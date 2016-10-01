@@ -10,9 +10,7 @@ import UIKit
 import QuartzCore
 
 protocol MonsterMakerViewControllerDelegate: class {
-    func createdStickerAtFileURL(fileURL: URL)
     func createdImage(image: UIImage)
-
 }
 
 enum monsterParts {
@@ -269,12 +267,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             currentSelectedIndexPath = nil
         }
     }
-    
-    
-
-
-
-    
+        
     func createImageFrom(view: UIView) -> UIImage {
         
         view.backgroundColor = .clear
@@ -282,10 +275,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        view.backgroundColor = .cyan
-        print("He")
         let resizedImage = resizeImage(image: image!)
-        
         return resizedImage
         
     }
@@ -302,124 +292,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         return resizedImage!
         
        // saveImage(image: resizedImage!)
-    }
-    
-    func saveImage(image: UIImage) {
-        
-//        let filename = "test.jpg"
-//        let subfolder = "SubDirectory"
-//        
-//        do {
-//            let fileManager = FileManager.default
-//            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-//            let folderURL = documentsURL.appendingPathComponent(subfolder)
-//            
-//            do {
-//                
-//                try folderURL.checkPromisedItemIsReachable()
-//                
-//                
-//            }
-//            
-//            
-//            
-//            
-//            
-//            
-//            if !folderURL.   checkPromisedItemIsReachableAndReturnError(nil) {
-//                try fileManager.createDirectoryAtURL(folderURL, withIntermediateDirectories: true, attributes: nil)
-//            }
-//            let fileURL = folderURL.URLByAppendingPathComponent(filename)
-//            
-//            try imageData.writeToURL(fileURL, options: .AtomicWrite)
-//        } catch {
-//            print(error)
-//        }
-        
-        
-        do {
-            
-            let fileManager = FileManager.default
-            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            print(documentsURL)
-            
-            let folderURL = documentsURL.appendingPathComponent("Sticker")
-            
-            do {
-                let reachable = try folderURL.checkPromisedItemIsReachable()
-                print("reachable!")
-                
-                let fileURL = folderURL.appendingPathComponent("MyImageName1.png")
-                
-                let imageData: Data = UIImagePNGRepresentation(image)!
-                
-                try imageData.write(to: fileURL)
-                
-            } catch {
-                
-                print("error = \(error)")
-                do {
-                   try fileManager.createDirectory(at: folderURL, withIntermediateDirectories: true, attributes: nil)
-                    print("must have made")
-                    
-                    let fileURL = folderURL.appendingPathComponent("MyImageName2.png")
-                    
-                    let imageData: Data = UIImagePNGRepresentation(image)!
-                    
-                    try imageData.write(to: fileURL)
-                    
-                } catch {
-                    
-                    print(error)
-                }
-            }
-            
-        } catch {
-            
-            print(error)
-        }
-
-        // Below works, i don't know if above does
-            
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-
-        
-        let fileUrl = Foundation.URL(string: "file://\(paths[0])/\(UUID().uuidString).png")
-        
-        
-        do {
-            let imageData: Data = UIImagePNGRepresentation(image)!
-            
-           // try imageData.write(to: fileUrl!)
-            
-            
-            try UIImagePNGRepresentation(image)?.write(to: fileUrl!)
-            
-            print("wrote to \(fileUrl!)")
-            
-            self.delegate?.createdStickerAtFileURL(fileURL: fileUrl!)
-
-        } catch {
-            
-            print("unable to write to \(fileUrl!)")
-            print(error)
-        }
-        
-        
-        
-        
-    //    UIImagePNGRepresentation(image)?.write(to: filePath) writeToFile(filePath, atomically: true)
-        
-        
-        
-        
-        
-        
-        
-        
-//        let filePath = "\(paths[0])/MyImageName.png"
-//
-//        UIImagePNGRepresentation(image)?.write(to: filePath) writeToFile(filePath, atomically: true)
     }
     
     // MARK: - IBActions

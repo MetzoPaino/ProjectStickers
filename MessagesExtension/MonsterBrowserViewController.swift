@@ -22,13 +22,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        styleView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,6 +30,9 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         collectionView.reloadData()
     }
     
+    func styleView() {
+        collectionView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+    }
 
     /*
     // MARK: - Navigation
@@ -76,7 +73,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 
                 let stickerView = cell.viewWithTag(1) as! MSStickerView
                 stickerView.sticker = stickerManager.customStickers[indexPath.row - 1]
-                stickerView.backgroundColor = UIColor.orange
                 return cell
             }
             
@@ -102,8 +98,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             delegate?.addCellSelected()
         }
     }
-    
-    
 }
 
 extension MonsterBrowserViewController : UICollectionViewDelegateFlowLayout {

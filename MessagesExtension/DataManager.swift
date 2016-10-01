@@ -30,124 +30,9 @@ class DataManager {
             }
         }
 
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        
-        do {
-            
-            let urlContents = try FileManager.default.contentsOfDirectory(at: urls[0], includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsSubdirectoryDescendants)
-            
-            let pngURLArray = urlContents.filter{ $0.pathExtension == "png" }
-            print(pngURLArray)
-            
-            stickerManager.customStickerFileURLS = pngURLArray
-            stickerManager.loadCustomStickers()
-            
-            
-//            do {
-//                
-//                let image = UIImage(data: try Data(contentsOf: mp3Files[0]))
-//                print("Image = \(image)")
-//            } catch {
-//                
-//                print("Failed to make file")
-//            }
-            
-            
-            
-            
-            // if you want to filter the directory contents you can do like this:
-//            if let directoryUrls = try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(documentsUrl, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsSubdirectoryDescendants) {
-//                print(directoryUrls)
-//                ........
-//            }
-            
-        } catch {
-            
-            print("total failure")
-        }
-        
-        
-        
-        
-
-        
-//        do {
-//            let directoryContents = try FileManager.default.contentsOfDirectory(atPath: path)
-//            
-//            for path in directoryContents {
-//                print(path)
-//                
-//                
-//                let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as [String]
-//                let path1 = paths[0] + "/" + path
-//                
-//                print(path1)
-//
-//                let url = Bundle.main.url(forResource: path1, withExtension: "png")
-//                
-//                print(url)
-//                
-////                if let audioFileURL = NSBundle.mainBundle().URLForResource(audioFileName, withExtension: "mp3", subdirectory: "audioFiles") {
-////                    print(audioFileURL)
-////                }
-//            }
-//            
-//            print("Directory \(directoryContents)")
-//
-//        } catch {
-//            print(error.localizedDescription);
-//        }
-//
-//            guard let bundle = Bundle.main.path(forResource: "ProjectStickers", ofType: "plist") else {
-//                
-//                print("Couldn't find bundle")
-//                return
-//            }
-
-            //FileManager.default.copyItemAtPath(bundle, toPath: path, error:nil)
-            
-         //   FileManager.default.copyItem(atPath: bundle, toPath: path)
-            
-            
-            
-            
-//            do {
-//                try FileManager.default.copyItem(atPath: bundle, toPath: path)
-//                print("Success")
-//            } catch {
-//                print(error.localizedDescription);
-//            }
-        }
-    
-//            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
-//                let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
-//                
-//                if let decodedStickerManager = unarchiver.decodeObject(forKey: "StickerManager") as? StickerManager {
-//                    
-//                    stickerManager = decodedStickerManager
-//                    
-//                } else {
-//                    
-//                    stickerManager = StickerManager()
-//                }
-//                
-//                unarchiver.finishDecoding()
-//                
-//            } else {
-//                
-//                // I don't know how i'd end up here, so should figure that out
-//                stickerManager = StickerManager()
-//            }
-//            
-//        } else {
-//            
-//            // Probably a first launch
-//            stickerManager = StickerManager()
-//        }
-        
-//        stickerManager.loadStickers()
-//        stickerManager.loadCustomStickers()
-//    }
+        loadURLSOfCreatedMonsters()
+        stickerManager.loadStickers()
+    }
     
     func dataFilePath() -> String {
         return documentsDirectory() + "/" + UUID().uuidString + ".png"
@@ -158,20 +43,7 @@ class DataManager {
         return paths[0]
     }
     
-    func saveData() {
-        
-        print("Saving Data")
-        
-//        let data = NSMutableData()
-//        let archiver = NSKeyedArchiver(forWritingWith: data)
-//        archiver.encode(stickerManager, forKey: "StickerManager")
-//        
-//        archiver.finishEncoding()
-//        data.write(toFile: dataFilePath(), atomically: true)
-    }
-    
     func saveImageToDisk(image: UIImage) {
-        
         
        // let fileUrl = Foundation.URL(string: "file://\(paths[0])/\(UUID().uuidString).png")
 
@@ -183,15 +55,34 @@ class DataManager {
             do {
                 try data.write(to: url!, options: Data.WritingOptions.atomic)
                 print("We saved the file!")
+                loadURLSOfCreatedMonsters()
             } catch {
                 print(error.localizedDescription);
             }
+            
         } else {
             
             print("Couldn't convert to data")
         }
+    }
+    
+    func loadURLSOfCreatedMonsters() {
         
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
-        
+        do {
+            
+            let urlContents = try FileManager.default.contentsOfDirectory(at: urls[0], includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsSubdirectoryDescendants)
+            
+            let pngURLArray = urlContents.filter{ $0.pathExtension == "png" }
+            
+            stickerManager.customStickers.removeAll()
+            stickerManager.customStickerFileURLS = pngURLArray
+            stickerManager.loadCustomStickers()
+            
+        } catch {
+            
+            print("No custom stickers")
+        }
     }
 }

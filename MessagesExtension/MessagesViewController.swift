@@ -17,15 +17,6 @@ class MessagesViewController: MSMessagesAppViewController, MonsterBrowserViewCon
         super.viewDidLoad()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        dataManager.saveData()
-    }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//    }
-    
     // MARK: - Navigation
     
     private func presentChildViewController(for presentationStyle: MSMessagesAppPresentationStyle) {
@@ -38,7 +29,7 @@ class MessagesViewController: MSMessagesAppViewController, MonsterBrowserViewCon
             controller.delegate = self
             controller.stickerManager = dataManager.stickerManager
             showViewController(controller: controller)
-            
+
         } else {
             
             let controller = UIStoryboard(name: "MainInterface", bundle: nil).instantiateViewController(withIdentifier: "MonsterMaker") as! MonsterMakerViewController
@@ -90,7 +81,6 @@ class MessagesViewController: MSMessagesAppViewController, MonsterBrowserViewCon
         // Use this method to release shared resources, save user data, invalidate timers,
         // and store enough state information to restore your extension to its current state
         // in case it is terminated later.
-        dataManager.saveData()
     }
     
     override func didReceive(_ message: MSMessage, conversation: MSConversation) {
@@ -131,15 +121,6 @@ class MessagesViewController: MSMessagesAppViewController, MonsterBrowserViewCon
     }
     
     // MARK: - MonsterMakerViewControllerDelegate
-    
-    func createdStickerAtFileURL(fileURL: URL) {
-        
-        dataManager.stickerManager.customStickerFileURLS.append(fileURL)
-        dataManager.stickerManager.loadCustomStickers()
-        dataManager.saveData()
-        self.requestPresentationStyle(.compact)
-        
-    }
     
     func createdImage(image: UIImage) {
         
