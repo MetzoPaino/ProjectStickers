@@ -1,0 +1,548 @@
+//
+//  MonsterMakerViewController.swift
+//  StickerTest
+//
+//  Created by William Robinson on 24/09/2016.
+//  Copyright © 2016 William Robinson. All rights reserved.
+//
+
+import UIKit
+import QuartzCore
+
+protocol MonsterMakerViewControllerDelegate: class {
+    func createdStickerAtFileURL(fileURL: URL)
+    func createdImage(image: UIImage)
+
+}
+
+enum monsterParts {
+    case heads
+    case mouths
+    case eyes
+    case text
+    case accessories
+}
+
+class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate {
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    var panGesture = UIPanGestureRecognizer()
+    var longGesture = UILongPressGestureRecognizer()
+    var pinchGesture = UIPinchGestureRecognizer()
+    var rotationGesture = UIRotationGestureRecognizer()
+
+    @IBOutlet weak var canvasImageView: UIImageView!
+
+
+    
+    @IBOutlet weak var headsButton: UIButton!
+    @IBOutlet weak var eyesButton: UIButton!
+    @IBOutlet weak var mouthsButton: UIButton!
+    @IBOutlet weak var accessoriesButton: UIButton!
+    @IBOutlet weak var textButton: UIButton!
+    
+    weak var delegate: MonsterMakerViewControllerDelegate?
+    
+    var showingMonsterParts = monsterParts.heads
+    
+    var currentSelectedIndexPath: IndexPath?
+    
+    var images = [UIImage(named:"Boo"), UIImage(named:"Eyeball"), UIImage(named:"HappyHalloween"), UIImage(named:"KeepingItSpooky"), UIImage(named:"Mask"), UIImage(named:"Medusa0"), UIImage(named:"SkullKid0"), UIImage(named:"Swamp0"), UIImage(named:"Vamp0"), UIImage(named:"Wolf0"), UIImage(named:"Medusa1"), UIImage(named:"SkullKid1"), UIImage(named:"Swamp1"), UIImage(named:"Vamp1"), UIImage(named:"Wolf1"), ]
+
+    
+    var movingImage = UIImageView()
+    var moving = false
+    
+    var createdImage = [UIImageView]()
+    
+    
+    var imagesOnCanvasArray = [UIImageView]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        canvasImageView.isOpaque = false
+        canvasImageView.layer.isOpaque = false
+        canvasImageView.isUserInteractionEnabled = false
+        canvasImageView.clipsToBounds = true
+
+        longGesture = UILongPressGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleLongPress(_:)))
+        pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handlePinch(_:)))
+        rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleRotation(_:)))
+        
+        longGesture.delegate = self
+        //pinchGesture.delegate = self
+        rotationGesture.delegate = self
+
+        self.view.addGestureRecognizer(longGesture)
+        self.view.addGestureRecognizer(pinchGesture)
+       // self.view.addGestureRecognizer(rotationGesture)
+
+//        longGesture.require(toFail: pinchGesture)
+//        longGesture.require(toFail: rotationGesture)
+
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+
+        var gesture = ""
+        var otherGesture = ""
+
+        if gestureRecognizer == longGesture {
+            
+            gesture = "Long Gesture"
+            
+        } else if gestureRecognizer == pinchGesture {
+            
+            gesture = "Pinch Gesture"
+            
+        }  else if gestureRecognizer == rotationGesture {
+            
+            gesture = "Rotation Gesture"
+        }
+        
+        if otherGestureRecognizer == longGesture {
+            
+            otherGesture = "Long Gesture"
+            
+        } else if otherGestureRecognizer == pinchGesture {
+            
+            otherGesture = "Pinch Gesture"
+            
+        }  else if otherGestureRecognizer == rotationGesture {
+            
+            otherGesture = "Rotation Gesture"
+        }
+        
+        print("We have \(gesture) with \(otherGesture)")
+        
+        if moving == false {
+            return true
+            
+        } else {
+            
+            if gestureRecognizer == longGesture && otherGestureRecognizer == pinchGesture || gestureRecognizer == pinchGesture && otherGestureRecognizer == longGesture || gestureRecognizer == longGesture && otherGestureRecognizer == rotationGesture {
+                
+                return true
+                
+            } else if gestureRecognizer == rotationGesture && otherGestureRecognizer == pinchGesture || gestureRecognizer == rotationGesture && otherGestureRecognizer == longGesture {
+                
+                return true
+                
+            } else if gestureRecognizer == rotationGesture {
+                
+                return true
+                
+            }  else if gestureRecognizer == pinchGesture {
+                
+                return true
+                
+            } else {
+                
+                return false
+            }
+        }
+    }
+    
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {}
+    
+    // MARK: - Gestures
+    
+    func handlePan(_ sender: UIPanGestureRecognizer) {
+        
+//        let windowLocationPoint = sender.location(in: nil)
+//        
+//        if sender.state == .changed {
+//            
+//            let image = sender.view!
+//            image.center = windowLocationPoint
+//        }
+    }
+    
+    func handlePinch(_ sender: UIPinchGestureRecognizer) {
+        
+        //print("Pinch!")
+
+        var scale = sender.scale
+        
+        if scale > 5.0 {
+            scale = 5.0
+        }
+        
+        if scale < 0.25 {
+            scale = 0.25
+        }
+        
+        movingImage.transform = CGAffineTransform(scaleX: scale, y: scale)
+        
+        if (sender.state == .ended) {
+            
+           // movingImage.bounds = movingImage.frame
+        }
+    }
+
+    func handleRotation(_ sender: UIRotationGestureRecognizer) {
+        
+        print("Rotation!")
+        movingImage.transform = CGAffineTransform(rotationAngle: sender.rotation)
+        
+        if (sender.state == .ended) {
+            
+            movingImage.bounds = movingImage.frame
+        }
+    }
+
+    
+    func handleLongPress(_ sender: UILongPressGestureRecognizer) {
+        
+        let locationPoint = sender.location(in: collectionView)
+        //let windowLocationPoint = sender.location(in: nil) This broke on landscape
+        let viewLocationPoint = sender.location(in: view)
+        let canvasLocationPoint = sender.location(in: canvasImageView)
+
+        if sender.state == .began {
+            
+            guard let selectedIndexPath = collectionView.indexPathForItem(at: locationPoint),
+                let cell = collectionView.cellForItem(at: selectedIndexPath) else {
+                    moving = false
+                    collectionView.isUserInteractionEnabled = true
+                    
+                    return
+            }
+            print("cell tag = \(cell.tag)")
+            moving = true
+            collectionView.isUserInteractionEnabled = false
+            
+            let imageView = cell.viewWithTag(1) as! UIImageView
+            
+            movingImage = UIImageView(image: imageView.image)
+            movingImage.alpha = 0.0
+            movingImage.frame = cell.frame
+            
+//            pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handlePinch(_:)))
+            movingImage.center = viewLocationPoint
+
+            view.addSubview(movingImage)
+            movingImage.center = viewLocationPoint
+
+            movingImage.alpha = 1.0
+            
+            imageView.alpha = 0.0
+            currentSelectedIndexPath = selectedIndexPath
+
+        } else if sender.state == .changed {
+            
+            movingImage.center = viewLocationPoint
+            
+        } else if sender.state == .ended {
+            
+            collectionView.reloadData()
+
+            collectionView.isUserInteractionEnabled = true
+            
+            let image = UIImageView(image: movingImage.image)
+            image.frame = movingImage.frame
+           //image.transform = movingImage.transform
+//             = movingImage.transform(ro)
+
+            
+//            
+//            let zKeyPath = "layer.presentationLayer.transform.rotation.z"
+//            let imageRotation = (movingImage.value(forKeyPath: zKeyPath) as? NSNumber)?.floatValue ?? 0.0
+//            
+//            let float = CGFloat(imageRotation)
+//            image.transform = CGAffineTransform(rotationAngle: float)
+//            
+//            
+//            image.bounds = movingImage.bounds
+            
+            
+            
+            if canvasImageView.point(inside: canvasLocationPoint, with: nil)  {
+                
+                canvasImageView.addSubview(image)
+                image.center = canvasLocationPoint
+                createdImage.append(image)
+            }
+            
+            movingImage.removeFromSuperview()
+            moving = false
+            currentSelectedIndexPath = nil
+        }
+    }
+    
+    
+
+
+
+    
+    func createImageFrom(view: UIView) -> UIImage {
+        
+        view.backgroundColor = .clear
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        view.backgroundColor = .cyan
+        print("He")
+        let resizedImage = resizeImage(image: image!)
+        
+        return resizedImage
+        
+    }
+    
+    func resizeImage(image: UIImage) -> UIImage {
+        
+        let stickerSize = CGRect(x: 0, y: 0, width: 600, height: 600)
+        UIGraphicsBeginImageContextWithOptions(stickerSize.size, false, 1.0)
+        image.draw(in: stickerSize)
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        print("He")
+        
+        return resizedImage!
+        
+       // saveImage(image: resizedImage!)
+    }
+    
+    func saveImage(image: UIImage) {
+        
+//        let filename = "test.jpg"
+//        let subfolder = "SubDirectory"
+//        
+//        do {
+//            let fileManager = FileManager.default
+//            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+//            let folderURL = documentsURL.appendingPathComponent(subfolder)
+//            
+//            do {
+//                
+//                try folderURL.checkPromisedItemIsReachable()
+//                
+//                
+//            }
+//            
+//            
+//            
+//            
+//            
+//            
+//            if !folderURL.   checkPromisedItemIsReachableAndReturnError(nil) {
+//                try fileManager.createDirectoryAtURL(folderURL, withIntermediateDirectories: true, attributes: nil)
+//            }
+//            let fileURL = folderURL.URLByAppendingPathComponent(filename)
+//            
+//            try imageData.writeToURL(fileURL, options: .AtomicWrite)
+//        } catch {
+//            print(error)
+//        }
+        
+        
+        do {
+            
+            let fileManager = FileManager.default
+            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            print(documentsURL)
+            
+            let folderURL = documentsURL.appendingPathComponent("Sticker")
+            
+            do {
+                let reachable = try folderURL.checkPromisedItemIsReachable()
+                print("reachable!")
+                
+                let fileURL = folderURL.appendingPathComponent("MyImageName1.png")
+                
+                let imageData: Data = UIImagePNGRepresentation(image)!
+                
+                try imageData.write(to: fileURL)
+                
+            } catch {
+                
+                print("error = \(error)")
+                do {
+                   try fileManager.createDirectory(at: folderURL, withIntermediateDirectories: true, attributes: nil)
+                    print("must have made")
+                    
+                    let fileURL = folderURL.appendingPathComponent("MyImageName2.png")
+                    
+                    let imageData: Data = UIImagePNGRepresentation(image)!
+                    
+                    try imageData.write(to: fileURL)
+                    
+                } catch {
+                    
+                    print(error)
+                }
+            }
+            
+        } catch {
+            
+            print(error)
+        }
+
+        // Below works, i don't know if above does
+            
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+
+        
+        let fileUrl = Foundation.URL(string: "file://\(paths[0])/\(UUID().uuidString).png")
+        
+        
+        do {
+            let imageData: Data = UIImagePNGRepresentation(image)!
+            
+           // try imageData.write(to: fileUrl!)
+            
+            
+            try UIImagePNGRepresentation(image)?.write(to: fileUrl!)
+            
+            print("wrote to \(fileUrl!)")
+            
+            self.delegate?.createdStickerAtFileURL(fileURL: fileUrl!)
+
+        } catch {
+            
+            print("unable to write to \(fileUrl!)")
+            print(error)
+        }
+        
+        
+        
+        
+    //    UIImagePNGRepresentation(image)?.write(to: filePath) writeToFile(filePath, atomically: true)
+        
+        
+        
+        
+        
+        
+        
+        
+//        let filePath = "\(paths[0])/MyImageName.png"
+//
+//        UIImagePNGRepresentation(image)?.write(to: filePath) writeToFile(filePath, atomically: true)
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func monsterPartButtonPressed(_ sender: UIButton) {
+        
+        if sender == headsButton {
+            showingMonsterParts = .heads
+        } else if sender == eyesButton {
+            showingMonsterParts = .eyes
+        } else if sender == mouthsButton {
+            showingMonsterParts = .mouths
+        } else if sender == accessoriesButton {
+            showingMonsterParts = .accessories
+        } else if sender == textButton {
+            showingMonsterParts = .text
+        }
+        collectionView.reloadData()
+    }
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        
+        let image = createImageFrom(view: canvasImageView)
+        
+        delegate?.createdImage(image: image)
+    }
+    
+    @IBAction func undoButtonPressed(_ sender: UIButton) {
+        
+        if let image = createdImage.last {
+            createdImage.removeLast()
+            image.removeFromSuperview()
+        }
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension MonsterMakerViewController: UICollectionViewDelegate {
+    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension MonsterMakerViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if showingMonsterParts == .heads {
+            
+            return MonsterPartsManager().headArray.count
+            
+        } else if showingMonsterParts == .eyes {
+            
+            return MonsterPartsManager().eyesArray.count
+            
+        } else if showingMonsterParts == .mouths {
+            
+            return MonsterPartsManager().mouthsArray.count
+            
+        } else if showingMonsterParts == .accessories {
+        
+            return MonsterPartsManager().accessoriesArray.count
+            
+        } else if showingMonsterParts == .text {
+            
+            return MonsterPartsManager().textArray.count
+            
+        } else {
+            
+            return images.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
+        
+        let imageView = cell.viewWithTag(1) as! UIImageView
+        
+        if currentSelectedIndexPath == indexPath {
+          
+            imageView.alpha = 0.0
+        } else {
+            imageView.alpha = 1.0
+        }
+        
+        if showingMonsterParts == .heads {
+            
+            imageView.image = MonsterPartsManager().headArray[indexPath.row]
+            
+        } else if showingMonsterParts == .eyes {
+            
+            imageView.image = MonsterPartsManager().eyesArray[indexPath.row]
+            
+        } else if showingMonsterParts == .mouths {
+            
+            imageView.image = MonsterPartsManager().mouthsArray[indexPath.row]
+            
+        } else if showingMonsterParts == .accessories {
+            
+            imageView.image = MonsterPartsManager().accessoriesArray[indexPath.row]
+            
+        } else if showingMonsterParts == .text {
+            
+            imageView.image = MonsterPartsManager().textArray[indexPath.row]
+            
+        }else {
+            
+            imageView.image = images[indexPath.row]
+        }
+        
+        
+        
+        cell.tag = indexPath.row * 10
+        
+        return cell
+    }
+}
+
+extension MonsterMakerViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 110, height: 110)
+    }
+}
