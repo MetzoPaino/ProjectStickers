@@ -72,8 +72,6 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
     }
     
     override func willResignActive(with conversation: MSConversation) {
-        
-        print("Hey")
     }
     
     override func didResignActive(with conversation: MSConversation) {
