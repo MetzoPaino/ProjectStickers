@@ -342,23 +342,23 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
         
         if showingMonsterParts == .heads {
             
-            return MonsterPartsManager().headArray.count
+            return StickerManager().createHeadArray().count
             
         } else if showingMonsterParts == .eyes {
             
-            return MonsterPartsManager().eyesArray.count
+            return StickerManager().createEyeArray().count
             
         } else if showingMonsterParts == .mouths {
             
-            return MonsterPartsManager().mouthsArray.count
+            return StickerManager().createMouthArray().count
             
         } else if showingMonsterParts == .accessories {
         
-            return MonsterPartsManager().accessoriesArray.count
+            return StickerManager().createAccessoriesArray().count
             
         } else if showingMonsterParts == .text {
             
-            return MonsterPartsManager().textArray.count
+            return StickerManager().createTextArray().count
             
         } else {
             
@@ -381,23 +381,23 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
         
         if showingMonsterParts == .heads {
             
-            imageView.image = MonsterPartsManager().headArray[indexPath.row]
+            imageView.image = StickerManager().createHeadArray()[indexPath.row]
             
         } else if showingMonsterParts == .eyes {
             
-            imageView.image = MonsterPartsManager().eyesArray[indexPath.row]
+            imageView.image = StickerManager().createEyeArray()[indexPath.row]
             
         } else if showingMonsterParts == .mouths {
             
-            imageView.image = MonsterPartsManager().mouthsArray[indexPath.row]
+            imageView.image = StickerManager().createMouthArray()[indexPath.row]
             
         } else if showingMonsterParts == .accessories {
             
-            imageView.image = MonsterPartsManager().accessoriesArray[indexPath.row]
+            imageView.image = StickerManager().createAccessoriesArray()[indexPath.row]
             
         } else if showingMonsterParts == .text {
             
-            imageView.image = MonsterPartsManager().textArray[indexPath.row]
+            imageView.image = StickerManager().createTextArray()[indexPath.row]
             
         }else {
             

@@ -39,6 +39,32 @@ class StickerManager: NSObject, NSCoding {
         aCoder.encode(customStickerFileURLS, forKey: customStickerFileURLSKey)
     }
     
+    func createHeadArray() -> [UIImage] {
+        
+        return createArray(fileName: "Head")
+    }
+
+    func createEyeArray() -> [UIImage] {
+        
+        return createArray(fileName: "Eye")
+    }
+    
+    func createMouthArray() -> [UIImage] {
+        
+        return createArray(fileName: "Mouth")
+    }
+    
+    func createAccessoriesArray() -> [UIImage] {
+        
+        return createArray(fileName: "Accessories")
+    }
+    
+    func createTextArray() -> [UIImage] {
+        
+        return createArray(fileName: "Text")
+    }
+    
+    
     func loadStickers() {
         
         stickers.removeAll()
@@ -116,10 +142,6 @@ class StickerManager: NSObject, NSCoding {
         
         let sticker: MSSticker
         
-        let fileManager = FileManager.default
-
-        print(fileURL.absoluteString)
-        
         do {
             
             try sticker = MSSticker(contentsOfFileURL: fileURL, localizedDescription: "Custom")
@@ -130,174 +152,63 @@ class StickerManager: NSObject, NSCoding {
             print(error)
             return
         }
-        
-//        if fileManager.fileExists(atPath: fileURL.absoluteString) {
-//            print("FILE AVAILABLE")
-//            
-//            do {
-//                
-//                try sticker = MSSticker(contentsOfFileURL: fileURL, localizedDescription: "Custom")
-//                customStickers.append(sticker)
-//                
-//            } catch {
-//                
-//                print(error)
-//                return
-//            }
-//            
-//        } else {
-//            print("FILE NOT AVAILABLE")
-//        }
     }
     
-//    func createImageFrom(view: UIView) {
-//        
-//        view.backgroundColor = .clear
-//        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
-//        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-//        let image = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        view.backgroundColor = .cyan
-//        print("He")
-//        resizeImage(image: image!)
+    func createArray(fileName: String) -> [UIImage] {
+        
+        var index = 0
+        var foundImage = false
+        var array = [UIImage]()
+        
+        repeat {
+            
+            let fileName = fileName + String(index)
+            
+            if let image = UIImage(named: fileName) {
+                
+                foundImage = true
+                array.append(image)
+                
+            } else {
+                
+                foundImage = false
+            }
+            
+            index = index + 1
+            
+        } while foundImage == true
+        
+        return array
+    }
+   
+//    var index = 0
+//    var foundImage = false
+//
+//    repeat {
+//    
+//    let fileName = "SortingAnimation_" + String(index)
+//    if let image = UIImage(named: fileName) {
+//    
+//    foundImage = true
+//    
+//    animationArray.append(image.cgImage!)
+//    } else {
+//    
+//    foundImage = false
+//
 //    }
 //    
-//    func resizeImage(image: UIImage) {
-//        
-//        let stickerSize = CGRect(x: 0, y: 0, width: 600, height: 600)
-//        UIGraphicsBeginImageContextWithOptions(stickerSize.size, false, 1.0)
-//        image.draw(in: stickerSize)
-//        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        print("He")
-//        saveImage(image: resizedImage!)
-//    }
-
-//    func saveImage(image: UIImage) {
-//        
-//        
-//        
+//    //            if image != nil {
+//    //                foundImage = true
+//    //
+//    //                animationArray.append(image!.CGImage!)
+//    //            } else {
+//    //                foundImage = false
+//    //            }
+//    index = index + 1
+//    
+//    } while foundImage
+//    
+    
 //        //http://stackoverflow.com/questions/25100262/save-data-to-plist-file-in-swift
-//        
-//        
-//        
-//        
-//        
-//        
-//        
-//        
-//        //        let filename = "test.jpg"
-//        //        let subfolder = "SubDirectory"
-//        //
-//        //        do {
-//        //            let fileManager = FileManager.default
-//        //            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-//        //            let folderURL = documentsURL.appendingPathComponent(subfolder)
-//        //
-//        //            do {
-//        //
-//        //                try folderURL.checkPromisedItemIsReachable()
-//        //
-//        //
-//        //            }
-//        //
-//        //
-//        //
-//        //
-//        //
-//        //
-//        //            if !folderURL.   checkPromisedItemIsReachableAndReturnError(nil) {
-//        //                try fileManager.createDirectoryAtURL(folderURL, withIntermediateDirectories: true, attributes: nil)
-//        //            }
-//        //            let fileURL = folderURL.URLByAppendingPathComponent(filename)
-//        //
-//        //            try imageData.writeToURL(fileURL, options: .AtomicWrite)
-//        //        } catch {
-//        //            print(error)
-//        //        }
-//        
-//        
-//        do {
-//            
-//            let fileManager = FileManager.default
-//            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-//            print(documentsURL)
-//            
-//            let folderURL = documentsURL.appendingPathComponent("Sticker")
-//            
-//            do {
-//                let reachable = try folderURL.checkPromisedItemIsReachable()
-//                print("reachable!")
-//                
-//                let fileURL = folderURL.appendingPathComponent("MyImageName1.png")
-//                
-//                let imageData: Data = UIImagePNGRepresentation(image)!
-//                
-//                try imageData.write(to: fileURL)
-//                
-//            } catch {
-//                
-//                print("error = \(error)")
-//                do {
-//                    try fileManager.createDirectory(at: folderURL, withIntermediateDirectories: true, attributes: nil)
-//                    print("must have made")
-//                    
-//                    let fileURL = folderURL.appendingPathComponent("MyImageName2.png")
-//                    
-//                    let imageData: Data = UIImagePNGRepresentation(image)!
-//                    
-//                    try imageData.write(to: fileURL)
-//                    
-//                } catch {
-//                    
-//                    print(error)
-//                }
-//            }
-//            
-//        } catch {
-//            
-//            print(error)
-//        }
-//        
-//        // Below works, i don't know if above does
-//        
-//        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-//        
-//        
-//        let fileUrl = Foundation.URL(string: "file://\(paths[0])/\(UUID().uuidString).png")
-//        
-//        
-//        do {
-//            let imageData: Data = UIImagePNGRepresentation(image)!
-//            
-//            // try imageData.write(to: fileUrl!)
-//            
-//            
-//            try UIImagePNGRepresentation(image)?.write(to: fileUrl!)
-//            
-//            print("wrote to \(fileUrl!)")
-//                        
-//        } catch {
-//            
-//            print("unable to write to \(fileUrl!)")
-//            print(error)
-//        }
-//        
-//        
-//        
-//        
-//        //    UIImagePNGRepresentation(image)?.write(to: filePath) writeToFile(filePath, atomically: true)
-//        
-//        
-//        
-//        
-//        
-//        
-//        
-//        
-//        //        let filePath = "\(paths[0])/MyImageName.png"
-//        //
-//        //        UIImagePNGRepresentation(image)?.write(to: filePath) writeToFile(filePath, atomically: true)
-//    }
-
 }
