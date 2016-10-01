@@ -19,12 +19,22 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewTopLayoutConstraint: NSLayoutConstraint!
+    
+//    var collectionViewTopConstraintCopy = NSLayoutConstraint()
+//    var collectionViewTopLayoutConstraintCopy = NSLayoutConstraint()
+
     weak var delegate: MonsterBrowserViewControllerDelegate?
     var stickerManager: StickerManager! = nil
     var editingCustomStickers = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        collectionViewTopConstraintCopy = collectionViewTopConstraint
+//        collectionViewTopLayoutConstraintCopy = collectionViewTopLayoutConstraint
+
         styleView()
     }
     
@@ -42,6 +52,29 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         collectionView.reloadData()
     }
 
+    func transitioningSize(compact: Bool) {
+        
+//        if compact == true {
+//            
+//            collectionViewTopConstraint = collectionViewTopConstraintCopy
+//            collectionViewTopLayoutConstraint = collectionViewTopLayoutConstraintCopy
+//            
+//            collectionViewTopConstraint.isActive = false
+//            collectionViewTopLayoutConstraint.isActive = true
+//            
+//        } else {
+//            
+//            collectionViewTopConstraint = collectionViewTopConstraintCopy
+//            collectionViewTopLayoutConstraint = collectionViewTopLayoutConstraintCopy
+//            
+//            collectionViewTopConstraint.isActive = true
+//            collectionViewTopLayoutConstraint.isActive = false
+//
+//        }
+//        
+//        view.layoutIfNeeded()
+    }
+    
     /*
     // MARK: - Navigation
 
