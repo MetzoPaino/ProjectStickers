@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 
+protocol DataManagerDelegate: class {
+    func dataManagerChanged()
+}
+
 class DataManager {
     
+    weak var delegate: DataManagerDelegate?
     let stickerManager = StickerManager()
-    
+
     required init() {
         
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as [String]
@@ -72,12 +77,36 @@ class DataManager {
         
         do {
             
-            let urlContents = try FileManager.default.contentsOfDirectory(at: urls[0], includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsSubdirectoryDescendants)
+            let properties = [URLResourceKey.localizedNameKey, URLResourceKey.creationDateKey, URLResourceKey.localizedTypeDescriptionKey]
             
+            let urlContents = try FileManager.default.contentsOfDirectory(at: urls[0], includingPropertiesForKeys: properties, options: FileManager.DirectoryEnumerationOptions.skipsSubdirectoryDescendants)
             let pngURLArray = urlContents.filter{ $0.pathExtension == "png" }
             
+            var dateArray = [Date]()
+            
+            for url in pngURLArray {
+                
+                do {
+                    let attributes = try FileManager.default.attributesOfItem(atPath: url.path)
+                    let creationDate = attributes[FileAttributeKey.creationDate] as! Date
+                    print(creationDate)
+                    dateArray.append(creationDate)
+                } catch {
+                    
+                    print("problems")
+                }
+            }
+            
+          //  let combined = zip(pngURLArray, dateArray).sortedBy: {$0.1 < $1.1}
+            
+            let combined = zip(pngURLArray, dateArray).sorted(by: { (s1: (URL, Date), s2: (URL, Date)) -> Bool in
+                return s1.1 > s2.1
+            })
+            
+            let sortedByDate = combined.map {$0.0}
+            
             stickerManager.customStickers.removeAll()
-            stickerManager.customStickerFileURLS = pngURLArray
+            stickerManager.customStickerFileURLS = sortedByDate
             stickerManager.loadCustomStickers()
             
         } catch {
@@ -85,4 +114,28 @@ class DataManager {
             print("No custom stickers")
         }
     }
+    
+    func deleteURLAtIndex(index: Int) {
+        
+        do {
+            
+            try FileManager.default.removeItem(at: stickerManager.customStickerFileURLS[index])
+            loadURLSOfCreatedMonsters()
+            delegate?.dataManagerChanged()
+            
+        } catch {
+            
+            print("Failed to delete \(error.localizedDescription)")
+        }
+        
+//        NSFileManager *fileManager = [NSFileManager defaultManager];
+//        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+//        NSString *filePath = [documentsPath stringByAppendingPathComponent:@"image.png"];
+//        NSError *error = nil;
+//        
+//        if (![fileManager removeItemAtPath:filePath error:&error]) {
+//            NSLog(@"[Error] %@ (%@)", error, filePath);
+//        }
+    }
+    
 }

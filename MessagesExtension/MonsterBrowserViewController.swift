@@ -11,6 +11,8 @@ import Messages
 
 protocol MonsterBrowserViewControllerDelegate: class {
     func addCellSelected()
+    func deleteButtonPressedForCellAtIndex(index: Int)
+
 }
 
 class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -19,6 +21,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     
     weak var delegate: MonsterBrowserViewControllerDelegate?
     var stickerManager: StickerManager! = nil
+    var editingCustomStickers = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,11 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     func styleView() {
         collectionView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
     }
+    
+    func reloadData() {
+        
+        collectionView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
@@ -43,6 +51,27 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - IBAction
+    
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        
+        
+        let buttonPosition = sender.convert(CGPoint.zero, to: collectionView)
+
+        guard let selectedIndexPath = collectionView.indexPathForItem(at: buttonPosition) else {
+                return
+        }
+        delegate?.deleteButtonPressedForCellAtIndex(index: selectedIndexPath.row - 1)
+        
+        print("Here")
+    }
+    
+    @IBAction func editButtonPressed(_ sender: UIButton) {
+        
+        editingCustomStickers = !editingCustomStickers
+        collectionView.reloadData()
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -73,6 +102,17 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 
                 let stickerView = cell.viewWithTag(1) as! MSStickerView
                 stickerView.sticker = stickerManager.customStickers[indexPath.row - 1]
+                
+                let button = cell.viewWithTag(2) as! UIButton
+                
+                if editingCustomStickers == true {
+                    button.isHidden = false
+
+                } else {
+                    button.isHidden = true
+                }
+
+                
                 return cell
             }
             
@@ -82,6 +122,9 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             
             let stickerView = cell.viewWithTag(1) as! MSStickerView
             stickerView.sticker = stickerManager.stickers[indexPath.row]
+            
+            let button = cell.viewWithTag(2) as! UIButton
+            button.isHidden = true
             
             return cell
         }
@@ -98,12 +141,63 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             delegate?.addCellSelected()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+            
+        case UICollectionElementKindSectionHeader:
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
+            
+            let button = headerView.viewWithTag(1) as! UIButton
+            
+            if indexPath.section == 0 {
+                button.isHidden = false
+
+            } else {
+                button.isHidden = true
+            }
+            
+            return headerView
+            
+        default:
+            return UICollectionReusableView()
+        }
+    }
+    
+//    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+//        
+//        switch kind {
+//            
+//        case UICollectionElementKindSectionHeader:
+//            
+//            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "Header", forIndexPath: indexPath) as! UICollectionReusableView
+//
+//            headerView.backgroundColor = UIColor.blueColor();
+//            return headerView
+//            
+//        case UICollectionElementKindSectionFooter:
+//            let footerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "Footer", forIndexPath: indexPath) as! UICollectionReusableView
+//            
+//            footerView.backgroundColor = UIColor.greenColor();
+//            return footerView
+//            
+//        default:
+//            
+//            assert(false, "Unexpected element kind")
+//        }
+//    }
 }
 
 extension MonsterBrowserViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.size.width / 4, height: view.frame.size.width / 4)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 20.0)
     }
     
     //3

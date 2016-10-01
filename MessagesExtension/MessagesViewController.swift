@@ -9,12 +9,14 @@
 import UIKit
 import Messages
 
-class MessagesViewController: MSMessagesAppViewController, MonsterBrowserViewControllerDelegate, MonsterMakerViewControllerDelegate {
+class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, MonsterBrowserViewControllerDelegate, MonsterMakerViewControllerDelegate {
     
     let dataManager = DataManager()
+    var monsterBrowser: MonsterBrowserViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataManager.delegate = self
     }
     
     // MARK: - Navigation
@@ -29,7 +31,8 @@ class MessagesViewController: MSMessagesAppViewController, MonsterBrowserViewCon
             controller.delegate = self
             controller.stickerManager = dataManager.stickerManager
             showViewController(controller: controller)
-
+            monsterBrowser = controller
+            
         } else {
             
             let controller = UIStoryboard(name: "MainInterface", bundle: nil).instantiateViewController(withIdentifier: "MonsterMaker") as! MonsterMakerViewController
@@ -113,11 +116,27 @@ class MessagesViewController: MSMessagesAppViewController, MonsterBrowserViewCon
         //view.sendSubview(toBack: imageView)
     }
     
+    // MARK: - DataManagerDelegate
+
+    
+    func dataManagerChanged() {
+        
+        if monsterBrowser != nil {
+            monsterBrowser!.reloadData()
+        }
+        
+    }
+    
     // MARK: - MonsterBrowserViewControllerDelegate
     
     func addCellSelected() {
         
         self.requestPresentationStyle(.expanded)
+    }
+    
+    func deleteButtonPressedForCellAtIndex(index: Int) {
+        
+        dataManager.deleteURLAtIndex(index: index)
     }
     
     // MARK: - MonsterMakerViewControllerDelegate

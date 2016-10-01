@@ -236,13 +236,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qkn-HC-iMw">
                                     <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="bp8-0F-CRl">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -251,17 +251,31 @@
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNG-uY-DTJ" customClass="MSStickerView">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0h-Bl-Zp0">
+                                                    <frame key="frameInset" minX="2" width="46" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="f0h-Bl-Zp0" secondAttribute="height" multiplier="1:1" id="Pgd-Eb-Tl7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <state key="normal" title="Delete"/>
+                                                    <connections>
+                                                        <action selector="deleteButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="0kn-Pz-xgQ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="WNG-uY-DTJ" firstAttribute="centerX" secondItem="bp8-0F-CRl" secondAttribute="centerX" id="OBH-pW-K06"/>
                                             <constraint firstItem="WNG-uY-DTJ" firstAttribute="centerY" secondItem="bp8-0F-CRl" secondAttribute="centerY" id="V5E-za-hoK"/>
                                             <constraint firstItem="WNG-uY-DTJ" firstAttribute="height" secondItem="bp8-0F-CRl" secondAttribute="height" id="WP2-qj-bfE"/>
+                                            <constraint firstItem="f0h-Bl-Zp0" firstAttribute="leading" secondItem="bp8-0F-CRl" secondAttribute="leading" id="ZKN-Or-PQx"/>
+                                            <constraint firstItem="f0h-Bl-Zp0" firstAttribute="top" secondItem="bp8-0F-CRl" secondAttribute="top" id="na5-uf-ErX"/>
                                             <constraint firstItem="WNG-uY-DTJ" firstAttribute="width" secondItem="bp8-0F-CRl" secondAttribute="width" id="uFb-HE-vdX"/>
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="67.5" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="68" y="50" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -283,6 +297,27 @@
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="c8v-lW-pu3">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snm-wr-v4h">
+                                            <frame key="frameInset" minX="252" minY="10" width="46" height="30"/>
+                                            <state key="normal" title="Edit">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="editButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="KxI-RA-gCV"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="snm-wr-v4h" secondAttribute="bottom" id="T0F-zP-y3I"/>
+                                        <constraint firstItem="snm-wr-v4h" firstAttribute="top" secondItem="c8v-lW-pu3" secondAttribute="top" id="bZs-eb-Rbs"/>
+                                        <constraint firstAttribute="trailing" secondItem="snm-wr-v4h" secondAttribute="trailing" constant="16" id="d6i-3o-m03"/>
+                                    </constraints>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="hXf-jq-1q5" id="aVG-e7-5nb"/>
                                     <outlet property="delegate" destination="hXf-jq-1q5" id="VUH-rg-fhd"/>
