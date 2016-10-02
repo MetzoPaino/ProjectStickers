@@ -3,13 +3,13 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iPhoneSettings_@1x.png",
+      "filename" : "iPhoneSettings@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iPhoneSettings_@3x.png",
+      "filename" : "iPhoneSettings@3x.png",
       "scale" : "3x"
     },
     {
@@ -21,13 +21,13 @@
     {
       "size" : "60x45",
       "idiom" : "iphone",
-      "filename" : "messages iphone_@3x.png",
+      "filename" : "messages iPhone@2x.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "iPhoneSettings_@1x-1.png",
+      "filename" : "iPhoneSettings@2x-1.png",
       "scale" : "2x"
     },
     {
