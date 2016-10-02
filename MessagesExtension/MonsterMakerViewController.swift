@@ -64,8 +64,8 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         canvasImageView.clipsToBounds = true
 
         longGesture = UILongPressGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleLongPress(_:)))
-        pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handlePinch(_:)))
-        rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleRotation(_:)))
+        pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handlePinch(recognizer:)))
+        rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleRotation(recognizer:)))
         
         longGesture.delegate = self
         //pinchGesture.delegate = self
@@ -73,7 +73,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 
         self.view.addGestureRecognizer(longGesture)
         self.view.addGestureRecognizer(pinchGesture)
-       // self.view.addGestureRecognizer(rotationGesture)
+       self.view.addGestureRecognizer(rotationGesture)
 
 //        longGesture.require(toFail: pinchGesture)
 //        longGesture.require(toFail: rotationGesture)
@@ -156,37 +156,42 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 //        }
     }
     
-    func handlePinch(_ sender: UIPinchGestureRecognizer) {
+    func handlePinch(recognizer: UIPinchGestureRecognizer) {
+        
+        movingImage.transform = movingImage.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
+        recognizer.scale = 1
         
         //print("Pinch!")
 
-        var scale = sender.scale
-        
-        if scale > 5.0 {
-            scale = 5.0
-        }
-        
-        if scale < 0.25 {
-            scale = 0.25
-        }
-        
-        movingImage.transform = CGAffineTransform(scaleX: scale, y: scale)
-        
-        if (sender.state == .ended) {
-            
-           // movingImage.bounds = movingImage.frame
-        }
+//        var scale = sender.scale
+//        
+//        if scale > 5.0 {
+//            scale = 5.0
+//        }
+//        
+//        if scale < 0.25 {
+//            scale = 0.25
+//        }
+//        
+//        movingImage.transform = CGAffineTransform(scaleX: scale, y: scale)
+//        
+//        if (sender.state == .ended) {
+//            
+//           // movingImage.bounds = movingImage.frame
+//        }
     }
 
-    func handleRotation(_ sender: UIRotationGestureRecognizer) {
+    func handleRotation(recognizer: UIRotationGestureRecognizer) {
         
-        print("Rotation!")
-        movingImage.transform = CGAffineTransform(rotationAngle: sender.rotation)
-        
-        if (sender.state == .ended) {
-            
-            movingImage.bounds = movingImage.frame
-        }
+        movingImage.transform = movingImage.transform.rotated(by: recognizer.rotation)
+        recognizer.rotation = 0
+//        print("Rotation!")
+//        movingImage.transform = CGAffineTransform(rotationAngle: sender.rotation)
+//        
+//        if (sender.state == .ended) {
+//            
+//            movingImage.bounds = movingImage.frame
+//        }
     }
 
     
@@ -234,26 +239,39 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         } else if sender.state == .ended {
             
             collectionView.reloadData()
-
             collectionView.isUserInteractionEnabled = true
+
+//----------- CAPTURING MOVING IMAGE
             
-            let image = UIImageView(image: movingImage.image)
+            var image = UIImageView()
+            UIGraphicsBeginImageContextWithOptions(movingImage.bounds.size, movingImage.isOpaque, 0.0)
+            
+            print("movingImage Center = x: \(movingImage.bounds.size.width / 2), y: \(movingImage.bounds.size.height / 2)")
+            
+            if let context = UIGraphicsGetCurrentContext() {
+                
+                let zKeyPath = "layer.presentationLayer.transform.rotation.z"
+                let imageRotation = (movingImage.value(forKeyPath: zKeyPath) as? NSNumber)?.floatValue ?? 0.0
+                
+                //let scale = "layer.presentationLayer.transform.scale"
+                //let imageScale = (movingImage.value(forKeyPath: scale) as? NSNumber)?.floatValue ?? 0.0
+                //let scaleFloat = CGFloat(imageScale)
+                
+                context.translateBy(x: movingImage.bounds.size.width / 2, y: movingImage.bounds.size.height / 2)
+                context.rotate(by: CGFloat(imageRotation))
+                //context.scaleBy(x: scaleFloat, y: scaleFloat)
+                context.translateBy(x: -movingImage.bounds.size.width / 2, y: -movingImage.bounds.size.height / 2)
+            }
+            
+            movingImage.drawHierarchy(in: movingImage.bounds, afterScreenUpdates: true)
+            let capturedImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            image = UIImageView(image:capturedImage)
+            //image.bounds = movingImage.bounds
             image.frame = movingImage.frame
-           //image.transform = movingImage.transform
-//             = movingImage.transform(ro)
 
             
-//            
-//            let zKeyPath = "layer.presentationLayer.transform.rotation.z"
-//            let imageRotation = (movingImage.value(forKeyPath: zKeyPath) as? NSNumber)?.floatValue ?? 0.0
-//            
-//            let float = CGFloat(imageRotation)
-//            image.transform = CGAffineTransform(rotationAngle: float)
-//            
-//            
-//            image.bounds = movingImage.bounds
-            
-            
+//-----------
             
             if canvasImageView.point(inside: canvasLocationPoint, with: nil)  {
                 
@@ -265,6 +283,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             movingImage.removeFromSuperview()
             moving = false
             currentSelectedIndexPath = nil
+            collectionView.reloadData()
         }
     }
         

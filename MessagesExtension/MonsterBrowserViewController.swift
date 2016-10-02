@@ -12,7 +12,14 @@ import Messages
 protocol MonsterBrowserViewControllerDelegate: class {
     func addCellSelected()
     func deleteButtonPressedForCellAtIndex(index: Int)
+}
 
+enum stickerType {
+    case all
+    case emoji
+    case parts
+    case accessories
+    case text
 }
 
 class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -22,16 +29,19 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewTopLayoutConstraint: NSLayoutConstraint!
     
+    
 //    var collectionViewTopConstraintCopy = NSLayoutConstraint()
 //    var collectionViewTopLayoutConstraintCopy = NSLayoutConstraint()
 
     weak var delegate: MonsterBrowserViewControllerDelegate?
     var stickerManager: StickerManager! = nil
     var editingCustomStickers = false
+    var viewingStickerType = stickerType.all
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //let flow = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+
 //        collectionViewTopConstraintCopy = collectionViewTopConstraint
 //        collectionViewTopLayoutConstraintCopy = collectionViewTopLayoutConstraint
 
@@ -44,7 +54,15 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     }
     
     func styleView() {
-        collectionView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        collectionView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+       // layout.itemSize = CGSize(width: view.frame.size.width / 2, height:  view.frame.size.width / 2)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView!.collectionViewLayout = layout
     }
     
     func reloadData() {
@@ -87,6 +105,25 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     
     // MARK: - IBAction
     
+    @IBAction func stickerTypeButtonPressed(_ sender: UIButton) {
+        
+        switch sender.tag {
+        case 2:
+            viewingStickerType = .all
+        case 3:
+            viewingStickerType = .emoji
+        case 4:
+            viewingStickerType = .parts
+        case 5:
+            viewingStickerType = .accessories
+        case 6:
+            viewingStickerType = .text
+        default:
+            viewingStickerType = .all
+        }
+        collectionView.reloadData()
+    }
+    
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         
         
@@ -111,7 +148,19 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         if section == 0 {
             return 1 + stickerManager.customStickers.count
         } else {
-            return stickerManager.stickers.count
+            
+            switch viewingStickerType {
+            case .all:
+                return StickerManager().createAllStickerArray().count
+            case .emoji:
+                return StickerManager().createEmojiStickerArray().count
+            case .parts:
+                return StickerManager().createPartStickerArray().count
+            case .accessories:
+                return StickerManager().createAccessoriesArray().count
+            case .text:
+                return StickerManager().createTextArray().count
+            }
         }
     }
     
@@ -134,6 +183,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
                 
                 let stickerView = cell.viewWithTag(1) as! MSStickerView
+ 
                 stickerView.sticker = stickerManager.customStickers[indexPath.row - 1]
                 
                 let button = cell.viewWithTag(2) as! UIButton
@@ -154,7 +204,19 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
             
             let stickerView = cell.viewWithTag(1) as! MSStickerView
-            stickerView.sticker = stickerManager.stickers[indexPath.row]
+            
+            switch viewingStickerType {
+            case .all:
+                stickerView.sticker = StickerManager().createAllStickerArray()[indexPath.row]
+            case .emoji:
+                stickerView.sticker = StickerManager().createEmojiStickerArray()[indexPath.row]
+            case .parts:
+                stickerView.sticker = StickerManager().createPartStickerArray()[indexPath.row]
+            case .accessories:
+                stickerView.sticker = StickerManager().createAccessoriesStickerArray()[indexPath.row]
+            case .text:
+                stickerView.sticker = StickerManager().createTextStickerArray()[indexPath.row]
+            }
             
             let button = cell.viewWithTag(2) as! UIButton
             button.isHidden = true
@@ -184,12 +246,28 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
             
             let button = headerView.viewWithTag(1) as! UIButton
-            
+            let allButton = headerView.viewWithTag(2) as! UIButton
+            let emojiButton = headerView.viewWithTag(3) as! UIButton
+            let partsButton = headerView.viewWithTag(4) as! UIButton
+            let accessoriesButton = headerView.viewWithTag(5) as! UIButton
+            let textButton = headerView.viewWithTag(6) as! UIButton
+
             if indexPath.section == 0 {
+                
                 button.isHidden = false
+                allButton.isHidden = true
+                emojiButton.isHidden = true
+                partsButton.isHidden = true
+                accessoriesButton.isHidden = true
+                textButton.isHidden = true
 
             } else {
                 button.isHidden = true
+                allButton.isHidden = false
+                emojiButton.isHidden = false
+                partsButton.isHidden = false
+                accessoriesButton.isHidden = false
+                textButton.isHidden = false
             }
             
             return headerView
@@ -226,17 +304,19 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
 extension MonsterBrowserViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width / 4, height: view.frame.size.width / 4)
+        return CGSize(width: view.frame.size.width / 3, height: view.frame.size.width / 3)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 20.0)
+        return CGSize(width: view.frame.width, height: 32.0)
     }
     
-    //3
-//    func collectionView(collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        
+//        print("Inset")
+//        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+//    }
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
 //        return sectionInsets
 //    }
 }

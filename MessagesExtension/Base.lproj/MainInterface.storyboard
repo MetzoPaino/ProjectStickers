@@ -275,7 +275,7 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="67.5" y="50" width="50" height="50"/>
+                                        <rect key="frame" x="68" y="50" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -301,8 +301,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snm-wr-v4h">
-                                            <frame key="frameInset" minX="252" minY="10" width="46" height="30"/>
+                                        <button opaque="NO" alpha="0.0" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snm-wr-v4h">
                                             <state key="normal" title="Edit">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -310,12 +309,80 @@
                                                 <action selector="editButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="KxI-RA-gCV"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWS-sr-dKP">
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <state key="normal" title="All">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="Uza-Ah-HiN"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVn-VX-EMq">
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <state key="normal" title="Emoji">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="LgS-vl-n0v"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZq-D2-bQS">
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <state key="normal" title="Parts">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="O2d-GJ-tzd"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cd-v2-m96">
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <state key="normal" title="Accessories">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="qUy-zt-m0P"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8h-2Z-gFb">
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <state key="normal" title="Text">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="7DH-H3-AeT"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="oWS-sr-dKP" firstAttribute="top" secondItem="c8v-lW-pu3" secondAttribute="top" id="5iK-52-j1g"/>
+                                        <constraint firstAttribute="bottom" secondItem="oWS-sr-dKP" secondAttribute="bottom" id="8Z5-8Z-CbK"/>
+                                        <constraint firstItem="nVn-VX-EMq" firstAttribute="leading" secondItem="oWS-sr-dKP" secondAttribute="trailing" id="AdE-hd-WdB"/>
+                                        <constraint firstItem="SZq-D2-bQS" firstAttribute="width" secondItem="nVn-VX-EMq" secondAttribute="width" id="Dyh-PF-5F5"/>
+                                        <constraint firstItem="0Cd-v2-m96" firstAttribute="centerY" secondItem="SZq-D2-bQS" secondAttribute="centerY" id="EGU-zr-pTd"/>
+                                        <constraint firstItem="oWS-sr-dKP" firstAttribute="top" secondItem="c8v-lW-pu3" secondAttribute="top" id="KJW-Dm-Ax1"/>
+                                        <constraint firstItem="nVn-VX-EMq" firstAttribute="height" secondItem="oWS-sr-dKP" secondAttribute="height" id="Kl3-rV-OJS"/>
+                                        <constraint firstItem="N8h-2Z-gFb" firstAttribute="centerY" secondItem="0Cd-v2-m96" secondAttribute="centerY" id="LrD-CO-4h4"/>
+                                        <constraint firstItem="SZq-D2-bQS" firstAttribute="centerY" secondItem="nVn-VX-EMq" secondAttribute="centerY" id="M8P-Iy-h4p"/>
+                                        <constraint firstItem="SZq-D2-bQS" firstAttribute="height" secondItem="nVn-VX-EMq" secondAttribute="height" id="N8p-4o-NUg"/>
+                                        <constraint firstAttribute="bottom" secondItem="oWS-sr-dKP" secondAttribute="bottom" id="Nk8-2K-By6"/>
                                         <constraint firstAttribute="bottom" secondItem="snm-wr-v4h" secondAttribute="bottom" id="T0F-zP-y3I"/>
+                                        <constraint firstItem="N8h-2Z-gFb" firstAttribute="leading" secondItem="0Cd-v2-m96" secondAttribute="trailing" id="a7a-V6-FN7"/>
+                                        <constraint firstItem="N8h-2Z-gFb" firstAttribute="width" secondItem="0Cd-v2-m96" secondAttribute="width" id="bKL-Z7-Qix"/>
                                         <constraint firstItem="snm-wr-v4h" firstAttribute="top" secondItem="c8v-lW-pu3" secondAttribute="top" id="bZs-eb-Rbs"/>
+                                        <constraint firstItem="0Cd-v2-m96" firstAttribute="width" secondItem="SZq-D2-bQS" secondAttribute="width" id="cH9-jS-X3h"/>
+                                        <constraint firstItem="nVn-VX-EMq" firstAttribute="centerY" secondItem="oWS-sr-dKP" secondAttribute="centerY" id="cHl-la-nAW"/>
                                         <constraint firstAttribute="trailing" secondItem="snm-wr-v4h" secondAttribute="trailing" constant="16" id="d6i-3o-m03"/>
+                                        <constraint firstAttribute="trailing" secondItem="N8h-2Z-gFb" secondAttribute="trailing" id="gzt-mQ-MIo"/>
+                                        <constraint firstItem="nVn-VX-EMq" firstAttribute="width" secondItem="oWS-sr-dKP" secondAttribute="width" id="i1w-J4-jf0"/>
+                                        <constraint firstItem="oWS-sr-dKP" firstAttribute="leading" secondItem="c8v-lW-pu3" secondAttribute="leading" id="lFb-wn-q96"/>
+                                        <constraint firstItem="N8h-2Z-gFb" firstAttribute="height" secondItem="0Cd-v2-m96" secondAttribute="height" id="mHz-hT-Dl8"/>
+                                        <constraint firstItem="0Cd-v2-m96" firstAttribute="leading" secondItem="SZq-D2-bQS" secondAttribute="trailing" id="mh2-Cc-0Lc"/>
+                                        <constraint firstItem="SZq-D2-bQS" firstAttribute="leading" secondItem="nVn-VX-EMq" secondAttribute="trailing" id="qkf-jo-2ZY"/>
+                                        <constraint firstItem="0Cd-v2-m96" firstAttribute="height" secondItem="SZq-D2-bQS" secondAttribute="height" id="uSq-iG-obh"/>
+                                        <constraint firstItem="oWS-sr-dKP" firstAttribute="leading" secondItem="c8v-lW-pu3" secondAttribute="leading" id="yi8-mH-3Ye"/>
                                     </constraints>
                                 </collectionReusableView>
                                 <connections>

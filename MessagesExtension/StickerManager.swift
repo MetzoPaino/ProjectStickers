@@ -9,6 +9,11 @@
 import Foundation
 import Messages
 
+enum StickerCreationError: Error {
+    case noPath
+    case noFileAtPath
+}
+
 class StickerManager: NSObject, NSCoding {
     
     fileprivate let customStickerFileURLSKey = "customStickerFileURLS"
@@ -39,6 +44,67 @@ class StickerManager: NSObject, NSCoding {
         aCoder.encode(customStickerFileURLS, forKey: customStickerFileURLSKey)
     }
     
+    // MARK: - Sticker Arrays
+    
+    func createAllStickerArray() -> [MSSticker] {
+        
+        let emojiArray = createEmojiStickerArray()
+        let headArray = createStickerArray(fileName: "Head")
+        let eyeArray = createStickerArray(fileName: "Eye")
+        let mouthArray = createStickerArray(fileName: "Mouth")
+        let accessoriesArray = createStickerArray(fileName: "Accessories")
+        let textArray = createStickerArray(fileName: "Text")
+
+        return emojiArray + headArray + eyeArray + mouthArray + accessoriesArray + textArray
+    }
+    
+    func createEmojiStickerArray() -> [MSSticker] {
+        
+        let vampArray = createStickerArray(fileName: "Vamp")
+        let skullArray = createStickerArray(fileName: "Skull")
+        let swampArray = createStickerArray(fileName: "Swamp")
+        let wolfArray = createStickerArray(fileName: "Wolf")
+        let medusaArray = createStickerArray(fileName: "Medusa")
+
+        return vampArray + skullArray + swampArray + wolfArray + medusaArray
+    }
+    
+    func createPartStickerArray() -> [MSSticker] {
+        
+        let headArray = createStickerArray(fileName: "Head")
+        let eyeArray = createStickerArray(fileName: "Eye")
+        let mouthArray = createStickerArray(fileName: "Mouth")
+        
+        return headArray + eyeArray + mouthArray
+    }
+    
+    func createHeadStickerArray() -> [MSSticker] {
+        
+        return createStickerArray(fileName: "Head")
+    }
+    
+    func createEyeStickerArray() -> [MSSticker] {
+        
+        return createStickerArray(fileName: "Head")
+    }
+    
+    func createMouthStickerArray() -> [MSSticker] {
+        
+        return createStickerArray(fileName: "Mouth")
+    }
+    
+    func createAccessoriesStickerArray() -> [MSSticker] {
+        
+        return createStickerArray(fileName: "Accessories")
+    }
+    
+    func createTextStickerArray() -> [MSSticker] {
+        
+        return createStickerArray(fileName: "Text")
+    }
+    
+    // MARK: - UIImage Arrays
+
     func createHeadArray() -> [UIImage] {
         
         return createArray(fileName: "Head")
@@ -69,41 +135,41 @@ class StickerManager: NSObject, NSCoding {
         
         stickers.removeAll()
         
-        createSticker(asset: "Vamp0", localizedDescription: "Vampire")
-        createSticker(asset: "Wolf0", localizedDescription: "Wolf")
-        createSticker(asset: "Medusa0", localizedDescription: "Medusa")
-        createSticker(asset: "SkullKid0", localizedDescription: "Skull")
-        createSticker(asset: "Swamp0", localizedDescription: "Swamp")
+        createStickerOld(asset: "Vamp0", localizedDescription: "Vampire")
+        createStickerOld(asset: "Wolf0", localizedDescription: "Wolf")
+        createStickerOld(asset: "Medusa0", localizedDescription: "Medusa")
+        createStickerOld(asset: "SkullKid0", localizedDescription: "Skull")
+        createStickerOld(asset: "Swamp0", localizedDescription: "Swamp")
         
-        createSticker(asset: "Vamp1", localizedDescription: "Vampire")
-        createSticker(asset: "Wolf1", localizedDescription: "Wolf")
-        createSticker(asset: "Medusa1", localizedDescription: "Medusa")
-        createSticker(asset: "SkullKid1", localizedDescription: "Skull")
-        createSticker(asset: "Swamp1", localizedDescription: "Swamp")
+        createStickerOld(asset: "Vamp1", localizedDescription: "Vampire")
+        createStickerOld(asset: "Wolf1", localizedDescription: "Wolf")
+        createStickerOld(asset: "Medusa1", localizedDescription: "Medusa")
+        createStickerOld(asset: "SkullKid1", localizedDescription: "Skull")
+        createStickerOld(asset: "Swamp1", localizedDescription: "Swamp")
         
-        createSticker(asset: "Vamp2", localizedDescription: "Vampire")
-        createSticker(asset: "Wolf2", localizedDescription: "Wolf")
-        createSticker(asset: "Medusa2", localizedDescription: "Medusa")
-        createSticker(asset: "SkullKid2", localizedDescription: "Skull")
-        createSticker(asset: "Swamp2", localizedDescription: "Swamp")
+        createStickerOld(asset: "Vamp2", localizedDescription: "Vampire")
+        createStickerOld(asset: "Wolf2", localizedDescription: "Wolf")
+        createStickerOld(asset: "Medusa2", localizedDescription: "Medusa")
+        createStickerOld(asset: "SkullKid2", localizedDescription: "Skull")
+        createStickerOld(asset: "Swamp2", localizedDescription: "Swamp")
         
-        createSticker(asset: "Vamp3", localizedDescription: "Vampire")
-        createSticker(asset: "Wolf3", localizedDescription: "Wolf")
-        createSticker(asset: "Medusa3", localizedDescription: "Medusa")
-        createSticker(asset: "SkullKid3", localizedDescription: "Skull")
-        createSticker(asset: "Swamp3", localizedDescription: "Swamp")
+        createStickerOld(asset: "Vamp3", localizedDescription: "Vampire")
+        createStickerOld(asset: "Wolf3", localizedDescription: "Wolf")
+        createStickerOld(asset: "Medusa3", localizedDescription: "Medusa")
+        createStickerOld(asset: "SkullKid3", localizedDescription: "Skull")
+        createStickerOld(asset: "Swamp3", localizedDescription: "Swamp")
         
-        createSticker(asset: "Vamp4", localizedDescription: "Vampire")
-        createSticker(asset: "Wolf4", localizedDescription: "Wolf")
-        createSticker(asset: "Medusa4", localizedDescription: "Medusa")
-        createSticker(asset: "SkullKid4", localizedDescription: "Skull")
-        createSticker(asset: "Swamp4", localizedDescription: "Swamp")
+        createStickerOld(asset: "Vamp4", localizedDescription: "Vampire")
+        createStickerOld(asset: "Wolf4", localizedDescription: "Wolf")
+        createStickerOld(asset: "Medusa4", localizedDescription: "Medusa")
+        createStickerOld(asset: "SkullKid4", localizedDescription: "Skull")
+        createStickerOld(asset: "Swamp4", localizedDescription: "Swamp")
         
-        createSticker(asset: "Vamp5", localizedDescription: "Vampire")
-        createSticker(asset: "Wolf5", localizedDescription: "Wolf")
-        createSticker(asset: "Medusa5", localizedDescription: "Medusa")
-        createSticker(asset: "SkullKid5", localizedDescription: "Skull")
-        createSticker(asset: "Swamp5", localizedDescription: "Swamp")
+        createStickerOld(asset: "Vamp5", localizedDescription: "Vampire")
+        createStickerOld(asset: "Wolf5", localizedDescription: "Wolf")
+        createStickerOld(asset: "Medusa5", localizedDescription: "Medusa")
+        createStickerOld(asset: "SkullKid5", localizedDescription: "Skull")
+        createStickerOld(asset: "Swamp5", localizedDescription: "Swamp")
 
     }
     
@@ -115,7 +181,7 @@ class StickerManager: NSObject, NSCoding {
         }
     }
     
-    func createSticker(asset: String, localizedDescription: String) {
+    func createStickerOld(asset: String, localizedDescription: String) {
         
         guard let stickerPath = Bundle.main.path(forResource: asset, ofType:"png") else {
             
@@ -130,11 +196,32 @@ class StickerManager: NSObject, NSCoding {
             
             try sticker = MSSticker(contentsOfFileURL: stickerURL, localizedDescription: localizedDescription)
             stickers.append(sticker)
-            
         } catch {
             
             print(error)
             return
+        }
+    }
+    
+    func createSticker(asset: String, localizedDescription: String) throws -> MSSticker {
+        
+        guard let stickerPath = Bundle.main.path(forResource: asset, ofType:"png") else {
+            
+            print("Couldn't create the sticker path for", asset)
+            throw StickerCreationError.noPath
+        }
+        
+        let stickerURL = URL(fileURLWithPath: stickerPath)
+        let sticker: MSSticker
+        
+        do {
+            
+            try sticker = MSSticker(contentsOfFileURL: stickerURL, localizedDescription: localizedDescription)
+            return sticker
+            
+        } catch {
+            print(error)
+            throw StickerCreationError.noFileAtPath
         }
     }
     
@@ -171,6 +258,32 @@ class StickerManager: NSObject, NSCoding {
                 
             } else {
                 
+                foundImage = false
+            }
+            
+            index = index + 1
+            
+        } while foundImage == true
+        
+        return array
+    }
+    
+    func createStickerArray(fileName: String) -> [MSSticker] {
+        
+        var index = 0
+        var foundImage = false
+        var array = [MSSticker]()
+        
+        repeat {
+            
+            let fileName = fileName + String(index)
+            
+            do {
+                let sticker = try createSticker(asset: fileName, localizedDescription: fileName)
+                array.append(sticker)
+                foundImage = true
+
+            } catch {
                 foundImage = false
             }
             
