@@ -43,7 +43,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     var stickerManager: StickerManager! = nil
     var editingCustomStickers = false
     var viewingStickerType = stickerType.all
-    var viewingCellSize = cellSize.medium
+    var viewingCellSize = cellSize.large
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -258,9 +258,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
-        print("You selected cell #\(indexPath.item)!")
-        
         if indexPath.section == 0 && indexPath.row == 0 {
             
             delegate?.addCellSelected()
@@ -274,6 +271,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         case UICollectionElementKindSectionHeader:
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
+            headerView.backgroundColor = #colorLiteral(red: 0.2191819251, green: 0.1625923216, blue: 0.2560424805, alpha: 1)
             
             let button = headerView.viewWithTag(1) as! UIButton
             let allButton = headerView.viewWithTag(2) as! UIButton
@@ -304,6 +302,36 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 } else {
                     button.setImage(UIImage(named:"Delete"), for: UIControlState.normal)
                 }
+                
+                smallButton.setImage(UIImage(named:"SkullSmall"), for: UIControlState.normal)
+                smallButton.setImage(UIImage(named:"SkullSmall")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                smallButton.setImage(UIImage(named:"SkullSmall")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                smallButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                
+                mediumButton.setImage(UIImage(named:"SkullMedium"), for: UIControlState.normal)
+                mediumButton.setImage(UIImage(named:"SkullMedium")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                mediumButton.setImage(UIImage(named:"SkullMedium")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                mediumButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                
+                largeButton.setImage(UIImage(named:"SkullLarge"), for: UIControlState.normal)
+                largeButton.setImage(UIImage(named:"SkullLarge")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                largeButton.setImage(UIImage(named:"SkullLarge")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                largeButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                
+                switch viewingCellSize {
+                case .small:
+                    smallButton.isSelected = true
+                    mediumButton.isSelected = false
+                    largeButton.isSelected = false
+                case .medium:
+                    largeButton.isSelected = false
+                    mediumButton.isSelected = true
+                    largeButton.isSelected = false
+                case .large:
+                    smallButton.isSelected = false
+                    mediumButton.isSelected = false
+                    largeButton.isSelected = true
+                }
 
             } else {
                 button.isHidden = true
@@ -316,6 +344,65 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 partsButton.isHidden = false
                 accessoriesButton.isHidden = false
                 textButton.isHidden = false
+                
+                allButton.setImage(UIImage(named:"All"), for: UIControlState.normal)
+                allButton.setImage(UIImage(named:"All")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                allButton.setImage(UIImage(named:"All")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                allButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                
+                emojiButton.setImage(UIImage(named:"Emoji"), for: UIControlState.normal)
+                emojiButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                emojiButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                emojiButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                
+                partsButton.setImage(UIImage(named:"Parts"), for: UIControlState.normal)
+                partsButton.setImage(UIImage(named:"Parts")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                partsButton.setImage(UIImage(named:"Parts")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                partsButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                
+                accessoriesButton.setImage(UIImage(named:"Accessories"), for: UIControlState.normal)
+                accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                accessoriesButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                
+                textButton.setImage(UIImage(named:"Text"), for: UIControlState.normal)
+                textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                textButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                
+                switch viewingStickerType {
+                case .all:
+                    allButton.isSelected = true
+                    emojiButton.isSelected = false
+                    partsButton.isSelected = false
+                    accessoriesButton.isSelected = false
+                    textButton.isSelected = false
+
+                case .emoji:
+                    allButton.isSelected = false
+                    emojiButton.isSelected = true
+                    partsButton.isSelected = false
+                    accessoriesButton.isSelected = false
+                    textButton.isSelected = false
+                case .parts:
+                    allButton.isSelected = false
+                    emojiButton.isSelected = false
+                    partsButton.isSelected = true
+                    accessoriesButton.isSelected = false
+                    textButton.isSelected = false
+                case .accessories:
+                    allButton.isSelected = false
+                    emojiButton.isSelected = false
+                    partsButton.isSelected = false
+                    accessoriesButton.isSelected = true
+                    textButton.isSelected = false
+                case .text:
+                    allButton.isSelected = false
+                    emojiButton.isSelected = false
+                    partsButton.isSelected = false
+                    accessoriesButton.isSelected = false
+                    textButton.isSelected = true
+                }
             }
             
             return headerView

@@ -33,6 +33,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var canvasImageView: UIImageView!
 
 
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var closeButton: UIButton!
     
     @IBOutlet weak var headsButton: UIButton!
     @IBOutlet weak var eyesButton: UIButton!
@@ -61,12 +64,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        canvasImageView.isOpaque = false
-        canvasImageView.layer.isOpaque = false
-        canvasImageView.isUserInteractionEnabled = false
-        canvasImageView.clipsToBounds = true
+
         //canvasImageView.backgroundColor = .clear
-        
+        styleView()
         
         longGesture = UILongPressGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleLongPress(_:)))
         pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handlePinch(recognizer:)))
@@ -82,6 +82,54 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 
 //        longGesture.require(toFail: pinchGesture)
 //        longGesture.require(toFail: rotationGesture)
+
+    }
+    
+    func styleView() {
+        
+        canvasImageView.isOpaque = false
+        canvasImageView.layer.isOpaque = false
+        canvasImageView.isUserInteractionEnabled = false
+        canvasImageView.clipsToBounds = true
+        
+        headsButton.setImage(UIImage(named:"Emoji"), for: UIControlState.normal)
+        headsButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        headsButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        headsButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+        
+        eyesButton.setImage(UIImage(named:"Eye"), for: UIControlState.normal)
+        eyesButton.setImage(UIImage(named:"Eye")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        eyesButton.setImage(UIImage(named:"Eye")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        eyesButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+        
+        mouthsButton.setImage(UIImage(named:"Mouth"), for: UIControlState.normal)
+        mouthsButton.setImage(UIImage(named:"Mouth")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        mouthsButton.setImage(UIImage(named:"Mouth")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        mouthsButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+        
+        accessoriesButton.setImage(UIImage(named:"Accessories"), for: UIControlState.normal)
+        accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        accessoriesButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+        
+        textButton.setImage(UIImage(named:"Text"), for: UIControlState.normal)
+        textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        textButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+        
+        headsButton.isSelected = true
+        
+        doneButton.setImage(UIImage(named:"Done"), for: UIControlState.normal)
+        doneButton.setImage(UIImage(named:"DoneInvert"), for: UIControlState.highlighted)
+        doneButton.setImage(UIImage(named:"DoneInvert"), for: UIControlState.selected)
+        
+        undoButton.setImage(UIImage(named:"Undo"), for: UIControlState.normal)
+        undoButton.setImage(UIImage(named:"UndoInvert"), for: UIControlState.highlighted)
+        undoButton.setImage(UIImage(named:"UndoInvert"), for: UIControlState.selected)
+        
+        closeButton.setImage(UIImage(named:"Delete"), for: UIControlState.normal)
+        closeButton.setImage(UIImage(named:"DeleteInvert"), for: UIControlState.highlighted)
+        closeButton.setImage(UIImage(named:"DeleteInvert"), for: UIControlState.selected)
 
     }
     
@@ -206,7 +254,10 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         //let windowLocationPoint = sender.location(in: nil) This broke on landscape
         let viewLocationPoint = sender.location(in: view)
         let canvasLocationPoint = sender.location(in: canvasImageView)
-
+        
+        let offsetedViewLocationPoint = CGPoint(x: viewLocationPoint.x, y: viewLocationPoint.y - 40)
+        let offsetedCanvasLocationPoint = CGPoint(x: canvasLocationPoint.x, y: canvasLocationPoint.y - 40)
+        
         if sender.state == .began {
             
             guard let selectedIndexPath = collectionView.indexPathForItem(at: locationPoint),
@@ -227,10 +278,13 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             movingImage.frame = cell.frame
             
 //            pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handlePinch(_:)))
-            movingImage.center = viewLocationPoint
-
+            //movingImage.center = viewLocationPoint
+            movingImage.center = offsetedViewLocationPoint
+            
+            
             view.addSubview(movingImage)
-            movingImage.center = viewLocationPoint
+            //movingImage.center = viewLocationPoint
+            movingImage.center = offsetedViewLocationPoint
 
             movingImage.alpha = 1.0
             
@@ -238,7 +292,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             currentSelectedIndexPath = selectedIndexPath
             
             
-            doneButtonWidthConstraint.constant = 44 / 2
+            doneButtonWidthConstraint.constant = 36 / 2
             
             UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
                 
@@ -248,14 +302,15 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 
         } else if sender.state == .changed {
             
-            movingImage.center = viewLocationPoint
-            
+            //movingImage.center = viewLocationPoint
+            movingImage.center = offsetedViewLocationPoint
+
         } else if sender.state == .ended {
             
             collectionView.reloadData()
             collectionView.isUserInteractionEnabled = true
             
-            doneButtonWidthConstraint.constant = 44
+            doneButtonWidthConstraint.constant = 36
             
             UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
                 
@@ -272,7 +327,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             if canvasImageView.point(inside: canvasLocationPoint, with: nil)  {
                 
                 canvasImageView.addSubview(movingImage)
-                movingImage.center = canvasLocationPoint
+                //movingImage.center = canvasLocationPoint
+                movingImage.center = offsetedCanvasLocationPoint
+
                 createdImage.append(movingImage)
 
 //                canvasImageView.addSubview(image)
@@ -348,15 +405,50 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         
         if sender == headsButton {
             showingMonsterParts = .heads
+            
+            headsButton.isSelected = true
+            eyesButton.isSelected = false
+            mouthsButton.isSelected = false
+            accessoriesButton.isSelected = false
+            textButton.isSelected = false
+            
         } else if sender == eyesButton {
             showingMonsterParts = .eyes
+            
+            headsButton.isSelected = false
+            eyesButton.isSelected = true
+            mouthsButton.isSelected = false
+            accessoriesButton.isSelected = false
+            textButton.isSelected = false
+            
         } else if sender == mouthsButton {
             showingMonsterParts = .mouths
+            
+            headsButton.isSelected = false
+            eyesButton.isSelected = false
+            mouthsButton.isSelected = true
+            accessoriesButton.isSelected = false
+            textButton.isSelected = false
+            
         } else if sender == accessoriesButton {
             showingMonsterParts = .accessories
+            
+            headsButton.isSelected = false
+            eyesButton.isSelected = false
+            mouthsButton.isSelected = false
+            accessoriesButton.isSelected = true
+            textButton.isSelected = false
+            
         } else if sender == textButton {
             showingMonsterParts = .text
+            
+            headsButton.isSelected = false
+            eyesButton.isSelected = false
+            mouthsButton.isSelected = false
+            accessoriesButton.isSelected = false
+            textButton.isSelected = true
         }
+        
         collectionView.reloadData()
     }
     
