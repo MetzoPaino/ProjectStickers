@@ -22,6 +22,12 @@ enum stickerType {
     case text
 }
 
+enum cellSize {
+    case small
+    case medium
+    case large
+}
+
 class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -37,7 +43,8 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     var stickerManager: StickerManager! = nil
     var editingCustomStickers = false
     var viewingStickerType = stickerType.all
-    
+    var viewingCellSize = cellSize.medium
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //let flow = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -124,6 +131,21 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         collectionView.reloadData()
     }
     
+    @IBAction func cellSizeButtonPressed(_ sender: UIButton) {
+        
+        switch sender.tag {
+        case 7:
+            viewingCellSize = .small
+        case 8:
+            viewingCellSize = .medium
+        case 9:
+            viewingCellSize = .large
+        default:
+            viewingCellSize = .medium
+        }
+        collectionView.reloadData()
+    }
+    
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         
         
@@ -140,6 +162,13 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     @IBAction func editButtonPressed(_ sender: UIButton) {
         
         editingCustomStickers = !editingCustomStickers
+        
+        if (editingCustomStickers == true) {
+            
+            sender.setImage(UIImage(named:"Done"), for: UIControlState.normal)
+        } else {
+            sender.setImage(UIImage(named:"Delete"), for: UIControlState.normal)
+        }
         collectionView.reloadData()
     }
 
@@ -251,18 +280,36 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             let partsButton = headerView.viewWithTag(4) as! UIButton
             let accessoriesButton = headerView.viewWithTag(5) as! UIButton
             let textButton = headerView.viewWithTag(6) as! UIButton
+            let smallButton = headerView.viewWithTag(7) as! UIButton
+            let mediumButton = headerView.viewWithTag(8) as! UIButton
+            let largeButton = headerView.viewWithTag(9) as! UIButton
 
             if indexPath.section == 0 {
                 
                 button.isHidden = false
+                smallButton.isHidden = false
+                mediumButton.isHidden = false
+                largeButton.isHidden = false
+                
                 allButton.isHidden = true
                 emojiButton.isHidden = true
                 partsButton.isHidden = true
                 accessoriesButton.isHidden = true
                 textButton.isHidden = true
+                
+                if (editingCustomStickers == true) {
+                    
+                    button.setImage(UIImage(named:"Done"), for: UIControlState.normal)
+                } else {
+                    button.setImage(UIImage(named:"Delete"), for: UIControlState.normal)
+                }
 
             } else {
                 button.isHidden = true
+                smallButton.isHidden = true
+                mediumButton.isHidden = true
+                largeButton.isHidden = true
+                
                 allButton.isHidden = false
                 emojiButton.isHidden = false
                 partsButton.isHidden = false
@@ -304,11 +351,19 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
 extension MonsterBrowserViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width / 3, height: view.frame.size.width / 3)
+        
+        switch viewingCellSize {
+        case .small:
+            return CGSize(width: view.frame.size.width / 5, height: view.frame.size.width / 5)
+        case .medium:
+            return CGSize(width: view.frame.size.width / 4, height: view.frame.size.width / 4)
+        case .large:
+            return CGSize(width: view.frame.size.width / 3, height: view.frame.size.width / 3)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 32.0)
+        return CGSize(width: view.frame.width, height: 48.0)
     }
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

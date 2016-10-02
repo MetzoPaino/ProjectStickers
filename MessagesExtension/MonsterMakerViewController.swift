@@ -11,6 +11,7 @@ import QuartzCore
 
 protocol MonsterMakerViewControllerDelegate: class {
     func createdImage(image: UIImage)
+    func cancelButtonPressed()
 }
 
 enum monsterParts {
@@ -344,6 +345,11 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             createdImage.removeLast()
             image.removeFromSuperview()
         }
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        
+        delegate?.cancelButtonPressed()
     }
 }
 

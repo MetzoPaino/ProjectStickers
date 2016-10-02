@@ -165,4 +165,8 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         dataManager.saveImageToDisk(image: image)
         self.requestPresentationStyle(.compact)
     }
+    
+    func cancelButtonPressed() {
+        self.requestPresentationStyle(.compact)
+    }
 }
