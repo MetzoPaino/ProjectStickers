@@ -104,6 +104,38 @@ class StickerManager: NSObject, NSCoding {
     }
     
     // MARK: - UIImage Arrays
+    
+    func createAllArray() -> [UIImage] {
+        
+        let emojiArray = createEmojiArray()
+        let headArray = createArray(fileName: "Head")
+        let eyeArray = createArray(fileName: "Eye")
+        let mouthArray = createArray(fileName: "Mouth")
+        let accessoriesArray = createArray(fileName: "Accessories")
+        let textArray = createArray(fileName: "Text")
+        
+        return emojiArray + headArray + eyeArray + mouthArray + accessoriesArray + textArray
+    }
+    
+    func createEmojiArray() -> [UIImage] {
+        
+        let vampArray = createArray(fileName: "Vamp")
+        let skullArray = createArray(fileName: "Skull")
+        let swampArray = createArray(fileName: "Swamp")
+        let wolfArray = createArray(fileName: "Wolf")
+        let medusaArray = createArray(fileName: "Medusa")
+        
+        return vampArray + skullArray + swampArray + wolfArray + medusaArray
+    }
+    
+    func createPartArray() -> [UIImage] {
+        
+        let headArray = createArray(fileName: "Head")
+        let eyeArray = createArray(fileName: "Eye")
+        let mouthArray = createArray(fileName: "Mouth")
+        
+        return headArray + eyeArray + mouthArray
+    }
 
     func createHeadArray() -> [UIImage] {
         

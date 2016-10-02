@@ -233,22 +233,38 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
             
             let stickerView = cell.viewWithTag(1) as! MSStickerView
+            let imageView = cell.viewWithTag(3) as! UIImageView
+
+            var image = UIImage()
             
             switch viewingStickerType {
             case .all:
                 stickerView.sticker = StickerManager().createAllStickerArray()[indexPath.row]
+                image = StickerManager().createAllArray()[indexPath.row]
             case .emoji:
                 stickerView.sticker = StickerManager().createEmojiStickerArray()[indexPath.row]
+                image = StickerManager().createEmojiArray()[indexPath.row]
             case .parts:
                 stickerView.sticker = StickerManager().createPartStickerArray()[indexPath.row]
+                image = StickerManager().createPartArray()[indexPath.row]
             case .accessories:
                 stickerView.sticker = StickerManager().createAccessoriesStickerArray()[indexPath.row]
+                image = StickerManager().createAccessoriesArray()[indexPath.row]
             case .text:
                 stickerView.sticker = StickerManager().createTextStickerArray()[indexPath.row]
+                image = StickerManager().createTextArray()[indexPath.row]
             }
+            
+            //let size = CGSizeApplyAffineTransform(image.size, CGAffineTransformMakeScale(0.5, 0.5))
+            
+            imageView.image = image.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            imageView.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+            imageView.tintColor = UIColor.black
             
             let button = cell.viewWithTag(2) as! UIButton
             button.isHidden = true
+            
+            
             
             return cell
         }

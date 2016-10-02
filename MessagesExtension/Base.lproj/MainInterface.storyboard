@@ -42,7 +42,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIl-9S-dFa">
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -50,7 +50,7 @@
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gSa-fk-1yR">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="osn-U6-QGv">
                                     <size key="itemSize" width="141" height="146"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -105,39 +105,48 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-tP-Ewj">
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Heads"/>
+                                        <state key="normal" title="Heads">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="shv-9f-AFt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EP-99-eUf">
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Mouths"/>
+                                        <state key="normal" title="Mouths">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="jWy-Qu-o6u"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-aX-poU">
-                                        <state key="normal" image="Accessories"/>
+                                        <state key="normal" image="Accessories">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="A46-B9-C4M"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABr-Js-ZB8">
-                                        <state key="normal" image="Text"/>
+                                        <state key="normal" image="Text">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="H0c-to-hHB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wm-qe-CBc">
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Eyes"/>
+                                        <state key="normal" title="Eyes">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="KIZ-Ad-Yfr"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="4wm-qe-CBc" firstAttribute="height" secondItem="vbm-tP-Ewj" secondAttribute="height" id="24t-pf-FhV"/>
                                     <constraint firstItem="vbm-tP-Ewj" firstAttribute="leading" secondItem="URL-vP-KAI" secondAttribute="leading" id="8Iz-bR-Iv3"/>
@@ -177,7 +186,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-kJ-WZW">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="Wer-D0-ySo"/>
+                                    <constraint firstAttribute="width" constant="36" id="Wer-D0-ySo"/>
                                     <constraint firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="height" multiplier="1:1" id="f4b-SW-qCT"/>
                                 </constraints>
                                 <state key="normal" image="Done"/>
@@ -203,6 +212,7 @@
                             <constraint firstItem="NUV-7S-CG8" firstAttribute="height" secondItem="pCU-kJ-WZW" secondAttribute="height" id="PZA-bx-b28"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="XIl-9S-dFa" secondAttribute="bottom" id="QPu-GG-QTu"/>
                             <constraint firstItem="hmj-2G-Qve" firstAttribute="centerX" secondItem="7oI-Qh-b0E" secondAttribute="centerX" id="Qla-hd-naK"/>
+                            <constraint firstItem="hmj-2G-Qve" firstAttribute="bottom" secondItem="URL-vP-KAI" secondAttribute="bottom" id="TR4-aE-ENH"/>
                             <constraint firstItem="hmj-2G-Qve" firstAttribute="width" secondItem="7oI-Qh-b0E" secondAttribute="width" id="Ufa-oL-xgf"/>
                             <constraint firstAttribute="trailing" secondItem="gSa-fk-1yR" secondAttribute="trailing" id="Umz-sv-s6q"/>
                             <constraint firstItem="XIl-9S-dFa" firstAttribute="height" secondItem="7oI-Qh-b0E" secondAttribute="height" multiplier="0.4" id="YvP-Og-dFL"/>
@@ -219,6 +229,11 @@
                             <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="pCU-kJ-WZW" secondAttribute="bottom" constant="8" id="wv0-bY-E28"/>
                             <constraint firstItem="gSa-fk-1yR" firstAttribute="top" secondItem="URL-vP-KAI" secondAttribute="bottom" id="xWO-q4-hIk"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mE8-fO-7Zq"/>
+                            </mask>
+                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Title" id="lbX-3n-ktR"/>
@@ -265,8 +280,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7sm-gW-noM"/>
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNG-uY-DTJ" customClass="MSStickerView">
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0h-Bl-Zp0">
                                                     <constraints>
@@ -281,11 +297,15 @@
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="7sm-gW-noM" firstAttribute="centerX" secondItem="bp8-0F-CRl" secondAttribute="centerX" id="5dU-YJ-esw"/>
+                                            <constraint firstItem="7sm-gW-noM" firstAttribute="height" secondItem="bp8-0F-CRl" secondAttribute="height" id="Kx7-Y6-ua1"/>
                                             <constraint firstItem="WNG-uY-DTJ" firstAttribute="centerX" secondItem="bp8-0F-CRl" secondAttribute="centerX" id="OBH-pW-K06"/>
+                                            <constraint firstItem="7sm-gW-noM" firstAttribute="centerY" secondItem="bp8-0F-CRl" secondAttribute="centerY" id="RKy-BR-8fq"/>
                                             <constraint firstItem="WNG-uY-DTJ" firstAttribute="centerY" secondItem="bp8-0F-CRl" secondAttribute="centerY" id="V5E-za-hoK"/>
                                             <constraint firstItem="WNG-uY-DTJ" firstAttribute="height" secondItem="bp8-0F-CRl" secondAttribute="height" id="WP2-qj-bfE"/>
                                             <constraint firstItem="f0h-Bl-Zp0" firstAttribute="leading" secondItem="bp8-0F-CRl" secondAttribute="leading" id="ZKN-Or-PQx"/>
                                             <constraint firstItem="f0h-Bl-Zp0" firstAttribute="top" secondItem="bp8-0F-CRl" secondAttribute="top" id="na5-uf-ErX"/>
+                                            <constraint firstItem="7sm-gW-noM" firstAttribute="width" secondItem="bp8-0F-CRl" secondAttribute="width" id="oza-6r-JRA"/>
                                             <constraint firstItem="WNG-uY-DTJ" firstAttribute="width" secondItem="bp8-0F-CRl" secondAttribute="width" id="uFb-HE-vdX"/>
                                         </constraints>
                                     </collectionViewCell>
@@ -493,6 +513,7 @@
         <image name="Delete" width="44" height="44"/>
         <image name="Done" width="44" height="44"/>
         <image name="Emoji" width="20" height="20"/>
+        <image name="MakerBackground" width="304" height="618"/>
         <image name="Parts" width="20" height="20"/>
         <image name="Text" width="20" height="20"/>
         <image name="Undo" width="44" height="44"/>

@@ -278,6 +278,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 //                canvasImageView.addSubview(image)
 //                image.center = canvasLocationPoint
 //                createdImage.append(image)
+            } else {
+                
+                movingImage.removeFromSuperview()
             }
             
             //movingImage.removeFromSuperview()
