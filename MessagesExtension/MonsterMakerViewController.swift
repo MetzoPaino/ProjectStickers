@@ -40,6 +40,8 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var accessoriesButton: UIButton!
     @IBOutlet weak var textButton: UIButton!
     
+    @IBOutlet weak var doneButtonWidthConstraint: NSLayoutConstraint!
+    
     weak var delegate: MonsterMakerViewControllerDelegate?
     
     var showingMonsterParts = monsterParts.heads
@@ -63,7 +65,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         canvasImageView.layer.isOpaque = false
         canvasImageView.isUserInteractionEnabled = false
         canvasImageView.clipsToBounds = true
-
+        //canvasImageView.backgroundColor = .clear
+        
+        
         longGesture = UILongPressGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleLongPress(_:)))
         pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handlePinch(recognizer:)))
         rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleRotation(recognizer:)))
@@ -232,6 +236,15 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             
             imageView.alpha = 0.0
             currentSelectedIndexPath = selectedIndexPath
+            
+            
+            doneButtonWidthConstraint.constant = 44 / 2
+            
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
+                
+                self.view.layoutIfNeeded()
+                
+            }, completion: nil)
 
         } else if sender.state == .changed {
             
@@ -241,53 +254,70 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             
             collectionView.reloadData()
             collectionView.isUserInteractionEnabled = true
+            
+            doneButtonWidthConstraint.constant = 44
+            
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
+                
+                self.view.layoutIfNeeded()
+                
+            }, completion: nil)
+            
+            //let image = self.captureMovingImage()
 
-//----------- CAPTURING MOVING IMAGE
+//            canvasImageView.addSubview(movingImage)
+//            movingImage.center = canvasLocationPoint
             
-            var image = UIImageView()
-            UIGraphicsBeginImageContextWithOptions(movingImage.bounds.size, movingImage.isOpaque, 0.0)
-            
-            print("movingImage Center = x: \(movingImage.bounds.size.width / 2), y: \(movingImage.bounds.size.height / 2)")
-            
-            if let context = UIGraphicsGetCurrentContext() {
-                
-                let zKeyPath = "layer.presentationLayer.transform.rotation.z"
-                let imageRotation = (movingImage.value(forKeyPath: zKeyPath) as? NSNumber)?.floatValue ?? 0.0
-                
-                //let scale = "layer.presentationLayer.transform.scale"
-                //let imageScale = (movingImage.value(forKeyPath: scale) as? NSNumber)?.floatValue ?? 0.0
-                //let scaleFloat = CGFloat(imageScale)
-                
-                context.translateBy(x: movingImage.bounds.size.width / 2, y: movingImage.bounds.size.height / 2)
-                context.rotate(by: CGFloat(imageRotation))
-                //context.scaleBy(x: scaleFloat, y: scaleFloat)
-                context.translateBy(x: -movingImage.bounds.size.width / 2, y: -movingImage.bounds.size.height / 2)
-            }
-            
-            movingImage.drawHierarchy(in: movingImage.bounds, afterScreenUpdates: true)
-            let capturedImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            image = UIImageView(image:capturedImage)
-            //image.bounds = movingImage.bounds
-            image.frame = movingImage.frame
-
-            
-//-----------
             
             if canvasImageView.point(inside: canvasLocationPoint, with: nil)  {
                 
-                canvasImageView.addSubview(image)
-                image.center = canvasLocationPoint
-                createdImage.append(image)
+                canvasImageView.addSubview(movingImage)
+                movingImage.center = canvasLocationPoint
+                createdImage.append(movingImage)
+
+//                canvasImageView.addSubview(image)
+//                image.center = canvasLocationPoint
+//                createdImage.append(image)
             }
             
-            movingImage.removeFromSuperview()
+            //movingImage.removeFromSuperview()
             moving = false
             currentSelectedIndexPath = nil
             collectionView.reloadData()
         }
     }
+    
+    func captureMovingImage() -> UIImageView {
         
+        var image = UIImageView()
+        UIGraphicsBeginImageContextWithOptions(movingImage.bounds.size, movingImage.isOpaque, 0.0)
+        
+        print("movingImage Center = x: \(movingImage.bounds.size.width / 2), y: \(movingImage.bounds.size.height / 2)")
+        
+        if let context = UIGraphicsGetCurrentContext() {
+            
+            let zKeyPath = "layer.presentationLayer.transform.rotation.z"
+            let imageRotation = (movingImage.value(forKeyPath: zKeyPath) as? NSNumber)?.floatValue ?? 0.0
+            
+            //                let scale = "layer.presentationLayer.transform.scale"
+            //                let imageScale = (movingImage.value(forKeyPath: scale) as? NSNumber)?.floatValue ?? 0.0
+            //                let scaleFloat = CGFloat(imageScale)
+            
+            context.translateBy(x: movingImage.bounds.size.width / 2, y: movingImage.bounds.size.height / 2)
+            context.rotate(by: CGFloat(imageRotation))
+            //context.scaleBy(x: scaleFloat, y: scaleFloat)
+            context.translateBy(x: -movingImage.bounds.size.width / 2, y: -movingImage.bounds.size.height / 2)
+        }
+        
+        movingImage.drawHierarchy(in: movingImage.bounds, afterScreenUpdates: true)
+        let capturedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        image = UIImageView(image:capturedImage)
+        //image.bounds = movingImage.bounds
+        image.frame = movingImage.frame
+        return image
+    }
+    
     func createImageFrom(view: UIView) -> UIImage {
         
         view.backgroundColor = .clear
@@ -297,7 +327,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         UIGraphicsEndImageContext()
         let resizedImage = resizeImage(image: image!)
         return resizedImage
-        
     }
     
     func resizeImage(image: UIImage) -> UIImage {
@@ -307,11 +336,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         image.draw(in: stickerSize)
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        print("He")
-        
         return resizedImage!
-        
-       // saveImage(image: resizedImage!)
     }
     
     // MARK: - IBActions

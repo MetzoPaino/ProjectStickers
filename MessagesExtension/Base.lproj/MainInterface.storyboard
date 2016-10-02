@@ -42,6 +42,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIl-9S-dFa">
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -116,16 +117,14 @@
                                             <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="jWy-Qu-o6u"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-aX-poU">
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Accessories"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-aX-poU">
+                                        <state key="normal" image="Accessories"/>
                                         <connections>
                                             <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="A46-B9-C4M"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABr-Js-ZB8">
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Text"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABr-Js-ZB8">
+                                        <state key="normal" image="Text"/>
                                         <connections>
                                             <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="H0c-to-hHB"/>
                                         </connections>
@@ -166,7 +165,6 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="iZJ-X8-Yid"/>
                                         <exclude reference="DTC-XK-aod"/>
                                     </mask>
                                 </variation>
@@ -179,6 +177,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-kJ-WZW">
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Wer-D0-ySo"/>
                                     <constraint firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="height" multiplier="1:1" id="f4b-SW-qCT"/>
                                 </constraints>
                                 <state key="normal" image="Done"/>
@@ -195,27 +194,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NUV-7S-CG8" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="1Rx-Y3-h1T"/>
+                            <constraint firstItem="NUV-7S-CG8" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" constant="8" id="1Rx-Y3-h1T"/>
                             <constraint firstItem="AwK-fn-rL3" firstAttribute="top" secondItem="gSa-fk-1yR" secondAttribute="bottom" id="1lI-0V-Gso"/>
                             <constraint firstItem="XIl-9S-dFa" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" id="2mx-ma-fXh"/>
                             <constraint firstItem="gSa-fk-1yR" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="5BE-fQ-gK5"/>
                             <constraint firstItem="NUV-7S-CG8" firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="width" id="6TH-3e-y7k"/>
-                            <constraint firstItem="pCU-kJ-WZW" firstAttribute="leading" secondItem="XIl-9S-dFa" secondAttribute="trailing" id="BDR-s3-i93"/>
-                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="top" secondItem="XIl-9S-dFa" secondAttribute="top" id="C74-AP-RSF"/>
+                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="top" secondItem="XIl-9S-dFa" secondAttribute="top" constant="8" id="C74-AP-RSF"/>
                             <constraint firstItem="NUV-7S-CG8" firstAttribute="height" secondItem="pCU-kJ-WZW" secondAttribute="height" id="PZA-bx-b28"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="XIl-9S-dFa" secondAttribute="bottom" id="QPu-GG-QTu"/>
+                            <constraint firstItem="hmj-2G-Qve" firstAttribute="centerX" secondItem="7oI-Qh-b0E" secondAttribute="centerX" id="Qla-hd-naK"/>
+                            <constraint firstItem="hmj-2G-Qve" firstAttribute="width" secondItem="7oI-Qh-b0E" secondAttribute="width" id="Ufa-oL-xgf"/>
                             <constraint firstAttribute="trailing" secondItem="gSa-fk-1yR" secondAttribute="trailing" id="Umz-sv-s6q"/>
                             <constraint firstItem="XIl-9S-dFa" firstAttribute="height" secondItem="7oI-Qh-b0E" secondAttribute="height" multiplier="0.4" id="YvP-Og-dFL"/>
+                            <constraint firstItem="hmj-2G-Qve" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" id="Z2k-QA-V9p"/>
                             <constraint firstItem="NUV-7S-CG8" firstAttribute="centerY" secondItem="pCU-kJ-WZW" secondAttribute="centerY" id="hKm-eg-v8v"/>
                             <constraint firstItem="XIl-9S-dFa" firstAttribute="centerX" secondItem="7oI-Qh-b0E" secondAttribute="centerX" id="jAq-aK-nFj"/>
-                            <constraint firstItem="XIl-9S-dFa" firstAttribute="leading" secondItem="NUV-7S-CG8" secondAttribute="trailing" id="ljx-W5-aUx"/>
+                            <constraint firstItem="hmj-2G-Qve" firstAttribute="height" secondItem="XIl-9S-dFa" secondAttribute="height" id="mE8-fO-7Zq"/>
                             <constraint firstItem="NCI-Bn-QZm" firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="width" id="qIC-U1-S4V"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="rGY-CP-1dg"/>
                             <constraint firstItem="NCI-Bn-QZm" firstAttribute="centerX" secondItem="pCU-kJ-WZW" secondAttribute="centerX" id="s4E-r1-hcO"/>
                             <constraint firstItem="NCI-Bn-QZm" firstAttribute="height" secondItem="pCU-kJ-WZW" secondAttribute="height" id="t3T-o3-lUO"/>
-                            <constraint firstAttribute="trailing" secondItem="pCU-kJ-WZW" secondAttribute="trailing" id="tYK-S9-MhQ"/>
+                            <constraint firstAttribute="trailing" secondItem="pCU-kJ-WZW" secondAttribute="trailing" constant="8" id="tYK-S9-MhQ"/>
                             <constraint firstAttribute="trailing" secondItem="URL-vP-KAI" secondAttribute="trailing" id="thj-zR-qk6"/>
-                            <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="pCU-kJ-WZW" secondAttribute="bottom" constant="16" id="wv0-bY-E28"/>
+                            <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="pCU-kJ-WZW" secondAttribute="bottom" constant="8" id="wv0-bY-E28"/>
                             <constraint firstItem="gSa-fk-1yR" firstAttribute="top" secondItem="URL-vP-KAI" secondAttribute="bottom" id="xWO-q4-hIk"/>
                         </constraints>
                     </view>
@@ -225,6 +226,7 @@
                         <outlet property="accessoriesButton" destination="9bv-aX-poU" id="cm5-5A-wMc"/>
                         <outlet property="canvasImageView" destination="XIl-9S-dFa" id="I1t-Ww-kpY"/>
                         <outlet property="collectionView" destination="gSa-fk-1yR" id="VIc-nU-1y0"/>
+                        <outlet property="doneButtonWidthConstraint" destination="Wer-D0-ySo" id="jb7-Qg-4Ea"/>
                         <outlet property="eyesButton" destination="4wm-qe-CBc" id="Cfn-fl-uEO"/>
                         <outlet property="headsButton" destination="vbm-tP-Ewj" id="eTP-tl-LK6"/>
                         <outlet property="mouthsButton" destination="9EP-99-eUf" id="bbA-mF-JH6"/>
@@ -343,36 +345,32 @@
                                                 <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="Uza-Ah-HiN"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVn-VX-EMq">
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <state key="normal" title="Emoji">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVn-VX-EMq">
+                                            <state key="normal" image="Emoji">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="LgS-vl-n0v"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZq-D2-bQS">
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <state key="normal" title="Parts">
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZq-D2-bQS">
+                                            <state key="normal" image="Parts">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="O2d-GJ-tzd"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cd-v2-m96">
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <state key="normal" title="Accessories">
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cd-v2-m96">
+                                            <state key="normal" image="Accessories">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="qUy-zt-m0P"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8h-2Z-gFb">
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <state key="normal" title="Text">
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8h-2Z-gFb">
+                                            <state key="normal" image="Text">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -490,10 +488,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Add" width="154" height="154"/>
-        <image name="Delete" width="154" height="154"/>
-        <image name="Done" width="154" height="154"/>
-        <image name="Undo" width="154" height="154"/>
+        <image name="Accessories" width="20" height="20"/>
+        <image name="Add" width="44" height="44"/>
+        <image name="Delete" width="44" height="44"/>
+        <image name="Done" width="44" height="44"/>
+        <image name="Emoji" width="20" height="20"/>
+        <image name="Parts" width="20" height="20"/>
+        <image name="Text" width="20" height="20"/>
+        <image name="Undo" width="44" height="44"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>
