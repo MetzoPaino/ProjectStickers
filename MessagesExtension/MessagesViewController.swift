@@ -175,7 +175,8 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         self.requestPresentationStyle(.compact)
         
         guard let conversation = activeConversation else {
-            fatalError("Expected an active converstation")
+            print("Couldn't find an active conversation")
+            return
         }
         
         if let sticker = dataManager.stickerManager.customStickers.first {
@@ -187,19 +188,6 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
                 }
             }
         }
-
-
-//        
-//        let message = composeMessage(with: iceCream, caption: messageCaption, session: conversation.selectedMessage?.session)
-//        
-//        // Add the message to the conversation.
-//        conversation.insert(message) { error in
-//            if let error = error {
-//                print(error)
-//            }
-//        }
-        
-        
     }
     
     func cancelButtonPressed() {

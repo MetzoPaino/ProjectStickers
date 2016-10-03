@@ -48,13 +48,19 @@ class StickerManager: NSObject, NSCoding {
     
     func createAllStickerArray() -> [MSSticker] {
         
+//        var animatedArray = [MSSticker]()
+//        
+//        if let sticker = createStickerGif(asset: "Unknown", localizedDescription: "Unknown") {
+//            animatedArray.append(sticker)
+//        }
+
         let emojiArray = createEmojiStickerArray()
         let headArray = createStickerArray(fileName: "Head")
         let eyeArray = createStickerArray(fileName: "Eye")
         let mouthArray = createStickerArray(fileName: "Mouth")
         let accessoriesArray = createStickerArray(fileName: "Accessories")
         let textArray = createStickerArray(fileName: "Text")
-
+        //return animatedArray
         return emojiArray + headArray + eyeArray + mouthArray + accessoriesArray + textArray
     }
     
@@ -232,6 +238,28 @@ class StickerManager: NSObject, NSCoding {
             
             print(error)
             return
+        }
+    }
+    
+    func createStickerGif(asset: String, localizedDescription: String) -> MSSticker? {
+        
+        guard let stickerPath = Bundle.main.path(forResource: asset, ofType:"apng") else {
+            
+            print("Couldn't create the sticker path for", asset)
+            return nil
+        }
+        let stickerURL = URL(fileURLWithPath: stickerPath)
+        
+        let sticker: MSSticker
+        
+        do {
+            
+            try sticker = MSSticker(contentsOfFileURL: stickerURL, localizedDescription: localizedDescription)
+            return sticker
+        } catch {
+            
+            print(error)
+            return nil
         }
     }
     

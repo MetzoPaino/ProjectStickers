@@ -214,6 +214,11 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 let stickerView = cell.viewWithTag(1) as! MSStickerView
  
                 stickerView.sticker = stickerManager.customStickers[indexPath.row - 1]
+                stickerView.startAnimating()
+               // let time: TimeInterval = 1.0
+               // stickerView.animationDuration = time
+               // stickerView.isAnimating() = true
+                //stickerView.animationDuration = 1.0
                 
                 let button = cell.viewWithTag(2) as! UIButton
                 
@@ -271,7 +276,10 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         case UICollectionElementKindSectionHeader:
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
-            headerView.backgroundColor = #colorLiteral(red: 0.2191819251, green: 0.1625923216, blue: 0.2560424805, alpha: 1)
+            headerView.backgroundColor = .clear
+            
+            let view = headerView.viewWithTag(10)
+            view?.backgroundColor = #colorLiteral(red: 0.2191819251, green: 0.1625923216, blue: 0.2560424805, alpha: 1)
             
             let button = headerView.viewWithTag(1) as! UIButton
             let allButton = headerView.viewWithTag(2) as! UIButton
@@ -451,7 +459,7 @@ extension MonsterBrowserViewController : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 48.0)
+        return CGSize(width: view.frame.width, height: 52.0)
     }
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
