@@ -20,11 +20,25 @@
                     <view key="view" contentMode="scaleToFill" id="tjo-EX-qOg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qe4-oj-ngU">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dUN-ib-e3Y" firstAttribute="top" secondItem="Qe4-oj-ngU" secondAttribute="bottom" id="XAs-bt-Scg"/>
+                            <constraint firstAttribute="trailing" secondItem="Qe4-oj-ngU" secondAttribute="trailing" id="bHs-sq-cEM"/>
+                            <constraint firstAttribute="topMargin" secondItem="Qe4-oj-ngU" secondAttribute="top" id="eMB-fr-J8T"/>
+                            <constraint firstItem="Qe4-oj-ngU" firstAttribute="leading" secondItem="tjo-EX-qOg" secondAttribute="leading" id="zOM-kJ-xaO"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="loadingImageView" destination="Qe4-oj-ngU" id="yN8-DQ-Sl9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5P-Bs-kSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -316,7 +330,7 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="68" y="50" width="50" height="50"/>
+                                        <rect key="frame" x="67.5" y="50" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>

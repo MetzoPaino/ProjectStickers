@@ -15,6 +15,8 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
     var monsterBrowser: MonsterBrowserViewController?
     var presentMonsterMaker = true
     
+    @IBOutlet weak var loadingImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.delegate = self
@@ -54,9 +56,7 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
 
                 showViewController(controller: controller)
                 monsterBrowser = controller
-
             }
-
         }
     }
     
@@ -67,8 +67,8 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         controller.view.frame = view.bounds
         
         controller.view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(controller.view)
-//        view.insertSubview(controller.view, belowSubview: imageView)
+       // view.addSubview(controller.view)
+        view.insertSubview(controller.view, belowSubview: loadingImageView)
         
         controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         controller.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -89,6 +89,8 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         // Use this method to configure the extension and restore previously stored state.
         super.willBecomeActive(with: conversation)
         presentChildViewController(for: .compact)
+        view.sendSubview(toBack: loadingImageView)
+
         
     }
     
@@ -123,7 +125,7 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         // Called before the extension transitions to a new presentation style.
-        //view.bringSubview(toFront: imageView)
+        view.bringSubview(toFront: loadingImageView)
         presentChildViewController(for: presentationStyle)
     }
     
@@ -131,7 +133,7 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         // Called after the extension transitions to a new presentation style.
         
         // Use this method to finalize any behaviors associated with the change in presentation style.
-        //view.sendSubview(toBack: imageView)
+        view.sendSubview(toBack: loadingImageView)
     }
     
     // MARK: - DataManagerDelegate
