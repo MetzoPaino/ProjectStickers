@@ -62,6 +62,13 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
     
     func showViewController(controller: UIViewController) {
         
+        // Remove any existing child controllers.
+//        for child in childViewControllers {
+//            child.willMove(toParentViewController: nil)
+//            child.view.removeFromSuperview()
+//            child.removeFromParentViewController()
+//        }
+        
         addChildViewController(controller)
         
         controller.view.frame = view.bounds
@@ -166,6 +173,33 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         
         dataManager.saveImageToDisk(image: image)
         self.requestPresentationStyle(.compact)
+        
+        guard let conversation = activeConversation else {
+            fatalError("Expected an active converstation")
+        }
+        
+        if let sticker = dataManager.stickerManager.customStickers.first {
+            conversation.insert(sticker) {
+                error in
+                
+                if let error = error {
+                    print(error)
+                }
+            }
+        }
+
+
+//        
+//        let message = composeMessage(with: iceCream, caption: messageCaption, session: conversation.selectedMessage?.session)
+//        
+//        // Add the message to the conversation.
+//        conversation.insert(message) { error in
+//            if let error = error {
+//                print(error)
+//            }
+//        }
+        
+        
     }
     
     func cancelButtonPressed() {

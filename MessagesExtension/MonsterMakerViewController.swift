@@ -131,6 +131,21 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         closeButton.setImage(UIImage(named:"DeleteInvert"), for: UIControlState.highlighted)
         closeButton.setImage(UIImage(named:"DeleteInvert"), for: UIControlState.selected)
 
+        updateButtonStates()
+    }
+    
+    func updateButtonStates() {
+        
+        if createdImage.count > 0 {
+            
+            undoButton.isEnabled = true
+            doneButton.isEnabled = true
+            
+        } else {
+            
+            undoButton.isEnabled = false
+            doneButton.isEnabled = false
+        }
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -260,6 +275,11 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         
         if sender.state == .began {
             
+            if canvasImageView.point(inside: canvasLocationPoint, with: nil)  {
+                // This is to stop moving already placed views
+                return
+            }
+            
             guard let selectedIndexPath = collectionView.indexPathForItem(at: locationPoint),
                 let cell = collectionView.cellForItem(at: selectedIndexPath) else {
                     moving = false
@@ -324,7 +344,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 //            movingImage.center = canvasLocationPoint
             
             
-            if canvasImageView.point(inside: canvasLocationPoint, with: nil)  {
+            if canvasImageView.point(inside: offsetedCanvasLocationPoint, with: nil)  {
                 
                 canvasImageView.addSubview(movingImage)
                 //movingImage.center = canvasLocationPoint
@@ -340,6 +360,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                 movingImage.removeFromSuperview()
             }
             
+            updateButtonStates()
             //movingImage.removeFromSuperview()
             moving = false
             currentSelectedIndexPath = nil
@@ -465,6 +486,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             createdImage.removeLast()
             image.removeFromSuperview()
         }
+        updateButtonStates()
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {

@@ -90,7 +90,7 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="ipi-qf-1Ll">
-                                        <rect key="frame" x="234" y="0.0" width="141" height="146"/>
+                                        <rect key="frame" x="172" y="0.0" width="141" height="146"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="141" height="146"/>
@@ -503,12 +503,10 @@
                             <constraint firstItem="DhE-U5-qwR" firstAttribute="width" secondItem="QYm-Bi-Fp9" secondAttribute="width" id="AMc-NV-bEC"/>
                             <constraint firstItem="K32-iu-a9X" firstAttribute="top" secondItem="DhE-U5-qwR" secondAttribute="bottom" id="Bws-6M-aMK"/>
                             <constraint firstAttribute="topMargin" secondItem="DhE-U5-qwR" secondAttribute="top" id="S2W-kc-w9Q"/>
-                            <constraint firstItem="DhE-U5-qwR" firstAttribute="top" secondItem="dSE-gM-6cJ" secondAttribute="bottom" id="gby-1l-Uw5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="9iU-Kb-VEl"/>
-                                <exclude reference="gby-1l-Uw5"/>
                             </mask>
                         </variation>
                     </view>
@@ -518,7 +516,6 @@
                     <connections>
                         <outlet property="collectionView" destination="DhE-U5-qwR" id="orJ-hm-TRg"/>
                         <outlet property="collectionViewTopConstraint" destination="S2W-kc-w9Q" id="t7C-4n-pWm"/>
-                        <outlet property="collectionViewTopLayoutConstraint" destination="gby-1l-Uw5" id="7s3-La-KIY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSM-p5-SQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
