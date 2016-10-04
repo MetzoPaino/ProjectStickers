@@ -48,11 +48,30 @@ class StickerManager: NSObject, NSCoding {
     
     func createAllStickerArray() -> [MSSticker] {
         
-//        var animatedArray = [MSSticker]()
-//        
-//        if let sticker = createStickerGif(asset: "Unknown", localizedDescription: "Unknown") {
-//            animatedArray.append(sticker)
-//        }
+        var animatedArray = [MSSticker]()
+        
+        if let sticker = createStickerGif(asset: "SleepyVamp", localizedDescription: "SleepyVamp") {
+            animatedArray.append(sticker)
+        }
+        
+        
+        let stickerNames = ["circle01", "circle02", "circle03", "circle04",]
+        
+        let stickers = stickerNames.map( {name -> MSSticker in
+            let url = Bundle.main.url(forResource: name, withExtension: "png")!
+            return try! MSSticker(contentsOfFileURL: url, localizedDescription: name)
+        })
+        
+       // animatedArray .append( createSticker(asset: <#T##String#>, localizedDescription: <#T##String#>)
+        
+        do {
+            let sticker = try createSticker(asset: "animated-2", localizedDescription: "Hello")
+            animatedArray.append(sticker)
+            
+        } catch {
+        }
+        
+        
 
         let emojiArray = createEmojiStickerArray()
         let headArray = createStickerArray(fileName: "Head")
@@ -60,7 +79,7 @@ class StickerManager: NSObject, NSCoding {
         let mouthArray = createStickerArray(fileName: "Mouth")
         let accessoriesArray = createStickerArray(fileName: "Accessories")
         let textArray = createStickerArray(fileName: "Text")
-        //return animatedArray
+        return animatedArray
         return emojiArray + headArray + eyeArray + mouthArray + accessoriesArray + textArray
     }
     
@@ -70,7 +89,7 @@ class StickerManager: NSObject, NSCoding {
         let skullArray = createStickerArray(fileName: "Skull")
         let swampArray = createStickerArray(fileName: "Swamp")
         let wolfArray = createStickerArray(fileName: "Wolf")
-        let medusaArray = createStickerArray(fileName: "Medusa")
+        let medusaArray = createStickerArray(fileName: "Snake")
 
         return vampArray + skullArray + swampArray + wolfArray + medusaArray
     }
@@ -129,7 +148,7 @@ class StickerManager: NSObject, NSCoding {
         let skullArray = createArray(fileName: "Skull")
         let swampArray = createArray(fileName: "Swamp")
         let wolfArray = createArray(fileName: "Wolf")
-        let medusaArray = createArray(fileName: "Medusa")
+        let medusaArray = createArray(fileName: "Snake")
         
         return vampArray + skullArray + swampArray + wolfArray + medusaArray
     }
@@ -243,7 +262,7 @@ class StickerManager: NSObject, NSCoding {
     
     func createStickerGif(asset: String, localizedDescription: String) -> MSSticker? {
         
-        guard let stickerPath = Bundle.main.path(forResource: asset, ofType:"apng") else {
+        guard let stickerPath = Bundle.main.path(forResource: asset, ofType:"gif") else {
             
             print("Couldn't create the sticker path for", asset)
             return nil

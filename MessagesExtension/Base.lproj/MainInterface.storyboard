@@ -289,7 +289,7 @@
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qkn-HC-iMw">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
@@ -359,152 +359,156 @@
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="c8v-lW-pu3">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="Ljz-H4-yhQ">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ui5-fH-ZQQ">
+                                        <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-Ml-bZT">
                                             <subviews>
-                                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGI-UK-Jd2" userLabel="Small">
+                                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6x-fw-Ira" userLabel="Small">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="HGI-UK-Jd2" secondAttribute="height" multiplier="1:1" id="bKv-fR-w5W"/>
+                                                        <constraint firstAttribute="width" secondItem="P6x-fw-Ira" secondAttribute="height" multiplier="1:1" id="nwu-2D-Ioz"/>
                                                     </constraints>
                                                     <state key="normal" image="SkullSmall">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="cellSizeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="UM0-yl-nBr"/>
+                                                        <action selector="cellSizeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="R7q-Fo-82Z"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jED-h5-zyg" userLabel="Medium">
+                                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-aG-3HJ" userLabel="Medium">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="jED-h5-zyg" secondAttribute="height" multiplier="1:1" id="XCT-iv-4t3"/>
+                                                        <constraint firstAttribute="width" secondItem="vc4-aG-3HJ" secondAttribute="height" multiplier="1:1" id="ydJ-e0-gSV"/>
                                                     </constraints>
                                                     <state key="normal" image="SkullMedium">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="cellSizeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="LDQ-ve-EPN"/>
+                                                        <action selector="cellSizeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="ihz-7m-87C"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="9" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaZ-LG-qyw" userLabel="Large">
+                                                <button opaque="NO" tag="9" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-Q7-j4b" userLabel="Large">
                                                     <frame key="frameInset" minX="200" width="44" height="44"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="BaZ-LG-qyw" secondAttribute="height" multiplier="1:1" id="mlE-wU-Rz6"/>
+                                                        <constraint firstAttribute="width" secondItem="ZWe-Q7-j4b" secondAttribute="height" multiplier="1:1" id="5dA-Ow-2ii"/>
                                                     </constraints>
                                                     <state key="normal" image="SkullLarge">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="cellSizeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="351-Zn-F6G"/>
+                                                        <action selector="cellSizeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="us5-lO-1Jk"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="BaZ-LG-qyw" firstAttribute="height" secondItem="jED-h5-zyg" secondAttribute="height" id="15r-7G-NRP"/>
-                                                <constraint firstItem="jED-h5-zyg" firstAttribute="leading" secondItem="HGI-UK-Jd2" secondAttribute="trailing" id="FQG-5U-uig"/>
-                                                <constraint firstItem="jED-h5-zyg" firstAttribute="height" secondItem="Ui5-fH-ZQQ" secondAttribute="height" id="Ujq-3y-ylS"/>
-                                                <constraint firstItem="HGI-UK-Jd2" firstAttribute="centerY" secondItem="jED-h5-zyg" secondAttribute="centerY" id="Vee-HQ-M20"/>
-                                                <constraint firstItem="jED-h5-zyg" firstAttribute="centerX" secondItem="Ui5-fH-ZQQ" secondAttribute="centerX" id="Y8Y-rQ-T3v"/>
-                                                <constraint firstItem="BaZ-LG-qyw" firstAttribute="centerY" secondItem="jED-h5-zyg" secondAttribute="centerY" id="ejz-4g-uFZ"/>
-                                                <constraint firstAttribute="height" constant="44" id="hFa-cQ-UxO"/>
-                                                <constraint firstItem="BaZ-LG-qyw" firstAttribute="leading" secondItem="jED-h5-zyg" secondAttribute="trailing" id="pPa-8n-gXh"/>
-                                                <constraint firstItem="jED-h5-zyg" firstAttribute="centerY" secondItem="Ui5-fH-ZQQ" secondAttribute="centerY" id="rRb-2Q-1JD"/>
-                                                <constraint firstItem="HGI-UK-Jd2" firstAttribute="height" secondItem="jED-h5-zyg" secondAttribute="height" id="tUj-Wi-YOH"/>
+                                                <constraint firstItem="vc4-aG-3HJ" firstAttribute="centerX" secondItem="qHN-Ml-bZT" secondAttribute="centerX" id="0rA-z0-yKX"/>
+                                                <constraint firstItem="vc4-aG-3HJ" firstAttribute="height" secondItem="qHN-Ml-bZT" secondAttribute="height" id="3SG-Vd-DtD"/>
+                                                <constraint firstItem="vc4-aG-3HJ" firstAttribute="centerY" secondItem="qHN-Ml-bZT" secondAttribute="centerY" id="FxS-cS-ScF"/>
+                                                <constraint firstItem="vc4-aG-3HJ" firstAttribute="leading" secondItem="P6x-fw-Ira" secondAttribute="trailing" id="bJ5-wH-gPd"/>
+                                                <constraint firstItem="P6x-fw-Ira" firstAttribute="centerY" secondItem="vc4-aG-3HJ" secondAttribute="centerY" id="eVT-rZ-Q1B"/>
+                                                <constraint firstItem="ZWe-Q7-j4b" firstAttribute="centerY" secondItem="vc4-aG-3HJ" secondAttribute="centerY" id="hTf-7Q-BDy"/>
+                                                <constraint firstAttribute="height" constant="44" id="sx7-dk-PlK"/>
+                                                <constraint firstItem="ZWe-Q7-j4b" firstAttribute="leading" secondItem="vc4-aG-3HJ" secondAttribute="trailing" id="yga-he-R87"/>
+                                                <constraint firstItem="P6x-fw-Ira" firstAttribute="height" secondItem="vc4-aG-3HJ" secondAttribute="height" id="ysq-iZ-Zfb"/>
+                                                <constraint firstItem="ZWe-Q7-j4b" firstAttribute="height" secondItem="vc4-aG-3HJ" secondAttribute="height" id="zAx-Rh-Wgp"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snm-wr-v4h" userLabel="Edit">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynB-Lb-PMU" userLabel="Edit">
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="snm-wr-v4h" secondAttribute="height" multiplier="1:1" id="Ylm-YG-F9n"/>
+                                                <constraint firstAttribute="width" secondItem="ynB-Lb-PMU" secondAttribute="height" multiplier="1:1" id="WCN-hH-WKc"/>
                                             </constraints>
                                             <state key="normal" image="Delete">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="editButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="KxI-RA-gCV"/>
+                                                <action selector="editButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="9eB-K7-gWW"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWS-sr-dKP" userLabel="All">
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XU-sp-EL6" userLabel="All">
                                             <state key="normal" image="All">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="Uza-Ah-HiN"/>
+                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="Xyh-SZ-Aw6"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVn-VX-EMq" userLabel="Emoji">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TV4-VB-cXs" userLabel="Emoji">
                                             <state key="normal" image="Emoji">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="LgS-vl-n0v"/>
+                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="FmM-ls-uwv"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZq-D2-bQS" userLabel="Parts">
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5i-dd-b6m" userLabel="Parts">
                                             <state key="normal" image="Parts">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="O2d-GJ-tzd"/>
+                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="r9k-OB-WkA"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cd-v2-m96" userLabel="Accessories">
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdK-QF-qP9" userLabel="Accessories">
                                             <state key="normal" image="Accessories">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="qUy-zt-m0P"/>
+                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="tcc-CB-n3y"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8h-2Z-gFb" userLabel="Text">
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="Text">
                                             <state key="normal" image="Text">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="7DH-H3-AeT"/>
+                                                <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="J6Z-Pa-f7c"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="oWS-sr-dKP" firstAttribute="top" secondItem="c8v-lW-pu3" secondAttribute="top" id="5iK-52-j1g"/>
-                                        <constraint firstItem="nVn-VX-EMq" firstAttribute="leading" secondItem="oWS-sr-dKP" secondAttribute="trailing" id="AdE-hd-WdB"/>
-                                        <constraint firstItem="SZq-D2-bQS" firstAttribute="width" secondItem="nVn-VX-EMq" secondAttribute="width" id="Dyh-PF-5F5"/>
-                                        <constraint firstItem="0Cd-v2-m96" firstAttribute="centerY" secondItem="SZq-D2-bQS" secondAttribute="centerY" id="EGU-zr-pTd"/>
-                                        <constraint firstItem="oWS-sr-dKP" firstAttribute="height" secondItem="Ui5-fH-ZQQ" secondAttribute="height" id="IQZ-sR-eaC"/>
-                                        <constraint firstItem="snm-wr-v4h" firstAttribute="height" secondItem="Ui5-fH-ZQQ" secondAttribute="height" multiplier="0.5" id="JTv-9O-bJ8"/>
-                                        <constraint firstItem="oWS-sr-dKP" firstAttribute="top" secondItem="c8v-lW-pu3" secondAttribute="top" id="KJW-Dm-Ax1"/>
-                                        <constraint firstItem="nVn-VX-EMq" firstAttribute="height" secondItem="oWS-sr-dKP" secondAttribute="height" id="Kl3-rV-OJS"/>
-                                        <constraint firstItem="N8h-2Z-gFb" firstAttribute="centerY" secondItem="0Cd-v2-m96" secondAttribute="centerY" id="LrD-CO-4h4"/>
-                                        <constraint firstItem="SZq-D2-bQS" firstAttribute="centerY" secondItem="nVn-VX-EMq" secondAttribute="centerY" id="M8P-Iy-h4p"/>
-                                        <constraint firstItem="SZq-D2-bQS" firstAttribute="height" secondItem="nVn-VX-EMq" secondAttribute="height" id="N8p-4o-NUg"/>
-                                        <constraint firstItem="Ui5-fH-ZQQ" firstAttribute="centerX" secondItem="c8v-lW-pu3" secondAttribute="centerX" id="NC2-Xi-Q4D"/>
-                                        <constraint firstItem="Ui5-fH-ZQQ" firstAttribute="width" secondItem="c8v-lW-pu3" secondAttribute="width" id="QIt-Li-neh"/>
-                                        <constraint firstAttribute="bottom" secondItem="snm-wr-v4h" secondAttribute="bottom" id="T0F-zP-y3I"/>
-                                        <constraint firstItem="N8h-2Z-gFb" firstAttribute="leading" secondItem="0Cd-v2-m96" secondAttribute="trailing" id="a7a-V6-FN7"/>
-                                        <constraint firstItem="N8h-2Z-gFb" firstAttribute="width" secondItem="0Cd-v2-m96" secondAttribute="width" id="bKL-Z7-Qix"/>
-                                        <constraint firstItem="snm-wr-v4h" firstAttribute="top" secondItem="c8v-lW-pu3" secondAttribute="top" id="bZs-eb-Rbs"/>
-                                        <constraint firstItem="0Cd-v2-m96" firstAttribute="width" secondItem="SZq-D2-bQS" secondAttribute="width" id="cH9-jS-X3h"/>
-                                        <constraint firstItem="nVn-VX-EMq" firstAttribute="centerY" secondItem="oWS-sr-dKP" secondAttribute="centerY" id="cHl-la-nAW"/>
-                                        <constraint firstAttribute="trailing" secondItem="N8h-2Z-gFb" secondAttribute="trailing" id="gzt-mQ-MIo"/>
-                                        <constraint firstItem="nVn-VX-EMq" firstAttribute="width" secondItem="oWS-sr-dKP" secondAttribute="width" id="i1w-J4-jf0"/>
-                                        <constraint firstItem="Ui5-fH-ZQQ" firstAttribute="top" secondItem="c8v-lW-pu3" secondAttribute="top" id="ieX-FI-PwF"/>
-                                        <constraint firstItem="oWS-sr-dKP" firstAttribute="leading" secondItem="c8v-lW-pu3" secondAttribute="leading" id="lFb-wn-q96"/>
-                                        <constraint firstItem="N8h-2Z-gFb" firstAttribute="height" secondItem="0Cd-v2-m96" secondAttribute="height" id="mHz-hT-Dl8"/>
-                                        <constraint firstItem="0Cd-v2-m96" firstAttribute="leading" secondItem="SZq-D2-bQS" secondAttribute="trailing" id="mh2-Cc-0Lc"/>
-                                        <constraint firstItem="snm-wr-v4h" firstAttribute="centerX" secondItem="N8h-2Z-gFb" secondAttribute="centerX" id="qBd-RX-LHT"/>
-                                        <constraint firstItem="SZq-D2-bQS" firstAttribute="leading" secondItem="nVn-VX-EMq" secondAttribute="trailing" id="qkf-jo-2ZY"/>
-                                        <constraint firstItem="0Cd-v2-m96" firstAttribute="height" secondItem="SZq-D2-bQS" secondAttribute="height" id="uSq-iG-obh"/>
-                                        <constraint firstItem="snm-wr-v4h" firstAttribute="centerY" secondItem="N8h-2Z-gFb" secondAttribute="centerY" id="wDt-R2-jJ4"/>
-                                        <constraint firstItem="oWS-sr-dKP" firstAttribute="leading" secondItem="c8v-lW-pu3" secondAttribute="leading" id="yi8-mH-3Ye"/>
+                                        <constraint firstItem="UgW-H7-ZDR" firstAttribute="width" secondItem="rdK-QF-qP9" secondAttribute="width" id="0nc-w0-uZt"/>
+                                        <constraint firstItem="3XU-sp-EL6" firstAttribute="top" secondItem="Ljz-H4-yhQ" secondAttribute="top" id="3JQ-4r-snR"/>
+                                        <constraint firstItem="ynB-Lb-PMU" firstAttribute="height" secondItem="qHN-Ml-bZT" secondAttribute="height" multiplier="0.5" id="3OO-Jy-cDB"/>
+                                        <constraint firstItem="3XU-sp-EL6" firstAttribute="top" secondItem="Ljz-H4-yhQ" secondAttribute="top" id="3a9-qA-gpv"/>
+                                        <constraint firstItem="rdK-QF-qP9" firstAttribute="leading" secondItem="t5i-dd-b6m" secondAttribute="trailing" id="4Ra-pA-EI9"/>
+                                        <constraint firstItem="t5i-dd-b6m" firstAttribute="centerY" secondItem="TV4-VB-cXs" secondAttribute="centerY" id="7h0-mz-XoY"/>
+                                        <constraint firstItem="UgW-H7-ZDR" firstAttribute="centerY" secondItem="rdK-QF-qP9" secondAttribute="centerY" id="9Wd-yK-K0T"/>
+                                        <constraint firstItem="3XU-sp-EL6" firstAttribute="leading" secondItem="Ljz-H4-yhQ" secondAttribute="leading" id="FWo-f8-9n9"/>
+                                        <constraint firstItem="UgW-H7-ZDR" firstAttribute="height" secondItem="rdK-QF-qP9" secondAttribute="height" id="GpL-t8-1bP"/>
+                                        <constraint firstItem="ynB-Lb-PMU" firstAttribute="centerX" secondItem="UgW-H7-ZDR" secondAttribute="centerX" id="S4z-fV-wJp"/>
+                                        <constraint firstAttribute="trailing" secondItem="UgW-H7-ZDR" secondAttribute="trailing" id="UjD-zj-7QA"/>
+                                        <constraint firstItem="qHN-Ml-bZT" firstAttribute="centerX" secondItem="Ljz-H4-yhQ" secondAttribute="centerX" id="WUC-th-iHW"/>
+                                        <constraint firstItem="rdK-QF-qP9" firstAttribute="centerY" secondItem="t5i-dd-b6m" secondAttribute="centerY" id="XpH-Td-LJz"/>
+                                        <constraint firstItem="TV4-VB-cXs" firstAttribute="height" secondItem="3XU-sp-EL6" secondAttribute="height" id="Y07-WR-aUm"/>
+                                        <constraint firstItem="TV4-VB-cXs" firstAttribute="centerY" secondItem="3XU-sp-EL6" secondAttribute="centerY" id="ZG4-6A-Oy4"/>
+                                        <constraint firstItem="t5i-dd-b6m" firstAttribute="width" secondItem="TV4-VB-cXs" secondAttribute="width" id="cAj-Dn-1rL"/>
+                                        <constraint firstItem="t5i-dd-b6m" firstAttribute="height" secondItem="TV4-VB-cXs" secondAttribute="height" id="dPA-TZ-EI2"/>
+                                        <constraint firstItem="rdK-QF-qP9" firstAttribute="height" secondItem="t5i-dd-b6m" secondAttribute="height" id="eVF-KD-lId"/>
+                                        <constraint firstItem="TV4-VB-cXs" firstAttribute="width" secondItem="3XU-sp-EL6" secondAttribute="width" id="fvB-ud-1eA"/>
+                                        <constraint firstItem="3XU-sp-EL6" firstAttribute="leading" secondItem="Ljz-H4-yhQ" secondAttribute="leading" id="h15-Be-1dC"/>
+                                        <constraint firstItem="3XU-sp-EL6" firstAttribute="height" secondItem="qHN-Ml-bZT" secondAttribute="height" id="hm0-ai-voH"/>
+                                        <constraint firstItem="ynB-Lb-PMU" firstAttribute="centerY" secondItem="UgW-H7-ZDR" secondAttribute="centerY" id="iET-wK-Mj4"/>
+                                        <constraint firstItem="qHN-Ml-bZT" firstAttribute="top" secondItem="Ljz-H4-yhQ" secondAttribute="top" id="jZo-pO-ypu"/>
+                                        <constraint firstItem="qHN-Ml-bZT" firstAttribute="width" secondItem="Ljz-H4-yhQ" secondAttribute="width" id="lnJ-jc-L3n"/>
+                                        <constraint firstAttribute="bottom" secondItem="ynB-Lb-PMU" secondAttribute="bottom" id="myG-ue-3MN"/>
+                                        <constraint firstItem="TV4-VB-cXs" firstAttribute="leading" secondItem="3XU-sp-EL6" secondAttribute="trailing" id="qkS-gG-yUX"/>
+                                        <constraint firstItem="ynB-Lb-PMU" firstAttribute="top" secondItem="Ljz-H4-yhQ" secondAttribute="top" id="rue-Mh-ey7"/>
+                                        <constraint firstItem="rdK-QF-qP9" firstAttribute="width" secondItem="t5i-dd-b6m" secondAttribute="width" id="uAu-CH-NiH"/>
+                                        <constraint firstItem="t5i-dd-b6m" firstAttribute="leading" secondItem="TV4-VB-cXs" secondAttribute="trailing" id="uZl-EJ-OTY"/>
+                                        <constraint firstItem="UgW-H7-ZDR" firstAttribute="leading" secondItem="rdK-QF-qP9" secondAttribute="trailing" id="zh9-iv-3J0"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="T0F-zP-y3I"/>
-                                            <exclude reference="bZs-eb-Rbs"/>
+                                            <exclude reference="myG-ue-3MN"/>
+                                            <exclude reference="rue-Mh-ey7"/>
                                         </mask>
                                     </variation>
+                                </collectionReusableView>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Footer" id="Vaj-kQ-NTL">
+                                    <rect key="frame" x="0.0" y="100" width="320" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="hXf-jq-1q5" id="aVG-e7-5nb"/>

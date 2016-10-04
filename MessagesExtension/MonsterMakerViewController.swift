@@ -30,6 +30,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     var pinchGesture = UIPinchGestureRecognizer()
     var rotationGesture = UIRotationGestureRecognizer()
 
+    var startingGesturePoint: CGPoint?
+    
+    
     @IBOutlet weak var canvasImageView: UIImageView!
 
 
@@ -86,6 +89,12 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     func styleView() {
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView!.collectionViewLayout = layout
         
         canvasImageView.isOpaque = false
         canvasImageView.layer.isOpaque = false
@@ -287,6 +296,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                     
                     return
             }
+            
+            startingGesturePoint = viewLocationPoint
+            
             print("cell tag = \(cell.tag)")
             moving = true
             collectionView.isUserInteractionEnabled = false
@@ -327,7 +339,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 
         } else if sender.state == .ended {
             
-            collectionView.reloadData()
+            //collectionView.reloadData()
             collectionView.isUserInteractionEnabled = true
             
             doneButtonWidthConstraint.constant = 36
@@ -351,20 +363,38 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                 movingImage.center = offsetedCanvasLocationPoint
 
                 createdImage.append(movingImage)
-
+                self.collectionView.reloadData()
 //                canvasImageView.addSubview(image)
 //                image.center = canvasLocationPoint
 //                createdImage.append(image)
             } else {
                 
-                movingImage.removeFromSuperview()
+                if let startingGesturePoint = startingGesturePoint {
+                    
+                    UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        
+                        self.movingImage.center = startingGesturePoint
+                        
+                        }, completion: { complete in
+                            self.movingImage.removeFromSuperview()
+                            self.startingGesturePoint = nil
+                            self.collectionView.reloadData()
+                    })
+                
+                
+                } else {
+                    
+                    movingImage.removeFromSuperview()
+                }
+
+
             }
             
             updateButtonStates()
             //movingImage.removeFromSuperview()
             moving = false
             currentSelectedIndexPath = nil
-            collectionView.reloadData()
+            //collectionView.reloadData()
         }
     }
     
@@ -582,6 +612,6 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
 extension MonsterMakerViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 110, height: 110)
+        return CGSize(width: view.frame.size.width / 4, height: view.frame.size.width / 4)
     }
 }

@@ -52,12 +52,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MessagesExtension/MonsterMakerViewController.swift"
-            timestampString = "497213643.363393"
+            timestampString = "497277693.095199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
             landmarkName = "handleLongPress(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MessagesExtension/StickerManager.swift"
+            timestampString = "497256404.696977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
+            landmarkName = "createStickerGif(asset:localizedDescription:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MessagesExtension/StickerManager.swift"
+            timestampString = "497256404.696977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "createAllStickerArray()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -214,11 +214,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 let stickerView = cell.viewWithTag(1) as! MSStickerView
  
                 stickerView.sticker = stickerManager.customStickers[indexPath.row - 1]
-                stickerView.startAnimating()
-               // let time: TimeInterval = 1.0
-               // stickerView.animationDuration = time
-               // stickerView.isAnimating() = true
-                //stickerView.animationDuration = 1.0
                 
                 let button = cell.viewWithTag(2) as! UIButton
                 
@@ -252,7 +247,8 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             case .text:
                 stickerView.sticker = StickerManager().createTextStickerArray()[indexPath.row]
             }
-            
+            stickerView.startAnimating()
+
             let button = cell.viewWithTag(2) as! UIButton
             button.isHidden = true            
             
@@ -414,7 +410,10 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             }
             
             return headerView
-            
+        case UICollectionElementKindSectionFooter:
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
+            footerView.backgroundColor = .clear
+            return footerView
         default:
             return UICollectionReusableView()
         }
@@ -460,6 +459,10 @@ extension MonsterBrowserViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 52.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 16.0)
     }
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
