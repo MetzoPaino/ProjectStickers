@@ -81,11 +81,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 
         self.view.addGestureRecognizer(longGesture)
         self.view.addGestureRecognizer(pinchGesture)
-       self.view.addGestureRecognizer(rotationGesture)
+        self.view.addGestureRecognizer(rotationGesture)
 
-//        longGesture.require(toFail: pinchGesture)
-//        longGesture.require(toFail: rotationGesture)
-
+        longGesture.minimumPressDuration = 0.25
     }
     
     func styleView() {
@@ -101,44 +99,47 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         canvasImageView.isUserInteractionEnabled = false
         canvasImageView.clipsToBounds = true
         
-        headsButton.setImage(UIImage(named:"Emoji"), for: UIControlState.normal)
-        headsButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        headsButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        headsButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+        headsButton.setImage(UIImage(named:"EmojiWhite"), for: UIControlState.normal)
+        headsButton.setImage(UIImage(named:"EmojiWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        headsButton.setImage(UIImage(named:"EmojiWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        headsButton.tintColor = #colorLiteral(red: 0.6746177673, green: 0.5587976575, blue: 0.8771905899, alpha: 1)
         
-        eyesButton.setImage(UIImage(named:"Eye"), for: UIControlState.normal)
-        eyesButton.setImage(UIImage(named:"Eye")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        eyesButton.setImage(UIImage(named:"Eye")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        eyesButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+        eyesButton.setImage(UIImage(named:"EyeWhite"), for: UIControlState.normal)
+        eyesButton.setImage(UIImage(named:"EyeWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        eyesButton.setImage(UIImage(named:"EyeWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        eyesButton.tintColor = #colorLiteral(red: 0.6746177673, green: 0.5587976575, blue: 0.8771905899, alpha: 1)
         
-        mouthsButton.setImage(UIImage(named:"Mouth"), for: UIControlState.normal)
-        mouthsButton.setImage(UIImage(named:"Mouth")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        mouthsButton.setImage(UIImage(named:"Mouth")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        mouthsButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+        mouthsButton.setImage(UIImage(named:"MouthWhite"), for: UIControlState.normal)
+        mouthsButton.setImage(UIImage(named:"MouthWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        mouthsButton.setImage(UIImage(named:"MouthWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        mouthsButton.tintColor = #colorLiteral(red: 0.6746177673, green: 0.5587976575, blue: 0.8771905899, alpha: 1)
         
-        accessoriesButton.setImage(UIImage(named:"Accessories"), for: UIControlState.normal)
-        accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        accessoriesButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+        accessoriesButton.setImage(UIImage(named:"AccessoriesWhite"), for: UIControlState.normal)
+        accessoriesButton.setImage(UIImage(named:"AccessoriesWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        accessoriesButton.setImage(UIImage(named:"AccessoriesWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        accessoriesButton.tintColor = #colorLiteral(red: 0.6746177673, green: 0.5587976575, blue: 0.8771905899, alpha: 1)
         
-        textButton.setImage(UIImage(named:"Text"), for: UIControlState.normal)
-        textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        textButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+        textButton.setImage(UIImage(named:"TextWhite"), for: UIControlState.normal)
+        textButton.setImage(UIImage(named:"TextWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        textButton.setImage(UIImage(named:"TextWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        textButton.tintColor = #colorLiteral(red: 0.6746177673, green: 0.5587976575, blue: 0.8771905899, alpha: 1)
         
         headsButton.isSelected = true
         
         doneButton.setImage(UIImage(named:"Done"), for: UIControlState.normal)
         doneButton.setImage(UIImage(named:"DoneInvert"), for: UIControlState.highlighted)
         doneButton.setImage(UIImage(named:"DoneInvert"), for: UIControlState.selected)
-        
+        doneButton.setImage(UIImage(named:"DoneDisabled"), for: UIControlState.disabled)
+
         undoButton.setImage(UIImage(named:"Undo"), for: UIControlState.normal)
         undoButton.setImage(UIImage(named:"UndoInvert"), for: UIControlState.highlighted)
         undoButton.setImage(UIImage(named:"UndoInvert"), for: UIControlState.selected)
-        
+        undoButton.setImage(UIImage(named:"UndoDisabled"), for: UIControlState.disabled)
+
         closeButton.setImage(UIImage(named:"Delete"), for: UIControlState.normal)
         closeButton.setImage(UIImage(named:"DeleteInvert"), for: UIControlState.highlighted)
         closeButton.setImage(UIImage(named:"DeleteInvert"), for: UIControlState.selected)
+        closeButton.setImage(UIImage(named:"DeleteDisabled"), for: UIControlState.disabled)
 
         updateButtonStates()
     }
@@ -309,14 +310,42 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             movingImage.alpha = 0.0
             movingImage.frame = cell.frame
             
+            
+
+
+            
+            
+            
+            
+            
+            
+            
+            
 //            pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handlePinch(_:)))
             //movingImage.center = viewLocationPoint
-            movingImage.center = offsetedViewLocationPoint
+            movingImage.center = viewLocationPoint
             
             
             view.addSubview(movingImage)
+            
+            
+            UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                
+                self.movingImage.center = offsetedViewLocationPoint
+
+                
+                }, completion: { complete in
+            })
+            
+            
+            
+            
+            
+            
+            
+            
             //movingImage.center = viewLocationPoint
-            movingImage.center = offsetedViewLocationPoint
+           // movingImage.center = offsetedViewLocationPoint
 
             movingImage.alpha = 1.0
             
@@ -380,7 +409,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                             self.startingGesturePoint = nil
                             self.collectionView.reloadData()
                     })
-                
                 
                 } else {
                     
@@ -612,6 +640,6 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
 extension MonsterMakerViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width / 4, height: view.frame.size.width / 4)
+        return CGSize(width: view.frame.size.width / 3, height: view.frame.size.width / 3)
     }
 }

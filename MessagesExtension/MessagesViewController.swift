@@ -34,7 +34,6 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
             let controller = UIStoryboard(name: "MainInterface", bundle: nil).instantiateViewController(withIdentifier: "MonsterBrowser") as! MonsterBrowserViewController
             controller.delegate = self
             controller.stickerManager = dataManager.stickerManager
-            controller.transitioningSize(compact: true)
 
             showViewController(controller: controller)
             monsterBrowser = controller
@@ -52,7 +51,6 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
                 let controller = UIStoryboard(name: "MainInterface", bundle: nil).instantiateViewController(withIdentifier: "MonsterBrowser") as! MonsterBrowserViewController
                 controller.delegate = self
                 controller.stickerManager = dataManager.stickerManager
-                controller.transitioningSize(compact: false)
 
                 showViewController(controller: controller)
                 monsterBrowser = controller

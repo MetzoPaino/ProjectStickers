@@ -34,10 +34,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewTopLayoutConstraint: NSLayoutConstraint!
-    
-    
-//    var collectionViewTopConstraintCopy = NSLayoutConstraint()
-//    var collectionViewTopLayoutConstraintCopy = NSLayoutConstraint()
 
     weak var delegate: MonsterBrowserViewControllerDelegate?
     var stickerManager: StickerManager! = nil
@@ -47,11 +43,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let flow = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-
-//        collectionViewTopConstraintCopy = collectionViewTopConstraint
-//        collectionViewTopLayoutConstraintCopy = collectionViewTopLayoutConstraint
-
         styleView()
     }
     
@@ -61,9 +52,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     }
     
     func styleView() {
-        collectionView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
-        
+        collectionView.backgroundColor = .white
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
        // layout.itemSize = CGSize(width: view.frame.size.width / 2, height:  view.frame.size.width / 2)
@@ -76,39 +65,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         
         collectionView.reloadData()
     }
-
-    func transitioningSize(compact: Bool) {
-        
-//        if compact == true {
-//            
-//            collectionViewTopConstraint = collectionViewTopConstraintCopy
-//            collectionViewTopLayoutConstraint = collectionViewTopLayoutConstraintCopy
-//            
-//            collectionViewTopConstraint.isActive = false
-//            collectionViewTopLayoutConstraint.isActive = true
-//            
-//        } else {
-//            
-//            collectionViewTopConstraint = collectionViewTopConstraintCopy
-//            collectionViewTopLayoutConstraint = collectionViewTopLayoutConstraintCopy
-//            
-//            collectionViewTopConstraint.isActive = true
-//            collectionViewTopLayoutConstraint.isActive = false
-//
-//        }
-//        
-//        view.layoutIfNeeded()
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK: - IBAction
     
@@ -148,15 +104,12 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         
-        
         let buttonPosition = sender.convert(CGPoint.zero, to: collectionView)
 
         guard let selectedIndexPath = collectionView.indexPathForItem(at: buttonPosition) else {
                 return
         }
         delegate?.deleteButtonPressedForCellAtIndex(index: selectedIndexPath.row - 1)
-        
-        print("Here")
     }
     
     @IBAction func editButtonPressed(_ sender: UIButton) {
@@ -231,7 +184,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         } else {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
-            
+            cell.backgroundColor = .white
             let stickerView = cell.viewWithTag(1) as! MSStickerView
             //let imageView = cell.viewWithTag(3) as! UIImageView
             
@@ -272,10 +225,11 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         case UICollectionElementKindSectionHeader:
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
-            headerView.backgroundColor = .clear
+            headerView.backgroundColor = .white
             
             let view = headerView.viewWithTag(10)
-            view?.backgroundColor = #colorLiteral(red: 0.2191819251, green: 0.1625923216, blue: 0.2560424805, alpha: 1)
+            //view?.backgroundColor = #colorLiteral(red: 0.2191819251, green: 0.1625923216, blue: 0.2560424805, alpha: 1)
+            view?.backgroundColor = .clear
             
             let button = headerView.viewWithTag(1) as! UIButton
             let allButton = headerView.viewWithTag(2) as! UIButton
@@ -307,21 +261,21 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                     button.setImage(UIImage(named:"Delete"), for: UIControlState.normal)
                 }
                 
-                smallButton.setImage(UIImage(named:"SkullSmall"), for: UIControlState.normal)
-                smallButton.setImage(UIImage(named:"SkullSmall")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-                smallButton.setImage(UIImage(named:"SkullSmall")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-                smallButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                smallButton.setImage(UIImage(named:"Small"), for: UIControlState.normal)
+                smallButton.setImage(UIImage(named:"Small")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                smallButton.setImage(UIImage(named:"Small")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                smallButton.tintColor = .white
                 
-                mediumButton.setImage(UIImage(named:"SkullMedium"), for: UIControlState.normal)
-                mediumButton.setImage(UIImage(named:"SkullMedium")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-                mediumButton.setImage(UIImage(named:"SkullMedium")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-                mediumButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                mediumButton.setImage(UIImage(named:"Medium"), for: UIControlState.normal)
+                mediumButton.setImage(UIImage(named:"Medium")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                mediumButton.setImage(UIImage(named:"Medium")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                mediumButton.tintColor = .white
                 
-                largeButton.setImage(UIImage(named:"SkullLarge"), for: UIControlState.normal)
-                largeButton.setImage(UIImage(named:"SkullLarge")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-                largeButton.setImage(UIImage(named:"SkullLarge")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-                largeButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
-                
+                largeButton.setImage(UIImage(named:"Large"), for: UIControlState.normal)
+                largeButton.setImage(UIImage(named:"Large")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                largeButton.setImage(UIImage(named:"Large")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                largeButton.tintColor = .white
+                                
                 switch viewingCellSize {
                 case .small:
                     smallButton.isSelected = true
@@ -352,27 +306,27 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 allButton.setImage(UIImage(named:"All"), for: UIControlState.normal)
                 allButton.setImage(UIImage(named:"All")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
                 allButton.setImage(UIImage(named:"All")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-                allButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                allButton.tintColor = .white
                 
                 emojiButton.setImage(UIImage(named:"Emoji"), for: UIControlState.normal)
                 emojiButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
                 emojiButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-                emojiButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                emojiButton.tintColor = .white
                 
                 partsButton.setImage(UIImage(named:"Parts"), for: UIControlState.normal)
                 partsButton.setImage(UIImage(named:"Parts")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
                 partsButton.setImage(UIImage(named:"Parts")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-                partsButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                partsButton.tintColor = .white
                 
                 accessoriesButton.setImage(UIImage(named:"Accessories"), for: UIControlState.normal)
                 accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
                 accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-                accessoriesButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                accessoriesButton.tintColor = .white
                 
                 textButton.setImage(UIImage(named:"Text"), for: UIControlState.normal)
                 textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
                 textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-                textButton.tintColor = #colorLiteral(red: 1, green: 0.4755113721, blue: 0, alpha: 1)
+                textButton.tintColor = .white
                 
                 switch viewingStickerType {
                 case .all:
@@ -381,7 +335,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                     partsButton.isSelected = false
                     accessoriesButton.isSelected = false
                     textButton.isSelected = false
-
                 case .emoji:
                     allButton.isSelected = false
                     emojiButton.isSelected = true

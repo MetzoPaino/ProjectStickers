@@ -330,7 +330,7 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="67.5" y="50" width="50" height="50"/>
+                                        <rect key="frame" x="68" y="50" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -363,6 +363,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-Lx-wcl"/>
                                         <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-Ml-bZT">
                                             <subviews>
                                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6x-fw-Ira" userLabel="Small">
@@ -387,8 +388,7 @@
                                                         <action selector="cellSizeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="ihz-7m-87C"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="9" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-Q7-j4b" userLabel="Large">
-                                                    <frame key="frameInset" minX="200" width="44" height="44"/>
+                                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-Q7-j4b" userLabel="Large">
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ZWe-Q7-j4b" secondAttribute="height" multiplier="1:1" id="5dA-Ow-2ii"/>
                                                     </constraints>
@@ -408,7 +408,7 @@
                                                 <constraint firstItem="vc4-aG-3HJ" firstAttribute="leading" secondItem="P6x-fw-Ira" secondAttribute="trailing" id="bJ5-wH-gPd"/>
                                                 <constraint firstItem="P6x-fw-Ira" firstAttribute="centerY" secondItem="vc4-aG-3HJ" secondAttribute="centerY" id="eVT-rZ-Q1B"/>
                                                 <constraint firstItem="ZWe-Q7-j4b" firstAttribute="centerY" secondItem="vc4-aG-3HJ" secondAttribute="centerY" id="hTf-7Q-BDy"/>
-                                                <constraint firstAttribute="height" constant="44" id="sx7-dk-PlK"/>
+                                                <constraint firstAttribute="height" constant="36" id="sx7-dk-PlK"/>
                                                 <constraint firstItem="ZWe-Q7-j4b" firstAttribute="leading" secondItem="vc4-aG-3HJ" secondAttribute="trailing" id="yga-he-R87"/>
                                                 <constraint firstItem="P6x-fw-Ira" firstAttribute="height" secondItem="vc4-aG-3HJ" secondAttribute="height" id="ysq-iZ-Zfb"/>
                                                 <constraint firstItem="ZWe-Q7-j4b" firstAttribute="height" secondItem="vc4-aG-3HJ" secondAttribute="height" id="zAx-Rh-Wgp"/>
@@ -477,6 +477,7 @@
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="centerY" secondItem="rdK-QF-qP9" secondAttribute="centerY" id="9Wd-yK-K0T"/>
                                         <constraint firstItem="3XU-sp-EL6" firstAttribute="leading" secondItem="Ljz-H4-yhQ" secondAttribute="leading" id="FWo-f8-9n9"/>
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="height" secondItem="rdK-QF-qP9" secondAttribute="height" id="GpL-t8-1bP"/>
+                                        <constraint firstItem="OuG-Lx-wcl" firstAttribute="width" secondItem="Ljz-H4-yhQ" secondAttribute="width" id="Pf2-Z7-22H"/>
                                         <constraint firstItem="ynB-Lb-PMU" firstAttribute="centerX" secondItem="UgW-H7-ZDR" secondAttribute="centerX" id="S4z-fV-wJp"/>
                                         <constraint firstAttribute="trailing" secondItem="UgW-H7-ZDR" secondAttribute="trailing" id="UjD-zj-7QA"/>
                                         <constraint firstItem="qHN-Ml-bZT" firstAttribute="centerX" secondItem="Ljz-H4-yhQ" secondAttribute="centerX" id="WUC-th-iHW"/>
@@ -488,6 +489,7 @@
                                         <constraint firstItem="rdK-QF-qP9" firstAttribute="height" secondItem="t5i-dd-b6m" secondAttribute="height" id="eVF-KD-lId"/>
                                         <constraint firstItem="TV4-VB-cXs" firstAttribute="width" secondItem="3XU-sp-EL6" secondAttribute="width" id="fvB-ud-1eA"/>
                                         <constraint firstItem="3XU-sp-EL6" firstAttribute="leading" secondItem="Ljz-H4-yhQ" secondAttribute="leading" id="h15-Be-1dC"/>
+                                        <constraint firstItem="OuG-Lx-wcl" firstAttribute="centerX" secondItem="Ljz-H4-yhQ" secondAttribute="centerX" id="h9w-ml-dgo"/>
                                         <constraint firstItem="3XU-sp-EL6" firstAttribute="height" secondItem="qHN-Ml-bZT" secondAttribute="height" id="hm0-ai-voH"/>
                                         <constraint firstItem="ynB-Lb-PMU" firstAttribute="centerY" secondItem="UgW-H7-ZDR" secondAttribute="centerY" id="iET-wK-Mj4"/>
                                         <constraint firstItem="qHN-Ml-bZT" firstAttribute="top" secondItem="Ljz-H4-yhQ" secondAttribute="top" id="jZo-pO-ypu"/>
@@ -497,6 +499,8 @@
                                         <constraint firstItem="ynB-Lb-PMU" firstAttribute="top" secondItem="Ljz-H4-yhQ" secondAttribute="top" id="rue-Mh-ey7"/>
                                         <constraint firstItem="rdK-QF-qP9" firstAttribute="width" secondItem="t5i-dd-b6m" secondAttribute="width" id="uAu-CH-NiH"/>
                                         <constraint firstItem="t5i-dd-b6m" firstAttribute="leading" secondItem="TV4-VB-cXs" secondAttribute="trailing" id="uZl-EJ-OTY"/>
+                                        <constraint firstItem="OuG-Lx-wcl" firstAttribute="centerY" secondItem="Ljz-H4-yhQ" secondAttribute="centerY" id="vM9-RQ-pUq"/>
+                                        <constraint firstItem="OuG-Lx-wcl" firstAttribute="height" secondItem="Ljz-H4-yhQ" secondAttribute="height" id="vRJ-y6-N4a"/>
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="leading" secondItem="rdK-QF-qP9" secondAttribute="trailing" id="zh9-iv-3J0"/>
                                     </constraints>
                                     <variation key="default">
@@ -551,6 +555,7 @@
         <image name="Done" width="44" height="44"/>
         <image name="Emoji" width="20" height="20"/>
         <image name="Eye" width="20" height="20"/>
+        <image name="Header" width="621" height="66"/>
         <image name="MakerBackground" width="304" height="618"/>
         <image name="Mouth" width="20" height="20"/>
         <image name="Parts" width="20" height="20"/>
