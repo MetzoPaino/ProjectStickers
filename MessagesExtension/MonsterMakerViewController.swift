@@ -309,43 +309,12 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             movingImage = UIImageView(image: imageView.image)
             movingImage.alpha = 0.0
             movingImage.frame = cell.frame
-            
-            
-
-
-            
-            
-            
-            
-            
-            
-            
-            
-//            pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handlePinch(_:)))
-            //movingImage.center = viewLocationPoint
-            movingImage.center = viewLocationPoint
-            
-            
+            movingImage.center = viewLocationPoint   
             view.addSubview(movingImage)
-            
-            
-            UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
-                
+        
+            UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
                 self.movingImage.center = offsetedViewLocationPoint
-
-                
-                }, completion: { complete in
             })
-            
-            
-            
-            
-            
-            
-            
-            
-            //movingImage.center = viewLocationPoint
-           // movingImage.center = offsetedViewLocationPoint
 
             movingImage.alpha = 1.0
             
@@ -465,6 +434,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         let resizedImage = resizeImage(image: image!)
+        view.backgroundColor = .white
         return resizedImage
     }
     

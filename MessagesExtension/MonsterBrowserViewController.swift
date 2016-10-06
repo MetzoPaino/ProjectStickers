@@ -109,7 +109,14 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         guard let selectedIndexPath = collectionView.indexPathForItem(at: buttonPosition) else {
                 return
         }
-        delegate?.deleteButtonPressedForCellAtIndex(index: selectedIndexPath.row - 1)
+        
+        var index = selectedIndexPath.row
+        
+        if index < 0 {
+            index = 0
+        }
+        
+        delegate?.deleteButtonPressedForCellAtIndex(index: index)
     }
     
     @IBAction func editButtonPressed(_ sender: UIButton) {

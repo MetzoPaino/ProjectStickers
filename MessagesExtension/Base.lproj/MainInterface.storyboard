@@ -180,6 +180,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-kJ-WZW">
+                                <accessibility key="accessibilityConfiguration" hint="Select to save your sticker" label="Done button"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="Wer-D0-ySo"/>
                                     <constraint firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="height" multiplier="1:1" id="f4b-SW-qCT"/>
@@ -190,6 +191,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-Bn-QZm">
+                                <accessibility key="accessibilityConfiguration" hint="Close the Monster Maker view" label="Close button"/>
                                 <state key="normal" image="Delete"/>
                                 <connections>
                                     <action selector="cancelButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="aeW-bb-iMN"/>
@@ -206,6 +208,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-7S-CG8">
+                                <accessibility key="accessibilityConfiguration" hint="Remove the last placed image" label="Undo button"/>
                                 <state key="normal" image="Undo"/>
                                 <connections>
                                     <action selector="undoButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="bT9-AP-UeB"/>
@@ -305,6 +308,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0h-Bl-Zp0">
+                                                    <accessibility key="accessibilityConfiguration" hint="Select to delete custom sticker" label="Delete button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="0OF-lY-xvN"/>
                                                         <constraint firstAttribute="width" secondItem="f0h-Bl-Zp0" secondAttribute="height" multiplier="1:1" id="Pgd-Eb-Tl7"/>
@@ -330,7 +334,7 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="68" y="50" width="50" height="50"/>
+                                        <rect key="frame" x="67.5" y="50" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -342,6 +346,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddInvert" translatesAutoresizingMaskIntoConstraints="NO" id="AbR-eD-EdS">
+                                                    <accessibility key="accessibilityConfiguration" hint="Select to launch Monster Maker" label="Create button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="AbR-eD-EdS" secondAttribute="height" multiplier="1:1" id="4VT-20-hgP"/>
                                                         <constraint firstAttribute="width" constant="44" id="sXc-Vn-Urb"/>
@@ -367,10 +372,11 @@
                                         <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-Ml-bZT">
                                             <subviews>
                                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6x-fw-Ira" userLabel="Small">
+                                                    <accessibility key="accessibilityConfiguration" hint="Select for 5 stickers per row" label="Small sizing button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="P6x-fw-Ira" secondAttribute="height" multiplier="1:1" id="nwu-2D-Ioz"/>
                                                     </constraints>
-                                                    <state key="normal" image="SkullSmall">
+                                                    <state key="normal" image="Small">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -378,10 +384,11 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-aG-3HJ" userLabel="Medium">
+                                                    <accessibility key="accessibilityConfiguration" hint="Select for 4 stickers per row" label="Medium sizing button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="vc4-aG-3HJ" secondAttribute="height" multiplier="1:1" id="ydJ-e0-gSV"/>
                                                     </constraints>
-                                                    <state key="normal" image="SkullMedium">
+                                                    <state key="normal" image="Medium">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -389,10 +396,11 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-Q7-j4b" userLabel="Large">
+                                                    <accessibility key="accessibilityConfiguration" hint="Select for 3 stickers per row" label="Large sizing button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ZWe-Q7-j4b" secondAttribute="height" multiplier="1:1" id="5dA-Ow-2ii"/>
                                                     </constraints>
-                                                    <state key="normal" image="SkullLarge">
+                                                    <state key="normal" image="Large">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -415,6 +423,7 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynB-Lb-PMU" userLabel="Edit">
+                                            <accessibility key="accessibilityConfiguration" hint="Toggle to enable custom sticker deletion" label="Edit button"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="ynB-Lb-PMU" secondAttribute="height" multiplier="1:1" id="WCN-hH-WKc"/>
                                             </constraints>
@@ -426,6 +435,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XU-sp-EL6" userLabel="All">
+                                            <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All button"/>
                                             <state key="normal" image="All">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -434,6 +444,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TV4-VB-cXs" userLabel="Emoji">
+                                            <accessibility key="accessibilityConfiguration" hint="Show monster stickers" label="Monsters button"/>
                                             <state key="normal" image="Emoji">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -442,6 +453,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5i-dd-b6m" userLabel="Parts">
+                                            <accessibility key="accessibilityConfiguration" hint="Show heads, eyes &amp; mouths of stickers" label="Parts button"/>
                                             <state key="normal" image="Parts">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -450,6 +462,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdK-QF-qP9" userLabel="Accessories">
+                                            <accessibility key="accessibilityConfiguration" hint="Show accessory stickers" label="Accessories button"/>
                                             <state key="normal" image="Accessories">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -458,6 +471,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="Text">
+                                            <accessibility key="accessibilityConfiguration" hint="Show text stickers" label="Text button"/>
                                             <state key="normal" image="Text">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -470,10 +484,10 @@
                                     <constraints>
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="width" secondItem="rdK-QF-qP9" secondAttribute="width" id="0nc-w0-uZt"/>
                                         <constraint firstItem="3XU-sp-EL6" firstAttribute="top" secondItem="Ljz-H4-yhQ" secondAttribute="top" id="3JQ-4r-snR"/>
-                                        <constraint firstItem="ynB-Lb-PMU" firstAttribute="height" secondItem="qHN-Ml-bZT" secondAttribute="height" multiplier="0.5" id="3OO-Jy-cDB"/>
                                         <constraint firstItem="3XU-sp-EL6" firstAttribute="top" secondItem="Ljz-H4-yhQ" secondAttribute="top" id="3a9-qA-gpv"/>
                                         <constraint firstItem="rdK-QF-qP9" firstAttribute="leading" secondItem="t5i-dd-b6m" secondAttribute="trailing" id="4Ra-pA-EI9"/>
                                         <constraint firstItem="t5i-dd-b6m" firstAttribute="centerY" secondItem="TV4-VB-cXs" secondAttribute="centerY" id="7h0-mz-XoY"/>
+                                        <constraint firstItem="ynB-Lb-PMU" firstAttribute="height" secondItem="qHN-Ml-bZT" secondAttribute="height" id="8Fi-jB-jQS"/>
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="centerY" secondItem="rdK-QF-qP9" secondAttribute="centerY" id="9Wd-yK-K0T"/>
                                         <constraint firstItem="3XU-sp-EL6" firstAttribute="leading" secondItem="Ljz-H4-yhQ" secondAttribute="leading" id="FWo-f8-9n9"/>
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="height" secondItem="rdK-QF-qP9" secondAttribute="height" id="GpL-t8-1bP"/>
@@ -556,12 +570,12 @@
         <image name="Emoji" width="20" height="20"/>
         <image name="Eye" width="20" height="20"/>
         <image name="Header" width="621" height="66"/>
+        <image name="Large" width="20" height="20"/>
         <image name="MakerBackground" width="304" height="618"/>
+        <image name="Medium" width="20" height="20"/>
         <image name="Mouth" width="20" height="20"/>
         <image name="Parts" width="20" height="20"/>
-        <image name="SkullLarge" width="20" height="20"/>
-        <image name="SkullMedium" width="20" height="20"/>
-        <image name="SkullSmall" width="20" height="20"/>
+        <image name="Small" width="20" height="20"/>
         <image name="Text" width="20" height="20"/>
         <image name="Undo" width="44" height="44"/>
     </resources>
