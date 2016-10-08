@@ -452,7 +452,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     
     func resizeImage(image: UIImage) -> UIImage {
         
-        let stickerSize = CGRect(x: 0, y: 0, width: 600, height: 600)
+        let stickerSize = CGRect(x: 0, y: 0, width: 618, height: 618)
         UIGraphicsBeginImageContextWithOptions(stickerSize.size, false, 1.0)
         image.draw(in: stickerSize)
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()

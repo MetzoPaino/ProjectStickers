@@ -61,11 +61,18 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
     func showViewController(controller: UIViewController) {
         
         // Remove any existing child controllers.
-//        for child in childViewControllers {
-//            child.willMove(toParentViewController: nil)
-//            child.view.removeFromSuperview()
-//            child.removeFromParentViewController()
-//        }
+        
+        for child in childViewControllers {
+            child.willMove(toParentViewController: nil)
+            
+//            if child is MonsterMakerViewController {
+//                child.view.removeFromSuperview()
+//                child.removeFromParentViewController()
+//            }
+            
+            child.view.removeFromSuperview()
+            child.removeFromParentViewController()
+        }
         
         addChildViewController(controller)
         
@@ -82,6 +89,8 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         
         controller.didMove(toParentViewController: self)
         //presentMonsterMaker = false
+        
+        view.layoutIfNeeded()
 
     }
     

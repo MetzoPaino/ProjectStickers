@@ -284,7 +284,7 @@ class StickerManager: NSObject, NSCoding {
         
         guard let stickerPath = Bundle.main.path(forResource: asset, ofType:"png") else {
             
-            print("Couldn't create the sticker path for", asset)
+            //print("Couldn't create the sticker path for", asset)
             throw StickerCreationError.noPath
         }
         
