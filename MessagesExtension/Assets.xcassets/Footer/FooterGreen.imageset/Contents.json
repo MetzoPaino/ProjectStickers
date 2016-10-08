@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "FooterGreen.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "MakerBackground.png",
+      "filename" : "FooterGreen@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "FooterGreen@3x.png",
       "scale" : "3x"
     }
   ],

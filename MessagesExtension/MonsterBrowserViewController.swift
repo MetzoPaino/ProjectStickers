@@ -39,7 +39,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     var stickerManager: StickerManager! = nil
     var editingCustomStickers = false
     var viewingStickerType = stickerType.all
-    var viewingCellSize = cellSize.large
+    var viewingCellSize = cellSize.medium
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +52,14 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     }
     
     func styleView() {
-        collectionView.backgroundColor = .white
+        view.backgroundColor = .green
+        collectionView.backgroundColor = .clear
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
        // layout.itemSize = CGSize(width: view.frame.size.width / 2, height:  view.frame.size.width / 2)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = -2
+        layout.minimumLineSpacing = -2
+
         collectionView!.collectionViewLayout = layout
     }
     
@@ -125,12 +127,14 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         
         if (editingCustomStickers == true) {
             
-            sender.setImage(UIImage(named:"Done"), for: UIControlState.normal)
+            sender.setImage(UIImage(named:"DoneHeader"), for: UIControlState.normal)
         } else {
-            sender.setImage(UIImage(named:"Delete"), for: UIControlState.normal)
+            sender.setImage(UIImage(named:"DeleteHeader"), for: UIControlState.normal)
         }
         collectionView.reloadData()
     }
+    
+    // MARK: - UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -170,11 +174,12 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             } else {
                 
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
-                
+                cell.backgroundColor = .white
+                cell.contentView.backgroundColor = .white
                 let stickerView = cell.viewWithTag(1) as! MSStickerView
  
                 stickerView.sticker = stickerManager.customStickers[indexPath.row - 1]
-                
+                stickerView.backgroundColor = .white
                 let button = cell.viewWithTag(2) as! UIButton
                 
                 if editingCustomStickers == true {
@@ -263,9 +268,9 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 
                 if (editingCustomStickers == true) {
                     
-                    button.setImage(UIImage(named:"Done"), for: UIControlState.normal)
+                    button.setImage(UIImage(named:"DoneHeader"), for: UIControlState.normal)
                 } else {
-                    button.setImage(UIImage(named:"Delete"), for: UIControlState.normal)
+                    button.setImage(UIImage(named:"DeleteHeader"), for: UIControlState.normal)
                 }
                 
                 smallButton.setImage(UIImage(named:"Small"), for: UIControlState.normal)
@@ -373,6 +378,14 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         case UICollectionElementKindSectionFooter:
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
             footerView.backgroundColor = .clear
+            let imageView = footerView.viewWithTag(1) as! UIImageView
+
+            if indexPath.section == 0 {
+                imageView.isHidden = false
+            } else {
+                imageView.isHidden = true
+            }
+            
             return footerView
         default:
             return UICollectionReusableView()
@@ -418,7 +431,7 @@ extension MonsterBrowserViewController : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 52.0)
+        return CGSize(width: view.frame.width, height: 58.0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "DoneHeaderInvert.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "MakerBackground.png",
+      "filename" : "DoneHeaderInvert@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "DoneHeaderInvert@3x.png",
       "scale" : "3x"
     }
   ],

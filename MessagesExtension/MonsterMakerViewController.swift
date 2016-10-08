@@ -65,6 +65,8 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     
     var imagesOnCanvasArray = [UIImageView]()
     
+    var tryingToMoveOldImage = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -99,30 +101,30 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         canvasImageView.isUserInteractionEnabled = false
         canvasImageView.clipsToBounds = true
         
-        headsButton.setImage(UIImage(named:"EmojiWhite"), for: UIControlState.normal)
-        headsButton.setImage(UIImage(named:"EmojiWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        headsButton.setImage(UIImage(named:"EmojiWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        headsButton.tintColor = #colorLiteral(red: 0.6746177673, green: 0.5587976575, blue: 0.8771905899, alpha: 1)
+        headsButton.setImage(UIImage(named:"Emoji"), for: UIControlState.normal)
+        headsButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        headsButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        headsButton.tintColor = .white
         
-        eyesButton.setImage(UIImage(named:"EyeWhite"), for: UIControlState.normal)
-        eyesButton.setImage(UIImage(named:"EyeWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        eyesButton.setImage(UIImage(named:"EyeWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        eyesButton.tintColor = #colorLiteral(red: 0.6746177673, green: 0.5587976575, blue: 0.8771905899, alpha: 1)
+        eyesButton.setImage(UIImage(named:"Eye"), for: UIControlState.normal)
+        eyesButton.setImage(UIImage(named:"Eye")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        eyesButton.setImage(UIImage(named:"Eye")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        eyesButton.tintColor = .white
         
-        mouthsButton.setImage(UIImage(named:"MouthWhite"), for: UIControlState.normal)
-        mouthsButton.setImage(UIImage(named:"MouthWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        mouthsButton.setImage(UIImage(named:"MouthWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        mouthsButton.tintColor = #colorLiteral(red: 0.6746177673, green: 0.5587976575, blue: 0.8771905899, alpha: 1)
+        mouthsButton.setImage(UIImage(named:"Mouth"), for: UIControlState.normal)
+        mouthsButton.setImage(UIImage(named:"Mouth")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        mouthsButton.setImage(UIImage(named:"Mouth")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        mouthsButton.tintColor = .white
         
-        accessoriesButton.setImage(UIImage(named:"AccessoriesWhite"), for: UIControlState.normal)
-        accessoriesButton.setImage(UIImage(named:"AccessoriesWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        accessoriesButton.setImage(UIImage(named:"AccessoriesWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        accessoriesButton.tintColor = #colorLiteral(red: 0.6746177673, green: 0.5587976575, blue: 0.8771905899, alpha: 1)
+        accessoriesButton.setImage(UIImage(named:"Accessories"), for: UIControlState.normal)
+        accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        accessoriesButton.tintColor = .white
         
-        textButton.setImage(UIImage(named:"TextWhite"), for: UIControlState.normal)
-        textButton.setImage(UIImage(named:"TextWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        textButton.setImage(UIImage(named:"TextWhite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        textButton.tintColor = #colorLiteral(red: 0.6746177673, green: 0.5587976575, blue: 0.8771905899, alpha: 1)
+        textButton.setImage(UIImage(named:"Text"), for: UIControlState.normal)
+        textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        textButton.tintColor = .white
         
         headsButton.isSelected = true
         
@@ -287,7 +289,10 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             
             if canvasImageView.point(inside: canvasLocationPoint, with: nil)  {
                 // This is to stop moving already placed views
+                tryingToMoveOldImage = true
                 return
+            } else {
+                tryingToMoveOldImage = false
             }
             
             guard let selectedIndexPath = collectionView.indexPathForItem(at: locationPoint),
@@ -299,8 +304,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             }
             
             startingGesturePoint = viewLocationPoint
-            
-            print("cell tag = \(cell.tag)")
             moving = true
             collectionView.isUserInteractionEnabled = false
             
@@ -332,11 +335,18 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 
         } else if sender.state == .changed {
             
-            //movingImage.center = viewLocationPoint
-            movingImage.center = offsetedViewLocationPoint
+            if tryingToMoveOldImage == false {
+                movingImage.center = offsetedViewLocationPoint
+            }
+
 
         } else if sender.state == .ended {
             
+            if tryingToMoveOldImage == true {
+                return
+            }
+            
+            sender.isEnabled = true
             //collectionView.reloadData()
             collectionView.isUserInteractionEnabled = true
             
@@ -392,6 +402,8 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             moving = false
             currentSelectedIndexPath = nil
             //collectionView.reloadData()
+        }else if sender.state == .failed {
+            print("Dhekee")
         }
     }
     
