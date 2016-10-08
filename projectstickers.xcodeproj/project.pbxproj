@@ -151,7 +151,7 @@
 		0AF36DD41DA03E1700DBFCF2 /* Head3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36DCF1DA03E1700DBFCF2 /* Head3.png */; };
 		0AF36DD51DA03E1700DBFCF2 /* Head4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36DD01DA03E1700DBFCF2 /* Head4.png */; };
 		0AF3B3721DA91D8500BB3111 /* BackgroundCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3B3711DA91D8500BB3111 /* BackgroundCollectionReusableView.swift */; };
-		0AF3B3741DA91F6100BB3111 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF3B3731DA91F6100BB3111 /* TestView.xib */; };
+		0AF3B3761DA9228100BB3111 /* BrowserLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3B3751DA9228100BB3111 /* BrowserLayout.swift */; };
 		0AF96BF71DA3870F0043C1B8 /* animated-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF96BF61DA3870F0043C1B8 /* animated-2.png */; };
 		0AF96BF91DA388520043C1B8 /* SleepyVamp.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0AF96BF81DA388520043C1B8 /* SleepyVamp.gif */; };
 /* End PBXBuildFile section */
@@ -328,7 +328,7 @@
 		0AF36DCF1DA03E1700DBFCF2 /* Head3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head3.png; sourceTree = "<group>"; };
 		0AF36DD01DA03E1700DBFCF2 /* Head4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head4.png; sourceTree = "<group>"; };
 		0AF3B3711DA91D8500BB3111 /* BackgroundCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionReusableView.swift; sourceTree = "<group>"; };
-		0AF3B3731DA91F6100BB3111 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		0AF3B3751DA9228100BB3111 /* BrowserLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserLayout.swift; sourceTree = "<group>"; };
 		0AF96BF61DA3870F0043C1B8 /* animated-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animated-2.png"; sourceTree = "<group>"; };
 		0AF96BF81DA388520043C1B8 /* SleepyVamp.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SleepyVamp.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -429,11 +429,11 @@
 				0A6AE3AB1D99C36F00F99EE1 /* MessagesViewController.swift */,
 				0A6AE3BC1D99C9A500F99EE1 /* DataManager.swift */,
 				0A6AE3BD1D99C9A500F99EE1 /* MonsterBrowserViewController.swift */,
-				0AF3B3731DA91F6100BB3111 /* TestView.xib */,
 				0AF3B3711DA91D8500BB3111 /* BackgroundCollectionReusableView.swift */,
 				0A6AE3BE1D99C9A500F99EE1 /* MonsterMakerViewController.swift */,
 				0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */,
 				0A6AE3BF1D99C9A500F99EE1 /* StickerManager.swift */,
+				0AF3B3751DA9228100BB3111 /* BrowserLayout.swift */,
 				0A6AE3AD1D99C36F00F99EE1 /* MainInterface.storyboard */,
 				0A6AE3B01D99C36F00F99EE1 /* Assets.xcassets */,
 				0A6AE3B21D99C36F00F99EE1 /* Info.plist */,
@@ -803,7 +803,6 @@
 				0A1A2C851DA18D1D0084FACA /* Mouth1.png in Resources */,
 				0A9308531DA30006009EF474 /* Vamp2.png in Resources */,
 				0A9308441DA30006009EF474 /* Skull5.png in Resources */,
-				0AF3B3741DA91F6100BB3111 /* TestView.xib in Resources */,
 				0A9308091DA2F5F8009EF474 /* Accessories0.png in Resources */,
 				0A1A2C961DA18D1D0084FACA /* Mouth18.png in Resources */,
 				0A1A2C9B1DA18D1D0084FACA /* Mouth23.png in Resources */,
@@ -827,6 +826,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF3B3761DA9228100BB3111 /* BrowserLayout.swift in Sources */,
 				0A6AE3C21D99C9A500F99EE1 /* MonsterMakerViewController.swift in Sources */,
 				0A6AE3C11D99C9A500F99EE1 /* MonsterBrowserViewController.swift in Sources */,
 				0A6AE3AC1D99C36F00F99EE1 /* MessagesViewController.swift in Sources */,

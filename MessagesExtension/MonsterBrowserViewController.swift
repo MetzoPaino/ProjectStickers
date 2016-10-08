@@ -52,19 +52,11 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     }
     
     func styleView() {
-        view.backgroundColor = .green
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .white
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-       // layout.itemSize = CGSize(width: view.frame.size.width / 2, height:  view.frame.size.width / 2)
-        layout.minimumInteritemSpacing = -2
-        layout.minimumLineSpacing = -2
-        layout.register(UINib(nibName:"TestView", bundle: nil), forDecorationViewOfKind: "Test")
-        //layout.register(BackgroundCollectionReusableView.self, forDecorationViewOfKind: "Test")
-        layout.layoutAttributesForDecorationView(ofKind: "Test", at: IndexPath(row: 0, section: 0))
-        //layout.sectionHeadersPinToVisibleBounds = true
-        
-        
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         collectionView!.collectionViewLayout = layout
     }
     
@@ -245,9 +237,9 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             headerView.backgroundColor = .clear
             
             let view = headerView.viewWithTag(10)
-            //view?.backgroundColor = #colorLiteral(red: 0.2191819251, green: 0.1625923216, blue: 0.2560424805, alpha: 1)
             view?.backgroundColor = .clear
-            
+            let imageView = headerView.viewWithTag(11) as! UIImageView
+
             let button = headerView.viewWithTag(1) as! UIButton
             let allButton = headerView.viewWithTag(2) as! UIButton
             let emojiButton = headerView.viewWithTag(3) as! UIButton
@@ -260,6 +252,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
 
             if indexPath.section == 0 {
                 
+                imageView.isHidden = false
                 button.isHidden = false
                 smallButton.isHidden = false
                 mediumButton.isHidden = false
@@ -309,6 +302,9 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 }
 
             } else {
+                
+                imageView.isHidden = true
+
                 button.isHidden = true
                 smallButton.isHidden = true
                 mediumButton.isHidden = true

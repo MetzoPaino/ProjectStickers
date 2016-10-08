@@ -374,10 +374,15 @@
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="Ljz-H4-yhQ">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="Ljz-H4-yhQ">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="11" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreen" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-a4-6Tv">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="400" id="5NH-vS-6eT"/>
+                                            </constraints>
+                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderGreen" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-Lx-wcl"/>
                                         <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-Ml-bZT">
                                             <subviews>
@@ -499,6 +504,7 @@
                                         <constraint firstItem="t5i-dd-b6m" firstAttribute="centerY" secondItem="TV4-VB-cXs" secondAttribute="centerY" id="7h0-mz-XoY"/>
                                         <constraint firstItem="ynB-Lb-PMU" firstAttribute="height" secondItem="qHN-Ml-bZT" secondAttribute="height" id="8Fi-jB-jQS"/>
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="centerY" secondItem="rdK-QF-qP9" secondAttribute="centerY" id="9Wd-yK-K0T"/>
+                                        <constraint firstItem="Aux-a4-6Tv" firstAttribute="centerX" secondItem="Ljz-H4-yhQ" secondAttribute="centerX" id="DfQ-tA-0SP"/>
                                         <constraint firstItem="3XU-sp-EL6" firstAttribute="leading" secondItem="Ljz-H4-yhQ" secondAttribute="leading" id="FWo-f8-9n9"/>
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="height" secondItem="rdK-QF-qP9" secondAttribute="height" id="GpL-t8-1bP"/>
                                         <constraint firstItem="OuG-Lx-wcl" firstAttribute="width" secondItem="Ljz-H4-yhQ" secondAttribute="width" id="Pf2-Z7-22H"/>
@@ -525,6 +531,8 @@
                                         <constraint firstItem="t5i-dd-b6m" firstAttribute="leading" secondItem="TV4-VB-cXs" secondAttribute="trailing" id="uZl-EJ-OTY"/>
                                         <constraint firstItem="OuG-Lx-wcl" firstAttribute="centerY" secondItem="Ljz-H4-yhQ" secondAttribute="centerY" id="vM9-RQ-pUq"/>
                                         <constraint firstItem="OuG-Lx-wcl" firstAttribute="height" secondItem="Ljz-H4-yhQ" secondAttribute="height" id="vRJ-y6-N4a"/>
+                                        <constraint firstItem="Aux-a4-6Tv" firstAttribute="width" secondItem="Ljz-H4-yhQ" secondAttribute="width" id="wSc-BE-m7h"/>
+                                        <constraint firstItem="Aux-a4-6Tv" firstAttribute="bottom" secondItem="qHN-Ml-bZT" secondAttribute="bottom" id="ynz-Ri-m7i"/>
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="leading" secondItem="rdK-QF-qP9" secondAttribute="trailing" id="zh9-iv-3J0"/>
                                     </constraints>
                                     <variation key="default">
