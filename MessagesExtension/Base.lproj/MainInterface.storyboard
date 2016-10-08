@@ -261,11 +261,12 @@
                             <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="42L-f8-Pxo" secondAttribute="bottom" id="Tux-Nf-y7w"/>
                             <constraint firstItem="hmj-2G-Qve" firstAttribute="width" secondItem="7oI-Qh-b0E" secondAttribute="width" id="Ufa-oL-xgf"/>
                             <constraint firstAttribute="trailing" secondItem="gSa-fk-1yR" secondAttribute="trailing" id="Umz-sv-s6q"/>
-                            <constraint firstItem="XIl-9S-dFa" firstAttribute="height" secondItem="7oI-Qh-b0E" secondAttribute="height" multiplier="0.4" id="YvP-Og-dFL"/>
+                            <constraint firstItem="XIl-9S-dFa" firstAttribute="height" secondItem="7oI-Qh-b0E" secondAttribute="height" multiplier="0.2" id="YvP-Og-dFL"/>
                             <constraint firstItem="hmj-2G-Qve" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" id="Z2k-QA-V9p"/>
                             <constraint firstItem="yoh-NT-xqt" firstAttribute="width" secondItem="XIl-9S-dFa" secondAttribute="width" id="av3-uD-s0F"/>
                             <constraint firstItem="hqK-Qd-tXZ" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" id="cIK-Xf-LKt"/>
                             <constraint firstItem="c9J-co-TRN" firstAttribute="leading" secondItem="XIl-9S-dFa" secondAttribute="trailing" id="hSu-GB-F3k"/>
+                            <constraint firstItem="XIl-9S-dFa" firstAttribute="height" secondItem="7oI-Qh-b0E" secondAttribute="height" multiplier="0.4" id="ix0-he-163"/>
                             <constraint firstItem="XIl-9S-dFa" firstAttribute="centerX" secondItem="7oI-Qh-b0E" secondAttribute="centerX" id="jAq-aK-nFj"/>
                             <constraint firstItem="NUV-7S-CG8" firstAttribute="centerY" secondItem="pCU-kJ-WZW" secondAttribute="centerY" id="jLp-L0-5W6"/>
                             <constraint firstItem="NCI-Bn-QZm" firstAttribute="height" secondItem="pCU-kJ-WZW" secondAttribute="height" id="jeM-ps-poO"/>
@@ -284,6 +285,18 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="mE8-fO-7Zq"/>
+                                <exclude reference="YvP-Og-dFL"/>
+                                <exclude reference="ix0-he-163"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="YvP-Og-dFL"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="ix0-he-163"/>
                             </mask>
                         </variation>
                     </view>
@@ -372,7 +385,7 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="67.5" y="58" width="50" height="50"/>
+                                        <rect key="frame" x="68" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
