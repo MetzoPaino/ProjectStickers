@@ -58,7 +58,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreen" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-NT-xqt">
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIl-9S-dFa">
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -187,24 +187,21 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-kJ-WZW">
-                                <accessibility key="accessibilityConfiguration" hint="Select to save your sticker" label="Done button"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqK-Qd-tXZ">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-Bn-QZm">
+                                        <accessibility key="accessibilityConfiguration" hint="Close the Monster Maker view" label="Close button"/>
+                                        <state key="normal" image="Delete"/>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="aeW-bb-iMN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="Wer-D0-ySo"/>
-                                    <constraint firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="height" multiplier="1:1" id="f4b-SW-qCT"/>
+                                    <constraint firstItem="NCI-Bn-QZm" firstAttribute="centerY" secondItem="hqK-Qd-tXZ" secondAttribute="centerY" id="doA-1w-h9B"/>
+                                    <constraint firstItem="NCI-Bn-QZm" firstAttribute="centerX" secondItem="hqK-Qd-tXZ" secondAttribute="centerX" id="oFI-zX-TMk"/>
                                 </constraints>
-                                <state key="normal" image="Done"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="gs4-dB-8A3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-Bn-QZm">
-                                <accessibility key="accessibilityConfiguration" hint="Close the Monster Maker view" label="Close button"/>
-                                <state key="normal" image="Delete"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="aeW-bb-iMN"/>
-                                </connections>
-                            </button>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9J-co-TRN">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -222,23 +219,44 @@
                                     <action selector="undoButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="bT9-AP-UeB"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-Yj-iYV">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-kJ-WZW">
+                                        <accessibility key="accessibilityConfiguration" hint="Select to save your sticker" label="Done button"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="Wer-D0-ySo"/>
+                                            <constraint firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="height" multiplier="1:1" id="f4b-SW-qCT"/>
+                                        </constraints>
+                                        <state key="normal" image="Done"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="gs4-dB-8A3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pCU-kJ-WZW" firstAttribute="centerY" secondItem="GzS-Yj-iYV" secondAttribute="centerY" id="GMq-Ec-mYZ"/>
+                                    <constraint firstItem="pCU-kJ-WZW" firstAttribute="centerX" secondItem="GzS-Yj-iYV" secondAttribute="centerX" id="htZ-Pv-cVE"/>
+                                    <constraint firstAttribute="height" constant="72" id="jQp-ob-a9z"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hqK-Qd-tXZ" firstAttribute="centerX" secondItem="GzS-Yj-iYV" secondAttribute="centerX" id="0ZB-v6-Ypt"/>
                             <constraint firstItem="AwK-fn-rL3" firstAttribute="top" secondItem="gSa-fk-1yR" secondAttribute="bottom" id="1lI-0V-Gso"/>
                             <constraint firstItem="XIl-9S-dFa" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" id="2mx-ma-fXh"/>
+                            <constraint firstItem="NUV-7S-CG8" firstAttribute="height" secondItem="pCU-kJ-WZW" secondAttribute="height" id="4Mi-qD-mXg"/>
                             <constraint firstItem="gSa-fk-1yR" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="5BE-fQ-gK5"/>
-                            <constraint firstItem="NUV-7S-CG8" firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="width" id="6TH-3e-y7k"/>
                             <constraint firstAttribute="trailing" secondItem="c9J-co-TRN" secondAttribute="trailing" id="8Tj-Kc-RqJ"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="c9J-co-TRN" secondAttribute="bottom" id="AmF-Di-M53"/>
-                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="top" secondItem="XIl-9S-dFa" secondAttribute="top" constant="8" id="C74-AP-RSF"/>
                             <constraint firstItem="NUV-7S-CG8" firstAttribute="centerX" secondItem="42L-f8-Pxo" secondAttribute="centerX" id="H8W-1b-z7m"/>
+                            <constraint firstItem="c9J-co-TRN" firstAttribute="top" secondItem="GzS-Yj-iYV" secondAttribute="bottom" id="I8v-bz-grR"/>
                             <constraint firstItem="yoh-NT-xqt" firstAttribute="height" secondItem="XIl-9S-dFa" secondAttribute="height" id="LCx-Ng-McH"/>
                             <constraint firstItem="42L-f8-Pxo" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="M65-tN-hiq"/>
-                            <constraint firstItem="NUV-7S-CG8" firstAttribute="height" secondItem="pCU-kJ-WZW" secondAttribute="height" id="PZA-bx-b28"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="XIl-9S-dFa" secondAttribute="bottom" id="QPu-GG-QTu"/>
                             <constraint firstItem="hmj-2G-Qve" firstAttribute="centerX" secondItem="7oI-Qh-b0E" secondAttribute="centerX" id="Qla-hd-naK"/>
                             <constraint firstItem="yoh-NT-xqt" firstAttribute="centerY" secondItem="XIl-9S-dFa" secondAttribute="centerY" id="R3b-Vi-tVr"/>
+                            <constraint firstItem="GzS-Yj-iYV" firstAttribute="leading" secondItem="XIl-9S-dFa" secondAttribute="trailing" id="REF-Q2-b4g"/>
                             <constraint firstItem="hmj-2G-Qve" firstAttribute="bottom" secondItem="URL-vP-KAI" secondAttribute="top" id="TR4-aE-ENH"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="42L-f8-Pxo" secondAttribute="bottom" id="Tux-Nf-y7w"/>
                             <constraint firstItem="hmj-2G-Qve" firstAttribute="width" secondItem="7oI-Qh-b0E" secondAttribute="width" id="Ufa-oL-xgf"/>
@@ -246,20 +264,22 @@
                             <constraint firstItem="XIl-9S-dFa" firstAttribute="height" secondItem="7oI-Qh-b0E" secondAttribute="height" multiplier="0.4" id="YvP-Og-dFL"/>
                             <constraint firstItem="hmj-2G-Qve" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" id="Z2k-QA-V9p"/>
                             <constraint firstItem="yoh-NT-xqt" firstAttribute="width" secondItem="XIl-9S-dFa" secondAttribute="width" id="av3-uD-s0F"/>
-                            <constraint firstItem="pCU-kJ-WZW" firstAttribute="centerX" secondItem="c9J-co-TRN" secondAttribute="centerX" id="b81-M0-TZ6"/>
-                            <constraint firstItem="NUV-7S-CG8" firstAttribute="centerY" secondItem="pCU-kJ-WZW" secondAttribute="centerY" id="hKm-eg-v8v"/>
+                            <constraint firstItem="hqK-Qd-tXZ" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" id="cIK-Xf-LKt"/>
                             <constraint firstItem="c9J-co-TRN" firstAttribute="leading" secondItem="XIl-9S-dFa" secondAttribute="trailing" id="hSu-GB-F3k"/>
                             <constraint firstItem="XIl-9S-dFa" firstAttribute="centerX" secondItem="7oI-Qh-b0E" secondAttribute="centerX" id="jAq-aK-nFj"/>
+                            <constraint firstItem="NUV-7S-CG8" firstAttribute="centerY" secondItem="pCU-kJ-WZW" secondAttribute="centerY" id="jLp-L0-5W6"/>
+                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="height" secondItem="pCU-kJ-WZW" secondAttribute="height" id="jeM-ps-poO"/>
                             <constraint firstItem="yoh-NT-xqt" firstAttribute="centerX" secondItem="XIl-9S-dFa" secondAttribute="centerX" id="l17-NT-d2g"/>
                             <constraint firstItem="hmj-2G-Qve" firstAttribute="height" secondItem="XIl-9S-dFa" secondAttribute="height" id="mE8-fO-7Zq"/>
                             <constraint firstItem="XIl-9S-dFa" firstAttribute="leading" secondItem="42L-f8-Pxo" secondAttribute="trailing" id="oeJ-Ow-9UU"/>
-                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="width" id="qIC-U1-S4V"/>
+                            <constraint firstItem="NUV-7S-CG8" firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="width" id="qP2-Ty-62x"/>
+                            <constraint firstItem="hqK-Qd-tXZ" firstAttribute="height" secondItem="GzS-Yj-iYV" secondAttribute="height" id="qt6-ay-uyt"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="rGY-CP-1dg"/>
-                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="centerX" secondItem="pCU-kJ-WZW" secondAttribute="centerX" id="s4E-r1-hcO"/>
-                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="height" secondItem="pCU-kJ-WZW" secondAttribute="height" id="t3T-o3-lUO"/>
+                            <constraint firstItem="hqK-Qd-tXZ" firstAttribute="width" secondItem="GzS-Yj-iYV" secondAttribute="width" id="tMF-S1-RNN"/>
                             <constraint firstAttribute="trailing" secondItem="URL-vP-KAI" secondAttribute="trailing" id="thj-zR-qk6"/>
-                            <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="pCU-kJ-WZW" secondAttribute="bottom" constant="8" id="wv0-bY-E28"/>
+                            <constraint firstAttribute="trailing" secondItem="GzS-Yj-iYV" secondAttribute="trailing" id="tvs-ag-iNd"/>
                             <constraint firstItem="gSa-fk-1yR" firstAttribute="top" secondItem="URL-vP-KAI" secondAttribute="bottom" id="xWO-q4-hIk"/>
+                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="width" id="z6v-CV-rSx"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
