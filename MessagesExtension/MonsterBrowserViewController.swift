@@ -59,7 +59,12 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
        // layout.itemSize = CGSize(width: view.frame.size.width / 2, height:  view.frame.size.width / 2)
         layout.minimumInteritemSpacing = -2
         layout.minimumLineSpacing = -2
-
+        layout.register(UINib(nibName:"TestView", bundle: nil), forDecorationViewOfKind: "Test")
+        //layout.register(BackgroundCollectionReusableView.self, forDecorationViewOfKind: "Test")
+        layout.layoutAttributesForDecorationView(ofKind: "Test", at: IndexPath(row: 0, section: 0))
+        //layout.sectionHeadersPinToVisibleBounds = true
+        
+        
         collectionView!.collectionViewLayout = layout
     }
     
@@ -237,7 +242,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         case UICollectionElementKindSectionHeader:
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
-            headerView.backgroundColor = .white
+            headerView.backgroundColor = .clear
             
             let view = headerView.viewWithTag(10)
             //view?.backgroundColor = #colorLiteral(red: 0.2191819251, green: 0.1625923216, blue: 0.2560424805, alpha: 1)
@@ -437,6 +442,7 @@ extension MonsterBrowserViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 16.0)
     }
+
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 //        
