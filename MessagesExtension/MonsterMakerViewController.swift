@@ -34,6 +34,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     
     
     @IBOutlet weak var canvasImageView: UIImageView!
+    @IBOutlet weak var shadowImageView: UIImageView!
 
 
     @IBOutlet weak var doneButton: UIButton!
@@ -100,6 +101,13 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         canvasImageView.layer.isOpaque = false
         canvasImageView.isUserInteractionEnabled = false
         canvasImageView.clipsToBounds = true
+        
+        shadowImageView.layer.shadowColor = UIColor.black.cgColor
+        shadowImageView.layer.shadowOpacity = 0.25
+        //shadowImageView.layer.shadowOffset = CGSize.zero
+        shadowImageView.layer.shadowOffset = CGSize(width: 0, height: -16)
+        shadowImageView.layer.shadowRadius = 4
+        //shadowImageView.layer.shouldRasterize = true
         
         headsButton.setImage(UIImage(named:"Emoji"), for: UIControlState.normal)
         headsButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
@@ -402,8 +410,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             moving = false
             currentSelectedIndexPath = nil
             //collectionView.reloadData()
-        }else if sender.state == .failed {
-            print("Dhekee")
         }
     }
     
