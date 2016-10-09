@@ -41,6 +41,8 @@
 		0A1A2CA31DA18D1D0084FACA /* Mouth31.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A2C821DA18D1D0084FACA /* Mouth31.png */; };
 		0A1A2CA41DA18D1D0084FACA /* Mouth32.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A2C831DA18D1D0084FACA /* Mouth32.png */; };
 		0A4AE0571D9A9EA40012CDAD /* MonsterPartsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */; };
+		0A689BB81DAA6D7A0068F3EC /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */; };
+		0A689BC61DAA90630068F3EC /* WolfAnimated1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BC51DAA90630068F3EC /* WolfAnimated1.png */; };
 		0A6AE39D1D99C36F00F99EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6AE39C1D99C36F00F99EE1 /* Assets.xcassets */; };
 		0A6AE3A41D99C36F00F99EE1 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A6AE3A31D99C36F00F99EE1 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0A6AE3A91D99C36F00F99EE1 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6AE3A81D99C36F00F99EE1 /* Messages.framework */; };
@@ -151,7 +153,7 @@
 		0AF36DD41DA03E1700DBFCF2 /* Head3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36DCF1DA03E1700DBFCF2 /* Head3.png */; };
 		0AF36DD51DA03E1700DBFCF2 /* Head4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36DD01DA03E1700DBFCF2 /* Head4.png */; };
 		0AF96BF71DA3870F0043C1B8 /* animated-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF96BF61DA3870F0043C1B8 /* animated-2.png */; };
-		0AF96BF91DA388520043C1B8 /* SleepyVamp.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0AF96BF81DA388520043C1B8 /* SleepyVamp.gif */; };
+		0AF96BF91DA388520043C1B8 /* VampGif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0AF96BF81DA388520043C1B8 /* VampGif1.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +215,8 @@
 		0A1A2C821DA18D1D0084FACA /* Mouth31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mouth31.png; sourceTree = "<group>"; };
 		0A1A2C831DA18D1D0084FACA /* Mouth32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mouth32.png; sourceTree = "<group>"; };
 		0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterPartsManager.swift; sourceTree = "<group>"; };
+		0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A689BC51DAA90630068F3EC /* WolfAnimated1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WolfAnimated1.png; sourceTree = "<group>"; };
 		0A6AE3991D99C36F00F99EE1 /* projectstickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectstickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6AE39C1D99C36F00F99EE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A6AE39E1D99C36F00F99EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -326,7 +330,7 @@
 		0AF36DCF1DA03E1700DBFCF2 /* Head3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head3.png; sourceTree = "<group>"; };
 		0AF36DD01DA03E1700DBFCF2 /* Head4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head4.png; sourceTree = "<group>"; };
 		0AF96BF61DA3870F0043C1B8 /* animated-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animated-2.png"; sourceTree = "<group>"; };
-		0AF96BF81DA388520043C1B8 /* SleepyVamp.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SleepyVamp.gif; sourceTree = "<group>"; };
+		0AF96BF81DA388520043C1B8 /* VampGif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = VampGif1.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +429,7 @@
 				0A6AE3AB1D99C36F00F99EE1 /* MessagesViewController.swift */,
 				0A6AE3BC1D99C9A500F99EE1 /* DataManager.swift */,
 				0A6AE3BD1D99C9A500F99EE1 /* MonsterBrowserViewController.swift */,
+				0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */,
 				0A6AE3BE1D99C9A500F99EE1 /* MonsterMakerViewController.swift */,
 				0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */,
 				0A6AE3BF1D99C9A500F99EE1 /* StickerManager.swift */,
@@ -469,7 +474,8 @@
 				0A93083D1DA30006009EF474 /* Wolf4.png */,
 				0A93083E1DA30006009EF474 /* Wolf5.png */,
 				0AF96BF61DA3870F0043C1B8 /* animated-2.png */,
-				0AF96BF81DA388520043C1B8 /* SleepyVamp.gif */,
+				0AF96BF81DA388520043C1B8 /* VampGif1.gif */,
+				0A689BC51DAA90630068F3EC /* WolfAnimated1.png */,
 			);
 			name = Stickers;
 			sourceTree = "<group>";
@@ -674,6 +680,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A689BC61DAA90630068F3EC /* WolfAnimated1.png in Resources */,
 				0A9307D41DA2F5E7009EF474 /* Eye5.png in Resources */,
 				0A9307ED1DA2F5E7009EF474 /* Eye30.png in Resources */,
 				0A9307E61DA2F5E7009EF474 /* Eye23.png in Resources */,
@@ -749,7 +756,7 @@
 				0A1A2C9A1DA18D1D0084FACA /* Mouth22.png in Resources */,
 				0A9307DF1DA2F5E7009EF474 /* Eye16.png in Resources */,
 				0A9308561DA30006009EF474 /* Vamp5.png in Resources */,
-				0AF96BF91DA388520043C1B8 /* SleepyVamp.gif in Resources */,
+				0AF96BF91DA388520043C1B8 /* VampGif1.gif in Resources */,
 				0A9307EB1DA2F5E7009EF474 /* Eye28.png in Resources */,
 				0A9308431DA30006009EF474 /* Skull4.png in Resources */,
 				0A1A2C941DA18D1D0084FACA /* Mouth16.png in Resources */,
@@ -822,6 +829,7 @@
 			files = (
 				0A6AE3C21D99C9A500F99EE1 /* MonsterMakerViewController.swift in Sources */,
 				0A6AE3C11D99C9A500F99EE1 /* MonsterBrowserViewController.swift in Sources */,
+				0A689BB81DAA6D7A0068F3EC /* StickerCollectionViewCell.swift in Sources */,
 				0A6AE3AC1D99C36F00F99EE1 /* MessagesViewController.swift in Sources */,
 				0A6AE3C31D99C9A500F99EE1 /* StickerManager.swift in Sources */,
 				0A6AE3C01D99C9A500F99EE1 /* DataManager.swift in Sources */,

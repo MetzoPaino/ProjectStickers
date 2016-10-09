@@ -105,19 +105,19 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         
-        let buttonPosition = sender.convert(CGPoint.zero, to: collectionView)
-
-        guard let selectedIndexPath = collectionView.indexPathForItem(at: buttonPosition) else {
-                return
+//        let buttonPosition = sender.convert(CGPoint.zero, to: collectionView)
+//
+//        guard let selectedIndexPath = collectionView.indexPathForItem(at: buttonPosition) else {
+//                return
+//        }
+//        
+//        var index = selectedIndexPath.row
+        if sender.tag < 0 {
+            print("Tried to delete before 0")
+            return
         }
         
-        var index = selectedIndexPath.row
-        
-        if index < 0 {
-            index = 0
-        }
-        
-        delegate?.deleteButtonPressedForCellAtIndex(index: index)
+        delegate?.deleteButtonPressedForCellAtIndex(index: sender.tag)
     }
     
     @IBAction func editButtonPressed(_ sender: UIButton) {
@@ -172,21 +172,25 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 
             } else {
                 
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
-                cell.backgroundColor = .white
-                cell.contentView.backgroundColor = .white
-                let stickerView = cell.viewWithTag(1) as! MSStickerView
- 
-                stickerView.sticker = stickerManager.customStickers[indexPath.row - 1]
-                stickerView.backgroundColor = .white
-                let button = cell.viewWithTag(2) as! UIButton
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StickerCell", for: indexPath as IndexPath) as! StickerCollectionViewCell
+                cell.configureCell(sticker: stickerManager.customStickers[indexPath.row - 1], editing: editingCustomStickers)
+                cell.deleteButton.tag = indexPath.row - 1
                 
-                if editingCustomStickers == true {
-                    button.isHidden = false
-
-                } else {
-                    button.isHidden = true
-                }
+//                cell.backgroundColor = .white
+//                
+//                cell.contentView.backgroundColor = .white
+//                let stickerView = cell.viewWithTag(1) as! MSStickerView
+// 
+//                stickerView.sticker = stickerManager.customStickers[indexPath.row - 1]
+//                stickerView.backgroundColor = .white
+//                let button = cell.viewWithTag(2) as! UIButton
+//                
+//                if editingCustomStickers == true {
+//                    button.isHidden = false
+//
+//                } else {
+//                    button.isHidden = true
+//                }
 
                 
                 return cell

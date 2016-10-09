@@ -59,107 +59,138 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wog-mT-sa4" userLabel="Canvas Container">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreenFlat" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve"/>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-NT-xqt">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIl-9S-dFa">
-                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="XIl-9S-dFa" secondAttribute="height" multiplier="1:1" identifier="CanvasRatio" id="R0g-yh-L5O"/>
-                                        </constraints>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4je-rD-fO4" userLabel="UndoContainer">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-zz-qOO" userLabel="Middle">
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-7S-CG8">
-                                                <accessibility key="accessibilityConfiguration" hint="Remove the last placed image" label="Undo button"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-NT-xqt">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIl-9S-dFa">
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="NUV-7S-CG8" secondAttribute="height" multiplier="1:1" id="hGr-0g-9qd"/>
+                                                    <constraint firstAttribute="width" secondItem="XIl-9S-dFa" secondAttribute="height" multiplier="1:1" identifier="CanvasRatio" id="R0g-yh-L5O"/>
                                                 </constraints>
-                                                <state key="normal" image="Undo"/>
-                                                <connections>
-                                                    <action selector="undoButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="bT9-AP-UeB"/>
-                                                </connections>
-                                            </button>
+                                            </imageView>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="NUV-7S-CG8" firstAttribute="centerY" secondItem="4je-rD-fO4" secondAttribute="centerY" id="5Cq-nc-ru2"/>
-                                            <constraint firstItem="NUV-7S-CG8" firstAttribute="centerX" secondItem="4je-rD-fO4" secondAttribute="centerX" id="KfO-pT-Clo"/>
-                                            <constraint firstAttribute="height" constant="44" id="rQN-ZA-EU0"/>
+                                            <constraint firstItem="XIl-9S-dFa" firstAttribute="centerX" secondItem="aHZ-zz-qOO" secondAttribute="centerX" id="4qS-vG-uIq"/>
+                                            <constraint firstItem="yoh-NT-xqt" firstAttribute="width" secondItem="XIl-9S-dFa" secondAttribute="width" id="9ae-wt-Kz2"/>
+                                            <constraint firstItem="XIl-9S-dFa" firstAttribute="height" secondItem="aHZ-zz-qOO" secondAttribute="height" id="FcH-GB-CaH"/>
+                                            <constraint firstItem="yoh-NT-xqt" firstAttribute="height" secondItem="XIl-9S-dFa" secondAttribute="height" id="Jhz-zD-Jz0"/>
+                                            <constraint firstItem="XIl-9S-dFa" firstAttribute="width" secondItem="aHZ-zz-qOO" secondAttribute="width" id="NOA-Uy-aah"/>
+                                            <constraint firstItem="yoh-NT-xqt" firstAttribute="centerX" secondItem="XIl-9S-dFa" secondAttribute="centerX" id="dsn-Hs-nd8"/>
+                                            <constraint firstItem="XIl-9S-dFa" firstAttribute="centerY" secondItem="aHZ-zz-qOO" secondAttribute="centerY" id="kz5-yn-FjM"/>
+                                            <constraint firstItem="yoh-NT-xqt" firstAttribute="centerY" secondItem="XIl-9S-dFa" secondAttribute="centerY" id="ruj-hX-bl5"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="NOA-Uy-aah"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5X-cZ-fcx" userLabel="Left">
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4je-rD-fO4" userLabel="UndoContainer">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-7S-CG8">
+                                                        <accessibility key="accessibilityConfiguration" hint="Remove the last placed image" label="Undo button"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="36" id="GZY-Jh-udq"/>
+                                                            <constraint firstAttribute="width" secondItem="NUV-7S-CG8" secondAttribute="height" multiplier="1:1" id="hGr-0g-9qd"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Undo"/>
+                                                        <connections>
+                                                            <action selector="undoButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="bT9-AP-UeB"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="NUV-7S-CG8" firstAttribute="centerY" secondItem="4je-rD-fO4" secondAttribute="centerY" id="5Cq-nc-ru2"/>
+                                                    <constraint firstItem="NUV-7S-CG8" firstAttribute="centerX" secondItem="4je-rD-fO4" secondAttribute="centerX" id="KfO-pT-Clo"/>
+                                                    <constraint firstAttribute="height" constant="44" id="rQN-ZA-EU0"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="4je-rD-fO4" firstAttribute="width" secondItem="S5X-cZ-fcx" secondAttribute="width" id="9ch-Vs-WBp"/>
+                                            <constraint firstAttribute="bottom" secondItem="4je-rD-fO4" secondAttribute="bottom" id="OCD-22-vWP"/>
+                                            <constraint firstItem="4je-rD-fO4" firstAttribute="leading" secondItem="S5X-cZ-fcx" secondAttribute="leading" id="nls-li-Y8S"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqK-Qd-tXZ" userLabel="DeleteContainer">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpM-gL-fGf" userLabel="Right">
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-Bn-QZm">
-                                                <accessibility key="accessibilityConfiguration" hint="Close the Monster Maker view" label="Close button"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqK-Qd-tXZ" userLabel="DeleteContainer">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-Bn-QZm">
+                                                        <accessibility key="accessibilityConfiguration" hint="Close the Monster Maker view" label="Close button"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="NCI-Bn-QZm" secondAttribute="height" multiplier="1:1" id="VdK-dv-ZGg"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Delete"/>
+                                                        <connections>
+                                                            <action selector="cancelButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="aeW-bb-iMN"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="NCI-Bn-QZm" secondAttribute="height" multiplier="1:1" id="VdK-dv-ZGg"/>
+                                                    <constraint firstItem="NCI-Bn-QZm" firstAttribute="centerY" secondItem="hqK-Qd-tXZ" secondAttribute="centerY" id="9nw-Fb-QzG"/>
+                                                    <constraint firstAttribute="height" constant="44" id="GWE-ja-mp3"/>
+                                                    <constraint firstItem="NCI-Bn-QZm" firstAttribute="centerX" secondItem="hqK-Qd-tXZ" secondAttribute="centerX" id="Glx-b5-0M0"/>
                                                 </constraints>
-                                                <state key="normal" image="Delete"/>
-                                                <connections>
-                                                    <action selector="cancelButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="aeW-bb-iMN"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="centerY" secondItem="hqK-Qd-tXZ" secondAttribute="centerY" id="9nw-Fb-QzG"/>
-                                            <constraint firstAttribute="height" constant="44" id="GWE-ja-mp3"/>
-                                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="centerX" secondItem="hqK-Qd-tXZ" secondAttribute="centerX" id="Glx-b5-0M0"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-Yj-iYV" userLabel="DoneContainerView">
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-kJ-WZW">
-                                                <accessibility key="accessibilityConfiguration" hint="Select to save your sticker" label="Done button"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-Yj-iYV" userLabel="DoneContainerView">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-kJ-WZW">
+                                                        <accessibility key="accessibilityConfiguration" hint="Select to save your sticker" label="Done button"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="height" multiplier="1:1" id="f4b-SW-qCT"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Done"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="gs4-dB-8A3"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="36" id="Wer-D0-ySo"/>
-                                                    <constraint firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="height" multiplier="1:1" id="f4b-SW-qCT"/>
+                                                    <constraint firstAttribute="height" constant="44" id="1JE-b3-oIc"/>
+                                                    <constraint firstItem="pCU-kJ-WZW" firstAttribute="centerX" secondItem="GzS-Yj-iYV" secondAttribute="centerX" id="82e-jh-F0g"/>
+                                                    <constraint firstItem="pCU-kJ-WZW" firstAttribute="centerY" secondItem="GzS-Yj-iYV" secondAttribute="centerY" id="IBa-fY-rEc"/>
                                                 </constraints>
-                                                <state key="normal" image="Done"/>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="gs4-dB-8A3"/>
-                                                </connections>
-                                            </button>
+                                            </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="1JE-b3-oIc"/>
-                                            <constraint firstItem="pCU-kJ-WZW" firstAttribute="centerX" secondItem="GzS-Yj-iYV" secondAttribute="centerX" id="82e-jh-F0g"/>
-                                            <constraint firstItem="pCU-kJ-WZW" firstAttribute="centerY" secondItem="GzS-Yj-iYV" secondAttribute="centerY" id="IBa-fY-rEc"/>
+                                            <constraint firstItem="hqK-Qd-tXZ" firstAttribute="centerX" secondItem="GzS-Yj-iYV" secondAttribute="centerX" id="12i-wf-fkv"/>
+                                            <constraint firstItem="hqK-Qd-tXZ" firstAttribute="width" secondItem="GzS-Yj-iYV" secondAttribute="width" id="2Ic-dH-mdo"/>
+                                            <constraint firstAttribute="trailing" secondItem="GzS-Yj-iYV" secondAttribute="trailing" id="Lv1-8p-owK"/>
+                                            <constraint firstItem="hqK-Qd-tXZ" firstAttribute="top" secondItem="xpM-gL-fGf" secondAttribute="top" id="N0w-kD-clG"/>
+                                            <constraint firstItem="NCI-Bn-QZm" firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="width" id="hED-CR-iS4"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="hmj-2G-Qve" firstAttribute="height" secondItem="Wog-mT-sa4" secondAttribute="height" id="3qv-pA-meq"/>
+                                    <constraint firstItem="S5X-cZ-fcx" firstAttribute="centerY" secondItem="Wog-mT-sa4" secondAttribute="centerY" id="3vg-HA-toc"/>
                                     <constraint firstItem="hmj-2G-Qve" firstAttribute="centerX" secondItem="Wog-mT-sa4" secondAttribute="centerX" id="4WJ-eh-DbX"/>
-                                    <constraint firstItem="4je-rD-fO4" firstAttribute="leading" secondItem="Wog-mT-sa4" secondAttribute="leading" id="6aL-AC-sSF"/>
-                                    <constraint firstAttribute="trailing" secondItem="hqK-Qd-tXZ" secondAttribute="trailing" id="7eY-ys-REB"/>
-                                    <constraint firstItem="NCI-Bn-QZm" firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="width" id="ACf-Oq-Mlf"/>
+                                    <constraint firstItem="GzS-Yj-iYV" firstAttribute="width" secondItem="4je-rD-fO4" secondAttribute="width" id="5P2-0O-6so"/>
+                                    <constraint firstItem="xpM-gL-fGf" firstAttribute="height" secondItem="S5X-cZ-fcx" secondAttribute="height" id="B09-2O-znf"/>
                                     <constraint firstItem="hmj-2G-Qve" firstAttribute="centerY" secondItem="Wog-mT-sa4" secondAttribute="centerY" id="B7a-Qs-gnt"/>
-                                    <constraint firstItem="yoh-NT-xqt" firstAttribute="width" secondItem="XIl-9S-dFa" secondAttribute="width" identifier="ShadowWidth" id="Fb1-Nn-lig"/>
-                                    <constraint firstItem="XIl-9S-dFa" firstAttribute="centerY" secondItem="Wog-mT-sa4" secondAttribute="centerY" identifier="CanvasY" id="Hwz-s5-q0x"/>
-                                    <constraint firstAttribute="bottom" secondItem="XIl-9S-dFa" secondAttribute="bottom" id="Mbe-2K-kBM"/>
-                                    <constraint firstItem="yoh-NT-xqt" firstAttribute="centerY" secondItem="XIl-9S-dFa" secondAttribute="centerY" identifier="ShadowCenterY" id="Ozx-38-nTJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="4je-rD-fO4" secondAttribute="bottom" id="RcM-Dg-yXI"/>
-                                    <constraint firstItem="hqK-Qd-tXZ" firstAttribute="top" secondItem="Wog-mT-sa4" secondAttribute="top" id="TTF-5T-sO3"/>
-                                    <constraint firstAttribute="bottom" secondItem="GzS-Yj-iYV" secondAttribute="bottom" id="U6Q-Pu-K7C"/>
-                                    <constraint firstItem="hqK-Qd-tXZ" firstAttribute="leading" secondItem="yoh-NT-xqt" secondAttribute="trailing" priority="750" id="VX1-HM-cR3"/>
-                                    <constraint firstItem="GzS-Yj-iYV" firstAttribute="leading" secondItem="yoh-NT-xqt" secondAttribute="trailing" priority="750" id="jY4-Cy-ZYU"/>
-                                    <constraint firstItem="XIl-9S-dFa" firstAttribute="centerX" secondItem="Wog-mT-sa4" secondAttribute="centerX" identifier="CanvasX" id="lLB-ly-rQ3"/>
+                                    <constraint firstItem="aHZ-zz-qOO" firstAttribute="trailing" secondItem="xpM-gL-fGf" secondAttribute="leading" id="D5G-7P-xTf"/>
+                                    <constraint firstItem="xpM-gL-fGf" firstAttribute="centerY" secondItem="S5X-cZ-fcx" secondAttribute="centerY" id="Fb5-jn-hrf"/>
+                                    <constraint firstItem="aHZ-zz-qOO" firstAttribute="centerY" secondItem="S5X-cZ-fcx" secondAttribute="centerY" id="H49-Ja-L5P"/>
+                                    <constraint firstItem="S5X-cZ-fcx" firstAttribute="width" secondItem="Wog-mT-sa4" secondAttribute="width" multiplier="0.15" id="S5K-cm-hmI"/>
+                                    <constraint firstItem="S5X-cZ-fcx" firstAttribute="height" secondItem="Wog-mT-sa4" secondAttribute="height" id="XFI-Q6-nXP"/>
+                                    <constraint firstItem="pCU-kJ-WZW" firstAttribute="width" secondItem="NUV-7S-CG8" secondAttribute="width" id="Ybf-Ra-FOz"/>
+                                    <constraint firstItem="aHZ-zz-qOO" firstAttribute="height" secondItem="S5X-cZ-fcx" secondAttribute="height" id="ZMd-Q7-0Qg"/>
+                                    <constraint firstItem="GzS-Yj-iYV" firstAttribute="centerY" secondItem="4je-rD-fO4" secondAttribute="centerY" id="fO7-U4-jsB"/>
+                                    <constraint firstItem="aHZ-zz-qOO" firstAttribute="leading" secondItem="S5X-cZ-fcx" secondAttribute="trailing" id="gln-hW-TgH"/>
+                                    <constraint firstItem="S5X-cZ-fcx" firstAttribute="leading" secondItem="Wog-mT-sa4" secondAttribute="leading" id="lPg-p1-dWo"/>
                                     <constraint firstItem="hmj-2G-Qve" firstAttribute="width" secondItem="Wog-mT-sa4" secondAttribute="width" id="mIw-5C-Vbi"/>
-                                    <constraint firstItem="XIl-9S-dFa" firstAttribute="top" secondItem="Wog-mT-sa4" secondAttribute="top" id="o1U-eR-ged"/>
-                                    <constraint firstItem="NUV-7S-CG8" firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="width" id="pcO-WO-P7j"/>
-                                    <constraint firstItem="4je-rD-fO4" firstAttribute="trailing" secondItem="yoh-NT-xqt" secondAttribute="leading" priority="750" id="prl-pt-ctg"/>
-                                    <constraint firstItem="yoh-NT-xqt" firstAttribute="height" secondItem="XIl-9S-dFa" secondAttribute="height" identifier="ShadowHeight" id="q2e-bv-QID"/>
-                                    <constraint firstAttribute="trailing" secondItem="GzS-Yj-iYV" secondAttribute="trailing" id="s6j-RV-8ed"/>
-                                    <constraint firstItem="yoh-NT-xqt" firstAttribute="centerX" secondItem="XIl-9S-dFa" secondAttribute="centerX" identifier="ShadowCenterX" id="wDY-Ae-hkt"/>
-                                    <constraint firstItem="XIl-9S-dFa" firstAttribute="height" secondItem="Wog-mT-sa4" secondAttribute="height" identifier="CanvasHeight" id="xd2-Bf-g8E"/>
+                                    <constraint firstAttribute="trailing" secondItem="xpM-gL-fGf" secondAttribute="trailing" id="qbq-4W-1SQ"/>
+                                    <constraint firstItem="xpM-gL-fGf" firstAttribute="width" secondItem="S5X-cZ-fcx" secondAttribute="width" id="xTi-BJ-vxj"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Hwz-s5-q0x"/>
-                                        <exclude reference="xd2-Bf-g8E"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gSa-fk-1yR">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -308,13 +339,13 @@
                         <outlet property="closeButton" destination="NCI-Bn-QZm" id="wuY-Rv-IPj"/>
                         <outlet property="collectionView" destination="gSa-fk-1yR" id="VIc-nU-1y0"/>
                         <outlet property="doneButton" destination="pCU-kJ-WZW" id="9Rx-Q4-q6b"/>
-                        <outlet property="doneButtonWidthConstraint" destination="Wer-D0-ySo" id="jb7-Qg-4Ea"/>
                         <outlet property="eyesButton" destination="4wm-qe-CBc" id="Cfn-fl-uEO"/>
                         <outlet property="headsButton" destination="vbm-tP-Ewj" id="eTP-tl-LK6"/>
                         <outlet property="mouthsButton" destination="9EP-99-eUf" id="bbA-mF-JH6"/>
                         <outlet property="shadowImageView" destination="yoh-NT-xqt" id="d0g-4x-xBn"/>
                         <outlet property="textButton" destination="ABr-Js-ZB8" id="g9Z-vL-KyO"/>
                         <outlet property="undoButton" destination="NUV-7S-CG8" id="fOY-wS-IyH"/>
+                        <outlet property="undoButtonWidthConstraint" destination="GZY-Jh-udq" id="z7r-4t-G8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pa-y7-BFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -347,8 +378,44 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </imageView>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="bp8-0F-CRl">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="nIb-qQ-OgH" customClass="StickerCollectionViewCell" customModule="MessagesExtension" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="58" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ps-tQ-gSb" customClass="MSStickerView">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baw-fP-Ryx">
+                                                    <accessibility key="accessibilityConfiguration" hint="Select to delete custom sticker" label="Delete button"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="baw-fP-Ryx" secondAttribute="height" multiplier="1:1" id="4k0-tv-ha5"/>
+                                                        <constraint firstAttribute="width" constant="20" id="onN-X6-RbG"/>
+                                                    </constraints>
+                                                    <state key="normal" image="DeleteInvert"/>
+                                                    <connections>
+                                                        <action selector="deleteButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="DIs-YQ-rwG"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="5ps-tQ-gSb" firstAttribute="width" secondItem="nIb-qQ-OgH" secondAttribute="width" id="3ri-gN-mTb"/>
+                                            <constraint firstItem="baw-fP-Ryx" firstAttribute="leading" secondItem="nIb-qQ-OgH" secondAttribute="leading" id="Iip-EV-rNQ"/>
+                                            <constraint firstItem="baw-fP-Ryx" firstAttribute="top" secondItem="nIb-qQ-OgH" secondAttribute="top" id="N0X-2N-NJw"/>
+                                            <constraint firstItem="5ps-tQ-gSb" firstAttribute="centerY" secondItem="nIb-qQ-OgH" secondAttribute="centerY" id="ZBQ-bK-5uO"/>
+                                            <constraint firstItem="5ps-tQ-gSb" firstAttribute="centerX" secondItem="nIb-qQ-OgH" secondAttribute="centerX" id="dC1-BM-HG8"/>
+                                            <constraint firstItem="5ps-tQ-gSb" firstAttribute="height" secondItem="nIb-qQ-OgH" secondAttribute="height" id="e5B-lV-su5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="deleteButton" destination="baw-fP-Ryx" id="sR0-Cv-U0Y"/>
+                                            <outlet property="stickerView" destination="5ps-tQ-gSb" id="dAa-94-D3F"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="bp8-0F-CRl">
+                                        <rect key="frame" x="68" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -385,7 +452,7 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="67.5" y="58" width="50" height="50"/>
+                                        <rect key="frame" x="135" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>

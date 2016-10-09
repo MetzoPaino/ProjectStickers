@@ -48,7 +48,7 @@ class StickerManager: NSObject, NSCoding {
     
     func createAllStickerArray() -> [MSSticker] {
         
-//        var animatedArray = [MSSticker]()
+        //var animatedArray = [MSSticker]()
 //        
 //        if let sticker = createStickerGif(asset: "SleepyVamp", localizedDescription: "SleepyVamp") {
 //            animatedArray.append(sticker)
@@ -65,7 +65,7 @@ class StickerManager: NSObject, NSCoding {
 //       // animatedArray .append( createSticker(asset: <#T##String#>, localizedDescription: <#T##String#>)
 //        
 //        do {
-//            let sticker = try createSticker(asset: "animated-2", localizedDescription: "Hello")
+//            let sticker = try createSticker(asset: "WolfHowlCompressed004", localizedDescription: "Hello")
 //            animatedArray.append(sticker)
 //            
 //        } catch {
@@ -83,10 +83,12 @@ class StickerManager: NSObject, NSCoding {
     
     func createEmojiStickerArray() -> [MSSticker] {
         
-        let vampArray = createStickerArray(fileName: "Vamp")
+        //let vampArray = createStickerArray(fileName: "Vamp")
+        let vampArray = createAnimatedStickerArray(animated: true, fileName: "Vamp")
         let skullArray = createStickerArray(fileName: "Skull")
         let swampArray = createStickerArray(fileName: "Swamp")
-        let wolfArray = createStickerArray(fileName: "Wolf")
+       // let wolfArray = createStickerArray(fileName: "Wolf")
+        let wolfArray = createAnimatedStickerArray(animated: true, fileName: "Wolf")
         let medusaArray = createStickerArray(fileName: "Snake")
 
         return vampArray + skullArray + swampArray + wolfArray + medusaArray
@@ -146,6 +148,8 @@ class StickerManager: NSObject, NSCoding {
         let skullArray = createArray(fileName: "Skull")
         let swampArray = createArray(fileName: "Swamp")
         let wolfArray = createArray(fileName: "Wolf")
+        
+
         let medusaArray = createArray(fileName: "Snake")
         
         return vampArray + skullArray + swampArray + wolfArray + medusaArray
@@ -258,25 +262,25 @@ class StickerManager: NSObject, NSCoding {
         }
     }
     
-    func createStickerGif(asset: String, localizedDescription: String) -> MSSticker? {
+    func createStickerGif(asset: String, localizedDescription: String) throws -> MSSticker {
         
         guard let stickerPath = Bundle.main.path(forResource: asset, ofType:"gif") else {
             
-            print("Couldn't create the sticker path for", asset)
-            return nil
+            //print("Couldn't create the sticker path for", asset)
+            throw StickerCreationError.noPath
         }
         let stickerURL = URL(fileURLWithPath: stickerPath)
-        
         let sticker: MSSticker
         
         do {
             
             try sticker = MSSticker(contentsOfFileURL: stickerURL, localizedDescription: localizedDescription)
             return sticker
+            
         } catch {
             
             print(error)
-            return nil
+            throw StickerCreationError.noFileAtPath
         }
     }
     
@@ -362,6 +366,54 @@ class StickerManager: NSObject, NSCoding {
 
             } catch {
                 foundImage = false
+            }
+            
+            index = index + 1
+            
+        } while foundImage == true
+        
+        return array
+    }
+    
+    func createAnimatedStickerArray(animated: Bool, fileName: String) -> [MSSticker] {
+        
+        var index = 0
+        var foundImage = false
+        var array = [MSSticker]()
+        
+        repeat {
+            
+            let animatedFileName = fileName + "Animated" + String(index)
+            let gifFileName = fileName + "Gif" + String(index)
+
+            let fileName = fileName + String(index)
+            
+            do {
+                let sticker = try createSticker(asset: animatedFileName, localizedDescription: fileName)
+                
+                array.append(sticker)
+                foundImage = true
+                
+            } catch {
+                
+                do {
+                    let sticker = try createStickerGif(asset: gifFileName, localizedDescription: fileName)
+                    array.append(sticker)
+                    foundImage = true
+                    
+                } catch {
+                    
+                    do {
+                        let sticker = try createSticker(asset: fileName, localizedDescription: fileName)
+                        array.append(sticker)
+                        foundImage = true
+                        
+                    } catch {
+                        foundImage = false
+                    }
+
+                    //foundImage = false
+                }
             }
             
             index = index + 1

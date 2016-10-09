@@ -46,7 +46,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var accessoriesButton: UIButton!
     @IBOutlet weak var textButton: UIButton!
     
-    @IBOutlet weak var doneButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var undoButtonWidthConstraint: NSLayoutConstraint!
     
     weak var delegate: MonsterMakerViewControllerDelegate?
     
@@ -291,7 +291,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             currentSelectedIndexPath = selectedIndexPath
             
             
-            doneButtonWidthConstraint.constant = 36 / 2
+            undoButtonWidthConstraint.constant = 36 / 2
             
             UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
                 
@@ -316,7 +316,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             //collectionView.reloadData()
             collectionView.isUserInteractionEnabled = true
             
-            doneButtonWidthConstraint.constant = 36
+            undoButtonWidthConstraint.constant = 36
             
             UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
                 
