@@ -292,7 +292,7 @@
                             <constraint firstItem="Wog-mT-sa4" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" identifier="CanvasContainerTopLayout" id="f0a-j4-bmh"/>
                             <constraint firstAttribute="trailing" secondItem="URL-vP-KAI" secondAttribute="trailing" id="llx-UY-BU6"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="rGY-CP-1dg"/>
-                            <constraint firstItem="gSa-fk-1yR" firstAttribute="top" secondItem="URL-vP-KAI" secondAttribute="bottom" id="xWO-q4-hIk"/>
+                            <constraint firstItem="gSa-fk-1yR" firstAttribute="top" secondItem="URL-vP-KAI" secondAttribute="bottom" constant="-16" id="xWO-q4-hIk"/>
                         </constraints>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">

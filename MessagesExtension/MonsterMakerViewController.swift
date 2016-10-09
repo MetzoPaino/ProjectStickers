@@ -78,7 +78,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleRotation(recognizer:)))
         
         longGesture.delegate = self
-        //pinchGesture.delegate = self
+        //pinchGesture.delegate = self // Perhaps this will solve the occasional grabbing of collectionView?
         rotationGesture.delegate = self
 
         self.view.addGestureRecognizer(longGesture)
