@@ -25,7 +25,6 @@ enum monsterParts {
 class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var panGesture = UIPanGestureRecognizer()
     var longGesture = UILongPressGestureRecognizer()
     var pinchGesture = UIPinchGestureRecognizer()
     var rotationGesture = UIRotationGestureRecognizer()
@@ -229,57 +228,16 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         }
     }
     
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {}
-    
-    // MARK: - Gestures
-    
-    func handlePan(_ sender: UIPanGestureRecognizer) {
-        
-//        let windowLocationPoint = sender.location(in: nil)
-//        
-//        if sender.state == .changed {
-//            
-//            let image = sender.view!
-//            image.center = windowLocationPoint
-//        }
-    }
-    
     func handlePinch(recognizer: UIPinchGestureRecognizer) {
         
         movingImage.transform = movingImage.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
         recognizer.scale = 1
-        
-        //print("Pinch!")
-
-//        var scale = sender.scale
-//        
-//        if scale > 5.0 {
-//            scale = 5.0
-//        }
-//        
-//        if scale < 0.25 {
-//            scale = 0.25
-//        }
-//        
-//        movingImage.transform = CGAffineTransform(scaleX: scale, y: scale)
-//        
-//        if (sender.state == .ended) {
-//            
-//           // movingImage.bounds = movingImage.frame
-//        }
     }
 
     func handleRotation(recognizer: UIRotationGestureRecognizer) {
         
         movingImage.transform = movingImage.transform.rotated(by: recognizer.rotation)
         recognizer.rotation = 0
-//        print("Rotation!")
-//        movingImage.transform = CGAffineTransform(rotationAngle: sender.rotation)
-//        
-//        if (sender.state == .ended) {
-//            
-//            movingImage.bounds = movingImage.frame
-//        }
     }
 
     
