@@ -296,7 +296,10 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
                 
                 self.view.layoutIfNeeded()
-                
+                self.undoButton.isEnabled = false
+                self.doneButton.isEnabled = false
+                self.closeButton.isEnabled = false
+
             }, completion: nil)
 
         } else if sender.state == .changed {
@@ -321,6 +324,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
                 
                 self.view.layoutIfNeeded()
+                self.undoButton.isEnabled = true
+                self.doneButton.isEnabled = true
+                self.closeButton.isEnabled = true
                 
             }, completion: nil)
             

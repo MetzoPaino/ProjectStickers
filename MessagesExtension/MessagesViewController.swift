@@ -90,6 +90,9 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         controller.didMove(toParentViewController: self)
         //presentMonsterMaker = false
         
+        let topConstraint = NSLayoutConstraint(item: controller.view, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)      
+        NSLayoutConstraint.activate([topConstraint])
+        
         view.layoutIfNeeded()
 
     }

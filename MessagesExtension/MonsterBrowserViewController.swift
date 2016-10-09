@@ -15,11 +15,11 @@ protocol MonsterBrowserViewControllerDelegate: class {
 }
 
 enum stickerType {
-    case all
     case emoji
     case parts
     case accessories
     case text
+    case all
 }
 
 enum cellSize {
@@ -38,7 +38,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     weak var delegate: MonsterBrowserViewControllerDelegate?
     var stickerManager: StickerManager! = nil
     var editingCustomStickers = false
-    var viewingStickerType = stickerType.all
+    var viewingStickerType = stickerType.emoji
     var viewingCellSize = cellSize.medium
     var animating = true
     
@@ -73,15 +73,15 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         
         switch sender.tag {
         case 2:
-            viewingStickerType = .all
-        case 3:
             viewingStickerType = .emoji
-        case 4:
+        case 3:
             viewingStickerType = .parts
-        case 5:
+        case 4:
             viewingStickerType = .accessories
-        case 6:
+        case 5:
             viewingStickerType = .text
+        case 6:
+            viewingStickerType = .all
         default:
             viewingStickerType = .all
         }
@@ -105,14 +105,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        
-//        let buttonPosition = sender.convert(CGPoint.zero, to: collectionView)
-//
-//        guard let selectedIndexPath = collectionView.indexPathForItem(at: buttonPosition) else {
-//                return
-//        }
-//        
-//        var index = selectedIndexPath.row
+
         if sender.tag < 0 {
             print("Tried to delete before 0")
             return
@@ -207,28 +200,20 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             
         } else {
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
-            cell.backgroundColor = .white
-            let stickerView = cell.viewWithTag(1) as! MSStickerView
-            //let imageView = cell.viewWithTag(3) as! UIImageView
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StickerCell", for: indexPath as IndexPath) as! StickerCollectionViewCell
             
             switch viewingStickerType {
             case .all:
-                stickerView.sticker = StickerManager().createAllStickerArray(animated: animating)[indexPath.row]
+            cell.configureCell(sticker: StickerManager().createAllStickerArray(animated: animating)[indexPath.row], editing: false)
             case .emoji:
-                stickerView.sticker = StickerManager().createEmojiStickerArray(animated: animating)[indexPath.row]
+            cell.configureCell(sticker: StickerManager().createEmojiStickerArray(animated: animating)[indexPath.row], editing: false)
             case .parts:
-                stickerView.sticker = StickerManager().createPartStickerArray()[indexPath.row]
+                cell.configureCell(sticker: StickerManager().createPartStickerArray()[indexPath.row], editing: false)
             case .accessories:
-                stickerView.sticker = StickerManager().createAccessoriesStickerArray()[indexPath.row]
+                cell.configureCell(sticker: StickerManager().createAccessoriesStickerArray()[indexPath.row], editing: false)
             case .text:
-                stickerView.sticker = StickerManager().createTextStickerArray()[indexPath.row]
+                cell.configureCell(sticker: StickerManager().createTextStickerArray()[indexPath.row], editing: false)
             }
-            stickerView.startAnimating()
-
-            let button = cell.viewWithTag(2) as! UIButton
-            button.isHidden = true            
-            
             return cell
         }
     }
@@ -256,11 +241,11 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             let imageView = headerView.viewWithTag(11) as! UIImageView
 
             let button = headerView.viewWithTag(1) as! UIButton
-            let allButton = headerView.viewWithTag(2) as! UIButton
-            let emojiButton = headerView.viewWithTag(3) as! UIButton
-            let partsButton = headerView.viewWithTag(4) as! UIButton
-            let accessoriesButton = headerView.viewWithTag(5) as! UIButton
-            let textButton = headerView.viewWithTag(6) as! UIButton
+            let emojiButton = headerView.viewWithTag(2) as! UIButton
+            let partsButton = headerView.viewWithTag(3) as! UIButton
+            let accessoriesButton = headerView.viewWithTag(4) as! UIButton
+            let textButton = headerView.viewWithTag(5) as! UIButton
+            let allButton = headerView.viewWithTag(6) as! UIButton
             let smallButton = headerView.viewWithTag(7) as! UIButton
             let mediumButton = headerView.viewWithTag(8) as! UIButton
             let largeButton = headerView.viewWithTag(9) as! UIButton
@@ -319,10 +304,10 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                     largeButton.isSelected = true
                 }
 
-                animatingButton.setImage(UIImage(named:"Play"), for: UIControlState.normal)
-                animatingButton.setImage(UIImage(named:"Play")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-                animatingButton.setImage(UIImage(named:"Play")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-                animatingButton.tintColor = .white
+                animatingButton.setImage(UIImage(named:"PlayDisabled"), for: UIControlState.normal)
+                animatingButton.setImage(UIImage(named:"Play"), for: UIControlState.selected)
+                animatingButton.setImage(UIImage(named:"PlayDisabled")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                animatingButton.setImage(UIImage(named:"PlayDisabled")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.disabled)
                 animatingButton.isSelected = animating
                 
             } else {

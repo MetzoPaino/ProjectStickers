@@ -42,6 +42,17 @@
 		0A1A2CA41DA18D1D0084FACA /* Mouth32.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A2C831DA18D1D0084FACA /* Mouth32.png */; };
 		0A4AE0571D9A9EA40012CDAD /* MonsterPartsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */; };
 		0A689BB81DAA6D7A0068F3EC /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */; };
+		0A689BD31DAAB74E0068F3EC /* SkullGif0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BC71DAAB74E0068F3EC /* SkullGif0.gif */; };
+		0A689BD41DAAB74E0068F3EC /* SkullGif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BC81DAAB74E0068F3EC /* SkullGif1.gif */; };
+		0A689BD51DAAB74E0068F3EC /* SkullGif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BC91DAAB74E0068F3EC /* SkullGif2.gif */; };
+		0A689BD61DAAB74E0068F3EC /* SkullGif3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BCA1DAAB74E0068F3EC /* SkullGif3.gif */; };
+		0A689BD71DAAB74E0068F3EC /* SkullGif4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BCB1DAAB74E0068F3EC /* SkullGif4.gif */; };
+		0A689BD81DAAB74E0068F3EC /* SkullGif5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BCC1DAAB74E0068F3EC /* SkullGif5.gif */; };
+		0A689BD91DAAB74E0068F3EC /* WolfGif0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BCD1DAAB74E0068F3EC /* WolfGif0.gif */; };
+		0A689BDA1DAAB74E0068F3EC /* WolfGif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BCE1DAAB74E0068F3EC /* WolfGif1.gif */; };
+		0A689BDC1DAAB74E0068F3EC /* WolfGif3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BD01DAAB74E0068F3EC /* WolfGif3.gif */; };
+		0A689BDD1DAAB74E0068F3EC /* WolfGif4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BD11DAAB74E0068F3EC /* WolfGif4.gif */; };
+		0A689BDE1DAAB74E0068F3EC /* WolfGif5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BD21DAAB74E0068F3EC /* WolfGif5.gif */; };
 		0A6AE39D1D99C36F00F99EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6AE39C1D99C36F00F99EE1 /* Assets.xcassets */; };
 		0A6AE3A41D99C36F00F99EE1 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A6AE3A31D99C36F00F99EE1 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0A6AE3A91D99C36F00F99EE1 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6AE3A81D99C36F00F99EE1 /* Messages.framework */; };
@@ -151,8 +162,6 @@
 		0AF36DD31DA03E1700DBFCF2 /* Head2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36DCE1DA03E1700DBFCF2 /* Head2.png */; };
 		0AF36DD41DA03E1700DBFCF2 /* Head3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36DCF1DA03E1700DBFCF2 /* Head3.png */; };
 		0AF36DD51DA03E1700DBFCF2 /* Head4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36DD01DA03E1700DBFCF2 /* Head4.png */; };
-		0AF96BF71DA3870F0043C1B8 /* animated-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF96BF61DA3870F0043C1B8 /* animated-2.png */; };
-		0AF96BF91DA388520043C1B8 /* VampGif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0AF96BF81DA388520043C1B8 /* VampGif1.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +224,17 @@
 		0A1A2C831DA18D1D0084FACA /* Mouth32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mouth32.png; sourceTree = "<group>"; };
 		0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterPartsManager.swift; sourceTree = "<group>"; };
 		0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A689BC71DAAB74E0068F3EC /* SkullGif0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SkullGif0.gif; sourceTree = "<group>"; };
+		0A689BC81DAAB74E0068F3EC /* SkullGif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SkullGif1.gif; sourceTree = "<group>"; };
+		0A689BC91DAAB74E0068F3EC /* SkullGif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SkullGif2.gif; sourceTree = "<group>"; };
+		0A689BCA1DAAB74E0068F3EC /* SkullGif3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SkullGif3.gif; sourceTree = "<group>"; };
+		0A689BCB1DAAB74E0068F3EC /* SkullGif4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SkullGif4.gif; sourceTree = "<group>"; };
+		0A689BCC1DAAB74E0068F3EC /* SkullGif5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SkullGif5.gif; sourceTree = "<group>"; };
+		0A689BCD1DAAB74E0068F3EC /* WolfGif0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WolfGif0.gif; sourceTree = "<group>"; };
+		0A689BCE1DAAB74E0068F3EC /* WolfGif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WolfGif1.gif; sourceTree = "<group>"; };
+		0A689BD01DAAB74E0068F3EC /* WolfGif3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WolfGif3.gif; sourceTree = "<group>"; };
+		0A689BD11DAAB74E0068F3EC /* WolfGif4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WolfGif4.gif; sourceTree = "<group>"; };
+		0A689BD21DAAB74E0068F3EC /* WolfGif5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WolfGif5.gif; sourceTree = "<group>"; };
 		0A6AE3991D99C36F00F99EE1 /* projectstickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectstickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6AE39C1D99C36F00F99EE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A6AE39E1D99C36F00F99EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -327,8 +347,6 @@
 		0AF36DCE1DA03E1700DBFCF2 /* Head2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head2.png; sourceTree = "<group>"; };
 		0AF36DCF1DA03E1700DBFCF2 /* Head3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head3.png; sourceTree = "<group>"; };
 		0AF36DD01DA03E1700DBFCF2 /* Head4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head4.png; sourceTree = "<group>"; };
-		0AF96BF61DA3870F0043C1B8 /* animated-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animated-2.png"; sourceTree = "<group>"; };
-		0AF96BF81DA388520043C1B8 /* VampGif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = VampGif1.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,8 +489,17 @@
 				0A93083C1DA30006009EF474 /* Wolf3.png */,
 				0A93083D1DA30006009EF474 /* Wolf4.png */,
 				0A93083E1DA30006009EF474 /* Wolf5.png */,
-				0AF96BF61DA3870F0043C1B8 /* animated-2.png */,
-				0AF96BF81DA388520043C1B8 /* VampGif1.gif */,
+				0A689BC71DAAB74E0068F3EC /* SkullGif0.gif */,
+				0A689BC81DAAB74E0068F3EC /* SkullGif1.gif */,
+				0A689BC91DAAB74E0068F3EC /* SkullGif2.gif */,
+				0A689BCA1DAAB74E0068F3EC /* SkullGif3.gif */,
+				0A689BCB1DAAB74E0068F3EC /* SkullGif4.gif */,
+				0A689BCC1DAAB74E0068F3EC /* SkullGif5.gif */,
+				0A689BCD1DAAB74E0068F3EC /* WolfGif0.gif */,
+				0A689BCE1DAAB74E0068F3EC /* WolfGif1.gif */,
+				0A689BD01DAAB74E0068F3EC /* WolfGif3.gif */,
+				0A689BD11DAAB74E0068F3EC /* WolfGif4.gif */,
+				0A689BD21DAAB74E0068F3EC /* WolfGif5.gif */,
 			);
 			name = Stickers;
 			sourceTree = "<group>";
@@ -680,18 +707,22 @@
 				0A9307D41DA2F5E7009EF474 /* Eye5.png in Resources */,
 				0A9307ED1DA2F5E7009EF474 /* Eye30.png in Resources */,
 				0A9307E61DA2F5E7009EF474 /* Eye23.png in Resources */,
+				0A689BD31DAAB74E0068F3EC /* SkullGif0.gif in Resources */,
 				0A1A2C951DA18D1D0084FACA /* Mouth17.png in Resources */,
 				0A1A2C991DA18D1D0084FACA /* Mouth21.png in Resources */,
 				0A9308171DA2F5F8009EF474 /* Accessories14.png in Resources */,
 				0A1A2C9D1DA18D1D0084FACA /* Mouth25.png in Resources */,
 				0A93080A1DA2F5F8009EF474 /* Accessories1.png in Resources */,
+				0A689BD61DAAB74E0068F3EC /* SkullGif3.gif in Resources */,
 				0A1A2C881DA18D1D0084FACA /* Mouth4.png in Resources */,
+				0A689BDE1DAAB74E0068F3EC /* WolfGif5.gif in Resources */,
 				0A9307E21DA2F5E7009EF474 /* Eye19.png in Resources */,
 				0A93084D1DA30006009EF474 /* Swamp2.png in Resources */,
 				0A1A2C871DA18D1D0084FACA /* Mouth3.png in Resources */,
 				0A9308491DA30006009EF474 /* Snake4.png in Resources */,
 				0A1A2C841DA18D1D0084FACA /* Mouth0.png in Resources */,
 				0A9307D21DA2F5E7009EF474 /* Eye3.png in Resources */,
+				0A689BDC1DAAB74E0068F3EC /* WolfGif3.gif in Resources */,
 				0A93080E1DA2F5F8009EF474 /* Accessories5.png in Resources */,
 				0A1A2C861DA18D1D0084FACA /* Mouth2.png in Resources */,
 				0A9307EF1DA2F5E7009EF474 /* Eye32.png in Resources */,
@@ -707,6 +738,7 @@
 				0A93083F1DA30006009EF474 /* Skull0.png in Resources */,
 				0A9308401DA30006009EF474 /* Skull1.png in Resources */,
 				0A9307F11DA2F5E7009EF474 /* Eye34.png in Resources */,
+				0A689BDD1DAAB74E0068F3EC /* WolfGif4.gif in Resources */,
 				0A1A2C8A1DA18D1D0084FACA /* Mouth6.png in Resources */,
 				0A9308151DA2F5F8009EF474 /* Accessories12.png in Resources */,
 				0A1A2C8D1DA18D1D0084FACA /* Mouth9.png in Resources */,
@@ -718,7 +750,9 @@
 				0A9307D51DA2F5E7009EF474 /* Eye6.png in Resources */,
 				0AF36DD11DA03E1700DBFCF2 /* Head0.png in Resources */,
 				0A9307E81DA2F5E7009EF474 /* Eye25.png in Resources */,
+				0A689BD81DAAB74E0068F3EC /* SkullGif5.gif in Resources */,
 				0A9308101DA2F5F8009EF474 /* Accessories7.png in Resources */,
+				0A689BDA1DAAB74E0068F3EC /* WolfGif1.gif in Resources */,
 				0A93085B1DA30006009EF474 /* Wolf4.png in Resources */,
 				0A93085C1DA30006009EF474 /* Wolf5.png in Resources */,
 				0A1A2C931DA18D1D0084FACA /* Mouth15.png in Resources */,
@@ -727,11 +761,11 @@
 				0A1A2C8E1DA18D1D0084FACA /* Mouth10.png in Resources */,
 				0A1A2CA31DA18D1D0084FACA /* Mouth31.png in Resources */,
 				0A9307F21DA2F5E7009EF474 /* Eye35.png in Resources */,
+				0A689BD71DAAB74E0068F3EC /* SkullGif4.gif in Resources */,
 				0A9307D01DA2F5E7009EF474 /* Eye1.png in Resources */,
 				0A9308161DA2F5F8009EF474 /* Accessories13.png in Resources */,
 				0A9308591DA30006009EF474 /* Wolf2.png in Resources */,
 				0A6AE3B11D99C36F00F99EE1 /* Assets.xcassets in Resources */,
-				0AF96BF71DA3870F0043C1B8 /* animated-2.png in Resources */,
 				0A1A2C921DA18D1D0084FACA /* Mouth14.png in Resources */,
 				0A1A2C971DA18D1D0084FACA /* Mouth19.png in Resources */,
 				0A1A2C9F1DA18D1D0084FACA /* Mouth27.png in Resources */,
@@ -752,7 +786,6 @@
 				0A1A2C9A1DA18D1D0084FACA /* Mouth22.png in Resources */,
 				0A9307DF1DA2F5E7009EF474 /* Eye16.png in Resources */,
 				0A9308561DA30006009EF474 /* Vamp5.png in Resources */,
-				0AF96BF91DA388520043C1B8 /* VampGif1.gif in Resources */,
 				0A9307EB1DA2F5E7009EF474 /* Eye28.png in Resources */,
 				0A9308431DA30006009EF474 /* Skull4.png in Resources */,
 				0A1A2C941DA18D1D0084FACA /* Mouth16.png in Resources */,
@@ -775,8 +808,10 @@
 				0A9308511DA30006009EF474 /* Vamp0.png in Resources */,
 				0A9307DA1DA2F5E7009EF474 /* Eye11.png in Resources */,
 				0A9307D61DA2F5E7009EF474 /* Eye7.png in Resources */,
+				0A689BD51DAAB74E0068F3EC /* SkullGif2.gif in Resources */,
 				0A9307E31DA2F5E7009EF474 /* Eye20.png in Resources */,
 				0A9307DD1DA2F5E7009EF474 /* Eye14.png in Resources */,
+				0A689BD41DAAB74E0068F3EC /* SkullGif1.gif in Resources */,
 				0A9307EC1DA2F5E7009EF474 /* Eye29.png in Resources */,
 				0A9307DE1DA2F5E7009EF474 /* Eye15.png in Resources */,
 				0A93081A1DA2F5F8009EF474 /* Accessories17.png in Resources */,
@@ -801,6 +836,7 @@
 				0A9308531DA30006009EF474 /* Vamp2.png in Resources */,
 				0A9308441DA30006009EF474 /* Skull5.png in Resources */,
 				0A9308091DA2F5F8009EF474 /* Accessories0.png in Resources */,
+				0A689BD91DAAB74E0068F3EC /* WolfGif0.gif in Resources */,
 				0A1A2C961DA18D1D0084FACA /* Mouth18.png in Resources */,
 				0A1A2C9B1DA18D1D0084FACA /* Mouth23.png in Resources */,
 				0A1A2CA21DA18D1D0084FACA /* Mouth30.png in Resources */,

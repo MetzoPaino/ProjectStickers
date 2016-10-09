@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "DeleteInvert.png",
+      "filename" : "PlayDisabled.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "DeleteInvert@2x.png",
+      "filename" : "PlayDisabled@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "DeleteInvert@3x.png",
+      "filename" : "PlayDisabled@3x.png",
       "scale" : "3x"
     }
   ],
