@@ -325,11 +325,6 @@
                             <constraint firstItem="URL-vP-KAI" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="rGY-CP-1dg"/>
                             <constraint firstItem="gSa-fk-1yR" firstAttribute="top" secondItem="URL-vP-KAI" secondAttribute="bottom" constant="-16" id="xWO-q4-hIk"/>
                         </constraints>
-                        <variation key="heightClass=compact-widthClass=compact">
-                            <mask key="constraints">
-                                <exclude reference="rGY-CP-1dg"/>
-                            </mask>
-                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Title" id="lbX-3n-ktR"/>
@@ -614,7 +609,7 @@
                                         <constraint firstItem="OuG-Lx-wcl" firstAttribute="centerY" secondItem="Ljz-H4-yhQ" secondAttribute="centerY" id="vM9-RQ-pUq"/>
                                         <constraint firstItem="OuG-Lx-wcl" firstAttribute="height" secondItem="Ljz-H4-yhQ" secondAttribute="height" id="vRJ-y6-N4a"/>
                                         <constraint firstItem="Aux-a4-6Tv" firstAttribute="width" secondItem="Ljz-H4-yhQ" secondAttribute="width" id="wSc-BE-m7h"/>
-                                        <constraint firstItem="Aux-a4-6Tv" firstAttribute="bottom" secondItem="qHN-Ml-bZT" secondAttribute="bottom" id="ynz-Ri-m7i"/>
+                                        <constraint firstItem="Aux-a4-6Tv" firstAttribute="bottom" secondItem="qHN-Ml-bZT" secondAttribute="bottom" constant="-8" id="ynz-Ri-m7i"/>
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="leading" secondItem="rdK-QF-qP9" secondAttribute="trailing" id="zh9-iv-3J0"/>
                                     </constraints>
                                     <variation key="default">
