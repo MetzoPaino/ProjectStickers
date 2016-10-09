@@ -170,36 +170,36 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
 
-        var gesture = ""
-        var otherGesture = ""
-
-        if gestureRecognizer == longGesture {
-            
-            gesture = "Long Gesture"
-            
-        } else if gestureRecognizer == pinchGesture {
-            
-            gesture = "Pinch Gesture"
-            
-        }  else if gestureRecognizer == rotationGesture {
-            
-            gesture = "Rotation Gesture"
-        }
-        
-        if otherGestureRecognizer == longGesture {
-            
-            otherGesture = "Long Gesture"
-            
-        } else if otherGestureRecognizer == pinchGesture {
-            
-            otherGesture = "Pinch Gesture"
-            
-        }  else if otherGestureRecognizer == rotationGesture {
-            
-            otherGesture = "Rotation Gesture"
-        }
-        
-        print("We have \(gesture) with \(otherGesture)")
+//        var gesture = ""
+//        var otherGesture = ""
+//
+//        if gestureRecognizer == longGesture {
+//            
+//            gesture = "Long Gesture"
+//            
+//        } else if gestureRecognizer == pinchGesture {
+//            
+//            gesture = "Pinch Gesture"
+//            
+//        }  else if gestureRecognizer == rotationGesture {
+//            
+//            gesture = "Rotation Gesture"
+//        }
+//        
+//        if otherGestureRecognizer == longGesture {
+//            
+//            otherGesture = "Long Gesture"
+//            
+//        } else if otherGestureRecognizer == pinchGesture {
+//            
+//            otherGesture = "Pinch Gesture"
+//            
+//        }  else if otherGestureRecognizer == rotationGesture {
+//            
+//            otherGesture = "Rotation Gesture"
+//        }
+//        
+        //print("We have \(gesture) with \(otherGesture)")
         
         if moving == false {
             return true
