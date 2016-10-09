@@ -494,6 +494,12 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderGreen" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-Lx-wcl"/>
                                         <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-Ml-bZT">
                                             <subviews>
+                                                <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8g-Os-kA4">
+                                                    <state key="normal" title="Play"/>
+                                                    <connections>
+                                                        <action selector="animatingButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="Jxw-c4-fnJ"/>
+                                                    </connections>
+                                                </button>
                                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6x-fw-Ira" userLabel="Small">
                                                     <accessibility key="accessibilityConfiguration" hint="Select for 5 stickers per row" label="Small sizing button"/>
                                                     <constraints>
@@ -535,9 +541,12 @@
                                             <constraints>
                                                 <constraint firstItem="vc4-aG-3HJ" firstAttribute="centerX" secondItem="qHN-Ml-bZT" secondAttribute="centerX" id="0rA-z0-yKX"/>
                                                 <constraint firstItem="vc4-aG-3HJ" firstAttribute="height" secondItem="qHN-Ml-bZT" secondAttribute="height" id="3SG-Vd-DtD"/>
+                                                <constraint firstItem="d8g-Os-kA4" firstAttribute="centerY" secondItem="P6x-fw-Ira" secondAttribute="centerY" id="Efp-cI-abR"/>
                                                 <constraint firstItem="vc4-aG-3HJ" firstAttribute="centerY" secondItem="qHN-Ml-bZT" secondAttribute="centerY" id="FxS-cS-ScF"/>
                                                 <constraint firstItem="vc4-aG-3HJ" firstAttribute="leading" secondItem="P6x-fw-Ira" secondAttribute="trailing" id="bJ5-wH-gPd"/>
                                                 <constraint firstItem="P6x-fw-Ira" firstAttribute="centerY" secondItem="vc4-aG-3HJ" secondAttribute="centerY" id="eVT-rZ-Q1B"/>
+                                                <constraint firstItem="d8g-Os-kA4" firstAttribute="width" secondItem="P6x-fw-Ira" secondAttribute="width" id="gGh-Hz-7fe"/>
+                                                <constraint firstItem="d8g-Os-kA4" firstAttribute="height" secondItem="P6x-fw-Ira" secondAttribute="height" id="h2P-nt-QhB"/>
                                                 <constraint firstItem="ZWe-Q7-j4b" firstAttribute="centerY" secondItem="vc4-aG-3HJ" secondAttribute="centerY" id="hTf-7Q-BDy"/>
                                                 <constraint firstAttribute="height" constant="44" id="sx7-dk-PlK"/>
                                                 <constraint firstItem="ZWe-Q7-j4b" firstAttribute="leading" secondItem="vc4-aG-3HJ" secondAttribute="trailing" id="yga-he-R87"/>
@@ -617,6 +626,7 @@
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="height" secondItem="rdK-QF-qP9" secondAttribute="height" id="GpL-t8-1bP"/>
                                         <constraint firstItem="OuG-Lx-wcl" firstAttribute="width" secondItem="Ljz-H4-yhQ" secondAttribute="width" id="Pf2-Z7-22H"/>
                                         <constraint firstItem="ynB-Lb-PMU" firstAttribute="centerX" secondItem="UgW-H7-ZDR" secondAttribute="centerX" id="S4z-fV-wJp"/>
+                                        <constraint firstItem="d8g-Os-kA4" firstAttribute="centerX" secondItem="3XU-sp-EL6" secondAttribute="centerX" id="TFY-Eo-ew4"/>
                                         <constraint firstAttribute="trailing" secondItem="UgW-H7-ZDR" secondAttribute="trailing" id="UjD-zj-7QA"/>
                                         <constraint firstItem="qHN-Ml-bZT" firstAttribute="centerX" secondItem="Ljz-H4-yhQ" secondAttribute="centerX" id="WUC-th-iHW"/>
                                         <constraint firstItem="rdK-QF-qP9" firstAttribute="centerY" secondItem="t5i-dd-b6m" secondAttribute="centerY" id="XpH-Td-LJz"/>

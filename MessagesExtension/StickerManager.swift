@@ -46,7 +46,7 @@ class StickerManager: NSObject, NSCoding {
     
     // MARK: - Sticker Arrays
     
-    func createAllStickerArray() -> [MSSticker] {
+    func createAllStickerArray(animated: Bool) -> [MSSticker] {
         
         //var animatedArray = [MSSticker]()
 //        
@@ -71,7 +71,7 @@ class StickerManager: NSObject, NSCoding {
 //        } catch {
 //        }
         
-        let emojiArray = createEmojiStickerArray()
+        let emojiArray = createEmojiStickerArray(animated: animated)
         let headArray = createStickerArray(fileName: "Head")
         let eyeArray = createStickerArray(fileName: "Eye")
         let mouthArray = createStickerArray(fileName: "Mouth")
@@ -81,16 +81,15 @@ class StickerManager: NSObject, NSCoding {
         return emojiArray + headArray + eyeArray + mouthArray + accessoriesArray + textArray
     }
     
-    func createEmojiStickerArray() -> [MSSticker] {
+    func createEmojiStickerArray(animated: Bool) -> [MSSticker] {
         
         //let vampArray = createStickerArray(fileName: "Vamp")
-        let vampArray = createAnimatedStickerArray(animated: true, fileName: "Vamp")
-        let skullArray = createStickerArray(fileName: "Skull")
-        let swampArray = createStickerArray(fileName: "Swamp")
-       // let wolfArray = createStickerArray(fileName: "Wolf")
-        let wolfArray = createAnimatedStickerArray(animated: true, fileName: "Wolf")
-        let medusaArray = createStickerArray(fileName: "Snake")
-
+        let vampArray = createAnimatedStickerArray(animated: animated, fileName: "Vamp")
+        let skullArray = createAnimatedStickerArray(animated: animated, fileName: "Skull")
+        let swampArray = createAnimatedStickerArray(animated: animated, fileName: "Swamp")
+        let wolfArray = createAnimatedStickerArray(animated: animated, fileName: "Wolf")
+        let medusaArray = createAnimatedStickerArray(animated: animated, fileName: "Snake")
+        
         return vampArray + skullArray + swampArray + wolfArray + medusaArray
     }
     
@@ -388,31 +387,43 @@ class StickerManager: NSObject, NSCoding {
 
             let fileName = fileName + String(index)
             
-            do {
-                let sticker = try createSticker(asset: animatedFileName, localizedDescription: fileName)
-                
-                array.append(sticker)
-                foundImage = true
-                
-            } catch {
+            if animated == true {
                 
                 do {
-                    let sticker = try createStickerGif(asset: gifFileName, localizedDescription: fileName)
+                    let sticker = try createSticker(asset: animatedFileName, localizedDescription: fileName)
+                    
                     array.append(sticker)
                     foundImage = true
                     
                 } catch {
                     
                     do {
-                        let sticker = try createSticker(asset: fileName, localizedDescription: fileName)
+                        let sticker = try createStickerGif(asset: gifFileName, localizedDescription: fileName)
                         array.append(sticker)
                         foundImage = true
                         
                     } catch {
-                        foundImage = false
+                        
+                        do {
+                            let sticker = try createSticker(asset: fileName, localizedDescription: fileName)
+                            array.append(sticker)
+                            foundImage = true
+                            
+                        } catch {
+                            foundImage = false
+                        }
                     }
-
-                    //foundImage = false
+                }
+                
+            } else {
+                
+                do {
+                    let sticker = try createSticker(asset: fileName, localizedDescription: fileName)
+                    array.append(sticker)
+                    foundImage = true
+                    
+                } catch {
+                    foundImage = false
                 }
             }
             

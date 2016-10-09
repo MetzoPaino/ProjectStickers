@@ -40,7 +40,8 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     var editingCustomStickers = false
     var viewingStickerType = stickerType.all
     var viewingCellSize = cellSize.medium
-
+    var animating = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         styleView()
@@ -133,6 +134,14 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         collectionView.reloadData()
     }
     
+    @IBAction func animatingButtonPressed(_ sender: UIButton) {
+        
+        animating = !animating
+        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.reloadData()
+    }
+    
+    
     // MARK: - UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -143,9 +152,9 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             
             switch viewingStickerType {
             case .all:
-                return StickerManager().createAllStickerArray().count
+                return StickerManager().createAllStickerArray(animated: animating).count
             case .emoji:
-                return StickerManager().createEmojiStickerArray().count
+                return StickerManager().createEmojiStickerArray(animated: animating).count
             case .parts:
                 return StickerManager().createPartStickerArray().count
             case .accessories:
@@ -205,9 +214,9 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             
             switch viewingStickerType {
             case .all:
-                stickerView.sticker = StickerManager().createAllStickerArray()[indexPath.row]
+                stickerView.sticker = StickerManager().createAllStickerArray(animated: animating)[indexPath.row]
             case .emoji:
-                stickerView.sticker = StickerManager().createEmojiStickerArray()[indexPath.row]
+                stickerView.sticker = StickerManager().createEmojiStickerArray(animated: animating)[indexPath.row]
             case .parts:
                 stickerView.sticker = StickerManager().createPartStickerArray()[indexPath.row]
             case .accessories:
@@ -255,6 +264,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             let smallButton = headerView.viewWithTag(7) as! UIButton
             let mediumButton = headerView.viewWithTag(8) as! UIButton
             let largeButton = headerView.viewWithTag(9) as! UIButton
+            let animatingButton = headerView.viewWithTag(20) as! UIButton
 
             if indexPath.section == 0 {
                 
@@ -263,12 +273,14 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 smallButton.isHidden = false
                 mediumButton.isHidden = false
                 largeButton.isHidden = false
+                animatingButton.isHidden = false
                 
                 allButton.isHidden = true
                 emojiButton.isHidden = true
                 partsButton.isHidden = true
                 accessoriesButton.isHidden = true
                 textButton.isHidden = true
+                
                 
                 if (editingCustomStickers == true) {
                     
@@ -307,6 +319,12 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                     largeButton.isSelected = true
                 }
 
+                animatingButton.setImage(UIImage(named:"Play"), for: UIControlState.normal)
+                animatingButton.setImage(UIImage(named:"Play")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+                animatingButton.setImage(UIImage(named:"Play")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+                animatingButton.tintColor = .white
+                animatingButton.isSelected = animating
+                
             } else {
                 
                 imageView.isHidden = true
@@ -315,7 +333,8 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 smallButton.isHidden = true
                 mediumButton.isHidden = true
                 largeButton.isHidden = true
-                
+                animatingButton.isHidden = true
+
                 allButton.isHidden = false
                 emojiButton.isHidden = false
                 partsButton.isHidden = false
