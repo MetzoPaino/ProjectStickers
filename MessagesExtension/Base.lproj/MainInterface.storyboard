@@ -583,17 +583,16 @@
                                         </mask>
                                     </variation>
                                 </collectionReusableView>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Footer" id="Vaj-kQ-NTL">
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="Footer" id="Vaj-kQ-NTL">
                                     <rect key="frame" x="0.0" y="108" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooterGreen" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-SC-GAH"/>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooterGreenOld" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-SC-GAH"/>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="9Ua-SC-GAH" firstAttribute="height" secondItem="Vaj-kQ-NTL" secondAttribute="height" id="H0F-Fl-nlk"/>
+                                        <constraint firstAttribute="bottom" secondItem="9Ua-SC-GAH" secondAttribute="bottom" id="K3M-LN-Ny2"/>
                                         <constraint firstItem="9Ua-SC-GAH" firstAttribute="centerX" secondItem="Vaj-kQ-NTL" secondAttribute="centerX" id="bIl-F1-VY7"/>
                                         <constraint firstItem="9Ua-SC-GAH" firstAttribute="width" secondItem="Vaj-kQ-NTL" secondAttribute="width" id="vqh-UF-RAm"/>
-                                        <constraint firstItem="9Ua-SC-GAH" firstAttribute="centerY" secondItem="Vaj-kQ-NTL" secondAttribute="centerY" id="x9c-jY-3Hv"/>
                                     </constraints>
                                 </collectionReusableView>
                                 <connections>
@@ -638,8 +637,8 @@
         <image name="Done" width="44" height="44"/>
         <image name="Emoji" width="20" height="20"/>
         <image name="Eye" width="20" height="20"/>
-        <image name="FooterGreen" width="414" height="5"/>
-        <image name="HeaderGreen" width="294" height="58"/>
+        <image name="FooterGreenOld" width="414" height="5"/>
+        <image name="HeaderGreen" width="414" height="58"/>
         <image name="Large" width="20" height="20"/>
         <image name="MakerBackgroundGreen" width="621" height="441"/>
         <image name="Medium" width="20" height="20"/>
