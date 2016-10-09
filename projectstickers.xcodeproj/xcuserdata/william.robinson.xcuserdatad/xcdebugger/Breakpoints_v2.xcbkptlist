@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MessagesExtension/StickerManager.swift"
-            timestampString = "497719700.658855"
+            timestampString = "497740900.341002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "createStickerGif(asset:localizedDescription:)"
             landmarkType = "7">
          </BreakpointContent>

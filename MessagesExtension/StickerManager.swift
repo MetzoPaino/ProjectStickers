@@ -48,42 +48,17 @@ class StickerManager: NSObject, NSCoding {
     
     func createAllStickerArray(animated: Bool) -> [MSSticker] {
         
-        //var animatedArray = [MSSticker]()
-//        
-//        if let sticker = createStickerGif(asset: "SleepyVamp", localizedDescription: "SleepyVamp") {
-//            animatedArray.append(sticker)
-//        }
-//        
-//        
-//        let stickerNames = ["circle01", "circle02", "circle03", "circle04",]
-//        
-//        let stickers = stickerNames.map( {name -> MSSticker in
-//            let url = Bundle.main.url(forResource: name, withExtension: "png")!
-//            return try! MSSticker(contentsOfFileURL: url, localizedDescription: name)
-//        })
-//        
-//       // animatedArray .append( createSticker(asset: <#T##String#>, localizedDescription: <#T##String#>)
-//        
-//        do {
-//            let sticker = try createSticker(asset: "WolfHowlCompressed004", localizedDescription: "Hello")
-//            animatedArray.append(sticker)
-//            
-//        } catch {
-//        }
-        
         let emojiArray = createEmojiStickerArray(animated: animated)
         let headArray = createStickerArray(fileName: "Head")
         let eyeArray = createStickerArray(fileName: "Eye")
         let mouthArray = createStickerArray(fileName: "Mouth")
         let accessoriesArray = createStickerArray(fileName: "Accessories")
         let textArray = createStickerArray(fileName: "Text")
-        //return animatedArray
         return emojiArray + headArray + eyeArray + mouthArray + accessoriesArray + textArray
     }
     
     func createEmojiStickerArray(animated: Bool) -> [MSSticker] {
         
-        //let vampArray = createStickerArray(fileName: "Vamp")
         let vampArray = createAnimatedStickerArray(animated: animated, fileName: "Vamp")
         let skullArray = createAnimatedStickerArray(animated: animated, fileName: "Skull")
         let swampArray = createAnimatedStickerArray(animated: animated, fileName: "Swamp")
@@ -194,39 +169,41 @@ class StickerManager: NSObject, NSCoding {
         stickers.removeAll()
         
         createStickerOld(asset: "Vamp0", localizedDescription: "Vampire")
-        createStickerOld(asset: "Wolf0", localizedDescription: "Wolf")
-        createStickerOld(asset: "Medusa0", localizedDescription: "Medusa")
-        createStickerOld(asset: "SkullKid0", localizedDescription: "Skull")
+        createStickerOld(asset: "Snake0", localizedDescription: "Medusa")
+        createStickerOld(asset: "Skull0", localizedDescription: "Skull")
         createStickerOld(asset: "Swamp0", localizedDescription: "Swamp")
-        
+        createStickerOld(asset: "Wolf0", localizedDescription: "Wolf")
+        createStickerOld(asset: "Skull2", localizedDescription: "Skull")
+
         createStickerOld(asset: "Vamp1", localizedDescription: "Vampire")
         createStickerOld(asset: "Wolf1", localizedDescription: "Wolf")
-        createStickerOld(asset: "Medusa1", localizedDescription: "Medusa")
-        createStickerOld(asset: "SkullKid1", localizedDescription: "Skull")
+        createStickerOld(asset: "Skull1", localizedDescription: "Skull")
+        createStickerOld(asset: "Vamp5", localizedDescription: "Vampire")
+
         createStickerOld(asset: "Swamp1", localizedDescription: "Swamp")
-        
-        createStickerOld(asset: "Vamp2", localizedDescription: "Vampire")
+        createStickerOld(asset: "Wolf4", localizedDescription: "Wolf")
+        createStickerOld(asset: "Skull3", localizedDescription: "Skull")
+
         createStickerOld(asset: "Wolf2", localizedDescription: "Wolf")
-        createStickerOld(asset: "Medusa2", localizedDescription: "Medusa")
-        createStickerOld(asset: "SkullKid2", localizedDescription: "Skull")
+        createStickerOld(asset: "Snake2", localizedDescription: "Medusa")
+        createStickerOld(asset: "Swamp3", localizedDescription: "Swamp")
+        createStickerOld(asset: "Vamp2", localizedDescription: "Vampire")
+
         createStickerOld(asset: "Swamp2", localizedDescription: "Swamp")
-        
+        createStickerOld(asset: "Vamp4", localizedDescription: "Vampire")
+        createStickerOld(asset: "Snake1", localizedDescription: "Medusa")
+        createStickerOld(asset: "Wolf5", localizedDescription: "Wolf")
+        createStickerOld(asset: "Skull4", localizedDescription: "Skull")
+
         createStickerOld(asset: "Vamp3", localizedDescription: "Vampire")
         createStickerOld(asset: "Wolf3", localizedDescription: "Wolf")
-        createStickerOld(asset: "Medusa3", localizedDescription: "Medusa")
-        createStickerOld(asset: "SkullKid3", localizedDescription: "Skull")
-        createStickerOld(asset: "Swamp3", localizedDescription: "Swamp")
+        createStickerOld(asset: "Snake3", localizedDescription: "Medusa")
         
-        createStickerOld(asset: "Vamp4", localizedDescription: "Vampire")
-        createStickerOld(asset: "Wolf4", localizedDescription: "Wolf")
-        createStickerOld(asset: "Medusa4", localizedDescription: "Medusa")
-        createStickerOld(asset: "SkullKid4", localizedDescription: "Skull")
+        createStickerOld(asset: "Snake4", localizedDescription: "Medusa")
         createStickerOld(asset: "Swamp4", localizedDescription: "Swamp")
         
-        createStickerOld(asset: "Vamp5", localizedDescription: "Vampire")
-        createStickerOld(asset: "Wolf5", localizedDescription: "Wolf")
-        createStickerOld(asset: "Medusa5", localizedDescription: "Medusa")
-        createStickerOld(asset: "SkullKid5", localizedDescription: "Skull")
+        createStickerOld(asset: "Snake5", localizedDescription: "Medusa")
+        createStickerOld(asset: "Skull5", localizedDescription: "Skull")
         createStickerOld(asset: "Swamp5", localizedDescription: "Swamp")
 
     }

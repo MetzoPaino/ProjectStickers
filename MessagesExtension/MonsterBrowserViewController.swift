@@ -177,22 +177,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StickerCell", for: indexPath as IndexPath) as! StickerCollectionViewCell
                 cell.configureCell(sticker: stickerManager.customStickers[indexPath.row - 1], editing: editingCustomStickers)
                 cell.deleteButton.tag = indexPath.row - 1
-                
-//                cell.backgroundColor = .white
-//                
-//                cell.contentView.backgroundColor = .white
-//                let stickerView = cell.viewWithTag(1) as! MSStickerView
-// 
-//                stickerView.sticker = stickerManager.customStickers[indexPath.row - 1]
-//                stickerView.backgroundColor = .white
-//                let button = cell.viewWithTag(2) as! UIButton
-//                
-//                if editingCustomStickers == true {
-//                    button.isHidden = false
-//
-//                } else {
-//                    button.isHidden = true
-//                }
 
                 
                 return cell

@@ -104,6 +104,7 @@
 		0A689C421DAAD75C0068F3EC /* Eye48.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A689C0F1DAAD75C0068F3EC /* Eye48.png */; };
 		0A689C431DAAD75C0068F3EC /* Eye49.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A689C101DAAD75C0068F3EC /* Eye49.png */; };
 		0A689C441DAAD75C0068F3EC /* Eye50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A689C111DAAD75C0068F3EC /* Eye50.png */; };
+		0A689C461DAAF36F0068F3EC /* SwampGif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689C451DAAF36F0068F3EC /* SwampGif2.gif */; };
 		0A6AE39D1D99C36F00F99EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6AE39C1D99C36F00F99EE1 /* Assets.xcassets */; };
 		0A6AE3A41D99C36F00F99EE1 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A6AE3A31D99C36F00F99EE1 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0A6AE3A91D99C36F00F99EE1 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6AE3A81D99C36F00F99EE1 /* Messages.framework */; };
@@ -299,6 +300,7 @@
 		0A689C0F1DAAD75C0068F3EC /* Eye48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eye48.png; sourceTree = "<group>"; };
 		0A689C101DAAD75C0068F3EC /* Eye49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eye49.png; sourceTree = "<group>"; };
 		0A689C111DAAD75C0068F3EC /* Eye50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eye50.png; sourceTree = "<group>"; };
+		0A689C451DAAF36F0068F3EC /* SwampGif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SwampGif2.gif; sourceTree = "<group>"; };
 		0A6AE3991D99C36F00F99EE1 /* projectstickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectstickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6AE39C1D99C36F00F99EE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A6AE39E1D99C36F00F99EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 				0A689BD01DAAB74E0068F3EC /* WolfGif3.gif */,
 				0A689BD11DAAB74E0068F3EC /* WolfGif4.gif */,
 				0A689BD21DAAB74E0068F3EC /* WolfGif5.gif */,
+				0A689C451DAAF36F0068F3EC /* SwampGif2.gif */,
 			);
 			name = Stickers;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				0A9308511DA30006009EF474 /* Vamp0.png in Resources */,
 				0A689C381DAAD75C0068F3EC /* Eye38.png in Resources */,
 				0A689C361DAAD75C0068F3EC /* Eye36.png in Resources */,
+				0A689C461DAAF36F0068F3EC /* SwampGif2.gif in Resources */,
 				0A689BD51DAAB74E0068F3EC /* SkullGif2.gif in Resources */,
 				0A689BD41DAAB74E0068F3EC /* SkullGif1.gif in Resources */,
 				0A689C2C1DAAD75C0068F3EC /* Eye26.png in Resources */,
