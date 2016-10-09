@@ -6,17 +6,17 @@
         "center" : {
           "mode" : "tile",
           "width" : 414,
-          "height" : 12
+          "height" : 1
         },
         "cap-insets" : {
-          "bottom" : 157,
-          "top" : 125,
+          "bottom" : 170,
+          "top" : 123,
           "right" : 0,
           "left" : 0
         }
       },
       "idiom" : "universal",
-      "filename" : "MakerBackgroundGreen.png",
+      "filename" : "MakerBackgroundGreenFlat.png",
       "scale" : "1x"
     },
     {
@@ -25,17 +25,17 @@
         "center" : {
           "mode" : "tile",
           "width" : 828,
-          "height" : 12
+          "height" : 1
         },
         "cap-insets" : {
-          "bottom" : 342,
-          "top" : 235,
+          "bottom" : 343,
+          "top" : 245,
           "right" : 0,
           "left" : 0
         }
       },
       "idiom" : "universal",
-      "filename" : "MakerBackgroundGreen@2x.png",
+      "filename" : "MakerBackgroundGreenFlat@2x.png",
       "scale" : "2x"
     },
     {
@@ -44,17 +44,17 @@
         "center" : {
           "mode" : "tile",
           "width" : 1242,
-          "height" : 12
+          "height" : 1
         },
         "cap-insets" : {
-          "bottom" : 503,
-          "top" : 368,
+          "bottom" : 495,
+          "top" : 387,
           "right" : 0,
           "left" : 0
         }
       },
       "idiom" : "universal",
-      "filename" : "MakerBackgroundGreen@3x.png",
+      "filename" : "MakerBackgroundGreenFlat@3x.png",
       "scale" : "3x"
     }
   ],

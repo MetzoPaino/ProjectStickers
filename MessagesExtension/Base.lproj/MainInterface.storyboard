@@ -58,7 +58,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wog-mT-sa4" userLabel="Canvas Container">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreen" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreenFlat" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve"/>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4je-rD-fO4" userLabel="UndoContainer">
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-7S-CG8">
@@ -419,7 +419,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="11" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreen" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-a4-6Tv">
+                                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreenFlat" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-a4-6Tv">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="400" id="5NH-vS-6eT"/>
                                             </constraints>
@@ -640,7 +640,7 @@
         <image name="FooterGreenOld" width="414" height="5"/>
         <image name="HeaderGreen" width="414" height="58"/>
         <image name="Large" width="20" height="20"/>
-        <image name="MakerBackgroundGreen" width="621" height="441"/>
+        <image name="MakerBackgroundGreenFlat" width="414" height="294"/>
         <image name="Medium" width="20" height="20"/>
         <image name="Mouth" width="20" height="20"/>
         <image name="Parts" width="20" height="20"/>

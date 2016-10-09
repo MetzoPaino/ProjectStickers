@@ -44,6 +44,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         styleView()
+        view.layoutIfNeeded()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,6 +99,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         default:
             viewingCellSize = .medium
         }
+        collectionView.collectionViewLayout.invalidateLayout()
         collectionView.reloadData()
     }
     
@@ -392,42 +394,33 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             return UICollectionReusableView()
         }
     }
-    
-//    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-//        
-//        switch kind {
-//            
-//        case UICollectionElementKindSectionHeader:
-//            
-//            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "Header", forIndexPath: indexPath) as! UICollectionReusableView
-//
-//            headerView.backgroundColor = UIColor.blueColor();
-//            return headerView
-//            
-//        case UICollectionElementKindSectionFooter:
-//            let footerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "Footer", forIndexPath: indexPath) as! UICollectionReusableView
-//            
-//            footerView.backgroundColor = UIColor.greenColor();
-//            return footerView
-//            
-//        default:
-//            
-//            assert(false, "Unexpected element kind")
-//        }
-//    }
 }
 
 extension MonsterBrowserViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
+        var smallDivision = 5.0 as CGFloat
+        var mediumDivision = 4.0 as CGFloat
+        var largeDivision = 3.0 as CGFloat
+
+        let horizontalClass = self.traitCollection.horizontalSizeClass;
+        let verticalClass = self.traitCollection.verticalSizeClass;
+        
+        if horizontalClass == UIUserInterfaceSizeClass.regular && verticalClass == UIUserInterfaceSizeClass.regular {
+            
+            smallDivision = 6
+            mediumDivision = 5
+            largeDivision = 4
+        }
+        
         switch viewingCellSize {
         case .small:
-            return CGSize(width: view.frame.size.width / 5, height: view.frame.size.width / 5)
+            return CGSize(width: view.frame.size.width / smallDivision, height: view.frame.size.width / smallDivision)
         case .medium:
-            return CGSize(width: view.frame.size.width / 4, height: view.frame.size.width / 4)
+            return CGSize(width: view.frame.size.width / mediumDivision, height: view.frame.size.width / mediumDivision)
         case .large:
-            return CGSize(width: view.frame.size.width / 3, height: view.frame.size.width / 3)
+            return CGSize(width: view.frame.size.width / largeDivision, height: view.frame.size.width / largeDivision)
         }
     }
     

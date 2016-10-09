@@ -586,6 +586,17 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
 extension MonsterMakerViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width / 3, height: view.frame.size.width / 3)
+        
+        var division = 3.0 as CGFloat
+        
+        let horizontalClass = self.traitCollection.horizontalSizeClass;
+        let verticalClass = self.traitCollection.verticalSizeClass;
+        
+        if horizontalClass == UIUserInterfaceSizeClass.regular && verticalClass == UIUserInterfaceSizeClass.regular {
+            
+            division = 4.0
+        }
+        
+        return CGSize(width: view.frame.size.width / division, height: view.frame.size.width / division)
     }
 }
