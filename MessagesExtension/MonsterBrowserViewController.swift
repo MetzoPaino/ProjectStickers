@@ -390,11 +390,14 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
             footerView.backgroundColor = .clear
             let imageView = footerView.viewWithTag(1) as! UIImageView
+            let twitterImageView = footerView.viewWithTag(2) as! UIImageView
 
             if indexPath.section == 0 {
                 imageView.isHidden = false
+                twitterImageView.isHidden = true
             } else {
                 imageView.isHidden = true
+                twitterImageView.isHidden = false
             }
             
             return footerView
@@ -437,7 +440,12 @@ extension MonsterBrowserViewController : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 16.0)
+        
+        if section == 0 {
+            return CGSize(width: view.frame.width, height: 16.0)
+        } else {
+            return CGSize(width: view.frame.width, height: 26.0)
+        }
     }
 
     

@@ -62,7 +62,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-zz-qOO" userLabel="Middle">
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-NT-xqt">
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIl-9S-dFa">
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -629,11 +629,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooterGreenOld" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-SC-GAH"/>
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="AzC-h6-paN"/>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="9Ua-SC-GAH" secondAttribute="bottom" id="K3M-LN-Ny2"/>
+                                        <constraint firstItem="AzC-h6-paN" firstAttribute="height" secondItem="Vaj-kQ-NTL" secondAttribute="height" id="Zry-of-XF2"/>
                                         <constraint firstItem="9Ua-SC-GAH" firstAttribute="centerX" secondItem="Vaj-kQ-NTL" secondAttribute="centerX" id="bIl-F1-VY7"/>
+                                        <constraint firstItem="AzC-h6-paN" firstAttribute="centerY" secondItem="Vaj-kQ-NTL" secondAttribute="centerY" id="dS1-rZ-pwj"/>
+                                        <constraint firstItem="AzC-h6-paN" firstAttribute="width" secondItem="Vaj-kQ-NTL" secondAttribute="width" id="enc-0I-2bd"/>
                                         <constraint firstItem="9Ua-SC-GAH" firstAttribute="width" secondItem="Vaj-kQ-NTL" secondAttribute="width" id="vqh-UF-RAm"/>
+                                        <constraint firstItem="AzC-h6-paN" firstAttribute="centerX" secondItem="Vaj-kQ-NTL" secondAttribute="centerX" id="yaD-3v-uKv"/>
                                     </constraints>
                                 </collectionReusableView>
                                 <connections>
@@ -682,6 +687,7 @@
         <image name="Play" width="20" height="20"/>
         <image name="Small" width="20" height="20"/>
         <image name="Text" width="20" height="20"/>
+        <image name="Twitter" width="130" height="13"/>
         <image name="Undo" width="44" height="44"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
