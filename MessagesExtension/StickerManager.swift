@@ -367,7 +367,7 @@ class StickerManager: NSObject, NSCoding {
             if animated == true {
                 
                 do {
-                    let sticker = try createSticker(asset: animatedFileName, localizedDescription: fileName)
+                    let sticker = try createSticker(asset: animatedFileName, localizedDescription: NSLocalizedString(fileName, comment: fileName))
                     
                     array.append(sticker)
                     foundImage = true
@@ -375,14 +375,14 @@ class StickerManager: NSObject, NSCoding {
                 } catch {
                     
                     do {
-                        let sticker = try createStickerGif(asset: gifFileName, localizedDescription: fileName)
+                        let sticker = try createStickerGif(asset: gifFileName, localizedDescription: NSLocalizedString(fileName, comment: fileName))
                         array.append(sticker)
                         foundImage = true
                         
                     } catch {
                         
                         do {
-                            let sticker = try createSticker(asset: fileName, localizedDescription: fileName)
+                            let sticker = try createSticker(asset: fileName, localizedDescription: NSLocalizedString(fileName, comment: fileName))
                             array.append(sticker)
                             foundImage = true
                             

@@ -411,7 +411,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="68" y="58" width="50" height="50"/>
+                                        <rect key="frame" x="67.5" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -454,6 +454,7 @@
                                         <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-Ml-bZT">
                                             <subviews>
                                                 <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8g-Os-kA4">
+                                                    <accessibility key="accessibilityConfiguration" hint="Toggle animations of stickers" label="Play"/>
                                                     <state key="normal" image="Play"/>
                                                     <connections>
                                                         <action selector="animatingButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="Jxw-c4-fnJ"/>
@@ -526,7 +527,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XU-sp-EL6" userLabel="Emoji">
-                                            <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All button"/>
+                                            <accessibility key="accessibilityConfiguration" hint="Show all monster emoji" label="Emoji"/>
                                             <state key="normal" image="Emoji">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -535,7 +536,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TV4-VB-cXs" userLabel="Parts">
-                                            <accessibility key="accessibilityConfiguration" hint="Show monster stickers" label="Monsters button"/>
+                                            <accessibility key="accessibilityConfiguration" hint="Show heads, eyes &amp; mouths of stickers" label="Parts"/>
                                             <state key="normal" image="Parts">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -544,7 +545,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5i-dd-b6m" userLabel="Accessories">
-                                            <accessibility key="accessibilityConfiguration" hint="Show heads, eyes &amp; mouths of stickers" label="Parts button"/>
+                                            <accessibility key="accessibilityConfiguration" hint="Show accessories" label="Accessories"/>
                                             <state key="normal" image="Accessories">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -553,7 +554,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdK-QF-qP9" userLabel="Text">
-                                            <accessibility key="accessibilityConfiguration" hint="Show accessory stickers" label="Accessories button"/>
+                                            <accessibility key="accessibilityConfiguration" hint="Show text stickers" label="Text"/>
                                             <state key="normal" image="Text">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -562,7 +563,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
-                                            <accessibility key="accessibilityConfiguration" hint="Show text stickers" label="Text button"/>
+                                            <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
                                             <state key="normal" image="All">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>

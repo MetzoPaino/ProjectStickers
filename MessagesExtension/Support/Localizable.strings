@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  projectstickers
+
+  Created by William Robinson on 10/10/2016.
+  Copyright © 2016 William Robinson. All rights reserved.
+*/
+
+// Vampire
+"Vamp0" = "Vampire face";
+"Vamp1" = "Sleeping vampire face";
+"Vamp2" = "Upside down vampire face";
+"Vamp3" = "Smiling vampire face with halo";
+"Vamp4" = "Smirking vampire face";
+"Vamp5" = "Vampire face with rolling eyes";
+
+// Skull
+"Skull0" = "Skull face";
+"Skull1" = "Grimacing skull face";
+"Skull2" = "Crying skull face";
+"Skull3" = "Loudly crying skull face";
+"Skull4" = "Neutral skull face";
+"Skull5" = "Grinning skull face with smiling eyes";
+
+// Swamp
+"Swamp0" = "Swamp monster face";
+"Swamp1" = "Swamp monster face with open mouth";
+"Swamp2" = "Smiling swamp monster face with heart-shaped eyes";
+"Swamp3" = "Flushed swamp monster face";
+"Swamp4" = "Disappointed swamp monster";
+"Swamp5" = "Swamp monster face with open mouth and cold sweat";
+
+// Wolf
+"Wolf0" = "Werewolf face";
+"Wolf1" = "Howling werewolf face";
+"Wolf2" = "Sleepy werewolf face";
+"Wolf3" = "Angry werewolf face";
+"Wolf4" = "Werewolf face with tears of joy";
+"Wolf5" = "Smiling werewolf face with open mouth and cold sweat";
+
+// Snake
+"Snake0" = "Medusa face";
+"Snake1" = "Shouting medusa face";
+"Snake2" = "Medusa face with stuck-out tongue";
+"Snake3" = "Medusa face with stuck-out tongue and winking eye";
+"Snake4" = "Medusa face throwing a kiss";
+"Snake5" = "Kissing medusa face with closed eyes";

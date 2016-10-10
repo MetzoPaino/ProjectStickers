@@ -40,6 +40,7 @@
 		0A1A2CA21DA18D1D0084FACA /* Mouth30.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A2C811DA18D1D0084FACA /* Mouth30.png */; };
 		0A1A2CA31DA18D1D0084FACA /* Mouth31.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A2C821DA18D1D0084FACA /* Mouth31.png */; };
 		0A1A2CA41DA18D1D0084FACA /* Mouth32.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A2C831DA18D1D0084FACA /* Mouth32.png */; };
+		0A22AC051DAC1EC500C66AF0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A22AC031DAC1AC300C66AF0 /* Localizable.strings */; };
 		0A4AE0571D9A9EA40012CDAD /* MonsterPartsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */; };
 		0A689BB81DAA6D7A0068F3EC /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */; };
 		0A689BD31DAAB74E0068F3EC /* SkullGif0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A689BC71DAAB74E0068F3EC /* SkullGif0.gif */; };
@@ -236,6 +237,7 @@
 		0A1A2C811DA18D1D0084FACA /* Mouth30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mouth30.png; sourceTree = "<group>"; };
 		0A1A2C821DA18D1D0084FACA /* Mouth31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mouth31.png; sourceTree = "<group>"; };
 		0A1A2C831DA18D1D0084FACA /* Mouth32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mouth32.png; sourceTree = "<group>"; };
+		0A22AC031DAC1AC300C66AF0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = MessagesExtension/Support/Localizable.strings; sourceTree = "<group>"; };
 		0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterPartsManager.swift; sourceTree = "<group>"; };
 		0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A689BC71DAAB74E0068F3EC /* SkullGif0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SkullGif0.gif; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 		0A6AE3921D99C36F00F99EE1 = {
 			isa = PBXGroup;
 			children = (
+				0A22AC031DAC1AC300C66AF0 /* Localizable.strings */,
 				0A6AE39B1D99C36F00F99EE1 /* projectstickers */,
 				0A6AE3AA1D99C36F00F99EE1 /* MessagesExtension */,
 				0A6AE3A71D99C36F00F99EE1 /* Frameworks */,
@@ -791,6 +794,7 @@
 				0A93083F1DA30006009EF474 /* Skull0.png in Resources */,
 				0A9308401DA30006009EF474 /* Skull1.png in Resources */,
 				0A689BDD1DAAB74E0068F3EC /* WolfGif4.gif in Resources */,
+				0A22AC051DAC1EC500C66AF0 /* Localizable.strings in Resources */,
 				0A1A2C8A1DA18D1D0084FACA /* Mouth6.png in Resources */,
 				0A9308151DA2F5F8009EF474 /* Accessories12.png in Resources */,
 				0A1A2C8D1DA18D1D0084FACA /* Mouth9.png in Resources */,
