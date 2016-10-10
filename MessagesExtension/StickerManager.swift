@@ -49,12 +49,21 @@ class StickerManager: NSObject, NSCoding {
     func createAllStickerArray(animated: Bool) -> [MSSticker] {
         
         let emojiArray = createEmojiStickerArray(animated: animated)
-        let headArray = createStickerArray(fileName: "Head")
-        let eyeArray = createStickerArray(fileName: "Eye")
-        let mouthArray = createStickerArray(fileName: "Mouth")
-        let accessoriesArray = createStickerArray(fileName: "Accessories")
-        let textArray = createStickerArray(fileName: "Text")
-        return emojiArray + headArray + eyeArray + mouthArray + accessoriesArray + textArray
+        let headArray = createHeadStickerArray()
+        let eyeArray = createEyeStickerArray()
+        let mouthArray = createMouthStickerArray()
+        let accessoriesArray = createAccessoriesStickerArray()
+        let textArray = createTextStickerArray()
+        
+        var allArray = [MSSticker]()
+        allArray.append(contentsOf: emojiArray)
+        allArray.append(contentsOf: headArray)
+        allArray.append(contentsOf: eyeArray)
+        allArray.append(contentsOf: mouthArray)
+        allArray.append(contentsOf: accessoriesArray)
+        allArray.append(contentsOf: textArray)
+        
+        return allArray
     }
     
     func createEmojiStickerArray(animated: Bool) -> [MSSticker] {
@@ -70,36 +79,36 @@ class StickerManager: NSObject, NSCoding {
     
     func createPartStickerArray() -> [MSSticker] {
         
-        let headArray = createStickerArray(fileName: "Head")
-        let eyeArray = createStickerArray(fileName: "Eye")
-        let mouthArray = createStickerArray(fileName: "Mouth")
+        let headArray = createAnimatedStickerArray(animated: false, fileName: "Head")
+        let eyeArray = createAnimatedStickerArray(animated: false, fileName: "Eye")
+        let mouthArray = createAnimatedStickerArray(animated: false, fileName: "Mouth")
         
         return headArray + eyeArray + mouthArray
     }
     
     func createHeadStickerArray() -> [MSSticker] {
         
-        return createStickerArray(fileName: "Head")
+        return createAnimatedStickerArray(animated: false, fileName: "Head")
     }
     
     func createEyeStickerArray() -> [MSSticker] {
         
-        return createStickerArray(fileName: "Head")
+        return createAnimatedStickerArray(animated: false, fileName: "Eye")
     }
     
     func createMouthStickerArray() -> [MSSticker] {
         
-        return createStickerArray(fileName: "Mouth")
+        return createAnimatedStickerArray(animated: false, fileName: "Mouth")
     }
     
     func createAccessoriesStickerArray() -> [MSSticker] {
         
-        return createStickerArray(fileName: "Accessories")
+        return createAnimatedStickerArray(animated: false, fileName: "Accessories")
     }
     
     func createTextStickerArray() -> [MSSticker] {
         
-        return createStickerArray(fileName: "Text")
+        return createAnimatedStickerArray(animated: false, fileName: "Text")
     }
     
     // MARK: - UIImage Arrays
@@ -122,8 +131,6 @@ class StickerManager: NSObject, NSCoding {
         let skullArray = createArray(fileName: "Skull")
         let swampArray = createArray(fileName: "Swamp")
         let wolfArray = createArray(fileName: "Wolf")
-        
-
         let medusaArray = createArray(fileName: "Snake")
         
         return vampArray + skullArray + swampArray + wolfArray + medusaArray
