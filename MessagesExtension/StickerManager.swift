@@ -47,7 +47,7 @@ class StickerManager: NSObject, NSCoding {
     // MARK: - Sticker Arrays
     
     func createAllStickerArray(animated: Bool) -> [MSSticker] {
-        
+                
         let emojiArray = createEmojiStickerArray(animated: animated)
         let headArray = createHeadStickerArray()
         let eyeArray = createEyeStickerArray()

@@ -202,6 +202,18 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         }
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        
+//        if indexPath.section == 1 {
+//            
+//            if let cell = collectionView.cellForItem(at: indexPath) as? StickerCollectionViewCell {
+//                
+//                cell.stickerView.stopAnimating()
+//                cell.stickerView.sticker = nil
+//            }
+//        }
+//    }
+    
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

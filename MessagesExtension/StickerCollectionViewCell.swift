@@ -22,7 +22,7 @@ class StickerCollectionViewCell: UICollectionViewCell {
 
         stickerView.sticker = sticker
         stickerView.startAnimating()
-
+        
         if editing == true {
             deleteButton.isHidden = false
             
