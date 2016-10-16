@@ -194,7 +194,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             case .parts:
                 cell.configureCell(sticker: StickerManager().createPartStickerArray()[indexPath.row], editing: false)
             case .accessories:
-                cell.configureCell(sticker: StickerManager().createAccessoriesStickerArray()[indexPath.row], editing: false)
+                cell.configureCell(sticker: StickerManager().createAccessoriesStickerArray(animated: animating)[indexPath.row], editing: false)
             case .text:
                 cell.configureCell(sticker: StickerManager().createTextStickerArray()[indexPath.row], editing: false)
             }
@@ -256,7 +256,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 largeButton.isHidden = false
                 animatingButton.isHidden = false
                 
-                allButton.isHidden = true
+                //allButton.isHidden = true
                 emojiButton.isHidden = true
                 partsButton.isHidden = true
                 accessoriesButton.isHidden = true
@@ -316,7 +316,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 largeButton.isHidden = true
                 animatingButton.isHidden = true
 
-                allButton.isHidden = false
+                //allButton.isHidden = false
                 emojiButton.isHidden = false
                 partsButton.isHidden = false
                 accessoriesButton.isHidden = false

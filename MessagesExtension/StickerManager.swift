@@ -52,7 +52,7 @@ class StickerManager: NSObject, NSCoding {
         let headArray = createHeadStickerArray()
         let eyeArray = createEyeStickerArray()
         let mouthArray = createMouthStickerArray()
-        let accessoriesArray = createAccessoriesStickerArray()
+        let accessoriesArray = createAccessoriesStickerArray(animated: animated)
         let textArray = createTextStickerArray()
         
         var allArray = [MSSticker]()
@@ -101,9 +101,9 @@ class StickerManager: NSObject, NSCoding {
         return createAnimatedStickerArray(animated: false, fileName: "Mouth")
     }
     
-    func createAccessoriesStickerArray() -> [MSSticker] {
+    func createAccessoriesStickerArray(animated: Bool) -> [MSSticker] {
         
-        return createAnimatedStickerArray(animated: false, fileName: "Accessories")
+        return createAnimatedStickerArray(animated: animated, fileName: "Accessories")
     }
     
     func createTextStickerArray() -> [MSSticker] {

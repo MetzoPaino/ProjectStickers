@@ -359,8 +359,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DhE-U5-qwR">
-                                <frame key="frameInset" minY="20" width="320" height="508"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DhE-U5-qwR">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qkn-HC-iMw">
                                     <size key="itemSize" width="50" height="50"/>
@@ -369,7 +368,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1nz-c9-7w0">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </imageView>
@@ -411,7 +410,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="67.5" y="58" width="50" height="50"/>
+                                        <rect key="frame" x="68" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -562,9 +561,9 @@
                                                 <action selector="stickerTypeButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="tcc-CB-n3y"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
+                                        <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="All">
+                                            <state key="normal" image="2A4D65CE-5188-4CFA-AAE1-DB611507EC21">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -589,6 +588,7 @@
                                         <constraint firstItem="d8g-Os-kA4" firstAttribute="centerX" secondItem="3XU-sp-EL6" secondAttribute="centerX" id="TFY-Eo-ew4"/>
                                         <constraint firstAttribute="trailing" secondItem="UgW-H7-ZDR" secondAttribute="trailing" id="UjD-zj-7QA"/>
                                         <constraint firstItem="qHN-Ml-bZT" firstAttribute="centerX" secondItem="Ljz-H4-yhQ" secondAttribute="centerX" id="WUC-th-iHW"/>
+                                        <constraint firstAttribute="trailing" secondItem="rdK-QF-qP9" secondAttribute="trailing" id="X0R-Li-haG"/>
                                         <constraint firstItem="rdK-QF-qP9" firstAttribute="centerY" secondItem="t5i-dd-b6m" secondAttribute="centerY" id="XpH-Td-LJz"/>
                                         <constraint firstItem="TV4-VB-cXs" firstAttribute="height" secondItem="3XU-sp-EL6" secondAttribute="height" id="Y07-WR-aUm"/>
                                         <constraint firstItem="TV4-VB-cXs" firstAttribute="centerY" secondItem="3XU-sp-EL6" secondAttribute="centerY" id="ZG4-6A-Oy4"/>
@@ -617,6 +617,7 @@
                                         <mask key="constraints">
                                             <exclude reference="myG-ue-3MN"/>
                                             <exclude reference="rue-Mh-ey7"/>
+                                            <exclude reference="zh9-iv-3J0"/>
                                         </mask>
                                     </variation>
                                 </collectionReusableView>
@@ -664,9 +665,86 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2A4D65CE-5188-4CFA-AAE1-DB611507EC21" width="20" height="20">
+            <mutableData key="keyedArchiveRepresentation">
+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
+AARsdHJUUgAAACIAAASQZmlGSQAAACgAAASyaHJIUgAAACgAAATacGxQTAAAACwAAAUCcnVSVQAAACIA
+AAUuYXJFRwAAACYAAAVQZW5VUwAAACYAAAV2AFYBYQBlAG8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIA
+bwBmAGkAbABHAGUAbgBlAHIAZQBsACAAUgBHAEIALQBiAGUAcwBrAHIAaQB2AGUAbABzAGUAUABlAHIA
+ZgBpAGwAIABSAEcAQgAgAGcAZQBuAOgAcgBpAGMAQx6lAHUAIABoAOwAbgBoACAAUgBHAEIAIABDAGgA
+dQBuAGcAUABlAHIAZgBpAGwAIABSAEcAQgAgAEcAZQBuAOkAcgBpAGMAbwQXBDAEMwQwBDsETAQ9BDgE
+OQAgBD8EQAQ+BEQEMAQ5BDsAIABSAEcAQgBQAHIAbwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEAdQBlACAA
+UgBWAEIAwQBsAHQAYQBsAOEAbgBvAHMAIABSAEcAQgAgAHAAcgBvAGYAaQBskBp1KAAgAFIARwBCACCC
+cl9pY8+P8ABHAGUAbgBlAHIAaQBzAGsAIABSAEcAQgAtAHAAcgBvAGYAaQBsAE8AYgBlAGMAbgD9ACAA
+UgBHAEIAIABwAHIAbwBmAGkAbAXkBegF1QXkBdkF3AAgAFIARwBCACAF2wXcBdwF2QBQAHIAbwBmAGkA
+bABvACAAUgBHAEIAIABnAGUAbgBlAHIAaQBjAG8AUAByAG8AZgBpAGwAIABSAEcAQgAgAGcAZQBuAGUA
+cgBpAGMAQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAAUgBHAEIALQBQAHIAbwBmAGkAbMd8vBgAIABSAEcA
+QgAg1QS4XNMMx3xmbpAaACAAUgBHAEIAIGPPj/Blh072TgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOsD
+kwO1A70DuQO6A8wAIAPAA8EDvwPGA68DuwAgAFIARwBCAFAAZQByAGYAaQBsACAAUgBHAEIAIABnAGUA
+bgDpAHIAaQBjAG8AQQBsAGcAZQBtAGUAZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAZQBsDkIOGw4jDkQO
+Hw4lDkwAIABSAEcAQgAgDhcOMQ5IDicORA4bAEcAZQBuAGUAbAAgAFIARwBCACAAUAByAG8AZgBpAGwA
+aQBZAGwAZQBpAG4AZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAaQBsAGkARwBlAG4AZQByAGkBDQBrAGkA
+IABSAEcAQgAgAHAAcgBvAGYAaQBsAFUAbgBpAHcAZQByAHMAYQBsAG4AeQAgAHAAcgBvAGYAaQBsACAA
+UgBHAEIEHgQxBEkEOAQ5ACAEPwRABD4ERAQ4BDsETAAgAFIARwBCBkUGRAZBACAGKgY5BjEGSgZBACAA
+UgBHAEIAIAYnBkQGOQYnBkUARwBlAG4AZQByAGkAYwAgAFIARwBCACAAUAByAG8AZgBpAGwAZXRleHQA
+AAAAQ29weXJpZ2h0IDIwMDcgQXBwbGUgSW5jLiwgYWxsIHJpZ2h0cyByZXNlcnZlZC4AWFlaIAAAAAAA
+APNSAAEAAAABFs9YWVogAAAAAAAAdE0AAD3uAAAD0FhZWiAAAAAAAABadQAArHMAABc0WFlaIAAAAAAA
+ACgaAAAVnwAAuDZjdXJ2AAAAAAAAAAEBzQAAc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeSAAD9kf//+6L/
+//2jAAAD3AAAwGzSJSYnKFokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMnKSpa
+TlNJbWFnZVJlcFhOU09iamVjdNIlJiwtV05TQXJyYXmiLCrSJSYvMF5OU011dGFibGVBcnJheaMvLCrT
+MjMKNDU2V05TV2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AM0iUmODlXTlNDb2xvcqI4KtIlJjs8V05T
+SW1hZ2WiOypfEA9OU0tleWVkQXJjaGl2ZXLRP0BUcm9vdIABAAgAEQAaACMALQAyADcARgBMAFcAXgBl
+AHIAeQCBAIMAhQCKAIwAjgCXAJwApwCpAKsArQCyALUAtwC5ALsAvQDCANkA2wDdD78PxA/PD9gP6w/v
+D/oQAxAIEBAQExAYECcQKxAyEDoQRxBMEE4QUBBVEF0QYBBlEG0QcBCCEIUQigAAAAAAAAIBAAAAAAAA
+AEEAAAAAAAAAAAAAAAAAABCMA
+</mutableData>
+        </image>
         <image name="Accessories" width="20" height="20"/>
         <image name="AddInvert" width="44" height="44"/>
-        <image name="All" width="20" height="20"/>
         <image name="Delete" width="44" height="44"/>
         <image name="DeleteHeader" width="20" height="20"/>
         <image name="DeleteInvert" width="44" height="44"/>
