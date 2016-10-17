@@ -276,6 +276,11 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             let imageView = cell.viewWithTag(1) as! UIImageView
             
             movingImage = UIImageView(image: imageView.image)
+            
+            movingImage.image = getHDImage(index: selectedIndexPath.row)
+//            guard let image = UIImage(named: imageView.ima)
+//                else { continue }
+            
             movingImage.alpha = 0.0
             movingImage.frame = cell.frame
             movingImage.center = viewLocationPoint   
@@ -430,6 +435,47 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         return resizedImage!
     }
     
+    func getHDImage(index: Int) -> UIImage {
+        
+        switch showingMonsterParts {
+        case .heads:
+            return StickerManager().createHeadArray()[index]
+        case .eyes:
+            return StickerManager().createEyeArray(optimised: false)[index]
+        case .mouths:
+            return StickerManager().createMouthArray(optimised: false)[index]
+        case .accessories:
+            return StickerManager().createAccessoriesArray()[index]
+        case .text:
+            return StickerManager().createTextArray()[index]
+        }
+        
+//        if showingMonsterParts == .heads {
+//            
+//            return StickerManager().createHeadArray()[index]
+//            
+//        } else if showingMonsterParts == .eyes {
+//            
+//            return StickerManager().createEyeArray()[index]
+//            
+//        } else if showingMonsterParts == .mouths {
+//            
+//            return StickerManager().createMouthArray()[index]
+//            
+//        } else if showingMonsterParts == .accessories {
+//            
+//            return StickerManager().createAccessoriesArray()[index]
+//            
+//        } else if showingMonsterParts == .text {
+//            
+//            return StickerManager().createTextArray()[index]
+//            
+//        } else {
+//            
+//            return images[index]
+//        }
+    }
+    
     // MARK: - IBActions
     
     @IBAction func monsterPartButtonPressed(_ sender: UIButton) {
@@ -481,6 +527,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         }
         
         collectionView.reloadData()
+        collectionView.setContentOffset(CGPoint.zero, animated: true)
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -517,35 +564,25 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if showingMonsterParts == .heads {
-            
+        switch showingMonsterParts {
+        case .heads:
             return StickerManager().createHeadArray().count
-            
-        } else if showingMonsterParts == .eyes {
-            
-            return StickerManager().createEyeArray().count
-            
-        } else if showingMonsterParts == .mouths {
-            
-            return StickerManager().createMouthArray().count
-            
-        } else if showingMonsterParts == .accessories {
-        
+        case .eyes:
+            return StickerManager().createEyeArray(optimised: true).count
+        case .mouths:
+            return StickerManager().createMouthArray(optimised: true).count
+        case .accessories:
             return StickerManager().createAccessoriesArray().count
-            
-        } else if showingMonsterParts == .text {
-            
+        case .text:
             return StickerManager().createTextArray().count
-            
-        } else {
-            
-            return images.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
+        cell.layer.shouldRasterize = true;
+        cell.layer.rasterizationScale = UIScreen.main.scale
         
         let imageView = cell.viewWithTag(1) as! UIImageView
         
@@ -562,11 +599,11 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
             
         } else if showingMonsterParts == .eyes {
             
-            imageView.image = StickerManager().createEyeArray()[indexPath.row]
+            imageView.image = StickerManager().createEyeArray(optimised: true)[indexPath.row]
             
         } else if showingMonsterParts == .mouths {
             
-            imageView.image = StickerManager().createMouthArray()[indexPath.row]
+            imageView.image = StickerManager().createMouthArray(optimised: true)[indexPath.row]
             
         } else if showingMonsterParts == .accessories {
             
@@ -576,14 +613,13 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
             
             imageView.image = StickerManager().createTextArray()[indexPath.row]
             
-        }else {
+        } else {
             
             imageView.image = images[indexPath.row]
         }
         
-        
-        
         cell.tag = indexPath.row * 10
+
         
         return cell
     }
@@ -595,12 +631,19 @@ extension MonsterMakerViewController : UICollectionViewDelegateFlowLayout {
         
         var division = 3.0 as CGFloat
         
+        switch showingMonsterParts {
+        case .heads, .accessories, .text:
+            division = 3.0
+        case .eyes, .mouths:
+            division = 4.0
+        }
+        
         let horizontalClass = self.traitCollection.horizontalSizeClass;
         let verticalClass = self.traitCollection.verticalSizeClass;
         
         if horizontalClass == UIUserInterfaceSizeClass.regular && verticalClass == UIUserInterfaceSizeClass.regular {
             
-            division = 4.0
+            division = division + 1.0
         }
         
         return CGSize(width: view.frame.size.width / division, height: view.frame.size.width / division)

@@ -150,14 +150,22 @@ class StickerManager: NSObject, NSCoding {
         return createArray(fileName: "Head")
     }
 
-    func createEyeArray() -> [UIImage] {
+    func createEyeArray(optimised: Bool) -> [UIImage] {
         
-        return createArray(fileName: "Eye")
+        if optimised == true {
+            return createArray(fileName: "EyeOptimised")
+        } else {
+            return createArray(fileName: "Eye")
+        }
     }
     
-    func createMouthArray() -> [UIImage] {
+    func createMouthArray(optimised: Bool) -> [UIImage] {
         
-        return createArray(fileName: "Mouth")
+        if optimised == true {
+            return createArray(fileName: "MouthOptimised")
+        } else {
+            return createArray(fileName: "Mouth")
+        }
     }
     
     func createAccessoriesArray() -> [UIImage] {

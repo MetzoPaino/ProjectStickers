@@ -175,16 +175,19 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             } else {
                 
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StickerCell", for: indexPath as IndexPath) as! StickerCollectionViewCell
+                cell.layer.shouldRasterize = true;
+                cell.layer.rasterizationScale = UIScreen.main.scale
                 cell.configureCell(sticker: stickerManager.customStickers[indexPath.row - 1], editing: editingCustomStickers)
                 cell.deleteButton.tag = indexPath.row - 1
 
-                
                 return cell
             }
             
         } else {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StickerCell", for: indexPath as IndexPath) as! StickerCollectionViewCell
+            cell.layer.shouldRasterize = true;
+            cell.layer.rasterizationScale = UIScreen.main.scale
             
             switch viewingStickerType {
             case .all:
