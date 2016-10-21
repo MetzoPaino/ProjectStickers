@@ -35,6 +35,8 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewTopLayoutConstraint: NSLayoutConstraint!
 
+    let feedbackGenerator = UINotificationFeedbackGenerator()
+    
     weak var delegate: MonsterBrowserViewControllerDelegate?
     var stickerManager: StickerManager! = nil
     var editingCustomStickers = false
@@ -44,6 +46,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        feedbackGenerator.prepare()
         styleView()
         view.layoutIfNeeded()
     }
@@ -85,6 +88,10 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         default:
             viewingStickerType = .all
         }
+        
+        let generator = UISelectionFeedbackGenerator()
+        generator.selectionChanged()
+        
         collectionView.reloadData()
     }
     
@@ -93,12 +100,20 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         switch sender.tag {
         case 7:
             viewingCellSize = .small
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
         case 8:
             viewingCellSize = .medium
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.impactOccurred()
         case 9:
             viewingCellSize = .large
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
         default:
             viewingCellSize = .medium
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.impactOccurred()
         }
         collectionView.collectionViewLayout.invalidateLayout()
         collectionView.reloadData()
@@ -110,7 +125,9 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             print("Tried to delete before 0")
             return
         }
-        
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+
         delegate?.deleteButtonPressedForCellAtIndex(index: sender.tag)
     }
     
@@ -121,13 +138,29 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         if (editingCustomStickers == true) {
             
             sender.setImage(UIImage(named:"DoneHeader"), for: UIControlState.normal)
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.warning)
         } else {
             sender.setImage(UIImage(named:"DeleteHeader"), for: UIControlState.normal)
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
         }
         collectionView.reloadData()
     }
     
     @IBAction func animatingButtonPressed(_ sender: UIButton) {
+        
+//        let generator = UISelectionFeedbackGenerator()
+//        generator.selectionChanged()
+        
+//        let generator = UINotificationFeedbackGenerator()
+//        generator.notificationOccurred(.error)
+        
+//        let generator = UINotificationFeedbackGenerator()
+//        generator.notificationOccurred(.success)
+        
+        let generator = UISelectionFeedbackGenerator()
+        generator.selectionChanged()
         
         animating = !animating
         collectionView.collectionViewLayout.invalidateLayout()
@@ -222,6 +255,8 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 && indexPath.row == 0 {
             
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.impactOccurred()
             delegate?.addCellSelected()
         }
     }

@@ -526,14 +526,19 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             textButton.isSelected = true
         }
         
+        let generator = UISelectionFeedbackGenerator()
+        generator.selectionChanged()
+        
         collectionView.reloadData()
         collectionView.setContentOffset(CGPoint.zero, animated: true)
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         
-        let image = createImageFrom(view: canvasImageView)
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
         
+        let image = createImageFrom(view: canvasImageView)
         delegate?.createdImage(image: image)
     }
     
@@ -542,12 +547,16 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         if let image = createdImage.last {
             createdImage.removeLast()
             image.removeFromSuperview()
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
         }
         updateButtonStates()
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.warning)
         delegate?.cancelButtonPressed()
     }
 }
