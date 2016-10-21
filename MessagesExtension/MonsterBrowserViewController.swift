@@ -90,6 +90,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         }
         
         let generator = UISelectionFeedbackGenerator()
+        generator.prepare()
         generator.selectionChanged()
         
         collectionView.reloadData()
@@ -101,18 +102,22 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         case 7:
             viewingCellSize = .small
             let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.prepare()
             generator.impactOccurred()
         case 8:
             viewingCellSize = .medium
             let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.prepare()
             generator.impactOccurred()
         case 9:
             viewingCellSize = .large
             let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.prepare()
             generator.impactOccurred()
         default:
             viewingCellSize = .medium
             let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.prepare()
             generator.impactOccurred()
         }
         collectionView.collectionViewLayout.invalidateLayout()
@@ -126,6 +131,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             return
         }
         let generator = UINotificationFeedbackGenerator()
+        generator.prepare()
         generator.notificationOccurred(.success)
 
         delegate?.deleteButtonPressedForCellAtIndex(index: sender.tag)
@@ -139,10 +145,12 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             
             sender.setImage(UIImage(named:"DoneHeader"), for: UIControlState.normal)
             let generator = UINotificationFeedbackGenerator()
+            generator.prepare()
             generator.notificationOccurred(.warning)
         } else {
             sender.setImage(UIImage(named:"DeleteHeader"), for: UIControlState.normal)
             let generator = UINotificationFeedbackGenerator()
+            generator.prepare()
             generator.notificationOccurred(.success)
         }
         collectionView.reloadData()
@@ -160,6 +168,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
 //        generator.notificationOccurred(.success)
         
         let generator = UISelectionFeedbackGenerator()
+        generator.prepare()
         generator.selectionChanged()
         
         animating = !animating
@@ -256,6 +265,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         if indexPath.section == 0 && indexPath.row == 0 {
             
             let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.prepare()
             generator.impactOccurred()
             delegate?.addCellSelected()
         }
