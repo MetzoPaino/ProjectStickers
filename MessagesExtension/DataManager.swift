@@ -36,7 +36,6 @@ class DataManager {
         }
 
         loadURLSOfCreatedMonsters()
-        stickerManager.loadStickers()
     }
     
     func dataFilePath() -> String {

@@ -101,22 +101,22 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         switch sender.tag {
         case 7:
             viewingCellSize = .small
-            let generator = UIImpactFeedbackGenerator(style: .light)
+            let generator = UISelectionFeedbackGenerator()
             generator.prepare()
-            generator.impactOccurred()
+            generator.selectionChanged()
         case 8:
             viewingCellSize = .medium
-            let generator = UIImpactFeedbackGenerator(style: .medium)
+            let generator = UIImpactFeedbackGenerator(style: .light)
             generator.prepare()
             generator.impactOccurred()
         case 9:
             viewingCellSize = .large
-            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            let generator = UIImpactFeedbackGenerator(style: .medium)
             generator.prepare()
             generator.impactOccurred()
         default:
             viewingCellSize = .medium
-            let generator = UIImpactFeedbackGenerator(style: .medium)
+            let generator = UIImpactFeedbackGenerator(style: .light)
             generator.prepare()
             generator.impactOccurred()
         }
@@ -211,7 +211,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             if indexPath.row == 0 {
                 
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddCell", for: indexPath as IndexPath)
-                
                 return cell
                 
             } else {

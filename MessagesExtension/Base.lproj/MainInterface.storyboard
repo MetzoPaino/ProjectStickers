@@ -208,7 +208,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="141" height="146"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PMd-tn-OWU"/>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PMd-tn-OWU">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -410,19 +414,16 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="68" y="58" width="50" height="50"/>
+                                        <rect key="frame" x="67.5" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPb-C2-N1T">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddInvert" translatesAutoresizingMaskIntoConstraints="NO" id="AbR-eD-EdS">
-                                                    <accessibility key="accessibilityConfiguration" hint="Select to launch Monster Maker" label="Create button"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Select to launch Monster Maker" label="Create button">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="AbR-eD-EdS" secondAttribute="height" multiplier="1:1" id="4VT-20-hgP"/>
                                                         <constraint firstAttribute="width" constant="44" id="sXc-Vn-Urb"/>
@@ -432,10 +433,6 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="AbR-eD-EdS" firstAttribute="centerX" secondItem="ECw-9O-ETM" secondAttribute="centerX" id="7yK-lG-VnG"/>
-                                            <constraint firstItem="WPb-C2-N1T" firstAttribute="width" secondItem="ECw-9O-ETM" secondAttribute="width" id="CQQ-hS-eiu"/>
-                                            <constraint firstItem="WPb-C2-N1T" firstAttribute="centerX" secondItem="ECw-9O-ETM" secondAttribute="centerX" id="D4E-ba-DIx"/>
-                                            <constraint firstItem="WPb-C2-N1T" firstAttribute="height" secondItem="ECw-9O-ETM" secondAttribute="height" id="igv-s9-cs8"/>
-                                            <constraint firstItem="WPb-C2-N1T" firstAttribute="centerY" secondItem="ECw-9O-ETM" secondAttribute="centerY" id="nAG-vA-Lan"/>
                                             <constraint firstItem="AbR-eD-EdS" firstAttribute="centerY" secondItem="ECw-9O-ETM" secondAttribute="centerY" id="tsL-iG-kBD"/>
                                         </constraints>
                                     </collectionViewCell>
@@ -563,7 +560,7 @@
                                         </button>
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="2A4D65CE-5188-4CFA-AAE1-DB611507EC21">
+                                            <state key="normal" image="1FE3CE39-2B92-4E3F-8250-70ED0EB7344A">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -615,9 +612,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="zh9-iv-3J0"/>
                                             <exclude reference="myG-ue-3MN"/>
                                             <exclude reference="rue-Mh-ey7"/>
-                                            <exclude reference="zh9-iv-3J0"/>
                                         </mask>
                                     </variation>
                                 </collectionReusableView>
@@ -665,7 +662,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2A4D65CE-5188-4CFA-AAE1-DB611507EC21" width="20" height="20">
+        <image name="1FE3CE39-2B92-4E3F-8250-70ED0EB7344A" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

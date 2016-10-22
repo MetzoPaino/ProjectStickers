@@ -116,112 +116,60 @@ class StickerManager: NSObject, NSCoding {
     func createAllArray() -> [UIImage] {
         
         let emojiArray = createEmojiArray()
-        let headArray = createArray(fileName: "Head")
-        let eyeArray = createArray(fileName: "Eye")
-        let mouthArray = createArray(fileName: "Mouth")
-        let accessoriesArray = createArray(fileName: "Accessories")
-        let textArray = createArray(fileName: "Text")
+        let headArray = createArray(fileName: "Head", optimised: false)
+        let eyeArray = createArray(fileName: "Eye", optimised: false)
+        let mouthArray = createArray(fileName: "Mouth", optimised: false)
+        let accessoriesArray = createArray(fileName: "Accessories", optimised: false)
+        let textArray = createArray(fileName: "Text", optimised: false)
         
         return emojiArray + headArray + eyeArray + mouthArray + accessoriesArray + textArray
     }
     
     func createEmojiArray() -> [UIImage] {
         
-        let vampArray = createArray(fileName: "Vamp")
-        let skullArray = createArray(fileName: "Skull")
-        let swampArray = createArray(fileName: "Swamp")
-        let wolfArray = createArray(fileName: "Wolf")
-        let medusaArray = createArray(fileName: "Snake")
+        let vampArray = createArray(fileName: "Vamp", optimised: false)
+        let skullArray = createArray(fileName: "Skull", optimised: false)
+        let swampArray = createArray(fileName: "Swamp", optimised: false)
+        let wolfArray = createArray(fileName: "Wolf", optimised: false)
+        let medusaArray = createArray(fileName: "Snake", optimised: false)
         
         return vampArray + skullArray + swampArray + wolfArray + medusaArray
     }
     
     func createPartArray() -> [UIImage] {
         
-        let headArray = createArray(fileName: "Head")
-        let eyeArray = createArray(fileName: "Eye")
-        let mouthArray = createArray(fileName: "Mouth")
+        let headArray = createArray(fileName: "Head", optimised: false)
+        let eyeArray = createArray(fileName: "Eye", optimised: false)
+        let mouthArray = createArray(fileName: "Mouth", optimised: false)
         
         return headArray + eyeArray + mouthArray
     }
 
     func createHeadArray() -> [UIImage] {
         
-        return createArray(fileName: "Head")
+        return createArray(fileName: "Head", optimised: false)
     }
 
     func createEyeArray(optimised: Bool) -> [UIImage] {
         
-        if optimised == true {
-            return createArray(fileName: "EyeOptimised")
-        } else {
-            return createArray(fileName: "Eye")
-        }
+        return createArray(fileName: "Eye", optimised: true)
     }
     
     func createMouthArray(optimised: Bool) -> [UIImage] {
         
-        if optimised == true {
-            return createArray(fileName: "MouthOptimised")
-        } else {
-            return createArray(fileName: "Mouth")
-        }
+        return createArray(fileName: "Mouth", optimised: true)
     }
     
     func createAccessoriesArray() -> [UIImage] {
         
-        return createArray(fileName: "Accessories")
+        return createArray(fileName: "Accessories", optimised: false)
     }
     
     func createTextArray() -> [UIImage] {
         
-        return createArray(fileName: "Text")
+        return createArray(fileName: "Text", optimised: false)
     }
     
-    
-    func loadStickers() {
-        
-        stickers.removeAll()
-        
-        createStickerOld(asset: "Vamp0", localizedDescription: "Vampire")
-        createStickerOld(asset: "Snake0", localizedDescription: "Medusa")
-        createStickerOld(asset: "Skull0", localizedDescription: "Skull")
-        createStickerOld(asset: "Swamp0", localizedDescription: "Swamp")
-        createStickerOld(asset: "Wolf0", localizedDescription: "Wolf")
-        createStickerOld(asset: "Skull2", localizedDescription: "Skull")
-
-        createStickerOld(asset: "Vamp1", localizedDescription: "Vampire")
-        createStickerOld(asset: "Wolf1", localizedDescription: "Wolf")
-        createStickerOld(asset: "Skull1", localizedDescription: "Skull")
-        createStickerOld(asset: "Vamp5", localizedDescription: "Vampire")
-
-        createStickerOld(asset: "Swamp1", localizedDescription: "Swamp")
-        createStickerOld(asset: "Wolf4", localizedDescription: "Wolf")
-        createStickerOld(asset: "Skull3", localizedDescription: "Skull")
-
-        createStickerOld(asset: "Wolf2", localizedDescription: "Wolf")
-        createStickerOld(asset: "Snake2", localizedDescription: "Medusa")
-        createStickerOld(asset: "Swamp3", localizedDescription: "Swamp")
-        createStickerOld(asset: "Vamp2", localizedDescription: "Vampire")
-
-        createStickerOld(asset: "Swamp2", localizedDescription: "Swamp")
-        createStickerOld(asset: "Vamp4", localizedDescription: "Vampire")
-        createStickerOld(asset: "Snake1", localizedDescription: "Medusa")
-        createStickerOld(asset: "Wolf5", localizedDescription: "Wolf")
-        createStickerOld(asset: "Skull4", localizedDescription: "Skull")
-
-        createStickerOld(asset: "Vamp3", localizedDescription: "Vampire")
-        createStickerOld(asset: "Wolf3", localizedDescription: "Wolf")
-        createStickerOld(asset: "Snake3", localizedDescription: "Medusa")
-        
-        createStickerOld(asset: "Snake4", localizedDescription: "Medusa")
-        createStickerOld(asset: "Swamp4", localizedDescription: "Swamp")
-        
-        createStickerOld(asset: "Snake5", localizedDescription: "Medusa")
-        createStickerOld(asset: "Skull5", localizedDescription: "Skull")
-        createStickerOld(asset: "Swamp5", localizedDescription: "Swamp")
-
-    }
     
     func loadCustomStickers() {
         
@@ -313,7 +261,7 @@ class StickerManager: NSObject, NSCoding {
         }
     }
     
-    func createArray(fileName: String) -> [UIImage] {
+    func createArray(fileName: String, optimised: Bool) -> [UIImage] {
         
         var index = 0
         var foundImage = false
@@ -321,10 +269,19 @@ class StickerManager: NSObject, NSCoding {
         
         repeat {
             
+            let optimisedFileName = fileName + "Optimised" + String(index)
             let fileName = fileName + String(index)
             
-            if let image = UIImage(named: fileName) {
+            var name = fileName
+            
+            if optimised == true {
                 
+                name = optimisedFileName
+            }
+            
+            if let image = UIImage(named: name) {
+                
+                image.accessibilityLabel = NSLocalizedString(fileName, comment: "")
                 foundImage = true
                 array.append(image)
                 
@@ -376,7 +333,6 @@ class StickerManager: NSObject, NSCoding {
             
             let animatedFileName = fileName + "Animated" + String(index)
             let gifFileName = fileName + "Gif" + String(index)
-
             let fileName = fileName + String(index)
             
             if animated == true {
@@ -410,7 +366,7 @@ class StickerManager: NSObject, NSCoding {
             } else {
                 
                 do {
-                    let sticker = try createSticker(asset: fileName, localizedDescription: fileName)
+                    let sticker = try createSticker(asset: fileName, localizedDescription: NSLocalizedString(fileName, comment: fileName))
                     array.append(sticker)
                     foundImage = true
                     
