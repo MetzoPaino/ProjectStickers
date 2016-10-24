@@ -54,7 +54,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     
     var currentSelectedIndexPath: IndexPath?
     
-    var images = [UIImage(named:"Boo"), UIImage(named:"Eyeball"), UIImage(named:"HappyHalloween"), UIImage(named:"KeepingItSpooky"), UIImage(named:"Mask"), UIImage(named:"Medusa0"), UIImage(named:"SkullKid0"), UIImage(named:"Swamp0"), UIImage(named:"Vamp0"), UIImage(named:"Wolf0"), UIImage(named:"Medusa1"), UIImage(named:"SkullKid1"), UIImage(named:"Swamp1"), UIImage(named:"Vamp1"), UIImage(named:"Wolf1"), ]
+
 
     
     var movingImage = UIImageView()
@@ -610,34 +610,21 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
             imageView.alpha = 1.0
         }
         
-        if showingMonsterParts == .heads {
-            
+        switch showingMonsterParts {
+        case .heads:
             imageView.image = StickerManager().createHeadArray()[indexPath.row]
-            
-        } else if showingMonsterParts == .eyes {
-            
+        case .eyes:
             imageView.image = StickerManager().createEyeArray(optimised: true)[indexPath.row]
-            
-        } else if showingMonsterParts == .mouths {
-            
+        case .mouths:
             imageView.image = StickerManager().createMouthArray(optimised: true)[indexPath.row]
-            
-        } else if showingMonsterParts == .accessories {
-            
+        case .accessories:
             imageView.image = StickerManager().createAccessoriesArray()[indexPath.row]
-            
-        } else if showingMonsterParts == .text {
-            
+        case .text:
             imageView.image = StickerManager().createTextArray()[indexPath.row]
-            
-        } else {
-            
-            imageView.image = images[indexPath.row]
         }
         
         cell.tag = indexPath.row * 10
 
-        
         return cell
     }
 }
