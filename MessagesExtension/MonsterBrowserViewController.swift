@@ -158,15 +158,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     
     @IBAction func animatingButtonPressed(_ sender: UIButton) {
         
-//        let generator = UISelectionFeedbackGenerator()
-//        generator.selectionChanged()
-        
-//        let generator = UINotificationFeedbackGenerator()
-//        generator.notificationOccurred(.error)
-        
-//        let generator = UINotificationFeedbackGenerator()
-//        generator.notificationOccurred(.success)
-        
         let generator = UISelectionFeedbackGenerator()
         generator.prepare()
         generator.selectionChanged()
@@ -245,18 +236,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             return cell
         }
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        
-//        if indexPath.section == 1 {
-//            
-//            if let cell = collectionView.cellForItem(at: indexPath) as? StickerCollectionViewCell {
-//                
-//                cell.stickerView.stopAnimating()
-//                cell.stickerView.sticker = nil
-//            }
-//        }
-//    }
     
     // MARK: - UICollectionViewDelegate
     
@@ -429,6 +408,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             }
             
             return headerView
+            
         case UICollectionElementKindSectionFooter:
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
             footerView.backgroundColor = .clear
