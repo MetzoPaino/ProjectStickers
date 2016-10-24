@@ -453,31 +453,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         case .text:
             return StickerManager().createTextArray()[index]
         }
-        
-//        if showingMonsterParts == .heads {
-//            
-//            return StickerManager().createHeadArray()[index]
-//            
-//        } else if showingMonsterParts == .eyes {
-//            
-//            return StickerManager().createEyeArray()[index]
-//            
-//        } else if showingMonsterParts == .mouths {
-//            
-//            return StickerManager().createMouthArray()[index]
-//            
-//        } else if showingMonsterParts == .accessories {
-//            
-//            return StickerManager().createAccessoriesArray()[index]
-//            
-//        } else if showingMonsterParts == .text {
-//            
-//            return StickerManager().createTextArray()[index]
-//            
-//        } else {
-//            
-//            return images[index]
-//        }
     }
     
     // MARK: - IBActions
