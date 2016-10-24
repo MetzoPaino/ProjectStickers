@@ -69,7 +69,6 @@ class MonsterBrowserCollectionHeaderReusableView: UICollectionReusableView {
     @IBOutlet weak var partsButton: UIButton!
     @IBOutlet weak var accessoriesButton: UIButton!
     @IBOutlet weak var textButton: UIButton!
-    @IBOutlet weak var allButton: UIButton!
     
     @IBOutlet weak var smallButton: UIButton!
     @IBOutlet weak var mediumButton: UIButton!
@@ -79,6 +78,8 @@ class MonsterBrowserCollectionHeaderReusableView: UICollectionReusableView {
         
         switch type {
         case .custom:
+
+            backgroundColor = .clear
 
             backgroundImageView.isHidden = false
             
@@ -151,11 +152,6 @@ class MonsterBrowserCollectionHeaderReusableView: UICollectionReusableView {
             accessoriesButton.isHidden = false
             textButton.isHidden = false
             
-            allButton.setImage(UIImage(named:"All"), for: UIControlState.normal)
-            allButton.setImage(UIImage(named:"All")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-            allButton.setImage(UIImage(named:"All")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-            allButton.tintColor = .white
-            
             emojiButton.setImage(UIImage(named:"Emoji"), for: UIControlState.normal)
             emojiButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
             emojiButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
@@ -178,31 +174,26 @@ class MonsterBrowserCollectionHeaderReusableView: UICollectionReusableView {
             
             switch stickerType {
             case .all:
-                allButton.isSelected = true
                 emojiButton.isSelected = false
                 partsButton.isSelected = false
                 accessoriesButton.isSelected = false
                 textButton.isSelected = false
             case .emoji:
-                allButton.isSelected = false
                 emojiButton.isSelected = true
                 partsButton.isSelected = false
                 accessoriesButton.isSelected = false
                 textButton.isSelected = false
             case .parts:
-                allButton.isSelected = false
                 emojiButton.isSelected = false
                 partsButton.isSelected = true
                 accessoriesButton.isSelected = false
                 textButton.isSelected = false
             case .accessories:
-                allButton.isSelected = false
                 emojiButton.isSelected = false
                 partsButton.isSelected = false
                 accessoriesButton.isSelected = true
                 textButton.isSelected = false
             case .text:
-                allButton.isSelected = false
                 emojiButton.isSelected = false
                 partsButton.isSelected = false
                 accessoriesButton.isSelected = false
