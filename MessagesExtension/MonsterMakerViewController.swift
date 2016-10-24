@@ -597,32 +597,31 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
-        cell.layer.shouldRasterize = true;
-        cell.layer.rasterizationScale = UIScreen.main.scale
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! MonsterPartCollectionViewCell
         
-        let imageView = cell.viewWithTag(1) as! UIImageView
-        
-        if currentSelectedIndexPath == indexPath {
-          
-            imageView.alpha = 0.0
-        } else {
-            imageView.alpha = 1.0
-        }
+        var image: UIImage
+        var currentlySelected: Bool
         
         switch showingMonsterParts {
         case .heads:
-            imageView.image = StickerManager().createHeadArray()[indexPath.row]
+            image = StickerManager().createHeadArray()[indexPath.row]
         case .eyes:
-            imageView.image = StickerManager().createEyeArray(optimised: true)[indexPath.row]
+            image = StickerManager().createEyeArray(optimised: true)[indexPath.row]
         case .mouths:
-            imageView.image = StickerManager().createMouthArray(optimised: true)[indexPath.row]
+            image = StickerManager().createMouthArray(optimised: true)[indexPath.row]
         case .accessories:
-            imageView.image = StickerManager().createAccessoriesArray()[indexPath.row]
+            image = StickerManager().createAccessoriesArray()[indexPath.row]
         case .text:
-            imageView.image = StickerManager().createTextArray()[indexPath.row]
+            image = StickerManager().createTextArray()[indexPath.row]
         }
         
+        if currentSelectedIndexPath == indexPath {
+            currentlySelected = true
+        } else {
+            currentlySelected = false
+        }
+        
+        cell.configureCell(image: image, currentlySelected: currentlySelected)
         cell.tag = indexPath.row * 10
 
         return cell

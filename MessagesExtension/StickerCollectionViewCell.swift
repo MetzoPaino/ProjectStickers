@@ -36,10 +36,19 @@ class MonsterPartCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    func configureCell(image: UIImage) {
+    func configureCell(image: UIImage, currentlySelected: Bool) {
         
+        layer.shouldRasterize = true;
+        layer.rasterizationScale = UIScreen.main.scale
         backgroundColor = .white
         contentView.backgroundColor = .white
+        
         imageView.image = image
+        
+        if currentlySelected == true {
+            imageView.alpha = 0.0
+        } else {
+            imageView.alpha = 1.0
+        }
     }
 }
