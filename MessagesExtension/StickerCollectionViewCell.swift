@@ -52,3 +52,28 @@ class MonsterPartCollectionViewCell: UICollectionViewCell {
         }
     }
 }
+
+enum MonsterBrowserFooterType {
+    case topSlime
+    case twitter
+}
+
+class MonsterBrowserCollectionFooterReusableView: UICollectionReusableView {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var twitterImageView: UIImageView!
+
+    func configureCell(type: MonsterBrowserFooterType) {
+        backgroundColor = .clear
+        
+        switch type {
+            case .topSlime:
+                imageView.isHidden = false
+                twitterImageView.isHidden = true
+            case .twitter:
+                imageView.isHidden = true
+                twitterImageView.isHidden = false
+        }
+    }
+}
+
