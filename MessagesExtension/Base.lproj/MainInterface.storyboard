@@ -563,7 +563,7 @@
                                         </button>
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="C1291F83-3316-4D8E-8471-56F09053F5B2">
+                                            <state key="normal" image="3FCFF30C-CBB5-43EB-A7AD-914FF3A95ED4">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -621,7 +621,7 @@
                                         </mask>
                                     </variation>
                                 </collectionReusableView>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="Footer" id="Vaj-kQ-NTL">
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="Footer" id="Vaj-kQ-NTL" customClass="MonsterBrowserCollectionFooterReusableView" customModule="MessagesExtension" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="108" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -637,6 +637,10 @@
                                         <constraint firstItem="9Ua-SC-GAH" firstAttribute="width" secondItem="Vaj-kQ-NTL" secondAttribute="width" id="vqh-UF-RAm"/>
                                         <constraint firstItem="AzC-h6-paN" firstAttribute="centerX" secondItem="Vaj-kQ-NTL" secondAttribute="centerX" id="yaD-3v-uKv"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="imageView" destination="9Ua-SC-GAH" id="wja-t4-es8"/>
+                                        <outlet property="twitterImageView" destination="AzC-h6-paN" id="C70-Tk-pYj"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="hXf-jq-1q5" id="aVG-e7-5nb"/>
@@ -665,9 +669,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Accessories" width="20" height="20"/>
-        <image name="AddInvert" width="44" height="44"/>
-        <image name="C1291F83-3316-4D8E-8471-56F09053F5B2" width="20" height="20">
+        <image name="3FCFF30C-CBB5-43EB-A7AD-914FF3A95ED4" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -745,6 +747,8 @@ D/oQAxAIEBAQExAYECcQKxAyEDoQRxBMEE4QUBBVEF0QYBBlEG0QcBCCEIUQigAAAAAAAAIBAAAAAAAA
 AEEAAAAAAAAAAAAAAAAAABCMA
 </mutableData>
         </image>
+        <image name="Accessories" width="20" height="20"/>
+        <image name="AddInvert" width="44" height="44"/>
         <image name="Delete" width="44" height="44"/>
         <image name="DeleteHeader" width="20" height="20"/>
         <image name="DeleteInvert" width="44" height="44"/>

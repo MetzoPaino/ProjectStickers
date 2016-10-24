@@ -410,19 +410,13 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             return headerView
             
         case UICollectionElementKindSectionFooter:
-            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
-            footerView.backgroundColor = .clear
-            let imageView = footerView.viewWithTag(1) as! UIImageView
-            let twitterImageView = footerView.viewWithTag(2) as! UIImageView
-
-            if indexPath.section == 0 {
-                imageView.isHidden = false
-                twitterImageView.isHidden = true
-            } else {
-                imageView.isHidden = true
-                twitterImageView.isHidden = false
-            }
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath) as! MonsterBrowserCollectionFooterReusableView
             
+            if indexPath.section == 0 {
+                footerView.configureCell(type: .topSlime)
+            } else {
+                footerView.configureCell(type: .twitter)
+            }
             return footerView
         default:
             return UICollectionReusableView()
