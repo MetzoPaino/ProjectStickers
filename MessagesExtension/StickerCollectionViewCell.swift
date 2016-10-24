@@ -31,3 +31,15 @@ class StickerCollectionViewCell: UICollectionViewCell {
         }        
     }
 }
+
+class MonsterPartCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    func configureCell(image: UIImage) {
+        
+        backgroundColor = .white
+        contentView.backgroundColor = .white
+        imageView.image = image
+    }
+}
