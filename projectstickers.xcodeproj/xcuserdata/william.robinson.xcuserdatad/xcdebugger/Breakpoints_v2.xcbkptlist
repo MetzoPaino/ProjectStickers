@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MessagesExtension/MonsterMakerViewController.swift"
-            timestampString = "500055106.785724"
+            timestampString = "500063339.765739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
             landmarkName = "handleLongPress(_:)"
             landmarkType = "7">
          </BreakpointContent>

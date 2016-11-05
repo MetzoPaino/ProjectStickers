@@ -650,7 +650,7 @@
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="B1374EEF-2143-4977-AC3C-9D512A55630F">
+                                            <state key="normal" image="2590572D-9C33-4213-B68F-7E7A3014B878">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -785,9 +785,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Accessories" width="20" height="20"/>
-        <image name="AddInvert" width="44" height="44"/>
-        <image name="B1374EEF-2143-4977-AC3C-9D512A55630F" width="20" height="20">
+        <image name="2590572D-9C33-4213-B68F-7E7A3014B878" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -865,6 +863,8 @@ D/oQAxAIEBAQExAYECcQKxAyEDoQRxBMEE4QUBBVEF0QYBBlEG0QcBCCEIUQigAAAAAAAAIBAAAAAAAA
 AEEAAAAAAAAAAAAAAAAAABCMA
 </mutableData>
         </image>
+        <image name="Accessories" width="20" height="20"/>
+        <image name="AddInvert" width="44" height="44"/>
         <image name="Delete" width="44" height="44"/>
         <image name="DeleteHeader" width="20" height="20"/>
         <image name="DeleteInvert" width="44" height="44"/>
