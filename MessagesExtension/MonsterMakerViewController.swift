@@ -302,6 +302,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                             
                         } else {
                             tryingToMoveOldImage = true
+                            canvasImageView.bringSubview(toFront: image)
                             movingImage = image as? UIImageView
                             return
                         }
