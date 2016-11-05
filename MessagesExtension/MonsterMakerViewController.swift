@@ -317,7 +317,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                 movingImage.center = offsetedViewLocationPoint
             }
 
-
         } else if sender.state == .ended {
             
             if tryingToMoveOldImage == true {

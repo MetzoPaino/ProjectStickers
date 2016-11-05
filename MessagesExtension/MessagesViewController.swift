@@ -9,6 +9,8 @@
 import UIKit
 import Messages
 
+
+
 class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, MonsterBrowserViewControllerDelegate, MonsterMakerViewControllerDelegate {
     
     let dataManager = DataManager()
@@ -21,6 +23,8 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         super.viewDidLoad()
         dataManager.delegate = self
     }
+    
+    
     
     // MARK: - Navigation
     

@@ -224,6 +224,7 @@
 		0ADE58C51DB41B2C00F06AAB /* AccessoriesAnimated24.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE58C21DB41B2C00F06AAB /* AccessoriesAnimated24.png */; };
 		0ADE58C61DB41B2C00F06AAB /* AccessoriesAnimated25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE58C31DB41B2C00F06AAB /* AccessoriesAnimated25.png */; };
 		0ADE58C71DB41B2C00F06AAB /* AccessoriesAnimated26.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE58C41DB41B2C00F06AAB /* AccessoriesAnimated26.png */; };
+		0AEC38171DCE2BFC0066030D /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC38161DCE2BFC0066030D /* DateManager.swift */; };
 		0AECB3781DB5586200C7D250 /* EyeOptimised0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AECB33D1DB5586200C7D250 /* EyeOptimised0.png */; };
 		0AECB3791DB5586200C7D250 /* EyeOptimised1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AECB33E1DB5586200C7D250 /* EyeOptimised1.png */; };
 		0AECB37A1DB5586200C7D250 /* EyeOptimised2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AECB33F1DB5586200C7D250 /* EyeOptimised2.png */; };
@@ -568,6 +569,7 @@
 		0ADE58C21DB41B2C00F06AAB /* AccessoriesAnimated24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccessoriesAnimated24.png; sourceTree = "<group>"; };
 		0ADE58C31DB41B2C00F06AAB /* AccessoriesAnimated25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccessoriesAnimated25.png; sourceTree = "<group>"; };
 		0ADE58C41DB41B2C00F06AAB /* AccessoriesAnimated26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccessoriesAnimated26.png; sourceTree = "<group>"; };
+		0AEC38161DCE2BFC0066030D /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateManager.swift; path = Managers/DateManager.swift; sourceTree = "<group>"; };
 		0AECB33D1DB5586200C7D250 /* EyeOptimised0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EyeOptimised0.png; sourceTree = "<group>"; };
 		0AECB33E1DB5586200C7D250 /* EyeOptimised1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EyeOptimised1.png; sourceTree = "<group>"; };
 		0AECB33F1DB5586200C7D250 /* EyeOptimised2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EyeOptimised2.png; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 				0A75E44A1D9D9AF90095AC92 /* Stickers */,
 				0A6AE3AB1D99C36F00F99EE1 /* MessagesViewController.swift */,
 				0A6AE3BC1D99C9A500F99EE1 /* DataManager.swift */,
+				0AEC38161DCE2BFC0066030D /* DateManager.swift */,
 				0A6AE3BD1D99C9A500F99EE1 /* MonsterBrowserViewController.swift */,
 				0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */,
 				0A6AE3BE1D99C9A500F99EE1 /* MonsterMakerViewController.swift */,
@@ -1517,6 +1520,7 @@
 				0A689BB81DAA6D7A0068F3EC /* StickerCollectionViewCell.swift in Sources */,
 				0A6AE3AC1D99C36F00F99EE1 /* MessagesViewController.swift in Sources */,
 				0A6AE3C31D99C9A500F99EE1 /* StickerManager.swift in Sources */,
+				0AEC38171DCE2BFC0066030D /* DateManager.swift in Sources */,
 				0A6AE3C01D99C9A500F99EE1 /* DataManager.swift in Sources */,
 				0A4AE0571D9A9EA40012CDAD /* MonsterPartsManager.swift in Sources */,
 			);
