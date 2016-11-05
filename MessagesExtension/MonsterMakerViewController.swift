@@ -276,103 +276,45 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 
     func handleLongPress(_ sender: UILongPressGestureRecognizer) {
         
-        let locationPoint = sender.location(in: collectionView)
-        //let windowLocationPoint = sender.location(in: nil) This broke on landscape
+        let collectionViewLocationPoint = sender.location(in: collectionView)
         let viewLocationPoint = sender.location(in: view)
         let canvasLocationPoint = sender.location(in: canvasImageView)
-        
-        var placedImagesLocationPoints = [CGPoint]()
-        
-        for image in canvasImageView.subviews {
-            
-            let locationPoint = sender.location(in: image)
-            placedImagesLocationPoints.append(locationPoint)
-        }
         
         let offsetedViewLocationPoint = CGPoint(x: viewLocationPoint.x, y: viewLocationPoint.y - 40)
         let offsetedCanvasLocationPoint = CGPoint(x: canvasLocationPoint.x, y: canvasLocationPoint.y - 40)
         
-       // var successfullTap = false
-        
         if sender.state == .began {
+            
+            // Check if user is moving an already placed image
             
             for image in canvasImageView.subviews.reversed() {
                 
-//                guard image is UIImageView else {
-//                        return
-//                }
-                
                 if image is UIImageView {
                     
-                    let locationPoint = sender.location(in: image)
+                    let imageLocationPoint = sender.location(in: image)
                     
-                    if image.point(inside: locationPoint, with: nil) {
-                        print("Yes")
-                        let color = colorAtPoint(point: locationPoint, imageView: image as! UIImageView)
+                    if image.point(inside: imageLocationPoint, with: nil) {
+                        
+                        let color = colorAtPoint(point: imageLocationPoint, imageView: image as! UIImageView)
                         
                         if color == UIColor.red {
-                            return
+                            tryingToMoveOldImage = false
+                            
                         } else {
                             tryingToMoveOldImage = true
                             movingImage = image as? UIImageView
                             return
                         }
                         
-                        break
                     }  else {
                         tryingToMoveOldImage = false
-                        print("No")
                     }
                 }
             }
+        
+            // Check if user is moving collectionView part
             
-//            for image in canvasImageView.subviews {
-//                
-//                let locationPoint = sender.location(in: image)
-//                
-//                if image.point(inside: locationPoint, with: nil) {
-//                    print("Yes")
-//                    movingImage = image as! UIImageView
-//                    successfullTap = true
-//                } else {
-//                    print("No")
-//                }
-//            }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-//            if canvasImageView.point(inside: canvasLocationPoint, with: nil)  {
-//                // This is to stop moving already placed views
-//                tryingToMoveOldImage = true
-//
-//                for image in canvasImageView.subviews {
-//
-//                    let locationPoint = sender.location(in: image)
-//
-//                    if image.point(inside: locationPoint, with: nil) {
-//                        print("Yes")
-//                        movingImage = image as! UIImageView
-//                    } else {
-//                        print("No")
-//                    }
-//                }
-//
-//                return
-//            } else {
-     //           tryingToMoveOldImage = false
-          //  }
-            
-            guard let selectedIndexPath = collectionView.indexPathForItem(at: locationPoint),
+            guard let selectedIndexPath = collectionView.indexPathForItem(at: collectionViewLocationPoint),
                 let cell = collectionView.cellForItem(at: selectedIndexPath) else {
                     moving = false
                     collectionView.isUserInteractionEnabled = true
@@ -394,8 +336,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             if let movingImage = movingImage {
 
                 movingImage.image = getHDImage(index: selectedIndexPath.row)
-                //            guard let image = UIImage(named: imageView.ima)
-                //                else { continue }
                 
                 movingImage.alpha = 0.0
                 movingImage.frame = cell.frame
@@ -412,7 +352,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                 movingImage.backgroundColor = UIColor.red
                 currentSelectedIndexPath = selectedIndexPath
                 
-                
                 undoButtonWidthConstraint.constant = 36 / 2
                 
                 UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
@@ -424,18 +363,8 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                     
                 }, completion: nil)
             }
-            
-
-        
-
 
         } else if sender.state == .changed {
-            
-//            if tryingToMoveOldImage == false {
-//                movingImage.center = offsetedViewLocationPoint
-//            } else {
-//                movingImage.center = offsetedViewLocationPoint
-//            }
             
             if let movingImage = movingImage {
                 
@@ -451,10 +380,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         } else if sender.state == .ended {
             
             if tryingToMoveOldImage == true {
+                movingImage = nil
                 return
             }
-            
-
             
             sender.isEnabled = true
             //collectionView.reloadData()
@@ -471,24 +399,16 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                 
             }, completion: nil)
             
-            //let image = self.captureMovingImage()
-
-//            canvasImageView.addSubview(movingImage)
-//            movingImage.center = canvasLocationPoint
-            
             if let movingImage = movingImage {
                 
                 if canvasImageView.point(inside: offsetedCanvasLocationPoint, with: nil)  {
                     
                     canvasImageView.addSubview(movingImage)
-                    //movingImage.center = canvasLocationPoint
                     movingImage.center = offsetedCanvasLocationPoint
                     
                     createdImage.append(movingImage)
                     self.collectionView.reloadData()
-                    //                canvasImageView.addSubview(image)
-                    //                image.center = canvasLocationPoint
-                    //                createdImage.append(image)
+
                 } else {
                     
                     if let startingGesturePoint = startingGesturePoint {
@@ -507,14 +427,8 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                         
                         movingImage.removeFromSuperview()
                     }
-                    
-                    
                 }
             }
-            
-            
-            
-            
 
             movingImage = nil
             updateButtonStates()

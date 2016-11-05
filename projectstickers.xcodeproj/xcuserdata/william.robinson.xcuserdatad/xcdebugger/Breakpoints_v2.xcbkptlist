@@ -51,22 +51,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MessagesExtension/MonsterMakerViewController.swift"
-            timestampString = "500063339.765739"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "474"
-            endingLineNumber = "474"
-            landmarkName = "handleLongPress(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MessagesExtension/StickerManager.swift"
             timestampString = "498838682.982737"
             startingColumnNumber = "9223372036854775807"
@@ -106,6 +90,22 @@
             startingLineNumber = "272"
             endingLineNumber = "272"
             landmarkName = "createArray(fileName:optimised:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MessagesExtension/MonsterMakerViewController.swift"
+            timestampString = "500073758.948078"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
+            landmarkName = "handleLongPress(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
