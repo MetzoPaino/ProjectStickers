@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WDl-CC-chs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WDl-CC-chs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -22,6 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qe4-oj-ngU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
@@ -56,15 +60,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fj0-J3-3ax">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <segue destination="Ghp-ij-ulH" kind="embed" id="KBH-ru-vqt"/>
+                                </connections>
+                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wog-mT-sa4" userLabel="Canvas Container">
+                                <rect key="frame" x="0.0" y="20" width="375" height="267"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreenFlat" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreenFlat" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
+                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-zz-qOO" userLabel="Middle">
+                                        <rect key="frame" x="56.5" y="0.0" width="262.5" height="267"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-NT-xqt">
+                                                <rect key="frame" x="-2.5" y="0.0" width="267" height="267"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIl-9S-dFa">
+                                                <rect key="frame" x="-2.5" y="0.0" width="267" height="267"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="XIl-9S-dFa" secondAttribute="height" multiplier="1:1" identifier="CanvasRatio" id="R0g-yh-L5O"/>
@@ -89,10 +105,36 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5X-cZ-fcx" userLabel="Left">
+                                        <rect key="frame" x="0.0" y="0.0" width="56.5" height="267"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8du-Bu-lxw" userLabel="UndoContainer">
+                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qys-vT-9p8">
+                                                        <rect key="frame" x="10" y="4" width="36" height="36"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="Remove the last placed image" label="Undo button"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Qys-vT-9p8" secondAttribute="height" multiplier="1:1" id="2zp-yU-zO3"/>
+                                                            <constraint firstAttribute="width" constant="36" id="QDc-8W-0wd"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Undo"/>
+                                                        <connections>
+                                                            <action selector="tutorialButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="ATM-Wt-ZKz"/>
+                                                            <action selector="undoButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="1TT-oC-vZF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="KB6-UD-uXd"/>
+                                                    <constraint firstItem="Qys-vT-9p8" firstAttribute="centerX" secondItem="8du-Bu-lxw" secondAttribute="centerX" id="QeP-2H-Kya"/>
+                                                    <constraint firstItem="Qys-vT-9p8" firstAttribute="centerY" secondItem="8du-Bu-lxw" secondAttribute="centerY" id="Zfl-GM-INJ"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4je-rD-fO4" userLabel="UndoContainer">
+                                                <rect key="frame" x="0.0" y="223" width="56.5" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-7S-CG8">
+                                                        <rect key="frame" x="10" y="4" width="36" height="36"/>
                                                         <accessibility key="accessibilityConfiguration" hint="Remove the last placed image" label="Undo button"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="36" id="GZY-Jh-udq"/>
@@ -113,16 +155,22 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="8du-Bu-lxw" firstAttribute="width" secondItem="4je-rD-fO4" secondAttribute="width" id="8GT-e6-Jmo"/>
                                             <constraint firstItem="4je-rD-fO4" firstAttribute="width" secondItem="S5X-cZ-fcx" secondAttribute="width" id="9ch-Vs-WBp"/>
+                                            <constraint firstItem="8du-Bu-lxw" firstAttribute="centerX" secondItem="4je-rD-fO4" secondAttribute="centerX" id="O9u-dH-snz"/>
                                             <constraint firstAttribute="bottom" secondItem="4je-rD-fO4" secondAttribute="bottom" id="OCD-22-vWP"/>
+                                            <constraint firstItem="8du-Bu-lxw" firstAttribute="height" secondItem="4je-rD-fO4" secondAttribute="height" id="eDT-wU-4Lo"/>
                                             <constraint firstItem="4je-rD-fO4" firstAttribute="leading" secondItem="S5X-cZ-fcx" secondAttribute="leading" id="nls-li-Y8S"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpM-gL-fGf" userLabel="Right">
+                                        <rect key="frame" x="319" y="0.0" width="56" height="267"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqK-Qd-tXZ" userLabel="DeleteContainer">
+                                                <rect key="frame" x="0.5" y="0.0" width="56" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-Bn-QZm">
+                                                        <rect key="frame" x="10.5" y="4" width="36" height="36"/>
                                                         <accessibility key="accessibilityConfiguration" hint="Close the Monster Maker view" label="Close button"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="NCI-Bn-QZm" secondAttribute="height" multiplier="1:1" id="VdK-dv-ZGg"/>
@@ -140,8 +188,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-Yj-iYV" userLabel="DoneContainerView">
+                                                <rect key="frame" x="0.5" y="223" width="56" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-kJ-WZW">
+                                                        <rect key="frame" x="10.5" y="4" width="36" height="36"/>
                                                         <accessibility key="accessibilityConfiguration" hint="Select to save your sticker" label="Done button"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="height" multiplier="1:1" id="f4b-SW-qCT"/>
@@ -188,11 +238,13 @@
                                     <constraint firstItem="aHZ-zz-qOO" firstAttribute="leading" secondItem="S5X-cZ-fcx" secondAttribute="trailing" id="gln-hW-TgH"/>
                                     <constraint firstItem="S5X-cZ-fcx" firstAttribute="leading" secondItem="Wog-mT-sa4" secondAttribute="leading" id="lPg-p1-dWo"/>
                                     <constraint firstItem="hmj-2G-Qve" firstAttribute="width" secondItem="Wog-mT-sa4" secondAttribute="width" id="mIw-5C-Vbi"/>
+                                    <constraint firstItem="8du-Bu-lxw" firstAttribute="centerY" secondItem="hqK-Qd-tXZ" secondAttribute="centerY" id="pbf-Rg-Kcx"/>
                                     <constraint firstAttribute="trailing" secondItem="xpM-gL-fGf" secondAttribute="trailing" id="qbq-4W-1SQ"/>
                                     <constraint firstItem="xpM-gL-fGf" firstAttribute="width" secondItem="S5X-cZ-fcx" secondAttribute="width" id="xTi-BJ-vxj"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gSa-fk-1yR">
+                                <rect key="frame" x="0.0" y="329" width="375" height="338"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="osn-U6-QGv">
                                     <size key="itemSize" width="141" height="146"/>
@@ -209,6 +261,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PMd-tn-OWU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="146"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <bool key="isElement" value="YES"/>
                                                     </accessibility>
@@ -233,6 +286,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSU-B8-dPv" customClass="MSStickerView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="146"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -252,35 +306,44 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URL-vP-KAI" userLabel="HeaderView">
+                                <rect key="frame" x="0.0" y="287" width="375" height="58"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderGreen" translatesAutoresizingMaskIntoConstraints="NO" id="HuA-kW-Mem"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderGreen" translatesAutoresizingMaskIntoConstraints="NO" id="HuA-kW-Mem">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLJ-9D-fRF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-tP-Ewj">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="44"/>
                                                 <state key="normal" image="Emoji"/>
                                                 <connections>
                                                     <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="shv-9f-AFt"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wm-qe-CBc">
+                                                <rect key="frame" x="75" y="0.0" width="75" height="44"/>
                                                 <state key="normal" image="Eye"/>
                                                 <connections>
                                                     <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="KIZ-Ad-Yfr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EP-99-eUf">
+                                                <rect key="frame" x="150" y="0.0" width="75" height="44"/>
                                                 <state key="normal" image="Mouth"/>
                                                 <connections>
                                                     <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="jWy-Qu-o6u"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-aX-poU">
+                                                <rect key="frame" x="225" y="0.0" width="75" height="44"/>
                                                 <state key="normal" image="Accessories"/>
                                                 <connections>
                                                     <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="A46-B9-C4M"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABr-Js-ZB8">
+                                                <rect key="frame" x="300" y="0.0" width="75" height="44"/>
                                                 <state key="normal" image="Text"/>
                                                 <connections>
                                                     <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="H0c-to-hHB"/>
@@ -323,13 +386,17 @@
                             <constraint firstAttribute="trailing" secondItem="Wog-mT-sa4" secondAttribute="trailing" identifier="CanvasContainerTrailing" id="0zd-Au-rj4"/>
                             <constraint firstItem="AwK-fn-rL3" firstAttribute="top" secondItem="gSa-fk-1yR" secondAttribute="bottom" id="1lI-0V-Gso"/>
                             <constraint firstItem="gSa-fk-1yR" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="5BE-fQ-gK5"/>
+                            <constraint firstItem="fj0-J3-3ax" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" id="AmY-8w-hoP"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="top" secondItem="Wog-mT-sa4" secondAttribute="bottom" identifier="HeaderTop" id="Aq3-ae-o3r"/>
                             <constraint firstItem="Wog-mT-sa4" firstAttribute="height" secondItem="7oI-Qh-b0E" secondAttribute="height" multiplier="0.4" identifier="CanvasContainerHeight" id="Cky-lB-akK"/>
                             <constraint firstAttribute="trailing" secondItem="gSa-fk-1yR" secondAttribute="trailing" id="Umz-sv-s6q"/>
+                            <constraint firstItem="fj0-J3-3ax" firstAttribute="width" secondItem="7oI-Qh-b0E" secondAttribute="width" id="V6i-yp-Sjd"/>
+                            <constraint firstItem="fj0-J3-3ax" firstAttribute="centerX" secondItem="7oI-Qh-b0E" secondAttribute="centerX" id="dAr-H8-OAk"/>
                             <constraint firstItem="Wog-mT-sa4" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" identifier="CanvasContainerLeading" id="dSD-dh-aup"/>
                             <constraint firstItem="Wog-mT-sa4" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" identifier="CanvasContainerTopLayout" id="f0a-j4-bmh"/>
                             <constraint firstAttribute="trailing" secondItem="URL-vP-KAI" secondAttribute="trailing" id="llx-UY-BU6"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="rGY-CP-1dg"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fj0-J3-3ax" secondAttribute="bottom" id="sUI-hV-XF1"/>
                             <constraint firstItem="gSa-fk-1yR" firstAttribute="top" secondItem="URL-vP-KAI" secondAttribute="bottom" constant="-16" id="xWO-q4-hIk"/>
                         </constraints>
                     </view>
@@ -346,6 +413,8 @@
                         <outlet property="mouthsButton" destination="9EP-99-eUf" id="bbA-mF-JH6"/>
                         <outlet property="shadowImageView" destination="yoh-NT-xqt" id="d0g-4x-xBn"/>
                         <outlet property="textButton" destination="ABr-Js-ZB8" id="g9Z-vL-KyO"/>
+                        <outlet property="tutorialContainerView" destination="fj0-J3-3ax" id="5gb-cN-ytz"/>
+                        <outlet property="tutorialContainerViewTopLayoutConstraint" destination="AmY-8w-hoP" id="pXf-fv-azw"/>
                         <outlet property="undoButton" destination="NUV-7S-CG8" id="fOY-wS-IyH"/>
                         <outlet property="undoButtonWidthConstraint" destination="GZY-Jh-udq" id="z7r-4t-G8p"/>
                     </connections>
@@ -367,6 +436,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DhE-U5-qwR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qkn-HC-iMw">
                                     <size key="itemSize" width="50" height="50"/>
@@ -388,9 +458,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ps-tQ-gSb" customClass="MSStickerView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baw-fP-Ryx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Select to delete custom sticker" label="Delete button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="baw-fP-Ryx" secondAttribute="height" multiplier="1:1" id="4k0-tv-ha5"/>
@@ -417,13 +489,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="67.5" y="58" width="50" height="50"/>
+                                        <rect key="frame" x="68" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddInvert" translatesAutoresizingMaskIntoConstraints="NO" id="AbR-eD-EdS">
+                                                    <rect key="frame" x="3" y="3" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Select to launch Monster Maker" label="Create button">
                                                         <bool key="isElement" value="YES"/>
                                                     </accessibility>
@@ -445,14 +518,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreenFlat" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-a4-6Tv">
+                                            <rect key="frame" x="0.0" y="-364" width="320" height="400"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="400" id="5NH-vS-6eT"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderGreen" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-Lx-wcl"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderGreen" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-Lx-wcl">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                                        </imageView>
                                         <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-Ml-bZT">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <subviews>
                                                 <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8g-Os-kA4">
+                                                    <rect key="frame" x="18" y="0.0" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Toggle animations of stickers" label="Play"/>
                                                     <state key="normal" image="Play"/>
                                                     <connections>
@@ -460,6 +538,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6x-fw-Ira" userLabel="Small">
+                                                    <rect key="frame" x="94" y="0.0" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Select for 5 stickers per row" label="Small sizing button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="P6x-fw-Ira" secondAttribute="height" multiplier="1:1" id="nwu-2D-Ioz"/>
@@ -472,6 +551,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-aG-3HJ" userLabel="Medium">
+                                                    <rect key="frame" x="138" y="0.0" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Select for 4 stickers per row" label="Medium sizing button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="vc4-aG-3HJ" secondAttribute="height" multiplier="1:1" id="ydJ-e0-gSV"/>
@@ -484,6 +564,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-Q7-j4b" userLabel="Large">
+                                                    <rect key="frame" x="182" y="0.0" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Select for 3 stickers per row" label="Large sizing button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ZWe-Q7-j4b" secondAttribute="height" multiplier="1:1" id="5dA-Ow-2ii"/>
@@ -514,6 +595,7 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynB-Lb-PMU" userLabel="Edit">
+                                            <rect key="frame" x="258" y="0.0" width="44" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Toggle to enable custom sticker deletion" label="Edit button"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="ynB-Lb-PMU" secondAttribute="height" multiplier="1:1" id="WCN-hH-WKc"/>
@@ -526,6 +608,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XU-sp-EL6" userLabel="Emoji">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all monster emoji" label="Emoji"/>
                                             <state key="normal" image="Emoji">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -535,6 +618,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TV4-VB-cXs" userLabel="Parts">
+                                            <rect key="frame" x="80" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show heads, eyes &amp; mouths of stickers" label="Parts"/>
                                             <state key="normal" image="Parts">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -544,6 +628,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5i-dd-b6m" userLabel="Accessories">
+                                            <rect key="frame" x="160" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show accessories" label="Accessories"/>
                                             <state key="normal" image="Accessories">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -553,6 +638,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdK-QF-qP9" userLabel="Text">
+                                            <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show text stickers" label="Text"/>
                                             <state key="normal" image="Text">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -562,8 +648,9 @@
                                             </connections>
                                         </button>
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
+                                            <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="462AEC2A-A1F1-4978-AB10-FB0D33D55B5A">
+                                            <state key="normal" image="B1374EEF-2143-4977-AC3C-9D512A55630F">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -637,8 +724,12 @@
                                     <rect key="frame" x="0.0" y="108" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooterGreenOld" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-SC-GAH"/>
-                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="AzC-h6-paN"/>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooterGreenOld" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-SC-GAH">
+                                            <rect key="frame" x="0.0" y="45" width="320" height="5"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="AzC-h6-paN">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="9Ua-SC-GAH" secondAttribute="bottom" id="K3M-LN-Ny2"/>
@@ -679,9 +770,24 @@
             </objects>
             <point key="canvasLocation" x="116.8" y="98.950524737631198"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="9c6-nx-WE0">
+            <objects>
+                <viewController id="Ghp-ij-ulH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ugh-57-bqT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6U-sC-5W0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820" y="809"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="462AEC2A-A1F1-4978-AB10-FB0D33D55B5A" width="20" height="20">
+        <image name="Accessories" width="20" height="20"/>
+        <image name="AddInvert" width="44" height="44"/>
+        <image name="B1374EEF-2143-4977-AC3C-9D512A55630F" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -759,8 +865,6 @@ D/oQAxAIEBAQExAYECcQKxAyEDoQRxBMEE4QUBBVEF0QYBBlEG0QcBCCEIUQigAAAAAAAAIBAAAAAAAA
 AEEAAAAAAAAAAAAAAAAAABCMA
 </mutableData>
         </image>
-        <image name="Accessories" width="20" height="20"/>
-        <image name="AddInvert" width="44" height="44"/>
         <image name="Delete" width="44" height="44"/>
         <image name="DeleteHeader" width="20" height="20"/>
         <image name="DeleteInvert" width="44" height="44"/>

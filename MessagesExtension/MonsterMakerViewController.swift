@@ -25,9 +25,10 @@ enum monsterParts {
 class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var longGesture = UILongPressGestureRecognizer()
-    var pinchGesture = UIPinchGestureRecognizer()
-    var rotationGesture = UIRotationGestureRecognizer()
+    @IBOutlet weak var tutorialContainerView: UIView!
+    @IBOutlet weak var tutorialContainerViewTopLayoutConstraint: NSLayoutConstraint!
+    
+
 
     var startingGesturePoint: CGPoint?
     
@@ -49,6 +50,10 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var undoButtonWidthConstraint: NSLayoutConstraint!
     
     weak var delegate: MonsterMakerViewControllerDelegate?
+    
+    var longGesture = UILongPressGestureRecognizer()
+    var pinchGesture = UIPinchGestureRecognizer()
+    var rotationGesture = UIRotationGestureRecognizer()
     
     var showingMonsterParts = monsterParts.heads
     
@@ -540,6 +545,11 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         generator.prepare()
         generator.notificationOccurred(.warning)
         delegate?.cancelButtonPressed()
+    }
+    
+    @IBAction func tutorialButtonPressed(_ sender: UIButton) {
+        
+        view.bringSubview(toFront: tutorialContainerView)
     }
 }
 
