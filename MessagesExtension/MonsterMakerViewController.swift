@@ -295,9 +295,11 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                     
                     if image.point(inside: imageLocationPoint, with: nil) {
                         
+                        // Need to construct own clear as Apple clear color is different colorModel
                         let color = colorAtPoint(point: imageLocationPoint, imageView: image as! UIImageView)
-                        
-                        if color == UIColor.red {
+                        let clearColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+
+                        if color == clearColor {
                             tryingToMoveOldImage = false
                             
                         } else {
@@ -350,7 +352,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                 movingImage.alpha = 1.0
                 
                 imageView.alpha = 0.0
-                movingImage.backgroundColor = UIColor.red
+                movingImage.backgroundColor = UIColor.clear
                 currentSelectedIndexPath = selectedIndexPath
                 
                 undoButtonWidthConstraint.constant = 36 / 2
