@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0A22AC051DAC1EC500C66AF0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A22AC031DAC1AC300C66AF0 /* Localizable.strings */; };
 		0A4AE0571D9A9EA40012CDAD /* MonsterPartsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */; };
+		0A5E4E411DCF8897009AF5BE /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E4E401DCF8897009AF5BE /* TutorialPageViewController.swift */; };
+		0A5E4E431DCF93CD009AF5BE /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E4E421DCF93CD009AF5BE /* TutorialViewController.swift */; };
+		0A5E4E461DCF93FA009AF5BE /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5E4E441DCF93FA009AF5BE /* Tutorial.storyboard */; };
 		0A689BB81DAA6D7A0068F3EC /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */; };
 		0A6AE39D1D99C36F00F99EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6AE39C1D99C36F00F99EE1 /* Assets.xcassets */; };
 		0A6AE3A41D99C36F00F99EE1 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A6AE3A31D99C36F00F99EE1 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -351,6 +354,9 @@
 /* Begin PBXFileReference section */
 		0A22AC031DAC1AC300C66AF0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = MessagesExtension/Support/Localizable.strings; sourceTree = "<group>"; };
 		0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterPartsManager.swift; sourceTree = "<group>"; };
+		0A5E4E401DCF8897009AF5BE /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialPageViewController.swift; path = Tutorial/TutorialPageViewController.swift; sourceTree = "<group>"; };
+		0A5E4E421DCF93CD009AF5BE /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
+		0A5E4E451DCF93FA009AF5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tutorial.storyboard; sourceTree = "<group>"; };
 		0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A6AE3991D99C36F00F99EE1 /* projectstickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectstickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6AE39C1D99C36F00F99EE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -726,6 +732,24 @@
 			path = Mouth;
 			sourceTree = "<group>";
 		};
+		0A5E4E471DCF9465009AF5BE /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E4E421DCF93CD009AF5BE /* TutorialViewController.swift */,
+				0A5E4E401DCF8897009AF5BE /* TutorialPageViewController.swift */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
+		0A5E4E481DCF946D009AF5BE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0A6AE3AD1D99C36F00F99EE1 /* MainInterface.storyboard */,
+				0A5E4E441DCF93FA009AF5BE /* Tutorial.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		0A6AE3921D99C36F00F99EE1 = {
 			isa = PBXGroup;
 			children = (
@@ -776,7 +800,8 @@
 				0A6AE3BE1D99C9A500F99EE1 /* MonsterMakerViewController.swift */,
 				0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */,
 				0A6AE3BF1D99C9A500F99EE1 /* StickerManager.swift */,
-				0A6AE3AD1D99C36F00F99EE1 /* MainInterface.storyboard */,
+				0A5E4E481DCF946D009AF5BE /* Storyboards */,
+				0A5E4E471DCF9465009AF5BE /* Tutorial */,
 				0A6AE3B01D99C36F00F99EE1 /* Assets.xcassets */,
 				0A6AE3B21D99C36F00F99EE1 /* Info.plist */,
 			);
@@ -1496,6 +1521,7 @@
 				0ADE57911DB40DD200F06AAB /* Eye52.png in Resources */,
 				0ADE57781DB40DD200F06AAB /* Eye27.png in Resources */,
 				0ADE57CB1DB40E1800F06AAB /* Snake3.png in Resources */,
+				0A5E4E461DCF93FA009AF5BE /* Tutorial.storyboard in Resources */,
 				0ADE57831DB40DD200F06AAB /* Eye38.png in Resources */,
 				0ADE57D61DB40E1800F06AAB /* Vamp2.png in Resources */,
 				0AECB3AF1DB5586200C7D250 /* EyeOptimised55.png in Resources */,
@@ -1517,9 +1543,11 @@
 			files = (
 				0A6AE3C21D99C9A500F99EE1 /* MonsterMakerViewController.swift in Sources */,
 				0A6AE3C11D99C9A500F99EE1 /* MonsterBrowserViewController.swift in Sources */,
+				0A5E4E431DCF93CD009AF5BE /* TutorialViewController.swift in Sources */,
 				0A689BB81DAA6D7A0068F3EC /* StickerCollectionViewCell.swift in Sources */,
 				0A6AE3AC1D99C36F00F99EE1 /* MessagesViewController.swift in Sources */,
 				0A6AE3C31D99C9A500F99EE1 /* StickerManager.swift in Sources */,
+				0A5E4E411DCF8897009AF5BE /* TutorialPageViewController.swift in Sources */,
 				0AEC38171DCE2BFC0066030D /* DateManager.swift in Sources */,
 				0A6AE3C01D99C9A500F99EE1 /* DataManager.swift in Sources */,
 				0A4AE0571D9A9EA40012CDAD /* MonsterPartsManager.swift in Sources */,
@@ -1537,6 +1565,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0A5E4E441DCF93FA009AF5BE /* Tutorial.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A5E4E451DCF93FA009AF5BE /* Base */,
+			);
+			name = Tutorial.storyboard;
+			sourceTree = "<group>";
+		};
 		0A6AE3AD1D99C36F00F99EE1 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

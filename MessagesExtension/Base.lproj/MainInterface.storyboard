@@ -63,7 +63,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fj0-J3-3ax">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <connections>
-                                    <segue destination="Ghp-ij-ulH" kind="embed" id="KBH-ru-vqt"/>
+                                    <segue destination="2Mh-Ey-FDS" kind="embed" identifier="EmbedTutorial" id="KBH-ru-vqt"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wog-mT-sa4" userLabel="Canvas Container">
@@ -396,7 +396,7 @@
                             <constraint firstItem="Wog-mT-sa4" firstAttribute="top" secondItem="Y7m-PH-Tfa" secondAttribute="bottom" identifier="CanvasContainerTopLayout" id="f0a-j4-bmh"/>
                             <constraint firstAttribute="trailing" secondItem="URL-vP-KAI" secondAttribute="trailing" id="llx-UY-BU6"/>
                             <constraint firstItem="URL-vP-KAI" firstAttribute="leading" secondItem="7oI-Qh-b0E" secondAttribute="leading" id="rGY-CP-1dg"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="fj0-J3-3ax" secondAttribute="bottom" id="sUI-hV-XF1"/>
+                            <constraint firstItem="AwK-fn-rL3" firstAttribute="top" secondItem="fj0-J3-3ax" secondAttribute="bottom" id="wZ5-HR-2hE"/>
                             <constraint firstItem="gSa-fk-1yR" firstAttribute="top" secondItem="URL-vP-KAI" secondAttribute="bottom" constant="-16" id="xWO-q4-hIk"/>
                         </constraints>
                     </view>
@@ -489,7 +489,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM">
-                                        <rect key="frame" x="68" y="58" width="50" height="50"/>
+                                        <rect key="frame" x="67.5" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -650,7 +650,7 @@
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="2590572D-9C33-4213-B68F-7E7A3014B878">
+                                            <state key="normal" image="76782317-9BD3-40FE-B239-30DBC17A2409">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -770,22 +770,17 @@
             </objects>
             <point key="canvasLocation" x="116.8" y="98.950524737631198"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="9c6-nx-WE0">
+        <!--Tutorial-->
+        <scene sceneID="IXi-yb-OGr">
             <objects>
-                <viewController id="Ghp-ij-ulH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ugh-57-bqT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M6U-sC-5W0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Tutorial" referencedIdentifier="Tutorial" id="2Mh-Ey-FDS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8By-Rb-wef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="809"/>
+            <point key="canvasLocation" x="820" y="504"/>
         </scene>
     </scenes>
     <resources>
-        <image name="2590572D-9C33-4213-B68F-7E7A3014B878" width="20" height="20">
+        <image name="76782317-9BD3-40FE-B239-30DBC17A2409" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

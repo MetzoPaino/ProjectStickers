@@ -609,6 +609,17 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         
         view.bringSubview(toFront: tutorialContainerView)
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "EmbedTutorial" {
+            
+            let controller = segue.destination as! TutorialViewController
+            controller.delegate = self
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegate
@@ -692,6 +703,14 @@ extension MonsterMakerViewController : UICollectionViewDelegateFlowLayout {
         }
         
         return CGSize(width: view.frame.size.width / division, height: view.frame.size.width / division)
+    }
+}
+
+extension MonsterMakerViewController : TutorialViewControllerDelegate {
+    
+    func quitButtonPressed() {
+        
+        view.sendSubview(toBack: tutorialContainerView)
     }
 }
 
