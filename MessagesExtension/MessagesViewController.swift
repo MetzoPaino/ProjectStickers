@@ -13,25 +13,23 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, MonsterBrowserViewControllerDelegate, MonsterMakerViewControllerDelegate {
     
+    @IBOutlet weak var loadingImageView: UIImageView!
+
     let dataManager = DataManager()
     var monsterBrowser: MonsterBrowserViewController?
-    var presentMonsterMaker = true
+    var presentMonsterMaker = false
+    var moveToMonsterMaker = false
     
-    @IBOutlet weak var loadingImageView: UIImageView!
+    // MARK: - Set Up ViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.delegate = self
     }
     
-    
-    
     // MARK: - Navigation
     
     private func presentChildViewController(for presentationStyle: MSMessagesAppPresentationStyle) {
-        
-        //let controller: UIViewController
-        
         
         if presentationStyle == .compact {
             
@@ -55,7 +53,8 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
                 let controller = UIStoryboard(name: "MainInterface", bundle: nil).instantiateViewController(withIdentifier: "MonsterBrowser") as! MonsterBrowserViewController
                 controller.delegate = self
                 controller.stickerManager = dataManager.stickerManager
-
+                controller.enableCreateButton = false
+                
                 showViewController(controller: controller)
                 monsterBrowser = controller
             }
@@ -92,7 +91,7 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         controller.didMove(toParentViewController: self)
-        //presentMonsterMaker = false
+        presentMonsterMaker = false
         
         let topConstraint = NSLayoutConstraint(item: controller.view, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)      
         NSLayoutConstraint.activate([topConstraint])
@@ -155,6 +154,12 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         
         // Use this method to finalize any behaviors associated with the change in presentation style.
         view.sendSubview(toBack: loadingImageView)
+        
+//        if moveToMonsterMaker == true {
+//            moveToMonsterMaker = false
+//            presentMonsterMaker = true
+//            self.requestPresentationStyle(.expanded)
+//        }
     }
     
     // MARK: - DataManagerDelegate
@@ -173,7 +178,16 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
     func addCellSelected() {
         
         presentMonsterMaker = true
-        self.requestPresentationStyle(.expanded)
+        
+        switch self.presentationStyle {
+        case .compact:
+            self.requestPresentationStyle(.expanded)
+        case .expanded:
+            break
+            //self.performSegue(withIdentifier: "ShowMonsterMaker", sender: self)
+           // self.requestPresentationStyle(.compact)
+        }
+        
     }
     
     func deleteButtonPressedForCellAtIndex(index: Int) {

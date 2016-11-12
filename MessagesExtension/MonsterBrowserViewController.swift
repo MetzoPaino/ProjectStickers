@@ -38,6 +38,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     let feedbackGenerator = UINotificationFeedbackGenerator()
     
     weak var delegate: MonsterBrowserViewControllerDelegate?
+    var enableCreateButton = true
     var stickerManager: StickerManager! = nil
     var editingCustomStickers = false
     var viewingStickerType = stickerType.emoji
@@ -97,11 +98,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     }
     
     @IBAction func cellSizeButtonPressed(_ sender: UIButton) {
-        
-        
-//        let buttonPosition = sender.convert(CGPoint.zero, to: <#T##UIView?#>)
-//        collectionView.supplementaryView(forElementKind: <#T##String#>, at: <#T##IndexPath#>)
-        
         
         switch sender.tag {
         case 7:
@@ -178,7 +174,9 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if section == 0 {
+            
             return 1 + stickerManager.customStickers.count
+
         } else {
             
             switch viewingStickerType {
@@ -206,7 +204,10 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             
             if indexPath.row == 0 {
                 
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddCell", for: indexPath as IndexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddCell", for: indexPath as IndexPath) as! AddCollectionViewCell
+                
+                cell.configureCell(enabled: enableCreateButton)
+                
                 return cell
                 
             } else {
@@ -216,7 +217,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
                 cell.layer.rasterizationScale = UIScreen.main.scale
                 cell.configureCell(sticker: stickerManager.customStickers[indexPath.row - 1], editing: editingCustomStickers)
                 cell.deleteButton.tag = indexPath.row - 1
-
+                
                 return cell
             }
             

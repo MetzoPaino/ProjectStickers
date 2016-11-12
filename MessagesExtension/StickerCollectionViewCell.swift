@@ -9,6 +9,25 @@
 import UIKit
 import Messages
 
+class AddCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var addImageView: UIImageView!
+    
+    func configureCell(enabled: Bool) {
+        
+        backgroundColor = .white
+        contentView.backgroundColor = .white
+        
+        if enabled == true {
+            addImageView.image = UIImage(named: "AddInvert")
+            isUserInteractionEnabled = true
+        } else {
+            addImageView.image = UIImage(named: "AddDisabled")
+            isUserInteractionEnabled = false
+        }
+    }
+}
+
 class StickerCollectionViewCell: UICollectionViewCell {
  
     @IBOutlet weak var stickerView: MSStickerView!
