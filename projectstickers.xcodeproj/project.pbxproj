@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A22AC051DAC1EC500C66AF0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A22AC031DAC1AC300C66AF0 /* Localizable.strings */; };
+		0A2AB7D91DD8B6AF003ABCA2 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AB7D81DD8B6AF003ABCA2 /* PageViewController.swift */; };
 		0A4AE0571D9A9EA40012CDAD /* MonsterPartsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */; };
 		0A5E4E411DCF8897009AF5BE /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E4E401DCF8897009AF5BE /* TutorialPageViewController.swift */; };
 		0A5E4E431DCF93CD009AF5BE /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E4E421DCF93CD009AF5BE /* TutorialViewController.swift */; };
@@ -353,6 +354,7 @@
 
 /* Begin PBXFileReference section */
 		0A22AC031DAC1AC300C66AF0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = MessagesExtension/Support/Localizable.strings; sourceTree = "<group>"; };
+		0A2AB7D81DD8B6AF003ABCA2 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = Tutorial/PageViewController.swift; sourceTree = "<group>"; };
 		0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterPartsManager.swift; sourceTree = "<group>"; };
 		0A5E4E401DCF8897009AF5BE /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialPageViewController.swift; path = Tutorial/TutorialPageViewController.swift; sourceTree = "<group>"; };
 		0A5E4E421DCF93CD009AF5BE /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
@@ -737,6 +739,7 @@
 			children = (
 				0A5E4E421DCF93CD009AF5BE /* TutorialViewController.swift */,
 				0A5E4E401DCF8897009AF5BE /* TutorialPageViewController.swift */,
+				0A2AB7D81DD8B6AF003ABCA2 /* PageViewController.swift */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -1543,6 +1546,7 @@
 			files = (
 				0A6AE3C21D99C9A500F99EE1 /* MonsterMakerViewController.swift in Sources */,
 				0A6AE3C11D99C9A500F99EE1 /* MonsterBrowserViewController.swift in Sources */,
+				0A2AB7D91DD8B6AF003ABCA2 /* PageViewController.swift in Sources */,
 				0A5E4E431DCF93CD009AF5BE /* TutorialViewController.swift in Sources */,
 				0A689BB81DAA6D7A0068F3EC /* StickerCollectionViewCell.swift in Sources */,
 				0A6AE3AC1D99C36F00F99EE1 /* MessagesViewController.swift in Sources */,

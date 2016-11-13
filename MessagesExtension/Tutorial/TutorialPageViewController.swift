@@ -12,16 +12,32 @@ import UIKit
 
 class TutorialPageViewController: UIPageViewController {
     
-
     internal lazy var tutorialViewControllers: [UIViewController] = {
         return [self.viewControllerForIndex(index: 0),
-                self.viewControllerForIndex(index: 0),
-                self.viewControllerForIndex(index: 0)]
+                self.viewControllerForIndex(index: 1),
+                self.viewControllerForIndex(index: 2)]
     }()
     
     func viewControllerForIndex(index: Int) -> UIViewController {
         
-        return UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier:"Page \(index)")
+        let viewController = UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier:"TutorialPage") as! PageViewController
+        let _ = viewController.view // Hack to instantiate IBOutlets
+        
+        switch index {
+        case 0:
+            viewController.imageView.image = UIImage(named: "Page1")
+            viewController.label.text = "Drag parts from the lists onto the canvas"
+        case 1:
+            viewController.imageView.image = UIImage(named: "Page1")
+            viewController.label.text = "Pinch to resize, and rotate to get the part looking perfect"
+        case 2:
+            viewController.imageView.image = UIImage(named: "Page1")
+            viewController.label.text = "Press on placed parts to pick them up again"
+        default:
+            break
+        }
+        
+        return viewController
     }
     
     override func viewDidLoad() {
@@ -37,8 +53,9 @@ class TutorialPageViewController: UIPageViewController {
     
     func style() {
         let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [TutorialPageViewController.self])
-        pageControl.pageIndicatorTintColor = UIColor.green
-        pageControl.currentPageIndicatorTintColor = UIColor.red
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
+        pageControl.currentPageIndicatorTintColor = UIColor.green
+        pageControl.backgroundColor = UIColor.clear
     }
 }
 

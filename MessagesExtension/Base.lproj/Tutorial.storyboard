@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ghp-ij-ulH">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,11 +21,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ULY-Go-Xin"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ugh-57-bqT">
-                        <rect key="frame" x="0.0" y="0.0" width="647" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLN-sf-7Iq">
-                                <rect key="frame" x="0.0" y="0.0" width="647" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <connections>
                                     <segue destination="ERT-Nn-nOE" kind="embed" id="rRx-xo-aO4"/>
                                 </connections>
@@ -67,27 +70,66 @@
             </objects>
             <point key="canvasLocation" x="1538" y="808"/>
         </scene>
-        <!--Page 0-->
+        <!--Page View Controller-->
         <scene sceneID="9ak-SF-H4g">
             <objects>
-                <viewController storyboardIdentifier="Page 0" title="Page 0" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M1T-4m-Fcb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M1T-4m-Fcb" customClass="PageViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oPc-sZ-2mV"/>
                         <viewControllerLayoutGuide type="bottom" id="jgC-fh-Zjb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8xR-xX-s6z">
-                        <rect key="frame" x="0.0" y="0.0" width="647" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Page1" translatesAutoresizingMaskIntoConstraints="NO" id="uzo-zU-0n3">
+                                <rect key="frame" x="-0.5" y="206" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uzo-zU-0n3" secondAttribute="height" multiplier="1:1" id="LKf-rp-Or1"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWC-Sr-92E">
+                                <rect key="frame" x="0.0" y="581" width="375" height="66"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag parts you want onto the canvas" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI4-gP-2Ou">
+                                        <rect key="frame" x="75" y="0.0" width="225" height="66"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="3HL-IZ-0DA"/>
+                                    <constraint firstItem="gI4-gP-2Ou" firstAttribute="centerY" secondItem="HWC-Sr-92E" secondAttribute="centerY" id="Yis-Je-3tV"/>
+                                    <constraint firstItem="gI4-gP-2Ou" firstAttribute="width" secondItem="HWC-Sr-92E" secondAttribute="width" multiplier="0.6" id="beM-cL-Vpa"/>
+                                    <constraint firstItem="gI4-gP-2Ou" firstAttribute="height" secondItem="HWC-Sr-92E" secondAttribute="height" id="uko-ZH-Sj0"/>
+                                    <constraint firstItem="gI4-gP-2Ou" firstAttribute="centerX" secondItem="HWC-Sr-92E" secondAttribute="centerX" id="vLZ-Nx-2hK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="uzo-zU-0n3" firstAttribute="width" secondItem="8xR-xX-s6z" secondAttribute="width" id="EDX-uP-dAz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="HWC-Sr-92E" secondAttribute="bottom" id="ReE-Vs-KYy"/>
+                            <constraint firstItem="HWC-Sr-92E" firstAttribute="top" secondItem="uzo-zU-0n3" secondAttribute="bottom" id="XpP-ZH-VcD"/>
+                            <constraint firstItem="uzo-zU-0n3" firstAttribute="centerX" secondItem="8xR-xX-s6z" secondAttribute="centerX" id="eat-9Y-gRR"/>
+                            <constraint firstItem="HWC-Sr-92E" firstAttribute="centerX" secondItem="8xR-xX-s6z" secondAttribute="centerX" id="jRy-C9-xTz"/>
+                            <constraint firstItem="HWC-Sr-92E" firstAttribute="width" secondItem="8xR-xX-s6z" secondAttribute="width" id="uoP-32-Ewx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="uzo-zU-0n3" id="pvw-jg-3gw"/>
+                        <outlet property="label" destination="gI4-gP-2Ou" id="KcD-r2-xlr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkM-gd-AAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1537" y="1503"/>
+            <point key="canvasLocation" x="1537" y="1545"/>
         </scene>
     </scenes>
     <resources>
         <image name="Delete" width="44" height="44"/>
+        <image name="Page1" width="414" height="736"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>

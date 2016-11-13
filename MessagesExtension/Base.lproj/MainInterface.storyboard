@@ -77,11 +77,11 @@
                                         <rect key="frame" x="48.666666666666671" y="0.0" width="223.33333333333331" height="211.33333333333334"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-NT-xqt">
-                                                <rect key="frame" x="7" y="21.666666666666657" width="210.33333333333334" height="168.66666666666669"/>
+                                                <rect key="frame" x="6.6666666666666714" y="21.666666666666657" width="211.33333333333331" height="168.66666666666669"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIl-9S-dFa">
-                                                <rect key="frame" x="7" y="0.0" width="210.33333333333334" height="211.33333333333334"/>
+                                                <rect key="frame" x="6.6666666666666714" y="0.0" width="211.33333333333331" height="211.33333333333334"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="XIl-9S-dFa" secondAttribute="height" multiplier="1:1" identifier="CanvasRatio" id="R0g-yh-L5O"/>
@@ -126,7 +126,7 @@
                                                             <constraint firstAttribute="width" secondItem="Qys-vT-9p8" secondAttribute="height" multiplier="1:1" id="2zp-yU-zO3"/>
                                                             <constraint firstAttribute="width" constant="36" id="QDc-8W-0wd"/>
                                                         </constraints>
-                                                        <state key="normal" image="Undo"/>
+                                                        <state key="normal" image="Tutorial"/>
                                                         <connections>
                                                             <action selector="tutorialButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="ATM-Wt-ZKz"/>
                                                             <action selector="undoButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="1TT-oC-vZF"/>
@@ -696,7 +696,7 @@
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="2D59598E-1BA4-4087-AA77-94C0D63B904D">
+                                            <state key="normal" image="DA3CED2A-0A4D-4518-933A-91C427338B32">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -826,7 +826,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2D59598E-1BA4-4087-AA77-94C0D63B904D" width="20" height="20">
+        <image name="Accessories" width="20" height="20"/>
+        <image name="AddInvert" width="44" height="44"/>
+        <image name="DA3CED2A-0A4D-4518-933A-91C427338B32" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -904,8 +906,6 @@ D/oQAxAIEBAQExAYECcQKxAyEDoQRxBMEE4QUBBVEF0QYBBlEG0QcBCCEIUQigAAAAAAAAIBAAAAAAAA
 AEEAAAAAAAAAAAAAAAAAABCMA
 </mutableData>
         </image>
-        <image name="Accessories" width="20" height="20"/>
-        <image name="AddInvert" width="44" height="44"/>
         <image name="Delete" width="44" height="44"/>
         <image name="DeleteHeader" width="20" height="20"/>
         <image name="DeleteInvert" width="44" height="44"/>
@@ -922,6 +922,7 @@ AEEAAAAAAAAAAAAAAAAAABCMA
         <image name="Play" width="20" height="20"/>
         <image name="Small" width="20" height="20"/>
         <image name="Text" width="20" height="20"/>
+        <image name="Tutorial" width="44" height="44"/>
         <image name="Twitter" width="130" height="13"/>
         <image name="Undo" width="44" height="44"/>
     </resources>
