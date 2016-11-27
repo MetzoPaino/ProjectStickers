@@ -388,6 +388,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                     self.undoButton.isEnabled = false
                     self.doneButton.isEnabled = false
                     self.closeButton.isEnabled = false
+                    self.tutorialButton.isEnabled = false
                     
                 }, completion: nil)
             }
@@ -424,7 +425,8 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                 self.undoButton.isEnabled = true
                 self.doneButton.isEnabled = true
                 self.closeButton.isEnabled = true
-                
+                self.tutorialButton.isEnabled = true
+
             }, completion: nil)
             
             if let movingImage = movingImage {

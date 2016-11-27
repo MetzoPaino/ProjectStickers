@@ -124,7 +124,17 @@ class StickerManager: NSObject, NSCoding {
     
     func createAccessoriesStickerArray(animated: Bool) -> [MSSticker] {
         
-        return createAnimatedStickerArray(animated: animated, fileName: "Accessories")
+        let date = DateManager().detectMonth()
+        if date == .december {
+            let christmasArray = createAnimatedStickerArray(animated: animated, fileName: "AccessoriesChristmas")
+            let accessoriesArray = createAnimatedStickerArray(animated: animated, fileName: "Accessories")
+            
+            return christmasArray + accessoriesArray
+            
+        } else {
+            return createAnimatedStickerArray(animated: animated, fileName: "Accessories")
+        }
+        
     }
     
     func createTextStickerArray() -> [MSSticker] {
@@ -190,7 +200,16 @@ class StickerManager: NSObject, NSCoding {
     
     func createAccessoriesArray() -> [UIImage] {
         
-        return createArray(fileName: "Accessories", optimised: false)
+        let date = DateManager().detectMonth()
+        if date == .december {
+            let christmasArray = createArray(fileName: "AccessoriesChristmas", optimised: false)
+            let accessoriesArray = createArray(fileName: "Accessories", optimised: false)
+            
+            return christmasArray + accessoriesArray
+            
+        } else {
+            return createArray(fileName: "Accessories", optimised: false)
+        }
     }
     
     func createTextArray() -> [UIImage] {
@@ -408,35 +427,4 @@ class StickerManager: NSObject, NSCoding {
         
         return array
     }
-   
-//    var index = 0
-//    var foundImage = false
-//
-//    repeat {
-//    
-//    let fileName = "SortingAnimation_" + String(index)
-//    if let image = UIImage(named: fileName) {
-//    
-//    foundImage = true
-//    
-//    animationArray.append(image.cgImage!)
-//    } else {
-//    
-//    foundImage = false
-//
-//    }
-//    
-//    //            if image != nil {
-//    //                foundImage = true
-//    //
-//    //                animationArray.append(image!.CGImage!)
-//    //            } else {
-//    //                foundImage = false
-//    //            }
-//    index = index + 1
-//    
-//    } while foundImage
-//    
-    
-//        //http://stackoverflow.com/questions/25100262/save-data-to-plist-file-in-swift
 }
