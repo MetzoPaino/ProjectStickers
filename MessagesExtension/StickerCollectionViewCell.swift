@@ -18,11 +18,20 @@ class AddCollectionViewCell: UICollectionViewCell {
         backgroundColor = .white
         contentView.backgroundColor = .white
         
+        let modifier: String
+        let date = DateManager().detectMonth()
+        if date == .december {
+            modifier = "Christmas"
+            
+        } else {
+            modifier = "Green"
+        }
+        
         if enabled == true {
-            addImageView.image = UIImage(named: "AddInvert")
+            addImageView.image = UIImage(named: "AddInvert" + modifier)
             isUserInteractionEnabled = true
         } else {
-            addImageView.image = UIImage(named: "AddDisabled")
+            addImageView.image = UIImage(named: "AddDisabled" + modifier)
             isUserInteractionEnabled = false
         }
     }

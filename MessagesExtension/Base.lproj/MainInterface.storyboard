@@ -458,6 +458,7 @@
                         <outlet property="mouthsButton" destination="9EP-99-eUf" id="bbA-mF-JH6"/>
                         <outlet property="shadowImageView" destination="yoh-NT-xqt" id="d0g-4x-xBn"/>
                         <outlet property="textButton" destination="ABr-Js-ZB8" id="g9Z-vL-KyO"/>
+                        <outlet property="tutorialButton" destination="Qys-vT-9p8" id="uL5-a8-nIv"/>
                         <outlet property="tutorialContainerView" destination="fj0-J3-3ax" id="5gb-cN-ytz"/>
                         <outlet property="tutorialContainerViewTopLayoutConstraint" destination="AmY-8w-hoP" id="pXf-fv-azw"/>
                         <outlet property="undoButton" destination="NUV-7S-CG8" id="fOY-wS-IyH"/>
@@ -698,7 +699,7 @@
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="A34A171E-4BB5-44C9-9863-C7ABCD910F51">
+                                            <state key="normal" image="D7E9C147-07B1-4106-AF4D-E0ACC9602DCA">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -829,7 +830,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="A34A171E-4BB5-44C9-9863-C7ABCD910F51" width="20" height="20">
+        <image name="Accessories" width="20" height="20"/>
+        <image name="AddInvert" width="44" height="44"/>
+        <image name="D7E9C147-07B1-4106-AF4D-E0ACC9602DCA" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -907,8 +910,6 @@ D/oQAxAIEBAQExAYECcQKxAyEDoQRxBMEE4QUBBVEF0QYBBlEG0QcBCCEIUQigAAAAAAAAIBAAAAAAAA
 AEEAAAAAAAAAAAAAAAAAABCMA
 </mutableData>
         </image>
-        <image name="Accessories" width="20" height="20"/>
-        <image name="AddInvert" width="44" height="44"/>
         <image name="Delete" width="44" height="44"/>
         <image name="DeleteHeader" width="20" height="20"/>
         <image name="DeleteInvert" width="44" height="44"/>

@@ -43,7 +43,8 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
-    
+    @IBOutlet weak var tutorialButton: UIButton!
+
     @IBOutlet weak var headsButton: UIButton!
     @IBOutlet weak var eyesButton: UIButton!
     @IBOutlet weak var mouthsButton: UIButton!
@@ -128,14 +129,21 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         layout.minimumLineSpacing = 0
         collectionView!.collectionViewLayout = layout
         
+        let modifier: String
+        let tintColor: UIColor
+
         let date = DateManager().detectMonth()
         if date == .december {
-            headerImageView.image = UIImage(named: "HeaderChristmas")
-            backgroundImageView.image = UIImage(named: "MakerBackgroundChristmas")
+            modifier = "Christmas"
+            tintColor = UIColor(red: 91/255, green: 142/255, blue: 196/255, alpha: 1.0)
         } else {
-            headerImageView.image = UIImage(named: "HeaderGreen")
-            backgroundImageView.image = UIImage(named: "MakerBackgroundGreen")
+            modifier = "Green"
+            tintColor = .white
         }
+        
+        
+        headerImageView.image = UIImage(named: "Header" + modifier)
+        backgroundImageView.image = UIImage(named: "MakerBackground" + modifier)
         
         canvasImageView.isOpaque = false
         canvasImageView.layer.isOpaque = false
@@ -149,47 +157,52 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         shadowImageView.layer.shadowRadius = 4
         //shadowImageView.layer.shouldRasterize = true
         
-        headsButton.setImage(UIImage(named:"Emoji"), for: UIControlState.normal)
-        headsButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        headsButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        headsButton.tintColor = .white
+        headsButton.setImage(UIImage(named:"Emoji" + modifier), for: UIControlState.normal)
+        headsButton.setImage(UIImage(named:"Emoji" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        headsButton.setImage(UIImage(named:"Emoji" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        headsButton.tintColor = tintColor
         
-        eyesButton.setImage(UIImage(named:"Eye"), for: UIControlState.normal)
-        eyesButton.setImage(UIImage(named:"Eye")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        eyesButton.setImage(UIImage(named:"Eye")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        eyesButton.tintColor = .white
+        eyesButton.setImage(UIImage(named:"Eye" + modifier), for: UIControlState.normal)
+        eyesButton.setImage(UIImage(named:"Eye" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        eyesButton.setImage(UIImage(named:"Eye" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        eyesButton.tintColor = tintColor
         
-        mouthsButton.setImage(UIImage(named:"Mouth"), for: UIControlState.normal)
-        mouthsButton.setImage(UIImage(named:"Mouth")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        mouthsButton.setImage(UIImage(named:"Mouth")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        mouthsButton.tintColor = .white
+        mouthsButton.setImage(UIImage(named:"Mouth" + modifier), for: UIControlState.normal)
+        mouthsButton.setImage(UIImage(named:"Mouth" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        mouthsButton.setImage(UIImage(named:"Mouth" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        mouthsButton.tintColor = tintColor
         
-        accessoriesButton.setImage(UIImage(named:"Accessories"), for: UIControlState.normal)
-        accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        accessoriesButton.tintColor = .white
+        accessoriesButton.setImage(UIImage(named:"Accessories" + modifier), for: UIControlState.normal)
+        accessoriesButton.setImage(UIImage(named:"Accessories" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        accessoriesButton.setImage(UIImage(named:"Accessories" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        accessoriesButton.tintColor = tintColor
         
-        textButton.setImage(UIImage(named:"Text"), for: UIControlState.normal)
-        textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-        textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-        textButton.tintColor = .white
+        textButton.setImage(UIImage(named:"Text" + modifier), for: UIControlState.normal)
+        textButton.setImage(UIImage(named:"Text" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+        textButton.setImage(UIImage(named:"Text" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+        textButton.tintColor = tintColor
         
         headsButton.isSelected = true
         
-        doneButton.setImage(UIImage(named:"Done"), for: UIControlState.normal)
-        doneButton.setImage(UIImage(named:"DoneInvert"), for: UIControlState.highlighted)
-        doneButton.setImage(UIImage(named:"DoneInvert"), for: UIControlState.selected)
-        doneButton.setImage(UIImage(named:"DoneDisabled"), for: UIControlState.disabled)
+        doneButton.setImage(UIImage(named:"Done" + modifier), for: UIControlState.normal)
+        doneButton.setImage(UIImage(named:"DoneInvert" + modifier), for: UIControlState.highlighted)
+        doneButton.setImage(UIImage(named:"DoneInvert" + modifier), for: UIControlState.selected)
+        doneButton.setImage(UIImage(named:"DoneDisabled" + modifier), for: UIControlState.disabled)
 
-        undoButton.setImage(UIImage(named:"Undo"), for: UIControlState.normal)
-        undoButton.setImage(UIImage(named:"UndoInvert"), for: UIControlState.highlighted)
-        undoButton.setImage(UIImage(named:"UndoInvert"), for: UIControlState.selected)
-        undoButton.setImage(UIImage(named:"UndoDisabled"), for: UIControlState.disabled)
+        undoButton.setImage(UIImage(named:"Undo" + modifier), for: UIControlState.normal)
+        undoButton.setImage(UIImage(named:"UndoInvert" + modifier), for: UIControlState.highlighted)
+        undoButton.setImage(UIImage(named:"UndoInvert" + modifier), for: UIControlState.selected)
+        undoButton.setImage(UIImage(named:"UndoDisabled" + modifier), for: UIControlState.disabled)
 
-        closeButton.setImage(UIImage(named:"Delete"), for: UIControlState.normal)
-        closeButton.setImage(UIImage(named:"DeleteInvert"), for: UIControlState.highlighted)
-        closeButton.setImage(UIImage(named:"DeleteInvert"), for: UIControlState.selected)
-        closeButton.setImage(UIImage(named:"DeleteDisabled"), for: UIControlState.disabled)
+        closeButton.setImage(UIImage(named:"Delete" + modifier), for: UIControlState.normal)
+        closeButton.setImage(UIImage(named:"DeleteInvert" + modifier), for: UIControlState.highlighted)
+        closeButton.setImage(UIImage(named:"DeleteInvert" + modifier), for: UIControlState.selected)
+        closeButton.setImage(UIImage(named:"DeleteDisabled" + modifier), for: UIControlState.disabled)
+        
+        tutorialButton.setImage(UIImage(named:"Tutorial" + modifier), for: UIControlState.normal)
+        tutorialButton.setImage(UIImage(named:"TutorialInvert" + modifier), for: UIControlState.highlighted)
+        tutorialButton.setImage(UIImage(named:"TutorialInvert" + modifier), for: UIControlState.selected)
+        tutorialButton.setImage(UIImage(named:"TutorialDisabled" + modifier), for: UIControlState.disabled)
 
         updateButtonStates()
     }

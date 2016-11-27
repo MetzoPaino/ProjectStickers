@@ -90,6 +90,7 @@ class StickerManager: NSObject, NSCoding {
         let date = DateManager().detectMonth()
         if date == .december {
             let christmasArray = createChristmasStickerArray(animated: animated)
+
             return christmasArray + yetiArray + vampArray + skullArray + swampArray + wolfArray + medusaArray
 
         } else {
