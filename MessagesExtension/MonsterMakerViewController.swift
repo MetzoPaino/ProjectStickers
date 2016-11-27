@@ -413,7 +413,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 
                 } else {
                     movingImage.center = offsetedViewLocationPoint
-
                 }
             }
 
@@ -421,8 +420,10 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             
             if tryingToMoveOldImage == true {
                 movingImage = nil
+                tryingToMoveOldImage = false
                 return
             }
+            tryingToMoveOldImage = false
             
             sender.isEnabled = true
             //collectionView.reloadData()
