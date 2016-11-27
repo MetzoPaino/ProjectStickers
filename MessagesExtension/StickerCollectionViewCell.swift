@@ -175,7 +175,7 @@ class MonsterBrowserCollectionHeaderReusableView: UICollectionReusableView {
                 mediumButton.isSelected = false
                 largeButton.isSelected = false
             case .medium:
-                largeButton.isSelected = false
+                smallButton.isSelected = false
                 mediumButton.isSelected = true
                 largeButton.isSelected = false
             case .large:
