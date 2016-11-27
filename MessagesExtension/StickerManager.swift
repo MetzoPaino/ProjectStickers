@@ -34,8 +34,6 @@ class StickerManager: NSObject, NSCoding {
             customStickerFileURLS = decodedcustomStickerFileURLS
         }
         
-       // loadStickers()
-        
         super.init()
     }
     
@@ -47,7 +45,7 @@ class StickerManager: NSObject, NSCoding {
     // MARK: - Sticker Arrays
     
     func createAllStickerArray(animated: Bool) -> [MSSticker] {
-                
+        
         let emojiArray = createEmojiStickerArray(animated: animated)
         let headArray = createHeadStickerArray()
         let eyeArray = createEyeStickerArray()
@@ -56,6 +54,13 @@ class StickerManager: NSObject, NSCoding {
         let textArray = createTextStickerArray()
         
         var allArray = [MSSticker]()
+        
+        let date = DateManager().detectMonth()
+        if date == .december {
+            let christmasArray = createChristmasStickerArray(animated: animated)
+            allArray.append(contentsOf: christmasArray)
+        }
+        
         allArray.append(contentsOf: emojiArray)
         allArray.append(contentsOf: headArray)
         allArray.append(contentsOf: eyeArray)
@@ -66,6 +71,13 @@ class StickerManager: NSObject, NSCoding {
         return allArray
     }
     
+    func createChristmasStickerArray(animated: Bool) -> [MSSticker] {
+        
+        let christmasArray = createAnimatedStickerArray(animated: animated, fileName: "Christmas")
+        
+        return christmasArray
+    }
+    
     func createEmojiStickerArray(animated: Bool) -> [MSSticker] {
         
         let vampArray = createAnimatedStickerArray(animated: animated, fileName: "Vamp")
@@ -73,8 +85,16 @@ class StickerManager: NSObject, NSCoding {
         let swampArray = createAnimatedStickerArray(animated: animated, fileName: "Swamp")
         let wolfArray = createAnimatedStickerArray(animated: animated, fileName: "Wolf")
         let medusaArray = createAnimatedStickerArray(animated: animated, fileName: "Snake")
+        let yetiArray = createAnimatedStickerArray(animated: animated, fileName: "Yeti")
         
-        return vampArray + skullArray + swampArray + wolfArray + medusaArray
+        let date = DateManager().detectMonth()
+        if date == .december {
+            let christmasArray = createChristmasStickerArray(animated: animated)
+            return christmasArray + yetiArray + vampArray + skullArray + swampArray + wolfArray + medusaArray
+
+        } else {
+            return yetiArray + vampArray + skullArray + swampArray + wolfArray + medusaArray
+        }
     }
     
     func createPartStickerArray() -> [MSSticker] {
@@ -123,6 +143,13 @@ class StickerManager: NSObject, NSCoding {
         let textArray = createArray(fileName: "Text", optimised: false)
         
         return emojiArray + headArray + eyeArray + mouthArray + accessoriesArray + textArray
+    }
+    
+    func createChristmasArray() -> [UIImage] {
+        
+        let christmasArray = createArray(fileName: "Christmas", optimised: false)
+        
+        return christmasArray
     }
     
     func createEmojiArray() -> [UIImage] {
@@ -227,7 +254,6 @@ class StickerManager: NSObject, NSCoding {
         
         guard let stickerPath = Bundle.main.path(forResource: asset, ofType:"png") else {
             
-            //print("Couldn't create the sticker path for", asset)
             throw StickerCreationError.noPath
         }
         

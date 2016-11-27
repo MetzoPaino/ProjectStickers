@@ -55,7 +55,7 @@ class DateManager {
         case 10:
             return Month.october
         case 11:
-            return Month.november
+            return Month.december
         case 12:
             return Month.december
         default:

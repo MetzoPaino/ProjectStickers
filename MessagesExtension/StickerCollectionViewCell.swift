@@ -80,6 +80,7 @@ enum MonsterBrowserHeaderType {
 class MonsterBrowserCollectionHeaderReusableView: UICollectionReusableView {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var headerImageView: UIImageView!
 
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var animatingButton: UIButton!
@@ -95,12 +96,36 @@ class MonsterBrowserCollectionHeaderReusableView: UICollectionReusableView {
     
     func configureCell(type: MonsterBrowserHeaderType, editing: Bool, animating: Bool, stickerType: stickerType, cellSize: cellSize) {
         
+        let date = DateManager().detectMonth()
+        if date == .december {
+            headerImageView.image = UIImage(named: "HeaderChristmas")
+            
+        } else {
+            headerImageView.image = UIImage(named: "HeaderGreen")
+        }
+        
+        let modifier: String
+        let tintColor: UIColor
+        
+        if date == .december {
+            modifier = "Christmas"
+            tintColor = UIColor(red: 91/255, green: 142/255, blue: 196/255, alpha: 1.0)
+        } else {
+            modifier = "Green"
+            tintColor = .white
+        }
+        
         switch type {
         case .custom:
 
             backgroundColor = .clear
-
             backgroundImageView.isHidden = false
+            
+            if date == .december {
+                backgroundImageView.image = UIImage(named: "MakerBackgroundChristmas")
+            } else {
+                backgroundImageView.image = UIImage(named: "MakerBackgroundGreen")
+            }
             
             editButton.isHidden = false
             smallButton.isHidden = false
@@ -120,20 +145,20 @@ class MonsterBrowserCollectionHeaderReusableView: UICollectionReusableView {
                 editButton.setImage(UIImage(named:"DeleteHeader"), for: UIControlState.normal)
             }
             
-            smallButton.setImage(UIImage(named:"Small"), for: UIControlState.normal)
-            smallButton.setImage(UIImage(named:"Small")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-            smallButton.setImage(UIImage(named:"Small")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-            smallButton.tintColor = .white
+            smallButton.setImage(UIImage(named:"Small" + modifier), for: UIControlState.normal)
+            smallButton.setImage(UIImage(named:"Small" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+            smallButton.setImage(UIImage(named:"Small" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+            smallButton.tintColor = tintColor
             
-            mediumButton.setImage(UIImage(named:"Medium"), for: UIControlState.normal)
-            mediumButton.setImage(UIImage(named:"Medium")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-            mediumButton.setImage(UIImage(named:"Medium")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-            mediumButton.tintColor = .white
+            mediumButton.setImage(UIImage(named:"Medium" + modifier), for: UIControlState.normal)
+            mediumButton.setImage(UIImage(named:"Medium" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+            mediumButton.setImage(UIImage(named:"Medium" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+            mediumButton.tintColor = tintColor
             
-            largeButton.setImage(UIImage(named:"Large"), for: UIControlState.normal)
-            largeButton.setImage(UIImage(named:"Large")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-            largeButton.setImage(UIImage(named:"Large")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-            largeButton.tintColor = .white
+            largeButton.setImage(UIImage(named:"Large" + modifier), for: UIControlState.normal)
+            largeButton.setImage(UIImage(named:"Large" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+            largeButton.setImage(UIImage(named:"Large" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+            largeButton.tintColor = tintColor
             
             switch cellSize {
             case .small:
@@ -150,13 +175,15 @@ class MonsterBrowserCollectionHeaderReusableView: UICollectionReusableView {
                 largeButton.isSelected = true
             }
             
-            animatingButton.setImage(UIImage(named:"PlayDisabled"), for: UIControlState.normal)
-            animatingButton.setImage(UIImage(named:"Play"), for: UIControlState.selected)
-            animatingButton.setImage(UIImage(named:"PlayDisabled")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-            animatingButton.setImage(UIImage(named:"PlayDisabled")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.disabled)
+            animatingButton.setImage(UIImage(named:"PlayDisabled" + modifier), for: UIControlState.normal)
+            animatingButton.setImage(UIImage(named:"Play" + modifier), for: UIControlState.selected)
+            animatingButton.setImage(UIImage(named:"PlayDisabled" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+            animatingButton.setImage(UIImage(named:"PlayDisabled" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.disabled)
             animatingButton.isSelected = animating
             
         case .provided:
+
+            backgroundColor = .clear
 
             backgroundImageView.isHidden = true
             
@@ -171,25 +198,25 @@ class MonsterBrowserCollectionHeaderReusableView: UICollectionReusableView {
             accessoriesButton.isHidden = false
             textButton.isHidden = false
             
-            emojiButton.setImage(UIImage(named:"Emoji"), for: UIControlState.normal)
-            emojiButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-            emojiButton.setImage(UIImage(named:"Emoji")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-            emojiButton.tintColor = .white
+            emojiButton.setImage(UIImage(named:"Emoji" + modifier), for: UIControlState.normal)
+            emojiButton.setImage(UIImage(named:"Emoji" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+            emojiButton.setImage(UIImage(named:"Emoji" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+            emojiButton.tintColor = tintColor
             
-            partsButton.setImage(UIImage(named:"Parts"), for: UIControlState.normal)
-            partsButton.setImage(UIImage(named:"Parts")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-            partsButton.setImage(UIImage(named:"Parts")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-            partsButton.tintColor = .white
+            partsButton.setImage(UIImage(named:"Parts" + modifier), for: UIControlState.normal)
+            partsButton.setImage(UIImage(named:"Parts" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+            partsButton.setImage(UIImage(named:"Parts" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+            partsButton.tintColor = tintColor
             
-            accessoriesButton.setImage(UIImage(named:"Accessories"), for: UIControlState.normal)
-            accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-            accessoriesButton.setImage(UIImage(named:"Accessories")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-            accessoriesButton.tintColor = .white
+            accessoriesButton.setImage(UIImage(named:"Accessories" + modifier), for: UIControlState.normal)
+            accessoriesButton.setImage(UIImage(named:"Accessories" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+            accessoriesButton.setImage(UIImage(named:"Accessories" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+            accessoriesButton.tintColor = tintColor
             
-            textButton.setImage(UIImage(named:"Text"), for: UIControlState.normal)
-            textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
-            textButton.setImage(UIImage(named:"Text")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
-            textButton.tintColor = .white
+            textButton.setImage(UIImage(named:"Text" + modifier), for: UIControlState.normal)
+            textButton.setImage(UIImage(named:"Text" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
+            textButton.setImage(UIImage(named:"Text" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
+            textButton.tintColor = tintColor
             
             switch stickerType {
             case .all:
@@ -237,6 +264,14 @@ class MonsterBrowserCollectionFooterReusableView: UICollectionReusableView {
         
         switch type {
             case .topSlime:
+                
+                let date = DateManager().detectMonth()
+                if date == .december {
+                    imageView.image = UIImage(named: "FooterChristmas")
+                } else {
+                    imageView.image = UIImage(named: "FooterGreen")
+                }
+                
                 imageView.isHidden = false
                 twitterImageView.isHidden = true
             case .twitter:

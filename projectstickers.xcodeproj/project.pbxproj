@@ -10,6 +10,18 @@
 		0A22AC051DAC1EC500C66AF0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A22AC031DAC1AC300C66AF0 /* Localizable.strings */; };
 		0A2AB7D91DD8B6AF003ABCA2 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AB7D81DD8B6AF003ABCA2 /* PageViewController.swift */; };
 		0A4AE0571D9A9EA40012CDAD /* MonsterPartsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */; };
+		0A5040EC1DEADCE900ACFA44 /* ChristmasAnimated1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040E01DEADCE900ACFA44 /* ChristmasAnimated1.png */; };
+		0A5040ED1DEADCE900ACFA44 /* ChristmasAnimated2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040E11DEADCE900ACFA44 /* ChristmasAnimated2.png */; };
+		0A5040EE1DEADCE900ACFA44 /* ChristmasAnimated3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040E21DEADCE900ACFA44 /* ChristmasAnimated3.png */; };
+		0A5040EF1DEADCE900ACFA44 /* ChristmasAnimated4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040E31DEADCE900ACFA44 /* ChristmasAnimated4.png */; };
+		0A5040F01DEADCE900ACFA44 /* ChristmasAnimated5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040E41DEADCE900ACFA44 /* ChristmasAnimated5.png */; };
+		0A5040F11DEADCE900ACFA44 /* YetiAnimated0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040E51DEADCE900ACFA44 /* YetiAnimated0.png */; };
+		0A5040F21DEADCE900ACFA44 /* YetiAnimated1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040E61DEADCE900ACFA44 /* YetiAnimated1.png */; };
+		0A5040F31DEADCE900ACFA44 /* YetiAnimated2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040E71DEADCE900ACFA44 /* YetiAnimated2.png */; };
+		0A5040F41DEADCE900ACFA44 /* YetiAnimated3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040E81DEADCE900ACFA44 /* YetiAnimated3.png */; };
+		0A5040F51DEADCE900ACFA44 /* YetiAnimated4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040E91DEADCE900ACFA44 /* YetiAnimated4.png */; };
+		0A5040F61DEADCE900ACFA44 /* YetiAnimated5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040EA1DEADCE900ACFA44 /* YetiAnimated5.png */; };
+		0A5040F91DEAE38300ACFA44 /* ChristmasAnimated0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5040F81DEAE38300ACFA44 /* ChristmasAnimated0.png */; };
 		0A5E4E411DCF8897009AF5BE /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E4E401DCF8897009AF5BE /* TutorialPageViewController.swift */; };
 		0A5E4E431DCF93CD009AF5BE /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E4E421DCF93CD009AF5BE /* TutorialViewController.swift */; };
 		0A5E4E461DCF93FA009AF5BE /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5E4E441DCF93FA009AF5BE /* Tutorial.storyboard */; };
@@ -356,6 +368,18 @@
 		0A22AC031DAC1AC300C66AF0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = MessagesExtension/Support/Localizable.strings; sourceTree = "<group>"; };
 		0A2AB7D81DD8B6AF003ABCA2 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = Tutorial/PageViewController.swift; sourceTree = "<group>"; };
 		0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterPartsManager.swift; sourceTree = "<group>"; };
+		0A5040E01DEADCE900ACFA44 /* ChristmasAnimated1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChristmasAnimated1.png; sourceTree = "<group>"; };
+		0A5040E11DEADCE900ACFA44 /* ChristmasAnimated2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChristmasAnimated2.png; sourceTree = "<group>"; };
+		0A5040E21DEADCE900ACFA44 /* ChristmasAnimated3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChristmasAnimated3.png; sourceTree = "<group>"; };
+		0A5040E31DEADCE900ACFA44 /* ChristmasAnimated4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChristmasAnimated4.png; sourceTree = "<group>"; };
+		0A5040E41DEADCE900ACFA44 /* ChristmasAnimated5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChristmasAnimated5.png; sourceTree = "<group>"; };
+		0A5040E51DEADCE900ACFA44 /* YetiAnimated0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YetiAnimated0.png; sourceTree = "<group>"; };
+		0A5040E61DEADCE900ACFA44 /* YetiAnimated1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YetiAnimated1.png; sourceTree = "<group>"; };
+		0A5040E71DEADCE900ACFA44 /* YetiAnimated2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YetiAnimated2.png; sourceTree = "<group>"; };
+		0A5040E81DEADCE900ACFA44 /* YetiAnimated3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YetiAnimated3.png; sourceTree = "<group>"; };
+		0A5040E91DEADCE900ACFA44 /* YetiAnimated4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YetiAnimated4.png; sourceTree = "<group>"; };
+		0A5040EA1DEADCE900ACFA44 /* YetiAnimated5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YetiAnimated5.png; sourceTree = "<group>"; };
+		0A5040F81DEAE38300ACFA44 /* ChristmasAnimated0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChristmasAnimated0.png; sourceTree = "<group>"; };
 		0A5E4E401DCF8897009AF5BE /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialPageViewController.swift; path = Tutorial/TutorialPageViewController.swift; sourceTree = "<group>"; };
 		0A5E4E421DCF93CD009AF5BE /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
 		0A5E4E451DCF93FA009AF5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tutorial.storyboard; sourceTree = "<group>"; };
@@ -734,6 +758,16 @@
 			path = Mouth;
 			sourceTree = "<group>";
 		};
+		0A5040F71DEADFEE00ACFA44 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0A6AE3BC1D99C9A500F99EE1 /* DataManager.swift */,
+				0AEC38161DCE2BFC0066030D /* DateManager.swift */,
+				0A6AE3BF1D99C9A500F99EE1 /* StickerManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		0A5E4E471DCF9465009AF5BE /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,13 +830,11 @@
 				0A75E4871D9D9C660095AC92 /* Parts */,
 				0A75E44A1D9D9AF90095AC92 /* Stickers */,
 				0A6AE3AB1D99C36F00F99EE1 /* MessagesViewController.swift */,
-				0A6AE3BC1D99C9A500F99EE1 /* DataManager.swift */,
-				0AEC38161DCE2BFC0066030D /* DateManager.swift */,
 				0A6AE3BD1D99C9A500F99EE1 /* MonsterBrowserViewController.swift */,
 				0A689BB71DAA6D7A0068F3EC /* StickerCollectionViewCell.swift */,
 				0A6AE3BE1D99C9A500F99EE1 /* MonsterMakerViewController.swift */,
 				0A4AE0561D9A9EA40012CDAD /* MonsterPartsManager.swift */,
-				0A6AE3BF1D99C9A500F99EE1 /* StickerManager.swift */,
+				0A5040F71DEADFEE00ACFA44 /* Managers */,
 				0A5E4E481DCF946D009AF5BE /* Storyboards */,
 				0A5E4E471DCF9465009AF5BE /* Tutorial */,
 				0A6AE3B01D99C36F00F99EE1 /* Assets.xcassets */,
@@ -844,6 +876,18 @@
 				0ADE57BF1DB40E1800F06AAB /* Wolf3.png */,
 				0ADE57C01DB40E1800F06AAB /* Wolf4.png */,
 				0ADE57C11DB40E1800F06AAB /* Wolf5.png */,
+				0A5040F81DEAE38300ACFA44 /* ChristmasAnimated0.png */,
+				0A5040E01DEADCE900ACFA44 /* ChristmasAnimated1.png */,
+				0A5040E11DEADCE900ACFA44 /* ChristmasAnimated2.png */,
+				0A5040E21DEADCE900ACFA44 /* ChristmasAnimated3.png */,
+				0A5040E31DEADCE900ACFA44 /* ChristmasAnimated4.png */,
+				0A5040E41DEADCE900ACFA44 /* ChristmasAnimated5.png */,
+				0A5040E51DEADCE900ACFA44 /* YetiAnimated0.png */,
+				0A5040E61DEADCE900ACFA44 /* YetiAnimated1.png */,
+				0A5040E71DEADCE900ACFA44 /* YetiAnimated2.png */,
+				0A5040E81DEADCE900ACFA44 /* YetiAnimated3.png */,
+				0A5040E91DEADCE900ACFA44 /* YetiAnimated4.png */,
+				0A5040EA1DEADCE900ACFA44 /* YetiAnimated5.png */,
 				0ADE58801DB4196D00F06AAB /* SkullAnimated0.png */,
 				0ADE58811DB4196D00F06AAB /* SkullAnimated1.png */,
 				0ADE58821DB4196D00F06AAB /* SkullAnimated2.png */,
@@ -1255,6 +1299,7 @@
 				0ADE57821DB40DD200F06AAB /* Eye37.png in Resources */,
 				0ADE57731DB40DD200F06AAB /* Eye22.png in Resources */,
 				0ADE57131DB40DC400F06AAB /* Accessories16.png in Resources */,
+				0A5040F11DEADCE900ACFA44 /* YetiAnimated0.png in Resources */,
 				0AECB3811DB5586200C7D250 /* EyeOptimised9.png in Resources */,
 				0ADE57201DB40DC400F06AAB /* Accessories29.png in Resources */,
 				0AECB3F11DB55FD900C7D250 /* MouthOptimised23.png in Resources */,
@@ -1269,10 +1314,12 @@
 				0ADE58351DB40E3A00F06AAB /* Text2.png in Resources */,
 				0ADE58A81DB4196D00F06AAB /* SnakeAnimated5.png in Resources */,
 				0ADE58C61DB41B2C00F06AAB /* AccessoriesAnimated25.png in Resources */,
+				0A5040F41DEADCE900ACFA44 /* YetiAnimated3.png in Resources */,
 				0AECB3871DB5586200C7D250 /* EyeOptimised15.png in Resources */,
 				0ADE57651DB40DD200F06AAB /* Eye8.png in Resources */,
 				0ADE58161DB40E2A00F06AAB /* Mouth16.png in Resources */,
 				0AECB3E11DB55FD900C7D250 /* MouthOptimised7.png in Resources */,
+				0A5040F21DEADCE900ACFA44 /* YetiAnimated1.png in Resources */,
 				0ADE582A1DB40E2A00F06AAB /* Mouth36.png in Resources */,
 				0ADE570A1DB40DC400F06AAB /* Accessories7.png in Resources */,
 				0AECB3F51DB55FD900C7D250 /* MouthOptimised27.png in Resources */,
@@ -1285,6 +1332,7 @@
 				0ADE57C41DB40E1800F06AAB /* Skull2.png in Resources */,
 				0AECB38E1DB5586200C7D250 /* EyeOptimised22.png in Resources */,
 				0ADE58171DB40E2A00F06AAB /* Mouth17.png in Resources */,
+				0A5040F01DEADCE900ACFA44 /* ChristmasAnimated5.png in Resources */,
 				0ADE580C1DB40E2A00F06AAB /* Mouth6.png in Resources */,
 				0ADE58AB1DB4196D00F06AAB /* SwampAnimated3.png in Resources */,
 				0ADE589D1DB4196D00F06AAB /* SkullAnimated0.png in Resources */,
@@ -1358,6 +1406,7 @@
 				0AECB3851DB5586200C7D250 /* EyeOptimised13.png in Resources */,
 				0AECB3A21DB5586200C7D250 /* EyeOptimised42.png in Resources */,
 				0ADE57151DB40DC400F06AAB /* Accessories18.png in Resources */,
+				0A5040F61DEADCE900ACFA44 /* YetiAnimated5.png in Resources */,
 				0ADE57791DB40DD200F06AAB /* Eye28.png in Resources */,
 				0ADE57C61DB40E1800F06AAB /* Skull4.png in Resources */,
 				0AECB3EE1DB55FD900C7D250 /* MouthOptimised20.png in Resources */,
@@ -1373,6 +1422,7 @@
 				0AECB3A51DB5586200C7D250 /* EyeOptimised45.png in Resources */,
 				0ADE57DD1DB40E1800F06AAB /* Wolf3.png in Resources */,
 				0ADE58BB1DB41A2000F06AAB /* SwampAnimated2.png in Resources */,
+				0A5040F31DEADCE900ACFA44 /* YetiAnimated2.png in Resources */,
 				0AECB3ED1DB55FD900C7D250 /* MouthOptimised19.png in Resources */,
 				0ADE57941DB40DD200F06AAB /* Eye55.png in Resources */,
 				0ADE571E1DB40DC400F06AAB /* Accessories27.png in Resources */,
@@ -1400,12 +1450,15 @@
 				0ADE57081DB40DC400F06AAB /* Accessories5.png in Resources */,
 				0ADE577D1DB40DD200F06AAB /* Eye32.png in Resources */,
 				0ADE58151DB40E2A00F06AAB /* Mouth15.png in Resources */,
+				0A5040ED1DEADCE900ACFA44 /* ChristmasAnimated2.png in Resources */,
+				0A5040EE1DEADCE900ACFA44 /* ChristmasAnimated3.png in Resources */,
 				0ADE577A1DB40DD200F06AAB /* Eye29.png in Resources */,
 				0ADE58B01DB4196D00F06AAB /* VampAnimated2.png in Resources */,
 				0AECB3B21DB5586200C7D250 /* EyeOptimised58.png in Resources */,
 				0ADE57691DB40DD200F06AAB /* Eye12.png in Resources */,
 				0ADE57A11DB40DE200F06AAB /* Head3.png in Resources */,
 				0ADE57CC1DB40E1800F06AAB /* Snake4.png in Resources */,
+				0A5040EF1DEADCE900ACFA44 /* ChristmasAnimated4.png in Resources */,
 				0ADE578E1DB40DD200F06AAB /* Eye49.png in Resources */,
 				0ADE57671DB40DD200F06AAB /* Eye10.png in Resources */,
 				0AECB3F21DB55FD900C7D250 /* MouthOptimised24.png in Resources */,
@@ -1433,6 +1486,7 @@
 				0ADE58261DB40E2A00F06AAB /* Mouth32.png in Resources */,
 				0AECB3E31DB55FD900C7D250 /* MouthOptimised9.png in Resources */,
 				0AECB3791DB5586200C7D250 /* EyeOptimised1.png in Resources */,
+				0A5040EC1DEADCE900ACFA44 /* ChristmasAnimated1.png in Resources */,
 				0ADE57761DB40DD200F06AAB /* Eye25.png in Resources */,
 				0AECB3DB1DB55FD900C7D250 /* MouthOptimised1.png in Resources */,
 				0ADE570C1DB40DC400F06AAB /* Accessories9.png in Resources */,
@@ -1477,6 +1531,7 @@
 				0AECB3901DB5586200C7D250 /* EyeOptimised24.png in Resources */,
 				0ADE57041DB40DC400F06AAB /* Accessories1.png in Resources */,
 				0ADE58A51DB4196D00F06AAB /* SnakeAnimated2.png in Resources */,
+				0A5040F91DEAE38300ACFA44 /* ChristmasAnimated0.png in Resources */,
 				0ADE57601DB40DD200F06AAB /* Eye3.png in Resources */,
 				0ADE580E1DB40E2A00F06AAB /* Mouth8.png in Resources */,
 				0AECB3951DB5586200C7D250 /* EyeOptimised29.png in Resources */,
@@ -1529,6 +1584,7 @@
 				0ADE57D61DB40E1800F06AAB /* Vamp2.png in Resources */,
 				0AECB3AF1DB5586200C7D250 /* EyeOptimised55.png in Resources */,
 				0ADE57681DB40DD200F06AAB /* Eye11.png in Resources */,
+				0A5040F51DEADCE900ACFA44 /* YetiAnimated4.png in Resources */,
 				0ADE576B1DB40DD200F06AAB /* Eye14.png in Resources */,
 				0AECB38D1DB5586200C7D250 /* EyeOptimised21.png in Resources */,
 				0ADE577E1DB40DD200F06AAB /* Eye33.png in Resources */,

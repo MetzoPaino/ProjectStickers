@@ -70,7 +70,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wog-mT-sa4" userLabel="Canvas Container">
                                 <rect key="frame" x="0.0" y="20" width="320" height="211.33333333333334"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreenFlat" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreen" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-2G-Qve">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="211.33333333333334"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-zz-qOO" userLabel="Middle">
@@ -447,11 +447,13 @@
                     <navigationItem key="navigationItem" title="Title" id="lbX-3n-ktR"/>
                     <connections>
                         <outlet property="accessoriesButton" destination="9bv-aX-poU" id="cm5-5A-wMc"/>
+                        <outlet property="backgroundImageView" destination="hmj-2G-Qve" id="M9i-If-8nX"/>
                         <outlet property="canvasImageView" destination="XIl-9S-dFa" id="I1t-Ww-kpY"/>
                         <outlet property="closeButton" destination="NCI-Bn-QZm" id="wuY-Rv-IPj"/>
                         <outlet property="collectionView" destination="gSa-fk-1yR" id="VIc-nU-1y0"/>
                         <outlet property="doneButton" destination="pCU-kJ-WZW" id="9Rx-Q4-q6b"/>
                         <outlet property="eyesButton" destination="4wm-qe-CBc" id="Cfn-fl-uEO"/>
+                        <outlet property="headerImageView" destination="HuA-kW-Mem" id="N8K-5I-cdR"/>
                         <outlet property="headsButton" destination="vbm-tP-Ewj" id="eTP-tl-LK6"/>
                         <outlet property="mouthsButton" destination="9EP-99-eUf" id="bbA-mF-JH6"/>
                         <outlet property="shadowImageView" destination="yoh-NT-xqt" id="d0g-4x-xBn"/>
@@ -532,7 +534,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM" customClass="AddCollectionViewCell" customModule="MessagesExtension" customModuleProvider="target">
-                                        <rect key="frame" x="67.666666666666671" y="58" width="50" height="50"/>
+                                        <rect key="frame" x="68" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -563,13 +565,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundGreenFlat" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-a4-6Tv">
-                                            <rect key="frame" x="0.0" y="-364" width="320" height="400"/>
+                                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MakerBackgroundChristmas" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-a4-6Tv">
+                                            <rect key="frame" x="0.0" y="-400" width="320" height="400"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="400" id="5NH-vS-6eT"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderGreen" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-Lx-wcl">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderChristmas" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-Lx-wcl">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
                                         </imageView>
                                         <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-Ml-bZT">
@@ -589,7 +591,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="P6x-fw-Ira" secondAttribute="height" multiplier="1:1" id="nwu-2D-Ioz"/>
                                                     </constraints>
-                                                    <state key="normal" image="Small">
+                                                    <state key="normal" image="SmallGreen">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -602,7 +604,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="vc4-aG-3HJ" secondAttribute="height" multiplier="1:1" id="ydJ-e0-gSV"/>
                                                     </constraints>
-                                                    <state key="normal" image="Medium">
+                                                    <state key="normal" image="MediumGreen">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -615,7 +617,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ZWe-Q7-j4b" secondAttribute="height" multiplier="1:1" id="5dA-Ow-2ii"/>
                                                     </constraints>
-                                                    <state key="normal" image="Large">
+                                                    <state key="normal" image="LargeGreen">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -696,7 +698,7 @@
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="DA3CED2A-0A4D-4518-933A-91C427338B32">
+                                            <state key="normal" image="A34A171E-4BB5-44C9-9863-C7ABCD910F51">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -743,7 +745,7 @@
                                         <constraint firstItem="OuG-Lx-wcl" firstAttribute="centerY" secondItem="Ljz-H4-yhQ" secondAttribute="centerY" id="vM9-RQ-pUq"/>
                                         <constraint firstItem="OuG-Lx-wcl" firstAttribute="height" secondItem="Ljz-H4-yhQ" secondAttribute="height" id="vRJ-y6-N4a"/>
                                         <constraint firstItem="Aux-a4-6Tv" firstAttribute="width" secondItem="Ljz-H4-yhQ" secondAttribute="width" id="wSc-BE-m7h"/>
-                                        <constraint firstItem="Aux-a4-6Tv" firstAttribute="bottom" secondItem="qHN-Ml-bZT" secondAttribute="bottom" constant="-8" id="ynz-Ri-m7i"/>
+                                        <constraint firstItem="Aux-a4-6Tv" firstAttribute="bottom" secondItem="qHN-Ml-bZT" secondAttribute="top" id="ynz-Ri-m7i"/>
                                         <constraint firstItem="UgW-H7-ZDR" firstAttribute="leading" secondItem="rdK-QF-qP9" secondAttribute="trailing" id="zh9-iv-3J0"/>
                                     </constraints>
                                     <variation key="default">
@@ -759,6 +761,7 @@
                                         <outlet property="backgroundImageView" destination="Aux-a4-6Tv" id="QUC-nS-mPE"/>
                                         <outlet property="editButton" destination="ynB-Lb-PMU" id="cWF-63-Kks"/>
                                         <outlet property="emojiButton" destination="3XU-sp-EL6" id="doP-N4-4ff"/>
+                                        <outlet property="headerImageView" destination="OuG-Lx-wcl" id="LOP-XV-B4x"/>
                                         <outlet property="largeButton" destination="ZWe-Q7-j4b" id="NVd-MG-JKi"/>
                                         <outlet property="mediumButton" destination="vc4-aG-3HJ" id="x14-ea-HXB"/>
                                         <outlet property="partsButton" destination="TV4-VB-cXs" id="DyJ-dL-HYU"/>
@@ -770,7 +773,7 @@
                                     <rect key="frame" x="0.0" y="108" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooterGreenOld" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-SC-GAH">
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FooterChristmas" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-SC-GAH">
                                             <rect key="frame" x="0.0" y="45" width="320" height="5"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" tag="2" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="AzC-h6-paN">
@@ -826,9 +829,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Accessories" width="20" height="20"/>
-        <image name="AddInvert" width="44" height="44"/>
-        <image name="DA3CED2A-0A4D-4518-933A-91C427338B32" width="20" height="20">
+        <image name="A34A171E-4BB5-44C9-9863-C7ABCD910F51" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -906,21 +907,25 @@ D/oQAxAIEBAQExAYECcQKxAyEDoQRxBMEE4QUBBVEF0QYBBlEG0QcBCCEIUQigAAAAAAAAIBAAAAAAAA
 AEEAAAAAAAAAAAAAAAAAABCMA
 </mutableData>
         </image>
+        <image name="Accessories" width="20" height="20"/>
+        <image name="AddInvert" width="44" height="44"/>
         <image name="Delete" width="44" height="44"/>
         <image name="DeleteHeader" width="20" height="20"/>
         <image name="DeleteInvert" width="44" height="44"/>
         <image name="Done" width="44" height="44"/>
         <image name="Emoji" width="20" height="20"/>
         <image name="Eye" width="20" height="20"/>
-        <image name="FooterGreenOld" width="414" height="5"/>
+        <image name="FooterChristmas" width="414" height="5"/>
+        <image name="HeaderChristmas" width="414" height="58"/>
         <image name="HeaderGreen" width="414" height="58"/>
-        <image name="Large" width="20" height="20"/>
-        <image name="MakerBackgroundGreenFlat" width="414" height="294"/>
-        <image name="Medium" width="20" height="20"/>
+        <image name="LargeGreen" width="20" height="20"/>
+        <image name="MakerBackgroundChristmas" width="414" height="294"/>
+        <image name="MakerBackgroundGreen" width="414" height="294"/>
+        <image name="MediumGreen" width="20" height="20"/>
         <image name="Mouth" width="20" height="20"/>
         <image name="Parts" width="20" height="20"/>
         <image name="Play" width="20" height="20"/>
-        <image name="Small" width="20" height="20"/>
+        <image name="SmallGreen" width="20" height="20"/>
         <image name="Text" width="20" height="20"/>
         <image name="Tutorial" width="44" height="44"/>
         <image name="Twitter" width="130" height="13"/>

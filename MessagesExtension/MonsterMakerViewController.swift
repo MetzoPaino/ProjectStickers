@@ -24,6 +24,9 @@ enum monsterParts {
 
 class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate {
 
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var headerImageView: UIImageView!
+
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tutorialContainerView: UIView!
     @IBOutlet weak var tutorialContainerViewTopLayoutConstraint: NSLayoutConstraint!
@@ -124,6 +127,15 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         collectionView!.collectionViewLayout = layout
+        
+        let date = DateManager().detectMonth()
+        if date == .december {
+            headerImageView.image = UIImage(named: "HeaderChristmas")
+            backgroundImageView.image = UIImage(named: "MakerBackgroundChristmas")
+        } else {
+            headerImageView.image = UIImage(named: "HeaderGreen")
+            backgroundImageView.image = UIImage(named: "MakerBackgroundGreen")
+        }
         
         canvasImageView.isOpaque = false
         canvasImageView.layer.isOpaque = false
