@@ -191,6 +191,7 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
     
     func createdImage(image: UIImage) {
         
+        dataManager.saveImageToDisk(image: image)
         self.requestPresentationStyle(.compact)
         
         guard let conversation = activeConversation else {

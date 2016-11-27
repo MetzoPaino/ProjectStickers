@@ -109,7 +109,7 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     }
     
     @IBAction func cellSizeButtonPressed(_ sender: UIButton) {
-                
+        
         switch sender.tag {
         case 7:
             viewingCellSize = .small
