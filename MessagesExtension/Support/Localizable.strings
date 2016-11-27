@@ -46,6 +46,22 @@
 "Snake4" = "Medusa face throwing a kiss";
 "Snake5" = "Kissing medusa face with closed eyes";
 
+// Yeti
+"Yeti0" = "";
+"Yeti1" = "";
+"Yeti2" = "";
+"Yeti3" = "";
+"Yeti4" = "";
+"Yeti5" = "";
+
+// Christmas
+"Christmas0" = "";
+"Christmas1" = "";
+"Christmas2" = "";
+"Christmas3" = "";
+"Christmas4" = "";
+"Christmas5" = "";
+
 // Accessories
 "Accessories0" = "Candy corn";
 "Accessories1" = "Pumpkin sweet";
@@ -79,6 +95,31 @@
 "Accessories29" = "Blush";
 "Accessories30" = "Sleeping bubble";
 
+// Accessories
+"AccessoriesChristmas0" = "";
+"AccessoriesChristmas1" = "";
+"AccessoriesChristmas2" = "";
+"AccessoriesChristmas3" = "";
+"AccessoriesChristmas4" = "";
+"AccessoriesChristmas5" = "";
+"AccessoriesChristmas6" = "";
+"AccessoriesChristmas7" = "";
+"AccessoriesChristmas8" = "";
+"AccessoriesChristmas9" = "";
+"AccessoriesChristmas10" = "";
+"AccessoriesChristmas11" = "";
+"AccessoriesChristmas12" = "";
+"AccessoriesChristmas13" = "";
+"AccessoriesChristmas14" = "";
+"AccessoriesChristmas15" = "";
+"AccessoriesChristmas16" = "";
+"AccessoriesChristmas17" = "";
+"AccessoriesChristmas18" = "";
+"AccessoriesChristmas19" = "";
+"AccessoriesChristmas20" = "";
+"AccessoriesChristmas21" = "";
+"AccessoriesChristmas22" = "";
+
 // Text
 "Text0" = "Trick or treat";
 "Text1" = "Halloween party!";
@@ -87,6 +128,13 @@
 "Text4" = "Boo!";
 "Text5" = "Too cute to spook";
 "Text6" = "Gone haunting";
+
+// Text Christmas
+"TextChristmas0" = "Trick or treat";
+"TextChristmas1" = "Halloween party!";
+"TextChristmas2" = "Keeping it spooky";
+"TextChristmas3" = "Happy Halloween";
+"TextChristmas4" = "Boo!";
 
 // Head
 "Head0" = "Blank werewolf face";
@@ -136,6 +184,13 @@
 "Mouth35" = "Happy pumpkin mouth";
 "Mouth36" = "Shocked pumpkin mouth";
 "Mouth37" = "Pumpkin nose";
+"Mouth38" = "";
+"Mouth39" = "";
+"Mouth40" = "";
+"Mouth41" = "";
+"Mouth42" = "";
+"Mouth43" = "";
+"Mouth44" = "";
 
 // Eye
 "Eye0" = "Blue eye";
@@ -197,3 +252,11 @@
 "Eye56" = "Angry right pumpkin eye";
 "Eye57" = "Angry left pumpkin eye";
 "Eye58" = "Happy pumpkin eye";
+"Eye59" = "";
+"Eye60" = "";
+"Eye61" = "";
+"Eye62" = "";
+"Eye63" = "";
+"Eye64" = "";
+"Eye65" = "";
+"Eye66" = "";
