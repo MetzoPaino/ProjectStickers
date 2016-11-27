@@ -58,16 +58,6 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
         collectionView.reloadData()
     }
     
-    override func viewWillLayoutSubviews() {
-        
-        if collectionView.frame.origin.y == 0 {
-            print("HEY HEY YEAH")
-        } else {
-            
-            print("NO NO NO!")
-        }
-    }
-    
     func styleView() {
         collectionView.backgroundColor = .white
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()

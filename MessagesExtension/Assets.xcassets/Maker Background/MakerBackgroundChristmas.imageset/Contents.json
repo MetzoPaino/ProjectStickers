@@ -1,6 +1,20 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 414,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 172,
+          "top" : 121,
+          "right" : 0,
+          "left" : 0
+        }
+      },
       "idiom" : "universal",
       "filename" : "MakerBackgroundChristmas.png",
       "scale" : "1x"
