@@ -225,6 +225,11 @@
 		0A8F3F9E1DEAF98500773A80 /* MouthOptimised42.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3F711DEAF98500773A80 /* MouthOptimised42.png */; };
 		0A8F3F9F1DEAF98500773A80 /* MouthOptimised43.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3F721DEAF98500773A80 /* MouthOptimised43.png */; };
 		0A8F3FA01DEAF98500773A80 /* MouthOptimised44.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3F731DEAF98500773A80 /* MouthOptimised44.png */; };
+		0A8F3FB11DEB016500773A80 /* TextChristmas0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3FAC1DEB016500773A80 /* TextChristmas0.png */; };
+		0A8F3FB21DEB016500773A80 /* TextChristmas1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3FAD1DEB016500773A80 /* TextChristmas1.png */; };
+		0A8F3FB31DEB016500773A80 /* TextChristmas2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3FAE1DEB016500773A80 /* TextChristmas2.png */; };
+		0A8F3FB41DEB016500773A80 /* TextChristmas3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3FAF1DEB016500773A80 /* TextChristmas3.png */; };
+		0A8F3FB51DEB016500773A80 /* TextChristmas4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3FB01DEB016500773A80 /* TextChristmas4.png */; };
 		0ADE57031DB40DC400F06AAB /* Accessories0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE56E41DB40DC400F06AAB /* Accessories0.png */; };
 		0ADE57041DB40DC400F06AAB /* Accessories1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE56E51DB40DC400F06AAB /* Accessories1.png */; };
 		0ADE57051DB40DC400F06AAB /* Accessories2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE56E61DB40DC400F06AAB /* Accessories2.png */; };
@@ -634,6 +639,11 @@
 		0A8F3F711DEAF98500773A80 /* MouthOptimised42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MouthOptimised42.png; sourceTree = "<group>"; };
 		0A8F3F721DEAF98500773A80 /* MouthOptimised43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MouthOptimised43.png; sourceTree = "<group>"; };
 		0A8F3F731DEAF98500773A80 /* MouthOptimised44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MouthOptimised44.png; sourceTree = "<group>"; };
+		0A8F3FAC1DEB016500773A80 /* TextChristmas0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextChristmas0.png; sourceTree = "<group>"; };
+		0A8F3FAD1DEB016500773A80 /* TextChristmas1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextChristmas1.png; sourceTree = "<group>"; };
+		0A8F3FAE1DEB016500773A80 /* TextChristmas2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextChristmas2.png; sourceTree = "<group>"; };
+		0A8F3FAF1DEB016500773A80 /* TextChristmas3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextChristmas3.png; sourceTree = "<group>"; };
+		0A8F3FB01DEB016500773A80 /* TextChristmas4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextChristmas4.png; sourceTree = "<group>"; };
 		0ADE56E41DB40DC400F06AAB /* Accessories0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Accessories0.png; sourceTree = "<group>"; };
 		0ADE56E51DB40DC400F06AAB /* Accessories1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Accessories1.png; sourceTree = "<group>"; };
 		0ADE56E61DB40DC400F06AAB /* Accessories2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Accessories2.png; sourceTree = "<group>"; };
@@ -1195,6 +1205,18 @@
 			name = Christmas;
 			sourceTree = "<group>";
 		};
+		0A8F3FAB1DEAFE8500773A80 /* Christmas */ = {
+			isa = PBXGroup;
+			children = (
+				0A8F3FAC1DEB016500773A80 /* TextChristmas0.png */,
+				0A8F3FAD1DEB016500773A80 /* TextChristmas1.png */,
+				0A8F3FAE1DEB016500773A80 /* TextChristmas2.png */,
+				0A8F3FAF1DEB016500773A80 /* TextChristmas3.png */,
+				0A8F3FB01DEB016500773A80 /* TextChristmas4.png */,
+			);
+			name = Christmas;
+			sourceTree = "<group>";
+		};
 		0AECB33C1DB5584900C7D250 /* EyeOptimised */ = {
 			isa = PBXGroup;
 			children = (
@@ -1325,6 +1347,7 @@
 		0AF36DA81DA03C6800DBFCF2 /* Text */ = {
 			isa = PBXGroup;
 			children = (
+				0A8F3FAB1DEAFE8500773A80 /* Christmas */,
 				0ADE582C1DB40E3A00F06AAB /* Text0.png */,
 				0ADE582D1DB40E3A00F06AAB /* Text1.png */,
 				0ADE582E1DB40E3A00F06AAB /* Text2.png */,
@@ -1453,9 +1476,11 @@
 				0A8F3F941DEAF98500773A80 /* MouthOptimised32.png in Resources */,
 				0A8F3E511DEAF5C400773A80 /* Eye59.png in Resources */,
 				0A8F3F2C1DEAF89200773A80 /* Mouth18.png in Resources */,
+				0A8F3FB41DEB016500773A80 /* TextChristmas3.png in Resources */,
 				0A8F3ECF1DEAF74A00773A80 /* EyeOptimised51.png in Resources */,
 				0A8F3E321DEAF52000773A80 /* AccessoriesChristmas0.png in Resources */,
 				0ADE57061DB40DC400F06AAB /* Accessories3.png in Resources */,
+				0A8F3FB51DEB016500773A80 /* TextChristmas4.png in Resources */,
 				0ADE57CE1DB40E1800F06AAB /* Swamp0.png in Resources */,
 				0ADE58B61DB4196D00F06AAB /* WolfAnimated2.png in Resources */,
 				0A8F3EDE1DEAF74A00773A80 /* EyeOptimised66.png in Resources */,
@@ -1495,6 +1520,7 @@
 				0ADE57D31DB40E1800F06AAB /* Swamp5.png in Resources */,
 				0ADE58351DB40E3A00F06AAB /* Text2.png in Resources */,
 				0ADE58A81DB4196D00F06AAB /* SnakeAnimated5.png in Resources */,
+				0A8F3FB11DEB016500773A80 /* TextChristmas0.png in Resources */,
 				0ADE58C61DB41B2C00F06AAB /* AccessoriesAnimated25.png in Resources */,
 				0A5040F41DEADCE900ACFA44 /* YetiAnimated3.png in Resources */,
 				0A8F3E3B1DEAF52000773A80 /* AccessoriesChristmas9.png in Resources */,
@@ -1722,6 +1748,7 @@
 				0A8F3E3D1DEAF52000773A80 /* AccessoriesChristmas11.png in Resources */,
 				0ADE58B71DB4196D00F06AAB /* WolfAnimated3.png in Resources */,
 				0ADE57C31DB40E1800F06AAB /* Skull1.png in Resources */,
+				0A8F3FB31DEB016500773A80 /* TextChristmas2.png in Resources */,
 				0A8F3F3B1DEAF89300773A80 /* Mouth33.png in Resources */,
 				0A8F3EA41DEAF74A00773A80 /* EyeOptimised8.png in Resources */,
 				0ADE576E1DB40DD200F06AAB /* Eye17.png in Resources */,
@@ -1744,6 +1771,7 @@
 				0A8F3F1B1DEAF89200773A80 /* Mouth1.png in Resources */,
 				0A8F3F7E1DEAF98500773A80 /* MouthOptimised10.png in Resources */,
 				0A8F3F771DEAF98500773A80 /* MouthOptimised3.png in Resources */,
+				0A8F3FB21DEB016500773A80 /* TextChristmas1.png in Resources */,
 				0A8F3ECC1DEAF74A00773A80 /* EyeOptimised48.png in Resources */,
 				0ADE57811DB40DD200F06AAB /* Eye36.png in Resources */,
 				0A8F3F421DEAF89300773A80 /* Mouth40.png in Resources */,

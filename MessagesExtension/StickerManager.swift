@@ -139,7 +139,17 @@ class StickerManager: NSObject, NSCoding {
     
     func createTextStickerArray() -> [MSSticker] {
         
-        return createAnimatedStickerArray(animated: false, fileName: "Text")
+        let date = DateManager().detectMonth()
+        if date == .december {
+            let christmasArray = createAnimatedStickerArray(animated: false, fileName: "TextChristmas")
+            let textArray = createAnimatedStickerArray(animated: false, fileName: "Text")
+            
+            return christmasArray + textArray
+            
+        } else {
+            return createAnimatedStickerArray(animated: false, fileName: "Text")
+        }
+        
     }
     
     // MARK: - UIImage Arrays
@@ -214,7 +224,16 @@ class StickerManager: NSObject, NSCoding {
     
     func createTextArray() -> [UIImage] {
         
-        return createArray(fileName: "Text", optimised: false)
+        let date = DateManager().detectMonth()
+        if date == .december {
+            let christmasArray = createArray(fileName: "TextChristmas", optimised: false)
+            let textArray = createArray(fileName: "Text", optimised: false)
+            
+            return christmasArray + textArray
+            
+        } else {
+            return createArray(fileName: "Text", optimised: false)
+        }
     }
     
     

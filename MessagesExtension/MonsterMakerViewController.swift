@@ -81,7 +81,10 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //canvasImageView.backgroundColor = .clear
+        
+        tutorialButton.isEnabled = false
+        tutorialButton.isHidden = true
+
         styleView()
         
         longGesture = UILongPressGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleLongPress(_:)))

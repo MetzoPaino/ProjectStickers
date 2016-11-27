@@ -125,7 +125,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Qys-vT-9p8" secondAttribute="height" multiplier="1:1" id="2zp-yU-zO3"/>
                                                         </constraints>
-                                                        <state key="normal" image="Tutorial"/>
+                                                        <state key="normal" image="TutorialGreen"/>
                                                         <connections>
                                                             <action selector="tutorialButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="ATM-Wt-ZKz"/>
                                                             <action selector="undoButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="1TT-oC-vZF"/>
@@ -148,7 +148,7 @@
                                                             <constraint firstAttribute="width" constant="36" id="GZY-Jh-udq"/>
                                                             <constraint firstAttribute="width" secondItem="NUV-7S-CG8" secondAttribute="height" multiplier="1:1" id="hGr-0g-9qd"/>
                                                         </constraints>
-                                                        <state key="normal" image="Undo"/>
+                                                        <state key="normal" image="UndoGreen"/>
                                                         <connections>
                                                             <action selector="undoButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="bT9-AP-UeB"/>
                                                         </connections>
@@ -183,7 +183,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="NCI-Bn-QZm" secondAttribute="height" multiplier="1:1" id="VdK-dv-ZGg"/>
                                                         </constraints>
-                                                        <state key="normal" image="Delete"/>
+                                                        <state key="normal" image="DeleteGreen"/>
                                                         <connections>
                                                             <action selector="cancelButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="aeW-bb-iMN"/>
                                                         </connections>
@@ -204,7 +204,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="pCU-kJ-WZW" secondAttribute="height" multiplier="1:1" id="f4b-SW-qCT"/>
                                                         </constraints>
-                                                        <state key="normal" image="Done"/>
+                                                        <state key="normal" image="DoneGreen"/>
                                                         <connections>
                                                             <action selector="buttonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="gs4-dB-8A3"/>
                                                         </connections>
@@ -324,35 +324,35 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-tP-Ewj">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="43.999999999999972"/>
-                                                <state key="normal" image="Emoji"/>
+                                                <state key="normal" image="EmojiGreen"/>
                                                 <connections>
                                                     <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="shv-9f-AFt"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wm-qe-CBc">
                                                 <rect key="frame" x="64" y="0.0" width="64" height="43.999999999999972"/>
-                                                <state key="normal" image="Eye"/>
+                                                <state key="normal" image="EyeGreen"/>
                                                 <connections>
                                                     <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="KIZ-Ad-Yfr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EP-99-eUf">
                                                 <rect key="frame" x="128" y="0.0" width="64" height="43.999999999999972"/>
-                                                <state key="normal" image="Mouth"/>
+                                                <state key="normal" image="MouthGreen"/>
                                                 <connections>
                                                     <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="jWy-Qu-o6u"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-aX-poU">
                                                 <rect key="frame" x="192" y="0.0" width="64" height="43.999999999999972"/>
-                                                <state key="normal" image="Accessories"/>
+                                                <state key="normal" image="AccessoriesGreen"/>
                                                 <connections>
                                                     <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="A46-B9-C4M"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABr-Js-ZB8">
                                                 <rect key="frame" x="256" y="0.0" width="64" height="43.999999999999972"/>
-                                                <state key="normal" image="Text"/>
+                                                <state key="normal" image="TextGreen"/>
                                                 <connections>
                                                     <action selector="monsterPartButtonPressed:" destination="L9W-V7-dRZ" eventType="touchUpInside" id="H0c-to-hHB"/>
                                                 </connections>
@@ -514,7 +514,7 @@
                                                         <constraint firstAttribute="width" secondItem="baw-fP-Ryx" secondAttribute="height" multiplier="1:1" id="4k0-tv-ha5"/>
                                                         <constraint firstAttribute="width" constant="20" id="onN-X6-RbG"/>
                                                     </constraints>
-                                                    <state key="normal" image="DeleteInvert"/>
+                                                    <state key="normal" image="DeleteInvertGreen"/>
                                                     <connections>
                                                         <action selector="deleteButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="DIs-YQ-rwG"/>
                                                     </connections>
@@ -535,13 +535,13 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM" customClass="AddCollectionViewCell" customModule="MessagesExtension" customModuleProvider="target">
-                                        <rect key="frame" x="68" y="58" width="50" height="50"/>
+                                        <rect key="frame" x="67.666666666666671" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddInvert" translatesAutoresizingMaskIntoConstraints="NO" id="AbR-eD-EdS">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddInvertGreen" translatesAutoresizingMaskIntoConstraints="NO" id="AbR-eD-EdS">
                                                     <rect key="frame" x="3" y="3" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Select to launch Monster Maker" label="Create button">
                                                         <bool key="isElement" value="YES"/>
@@ -659,7 +659,7 @@
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XU-sp-EL6" userLabel="Emoji">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all monster emoji" label="Emoji"/>
-                                            <state key="normal" image="Emoji">
+                                            <state key="normal" image="EmojiGreen">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -669,7 +669,7 @@
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TV4-VB-cXs" userLabel="Parts">
                                             <rect key="frame" x="80" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show heads, eyes &amp; mouths of stickers" label="Parts"/>
-                                            <state key="normal" image="Parts">
+                                            <state key="normal" image="PartsGreen">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -679,7 +679,7 @@
                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5i-dd-b6m" userLabel="Accessories">
                                             <rect key="frame" x="160" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show accessories" label="Accessories"/>
-                                            <state key="normal" image="Accessories">
+                                            <state key="normal" image="AccessoriesGreen">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -689,7 +689,7 @@
                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdK-QF-qP9" userLabel="Text">
                                             <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show text stickers" label="Text"/>
-                                            <state key="normal" image="Text">
+                                            <state key="normal" image="TextGreen">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -699,7 +699,7 @@
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="0FF5A78F-A217-4B71-BAE1-E510A515746D">
+                                            <state key="normal" image="FA42A815-BE80-4B9A-B700-C10AE08E8888">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -830,7 +830,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0FF5A78F-A217-4B71-BAE1-E510A515746D" width="20" height="20">
+        <image name="AccessoriesGreen" width="20" height="20"/>
+        <image name="AddInvertGreen" width="44" height="44"/>
+        <image name="DeleteGreen" width="44" height="44"/>
+        <image name="DeleteHeader" width="20" height="20"/>
+        <image name="DeleteInvertGreen" width="44" height="44"/>
+        <image name="DoneGreen" width="44" height="44"/>
+        <image name="EmojiGreen" width="20" height="20"/>
+        <image name="EyeGreen" width="20" height="20"/>
+        <image name="FA42A815-BE80-4B9A-B700-C10AE08E8888" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -908,14 +916,6 @@ D/oQAxAIEBAQExAYECcQKxAyEDoQRxBMEE4QUBBVEF0QYBBlEG0QcBCCEIUQigAAAAAAAAIBAAAAAAAA
 AEEAAAAAAAAAAAAAAAAAABCMA
 </mutableData>
         </image>
-        <image name="Accessories" width="20" height="20"/>
-        <image name="AddInvert" width="44" height="44"/>
-        <image name="Delete" width="44" height="44"/>
-        <image name="DeleteHeader" width="20" height="20"/>
-        <image name="DeleteInvert" width="44" height="44"/>
-        <image name="Done" width="44" height="44"/>
-        <image name="Emoji" width="20" height="20"/>
-        <image name="Eye" width="20" height="20"/>
         <image name="FooterChristmas" width="414" height="5"/>
         <image name="HeaderChristmas" width="414" height="58"/>
         <image name="HeaderGreen" width="414" height="58"/>
@@ -923,14 +923,14 @@ AEEAAAAAAAAAAAAAAAAAABCMA
         <image name="MakerBackgroundChristmas" width="414" height="294"/>
         <image name="MakerBackgroundGreen" width="414" height="294"/>
         <image name="MediumGreen" width="20" height="20"/>
-        <image name="Mouth" width="20" height="20"/>
-        <image name="Parts" width="20" height="20"/>
+        <image name="MouthGreen" width="20" height="20"/>
+        <image name="PartsGreen" width="20" height="20"/>
         <image name="Play" width="20" height="20"/>
         <image name="SmallGreen" width="20" height="20"/>
-        <image name="Text" width="20" height="20"/>
-        <image name="Tutorial" width="44" height="44"/>
+        <image name="TextGreen" width="20" height="20"/>
+        <image name="TutorialGreen" width="44" height="44"/>
         <image name="Twitter" width="130" height="13"/>
-        <image name="Undo" width="44" height="44"/>
+        <image name="UndoGreen" width="44" height="44"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>
