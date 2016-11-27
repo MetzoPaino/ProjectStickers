@@ -47,20 +47,20 @@
 "Snake5" = "Kissing medusa face with closed eyes";
 
 // Yeti
-"Yeti0" = "";
-"Yeti1" = "";
-"Yeti2" = "";
-"Yeti3" = "";
-"Yeti4" = "";
-"Yeti5" = "";
+"Yeti0" = "Yeti face";
+"Yeti1" = "Yeti relieved face";
+"Yeti2" = "Yeti tasting delicious food face";
+"Yeti3" = "Yeti feeling sick face";
+"Yeti4" = "Yeti concerned face";
+"Yeti5" = "Yeti unsure face";
 
 // Christmas
-"Christmas0" = "";
-"Christmas1" = "";
-"Christmas2" = "";
-"Christmas3" = "";
-"Christmas4" = "";
-"Christmas5" = "";
+"Christmas0" = "Werewolf wearing Rudolf costume";
+"Christmas1" = "Swamp monster wearing Santa costume";
+"Christmas2" = "Vampire wearing elf costume";
+"Christmas3" = "Skeleton wearing snowman costume";
+"Christmas4" = "Medusa dress for Christmas party";
+"Christmas5" = "Yeti catching snowflake on tongue";
 
 // Accessories
 "Accessories0" = "Candy corn";
@@ -96,29 +96,29 @@
 "Accessories30" = "Sleeping bubble";
 
 // Accessories
-"AccessoriesChristmas0" = "";
-"AccessoriesChristmas1" = "";
-"AccessoriesChristmas2" = "";
-"AccessoriesChristmas3" = "";
-"AccessoriesChristmas4" = "";
-"AccessoriesChristmas5" = "";
-"AccessoriesChristmas6" = "";
-"AccessoriesChristmas7" = "";
-"AccessoriesChristmas8" = "";
-"AccessoriesChristmas9" = "";
-"AccessoriesChristmas10" = "";
-"AccessoriesChristmas11" = "";
-"AccessoriesChristmas12" = "";
-"AccessoriesChristmas13" = "";
-"AccessoriesChristmas14" = "";
-"AccessoriesChristmas15" = "";
-"AccessoriesChristmas16" = "";
-"AccessoriesChristmas17" = "";
-"AccessoriesChristmas18" = "";
-"AccessoriesChristmas19" = "";
-"AccessoriesChristmas20" = "";
-"AccessoriesChristmas21" = "";
-"AccessoriesChristmas22" = "";
+"AccessoriesChristmas0" = "Holly leaves & berries";
+"AccessoriesChristmas1" = "Hot chocolate in a mug";
+"AccessoriesChristmas2" = "Candy cane";
+"AccessoriesChristmas3" = "Gingerbread person";
+"AccessoriesChristmas4" = "Christmas pudding";
+"AccessoriesChristmas5" = "Red bow";
+"AccessoriesChristmas6" = "Sparkling star";
+"AccessoriesChristmas7" = "Blue bauble";
+"AccessoriesChristmas8" = "Red bauble";
+"AccessoriesChristmas9" = "Decorated Christmas tree";
+"AccessoriesChristmas10" = "Snowy Christmas tree";
+"AccessoriesChristmas11" = "Blank Christmas tree";
+"AccessoriesChristmas12" = "Santa beard";
+"AccessoriesChristmas13" = "Santa hat";
+"AccessoriesChristmas14" = "Elf hat";
+"AccessoriesChristmas15" = "Bell";
+"AccessoriesChristmas16" = "Reindeer antlers";
+"AccessoriesChristmas17" = "Rudolf nose";
+"AccessoriesChristmas18" = "Snowman carrot nose";
+"AccessoriesChristmas19" = "Coal";
+"AccessoriesChristmas20" = "Snowman head";
+"AccessoriesChristmas21" = "Snowflake";
+"AccessoriesChristmas22" = "Snowflake";
 
 // Text
 "Text0" = "Trick or treat";
@@ -130,11 +130,11 @@
 "Text6" = "Gone haunting";
 
 // Text Christmas
-"TextChristmas0" = "Trick or treat";
-"TextChristmas1" = "Halloween party!";
-"TextChristmas2" = "Keeping it spooky";
-"TextChristmas3" = "Happy Halloween";
-"TextChristmas4" = "Boo!";
+"TextChristmas0" = "Happy holidays";
+"TextChristmas1" = "Season's greetings";
+"TextChristmas2" = "Merry Christmas";
+"TextChristmas3" = "Peace & happiness";
+"TextChristmas4" = "Ho ho ho";
 
 // Head
 "Head0" = "Blank werewolf face";
@@ -184,13 +184,13 @@
 "Mouth35" = "Happy pumpkin mouth";
 "Mouth36" = "Shocked pumpkin mouth";
 "Mouth37" = "Pumpkin nose";
-"Mouth38" = "";
-"Mouth39" = "";
-"Mouth40" = "";
-"Mouth41" = "";
-"Mouth42" = "";
-"Mouth43" = "";
-"Mouth44" = "";
+"Mouth38" = "Yeti mouth";
+"Mouth39" = "Happy yeti mouth";
+"Mouth40" = "Shocked yeti mouth";
+"Mouth41" = "Unsure yeti mouth";
+"Mouth42" = "Sad yeti mouth";
+"Mouth43" = "Tasty yeti mouth";
+"Mouth44" = "Smiling yeti mouth";
 
 // Eye
 "Eye0" = "Blue eye";
@@ -252,11 +252,11 @@
 "Eye56" = "Angry right pumpkin eye";
 "Eye57" = "Angry left pumpkin eye";
 "Eye58" = "Happy pumpkin eye";
-"Eye59" = "";
-"Eye60" = "";
-"Eye61" = "";
-"Eye62" = "";
-"Eye63" = "";
-"Eye64" = "";
-"Eye65" = "";
-"Eye66" = "";
+"Eye59" = "Yeti eye";
+"Eye60" = "Happy yeti eye";
+"Eye61" = "Looking right yeti eye";
+"Eye62" = "Looking left yeti eye";
+"Eye63" = "Sleepy yeti eye";
+"Eye64" = "Excited yeti eye";
+"Eye65" = "Shut yeti eye";
+"Eye66" = "Looking up yeti eye";

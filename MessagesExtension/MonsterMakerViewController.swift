@@ -137,16 +137,24 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 
         let date = DateManager().detectMonth()
         if date == .december {
+            
+
             modifier = "Christmas"
+
             tintColor = UIColor(red: 91/255, green: 142/255, blue: 196/255, alpha: 1.0)
         } else {
             modifier = "Green"
             tintColor = .white
         }
         
+        if UIDevice.current.userInterfaceIdiom == .pad && date == .december {
+            backgroundImageView.image = UIImage(named: "MakerBackgroundChristmas2")
+            backgroundImageView.contentMode = .scaleAspectFill
+        } else {
+            backgroundImageView.image = UIImage(named: "MakerBackground" + modifier)
+        }
         
         headerImageView.image = UIImage(named: "Header" + modifier)
-        backgroundImageView.image = UIImage(named: "MakerBackground" + modifier)
         
         canvasImageView.isOpaque = false
         canvasImageView.layer.isOpaque = false
@@ -644,11 +652,11 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        if segue.identifier == "EmbedTutorial" {
-            
-            let controller = segue.destination as! TutorialViewController
-            controller.delegate = self
-        }
+//        if segue.identifier == "EmbedTutorial" {
+//            
+//            let controller = segue.destination as! TutorialViewController
+//            controller.delegate = self
+//        }
     }
 }
 

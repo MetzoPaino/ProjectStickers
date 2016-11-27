@@ -699,7 +699,7 @@
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="0DF860DF-BB6A-4A6B-BF90-2A9CB9ACEDB2">
+                                            <state key="normal" image="E10698FA-97B7-4EAC-9FC0-9643434964CE">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -836,7 +836,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0DF860DF-BB6A-4A6B-BF90-2A9CB9ACEDB2" width="20" height="20">
+        <image name="AccessoriesGreen" width="20" height="20"/>
+        <image name="AddInvertGreen" width="44" height="44"/>
+        <image name="DeleteGreen" width="44" height="44"/>
+        <image name="DeleteHeader" width="20" height="20"/>
+        <image name="DeleteInvertGreen" width="44" height="44"/>
+        <image name="DoneGreen" width="44" height="44"/>
+        <image name="E10698FA-97B7-4EAC-9FC0-9643434964CE" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -914,12 +920,6 @@ D/oQAxAIEBAQExAYECcQKxAyEDoQRxBMEE4QUBBVEF0QYBBlEG0QcBCCEIUQigAAAAAAAAIBAAAAAAAA
 AEEAAAAAAAAAAAAAAAAAABCMA
 </mutableData>
         </image>
-        <image name="AccessoriesGreen" width="20" height="20"/>
-        <image name="AddInvertGreen" width="44" height="44"/>
-        <image name="DeleteGreen" width="44" height="44"/>
-        <image name="DeleteHeader" width="20" height="20"/>
-        <image name="DeleteInvertGreen" width="44" height="44"/>
-        <image name="DoneGreen" width="44" height="44"/>
         <image name="EmojiGreen" width="20" height="20"/>
         <image name="EyeGreen" width="20" height="20"/>
         <image name="FooterChristmas" width="414" height="5"/>
