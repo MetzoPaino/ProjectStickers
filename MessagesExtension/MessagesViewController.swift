@@ -37,7 +37,7 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
             controller.delegate = self
             controller.stickerManager = dataManager.stickerManager
 
-            showViewController(controller: controller)
+            showViewController(controller: controller, presentationStyle: presentationStyle)
             monsterBrowser = controller
             
         } else {
@@ -46,7 +46,7 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
                 
                 let controller = UIStoryboard(name: "MainInterface", bundle: nil).instantiateViewController(withIdentifier: "MonsterMaker") as! MonsterMakerViewController
                 controller.delegate = self
-                showViewController(controller: controller)
+                showViewController(controller: controller, presentationStyle: presentationStyle)
                 
             } else {
                 
@@ -55,13 +55,13 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
                 controller.stickerManager = dataManager.stickerManager
                 controller.enableCreateButton = false
                 
-                showViewController(controller: controller)
+                showViewController(controller: controller, presentationStyle: presentationStyle)
                 monsterBrowser = controller
             }
         }
     }
     
-    func showViewController(controller: UIViewController) {
+    func showViewController(controller: UIViewController, presentationStyle:MSMessagesAppPresentationStyle) {
         
         // Remove any existing child controllers.
         
@@ -82,22 +82,20 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         controller.view.frame = view.bounds
         
         controller.view.translatesAutoresizingMaskIntoConstraints = false
-       // view.addSubview(controller.view)
         view.insertSubview(controller.view, belowSubview: loadingImageView)
         
         controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         controller.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
+        if presentationStyle == .compact {
+            controller.view.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor).isActive = true
+        } else {
+            controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        }
+
         controller.didMove(toParentViewController: self)
         presentMonsterMaker = false
-        
-        let topConstraint = NSLayoutConstraint(item: controller.view, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)      
-        NSLayoutConstraint.activate([topConstraint])
-        
-        view.layoutIfNeeded()
-
     }
     
     // MARK: - Conversation Handling
@@ -154,12 +152,6 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         
         // Use this method to finalize any behaviors associated with the change in presentation style.
         view.sendSubview(toBack: loadingImageView)
-        
-//        if moveToMonsterMaker == true {
-//            moveToMonsterMaker = false
-//            presentMonsterMaker = true
-//            self.requestPresentationStyle(.expanded)
-//        }
     }
     
     // MARK: - DataManagerDelegate

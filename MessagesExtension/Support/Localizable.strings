@@ -94,7 +94,8 @@
 "Head2" = "Blank vampire face";
 "Head3" = "Blank medusa face";
 "Head4" = "Blank skull face";
-"Head5" = "Blank pumpkin";
+"Head5" = "Blank yeti face";
+"Head6" = "Blank pumpkin";
 
 // Mouth
 "Mouth0" = "Open skeleton mouth";

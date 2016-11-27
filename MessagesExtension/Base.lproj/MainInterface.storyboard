@@ -15,7 +15,7 @@
         <!--Messages View Controller-->
         <scene sceneID="rJI-4W-A0I">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="WDl-CC-chs" customClass="MessagesViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WDl-CC-chs" customClass="MessagesViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nkZ-Er-kkO"/>
                         <viewControllerLayoutGuide type="bottom" id="dUN-ib-e3Y"/>
@@ -535,7 +535,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddCell" id="ECw-9O-ETM" customClass="AddCollectionViewCell" customModule="MessagesExtension" customModuleProvider="target">
-                                        <rect key="frame" x="67.666666666666671" y="58" width="50" height="50"/>
+                                        <rect key="frame" x="68" y="58" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -581,7 +581,7 @@
                                                 <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8g-Os-kA4">
                                                     <rect key="frame" x="18" y="0.0" width="44" height="44"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Toggle animations of stickers" label="Play"/>
-                                                    <state key="normal" image="Play"/>
+                                                    <state key="normal" image="PlayGreen"/>
                                                     <connections>
                                                         <action selector="animatingButtonPressed:" destination="hXf-jq-1q5" eventType="touchUpInside" id="Jxw-c4-fnJ"/>
                                                     </connections>
@@ -699,7 +699,7 @@
                                         <button hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-H7-ZDR" userLabel="All">
                                             <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                             <accessibility key="accessibilityConfiguration" hint="Show all stickers" label="All"/>
-                                            <state key="normal" image="FA42A815-BE80-4B9A-B700-C10AE08E8888">
+                                            <state key="normal" image="0DF860DF-BB6A-4A6B-BF90-2A9CB9ACEDB2">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -805,8 +805,14 @@
                             <constraint firstItem="DhE-U5-qwR" firstAttribute="centerX" secondItem="QYm-Bi-Fp9" secondAttribute="centerX" id="2gy-Or-VoU"/>
                             <constraint firstItem="DhE-U5-qwR" firstAttribute="width" secondItem="QYm-Bi-Fp9" secondAttribute="width" id="AMc-NV-bEC"/>
                             <constraint firstItem="K32-iu-a9X" firstAttribute="top" secondItem="DhE-U5-qwR" secondAttribute="bottom" id="Bws-6M-aMK"/>
+                            <constraint firstItem="DhE-U5-qwR" firstAttribute="top" secondItem="dSE-gM-6cJ" secondAttribute="bottom" id="G8K-rd-nru"/>
                             <constraint firstAttribute="topMargin" secondItem="DhE-U5-qwR" secondAttribute="top" id="S2W-kc-w9Q"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="G8K-rd-nru"/>
+                            </mask>
+                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -818,7 +824,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSM-p5-SQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116.8" y="98.950524737631198"/>
+            <point key="canvasLocation" x="164" y="92"/>
         </scene>
         <!--Tutorial-->
         <scene sceneID="IXi-yb-OGr">
@@ -830,15 +836,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AccessoriesGreen" width="20" height="20"/>
-        <image name="AddInvertGreen" width="44" height="44"/>
-        <image name="DeleteGreen" width="44" height="44"/>
-        <image name="DeleteHeader" width="20" height="20"/>
-        <image name="DeleteInvertGreen" width="44" height="44"/>
-        <image name="DoneGreen" width="44" height="44"/>
-        <image name="EmojiGreen" width="20" height="20"/>
-        <image name="EyeGreen" width="20" height="20"/>
-        <image name="FA42A815-BE80-4B9A-B700-C10AE08E8888" width="20" height="20">
+        <image name="0DF860DF-BB6A-4A6B-BF90-2A9CB9ACEDB2" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -916,6 +914,14 @@ D/oQAxAIEBAQExAYECcQKxAyEDoQRxBMEE4QUBBVEF0QYBBlEG0QcBCCEIUQigAAAAAAAAIBAAAAAAAA
 AEEAAAAAAAAAAAAAAAAAABCMA
 </mutableData>
         </image>
+        <image name="AccessoriesGreen" width="20" height="20"/>
+        <image name="AddInvertGreen" width="44" height="44"/>
+        <image name="DeleteGreen" width="44" height="44"/>
+        <image name="DeleteHeader" width="20" height="20"/>
+        <image name="DeleteInvertGreen" width="44" height="44"/>
+        <image name="DoneGreen" width="44" height="44"/>
+        <image name="EmojiGreen" width="20" height="20"/>
+        <image name="EyeGreen" width="20" height="20"/>
         <image name="FooterChristmas" width="414" height="5"/>
         <image name="HeaderChristmas" width="414" height="58"/>
         <image name="HeaderGreen" width="414" height="58"/>
@@ -925,7 +931,7 @@ AEEAAAAAAAAAAAAAAAAAABCMA
         <image name="MediumGreen" width="20" height="20"/>
         <image name="MouthGreen" width="20" height="20"/>
         <image name="PartsGreen" width="20" height="20"/>
-        <image name="Play" width="20" height="20"/>
+        <image name="PlayGreen" width="20" height="20"/>
         <image name="SmallGreen" width="20" height="20"/>
         <image name="TextGreen" width="20" height="20"/>
         <image name="TutorialGreen" width="44" height="44"/>

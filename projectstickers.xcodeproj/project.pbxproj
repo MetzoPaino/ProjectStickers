@@ -133,8 +133,8 @@
 		0A8F3EE81DEAF7BB00773A80 /* Head2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3EE11DEAF7BB00773A80 /* Head2.png */; };
 		0A8F3EE91DEAF7BB00773A80 /* Head3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3EE21DEAF7BB00773A80 /* Head3.png */; };
 		0A8F3EEA1DEAF7BB00773A80 /* Head4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3EE31DEAF7BB00773A80 /* Head4.png */; };
-		0A8F3EEB1DEAF7BB00773A80 /* Head5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3EE41DEAF7BB00773A80 /* Head5.png */; };
-		0A8F3EEC1DEAF7BB00773A80 /* Head6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3EE51DEAF7BB00773A80 /* Head6.png */; };
+		0A8F3EEB1DEAF7BB00773A80 /* Head6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3EE41DEAF7BB00773A80 /* Head6.png */; };
+		0A8F3EEC1DEAF7BB00773A80 /* Head5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3EE51DEAF7BB00773A80 /* Head5.png */; };
 		0A8F3F1A1DEAF89200773A80 /* Mouth0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3EED1DEAF89200773A80 /* Mouth0.png */; };
 		0A8F3F1B1DEAF89200773A80 /* Mouth1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3EEE1DEAF89200773A80 /* Mouth1.png */; };
 		0A8F3F1C1DEAF89200773A80 /* Mouth2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8F3EEF1DEAF89200773A80 /* Mouth2.png */; };
@@ -559,8 +559,8 @@
 		0A8F3EE11DEAF7BB00773A80 /* Head2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head2.png; sourceTree = "<group>"; };
 		0A8F3EE21DEAF7BB00773A80 /* Head3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head3.png; sourceTree = "<group>"; };
 		0A8F3EE31DEAF7BB00773A80 /* Head4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head4.png; sourceTree = "<group>"; };
-		0A8F3EE41DEAF7BB00773A80 /* Head5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head5.png; sourceTree = "<group>"; };
-		0A8F3EE51DEAF7BB00773A80 /* Head6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head6.png; sourceTree = "<group>"; };
+		0A8F3EE41DEAF7BB00773A80 /* Head6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head6.png; sourceTree = "<group>"; };
+		0A8F3EE51DEAF7BB00773A80 /* Head5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Head5.png; sourceTree = "<group>"; };
 		0A8F3EED1DEAF89200773A80 /* Mouth0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mouth0.png; sourceTree = "<group>"; };
 		0A8F3EEE1DEAF89200773A80 /* Mouth1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mouth1.png; sourceTree = "<group>"; };
 		0A8F3EEF1DEAF89200773A80 /* Mouth2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mouth2.png; sourceTree = "<group>"; };
@@ -1411,8 +1411,8 @@
 				0A8F3EE11DEAF7BB00773A80 /* Head2.png */,
 				0A8F3EE21DEAF7BB00773A80 /* Head3.png */,
 				0A8F3EE31DEAF7BB00773A80 /* Head4.png */,
-				0A8F3EE41DEAF7BB00773A80 /* Head5.png */,
-				0A8F3EE51DEAF7BB00773A80 /* Head6.png */,
+				0A8F3EE51DEAF7BB00773A80 /* Head5.png */,
+				0A8F3EE41DEAF7BB00773A80 /* Head6.png */,
 			);
 			path = Heads;
 			sourceTree = "<group>";
@@ -1808,7 +1808,7 @@
 				0ADE576E1DB40DD200F06AAB /* Eye17.png in Resources */,
 				0A8F3F7D1DEAF98500773A80 /* MouthOptimised9.png in Resources */,
 				0A8F3EA91DEAF74A00773A80 /* EyeOptimised13.png in Resources */,
-				0A8F3EEC1DEAF7BB00773A80 /* Head6.png in Resources */,
+				0A8F3EEC1DEAF7BB00773A80 /* Head5.png in Resources */,
 				0ADE57041DB40DC400F06AAB /* Accessories1.png in Resources */,
 				0A8F3EA71DEAF74A00773A80 /* EyeOptimised11.png in Resources */,
 				0ADE58A51DB4196D00F06AAB /* SnakeAnimated2.png in Resources */,
@@ -1857,7 +1857,7 @@
 				0A8F3F8C1DEAF98500773A80 /* MouthOptimised24.png in Resources */,
 				0A8F3EBD1DEAF74A00773A80 /* EyeOptimised33.png in Resources */,
 				0A8F3F341DEAF89300773A80 /* Mouth26.png in Resources */,
-				0A8F3EEB1DEAF7BB00773A80 /* Head5.png in Resources */,
+				0A8F3EEB1DEAF7BB00773A80 /* Head6.png in Resources */,
 				0A8F3ED91DEAF74A00773A80 /* EyeOptimised61.png in Resources */,
 				0A8F3F871DEAF98500773A80 /* MouthOptimised19.png in Resources */,
 				0A8F3F241DEAF89200773A80 /* Mouth10.png in Resources */,

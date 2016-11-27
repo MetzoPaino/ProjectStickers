@@ -54,7 +54,18 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        view.layoutIfNeeded()
         collectionView.reloadData()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        
+        if collectionView.frame.origin.y == 0 {
+            print("HEY HEY YEAH")
+        } else {
+            
+            print("NO NO NO!")
+        }
     }
     
     func styleView() {
