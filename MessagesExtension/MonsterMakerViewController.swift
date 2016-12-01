@@ -544,15 +544,15 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         
         switch showingMonsterParts {
         case .heads:
-            return StickerManager().createHeadArray()[index]
+            return StickerManager().createHeadArray(optimised: false)[index]
         case .eyes:
             return StickerManager().createEyeArray(optimised: false)[index]
         case .mouths:
             return StickerManager().createMouthArray(optimised: false)[index]
         case .accessories:
-            return StickerManager().createAccessoriesArray()[index]
+            return StickerManager().createAccessoriesArray(optimised: false)[index]
         case .text:
-            return StickerManager().createTextArray()[index]
+            return StickerManager().createTextArray(optimised: false)[index]
         }
     }
     
@@ -675,15 +675,15 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
         
         switch showingMonsterParts {
         case .heads:
-            return StickerManager().createHeadArray().count
+            return StickerManager().createHeadArray(optimised: true).count
         case .eyes:
             return StickerManager().createEyeArray(optimised: true).count
         case .mouths:
             return StickerManager().createMouthArray(optimised: true).count
         case .accessories:
-            return StickerManager().createAccessoriesArray().count
+            return StickerManager().createAccessoriesArray(optimised: true).count
         case .text:
-            return StickerManager().createTextArray().count
+            return StickerManager().createTextArray(optimised: true).count
         }
     }
     
@@ -696,15 +696,15 @@ extension MonsterMakerViewController: UICollectionViewDataSource {
         
         switch showingMonsterParts {
         case .heads:
-            image = StickerManager().createHeadArray()[indexPath.row]
+            image = StickerManager().createHeadArray(optimised: true)[indexPath.row]
         case .eyes:
             image = StickerManager().createEyeArray(optimised: true)[indexPath.row]
         case .mouths:
             image = StickerManager().createMouthArray(optimised: true)[indexPath.row]
         case .accessories:
-            image = StickerManager().createAccessoriesArray()[indexPath.row]
+            image = StickerManager().createAccessoriesArray(optimised: true)[indexPath.row]
         case .text:
-            image = StickerManager().createTextArray()[indexPath.row]
+            image = StickerManager().createTextArray(optimised: true)[indexPath.row]
         }
         
         if currentSelectedIndexPath == indexPath {

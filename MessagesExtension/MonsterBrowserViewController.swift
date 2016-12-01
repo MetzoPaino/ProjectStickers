@@ -188,9 +188,9 @@ class MonsterBrowserViewController: UIViewController, UICollectionViewDataSource
             case .parts:
                 return StickerManager().createPartStickerArray().count
             case .accessories:
-                return StickerManager().createAccessoriesArray().count
+                return StickerManager().createAccessoriesStickerArray(animated: animating).count
             case .text:
-                return StickerManager().createTextArray().count
+                return StickerManager().createTextStickerArray().count
             }
         }
     }
