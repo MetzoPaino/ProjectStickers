@@ -193,46 +193,43 @@ class StickerManager: NSObject, NSCoding {
         return headArray + eyeArray + mouthArray
     }
 
-    func createHeadArray() -> [UIImage] {
+    func createHeadArray(optimised: Bool) -> [UIImage] {
         
-        return createArray(fileName: "Head", optimised: false)
+        return createArray(fileName: "Head", optimised: optimised)
     }
 
     func createEyeArray(optimised: Bool) -> [UIImage] {
         
-        return createArray(fileName: "Eye", optimised: true)
+        return createArray(fileName: "Eye", optimised: optimised)
     }
     
     func createMouthArray(optimised: Bool) -> [UIImage] {
         
-        return createArray(fileName: "Mouth", optimised: true)
+        return createArray(fileName: "Mouth", optimised: optimised)
     }
     
-    func createAccessoriesArray() -> [UIImage] {
+    func createAccessoriesArray(optimised: Bool) -> [UIImage] {
         
         let date = DateManager().detectMonth()
         if date == .december {
-            let christmasArray = createArray(fileName: "AccessoriesChristmas", optimised: false)
-            let accessoriesArray = createArray(fileName: "Accessories", optimised: false)
-            
+            let christmasArray = createArray(fileName: "AccessoriesChristmas", optimised: optimised)
+            let accessoriesArray = createArray(fileName: "Accessories", optimised: optimised)
             return christmasArray + accessoriesArray
-            
         } else {
-            return createArray(fileName: "Accessories", optimised: false)
+            return createArray(fileName: "Accessories", optimised: optimised)
         }
     }
     
-    func createTextArray() -> [UIImage] {
+    func createTextArray(optimised: Bool) -> [UIImage] {
         
         let date = DateManager().detectMonth()
         if date == .december {
-            let christmasArray = createArray(fileName: "TextChristmas", optimised: false)
-            let textArray = createArray(fileName: "Text", optimised: false)
+            let christmasArray = createArray(fileName: "TextChristmas", optimised: optimised)
+            let textArray = createArray(fileName: "Text", optimised: optimised)
             
             return christmasArray + textArray
-            
         } else {
-            return createArray(fileName: "Text", optimised: false)
+            return createArray(fileName: "Text", optimised: optimised)
         }
     }
     
