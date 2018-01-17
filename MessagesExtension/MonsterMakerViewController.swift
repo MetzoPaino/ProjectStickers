@@ -30,12 +30,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tutorialContainerView: UIView!
     @IBOutlet weak var tutorialContainerViewTopLayoutConstraint: NSLayoutConstraint!
-    
 
-
-    var startingGesturePoint: CGPoint?
-    
-    
     @IBOutlet weak var canvasImageView: UIImageView!
     @IBOutlet weak var shadowImageView: UIImageView!
 
@@ -54,7 +49,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var undoButtonWidthConstraint: NSLayoutConstraint!
     
     weak var delegate: MonsterMakerViewControllerDelegate?
-    
+
+    var startingGesturePoint: CGPoint?
+
     var longGesture = UILongPressGestureRecognizer()
     var pinchGesture = UIPinchGestureRecognizer()
     var rotationGesture = UIRotationGestureRecognizer()
@@ -62,10 +59,7 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     var showingMonsterParts = monsterParts.heads
     
     var currentSelectedIndexPath: IndexPath?
-    
 
-
-    
     var movingImage: UIImageView?
     var moving = false
     
@@ -92,7 +86,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(MonsterMakerViewController.handleRotation(recognizer:)))
         
         longGesture.delegate = self
-        //pinchGesture.delegate = self // Perhaps this will solve the occasional grabbing of collectionView?
         rotationGesture.delegate = self
 
         self.view.addGestureRecognizer(longGesture)
@@ -163,11 +156,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
         
         shadowImageView.layer.shadowColor = UIColor.black.cgColor
         shadowImageView.layer.shadowOpacity = 0.25
-        //shadowImageView.layer.shadowOffset = CGSize.zero
         shadowImageView.layer.shadowOffset = CGSize(width: 0, height: -16)
         shadowImageView.layer.shadowRadius = 4
-        //shadowImageView.layer.shouldRasterize = true
-        
+
         headsButton.setImage(UIImage(named:"Emoji" + modifier), for: UIControlState.normal)
         headsButton.setImage(UIImage(named:"Emoji" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.highlighted)
         headsButton.setImage(UIImage(named:"Emoji" + modifier)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: UIControlState.selected)
@@ -233,37 +224,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-
-//        var gesture = ""
-//        var otherGesture = ""
-//
-//        if gestureRecognizer == longGesture {
-//            
-//            gesture = "Long Gesture"
-//            
-//        } else if gestureRecognizer == pinchGesture {
-//            
-//            gesture = "Pinch Gesture"
-//            
-//        }  else if gestureRecognizer == rotationGesture {
-//            
-//            gesture = "Rotation Gesture"
-//        }
-//        
-//        if otherGestureRecognizer == longGesture {
-//            
-//            otherGesture = "Long Gesture"
-//            
-//        } else if otherGestureRecognizer == pinchGesture {
-//            
-//            otherGesture = "Pinch Gesture"
-//            
-//        }  else if otherGestureRecognizer == rotationGesture {
-//            
-//            otherGesture = "Rotation Gesture"
-//        }
-//        
-        //print("We have \(gesture) with \(otherGesture)")
         
         if moving == false {
             return true
@@ -426,7 +386,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             tryingToMoveOldImage = false
             
             sender.isEnabled = true
-            //collectionView.reloadData()
             collectionView.isUserInteractionEnabled = true
             
             undoButtonWidthConstraint.constant = 36
@@ -474,10 +433,8 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
 
             movingImage = nil
             updateButtonStates()
-            //movingImage.removeFromSuperview()
             moving = false
             currentSelectedIndexPath = nil
-            //collectionView.reloadData()
         }
     }
     
@@ -495,14 +452,9 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
                 
                 let zKeyPath = "layer.presentationLayer.transform.rotation.z"
                 let imageRotation = (movingImage.value(forKeyPath: zKeyPath) as? NSNumber)?.floatValue ?? 0.0
-                
-                //                let scale = "layer.presentationLayer.transform.scale"
-                //                let imageScale = (movingImage.value(forKeyPath: scale) as? NSNumber)?.floatValue ?? 0.0
-                //                let scaleFloat = CGFloat(imageScale)
-                
+
                 context.translateBy(x: movingImage.bounds.size.width / 2, y: movingImage.bounds.size.height / 2)
                 context.rotate(by: CGFloat(imageRotation))
-                //context.scaleBy(x: scaleFloat, y: scaleFloat)
                 context.translateBy(x: -movingImage.bounds.size.width / 2, y: -movingImage.bounds.size.height / 2)
             }
             
@@ -510,7 +462,6 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
             let capturedImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             image = UIImageView(image:capturedImage)
-            //image.bounds = movingImage.bounds
             image.frame = movingImage.frame
         }
         
@@ -652,19 +603,12 @@ class MonsterMakerViewController: UIViewController, UIGestureRecognizerDelegate 
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-//        if segue.identifier == "EmbedTutorial" {
-//            
-//            let controller = segue.destination as! TutorialViewController
-//            controller.delegate = self
-//        }
     }
 }
 
 // MARK: - UICollectionViewDelegate
 
 extension MonsterMakerViewController: UICollectionViewDelegate {
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
 }
 
 // MARK: - UICollectionViewDataSource

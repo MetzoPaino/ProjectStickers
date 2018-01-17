@@ -24,7 +24,6 @@ class StickerManager: NSObject, NSCoding {
 
     override init() {
         super.init()
-        //loadStickers()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -267,8 +266,6 @@ class StickerManager: NSObject, NSCoding {
     func createStickerGif(asset: String, localizedDescription: String) throws -> MSSticker {
         
         guard let stickerPath = Bundle.main.path(forResource: asset, ofType:"gif") else {
-            
-            //print("Couldn't create the sticker path for", asset)
             throw StickerCreationError.noPath
         }
         let stickerURL = URL(fileURLWithPath: stickerPath)

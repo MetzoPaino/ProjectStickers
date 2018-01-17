@@ -67,12 +67,6 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         
         for child in childViewControllers {
             child.willMove(toParentViewController: nil)
-            
-//            if child is MonsterMakerViewController {
-//                child.view.removeFromSuperview()
-//                child.removeFromParentViewController()
-//            }
-            
             child.view.removeFromSuperview()
             child.removeFromParentViewController()
         }
@@ -174,10 +168,8 @@ class MessagesViewController: MSMessagesAppViewController, DataManagerDelegate, 
         switch self.presentationStyle {
         case .compact:
             self.requestPresentationStyle(.expanded)
-        case .expanded:
+        case .expanded, .transcript:
             break
-            //self.performSegue(withIdentifier: "ShowMonsterMaker", sender: self)
-           // self.requestPresentationStyle(.compact)
         }
         
     }

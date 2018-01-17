@@ -21,7 +21,7 @@ class DataManager {
     required init() {
         
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as [String]
-        let path = paths[0] //+ "/"//+ "/ProjectStickers.plist"
+        let path = paths[0]
         
         if FileManager.default.fileExists(atPath: path) == false {
             
@@ -48,8 +48,6 @@ class DataManager {
     }
     
     func saveImageToDisk(image: UIImage) {
-        
-       // let fileUrl = Foundation.URL(string: "file://\(paths[0])/\(UUID().uuidString).png")
 
         print("File path = \("file://" + dataFilePath())")
         
@@ -95,9 +93,7 @@ class DataManager {
                     print("problems")
                 }
             }
-            
-          //  let combined = zip(pngURLArray, dateArray).sortedBy: {$0.1 < $1.1}
-            
+
             let combined = zip(pngURLArray, dateArray).sorted(by: { (s1: (URL, Date), s2: (URL, Date)) -> Bool in
                 return s1.1 > s2.1
             })
@@ -126,15 +122,6 @@ class DataManager {
             
             print("Failed to delete \(error.localizedDescription)")
         }
-        
-//        NSFileManager *fileManager = [NSFileManager defaultManager];
-//        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-//        NSString *filePath = [documentsPath stringByAppendingPathComponent:@"image.png"];
-//        NSError *error = nil;
-//        
-//        if (![fileManager removeItemAtPath:filePath error:&error]) {
-//            NSLog(@"[Error] %@ (%@)", error, filePath);
-//        }
     }
     
 }
